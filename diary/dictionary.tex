@@ -1,0 +1,100 @@
+% standard
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% geometry
+\usepackage{geometry}
+\geometry{ headsep=20pt,
+headheight=20pt,
+left=21mm,
+top=15mm,
+right=21mm,
+bottom=15mm,
+footskip=20pt,
+includeheadfoot}
+
+% header and footer
+\usepackage{datetime}
+\newdateformat{dmy}{%
+\THEDAY.~\monthname[\THEMONTH] \THEYEAR}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Noah Vogt \& Simon Hammer}
+\chead{}
+\rhead{\dmy\today}
+\lfoot{}
+\cfoot{Gymnasium Kirschgarten}
+\rfoot{Seite \thepage}
+\renewcommand{\footrulewidth}{.4pt}
+
+% fix figure positioning
+\usepackage{float}
+
+% larger inner table margin
+\renewcommand{\arraystretch}{1.4}
+
+% no paragraph indent
+\setlength{\parindent}{0em}
+
+% graphics package
+\usepackage{graphicx}
+
+\usepackage{multicol}
+
+% use sans serif font
+\usepackage{tgheros}
+\usepackage{mathptmx}
+
+% don't even ask what this is for, I have no idea (noah)
+\usepackage{bm} %italic \bm{\mathit{•}}
+\usepackage[hang]{footmisc}
+\usepackage{siunitx}
+\usepackage[font={small,it}]{caption}
+\sisetup{locale = DE, per-mode = fraction, separate-uncertainty,   exponent-to-prefix, prefixes-as-symbols = false, scientific-notation=false
+}
+\newcommand{\ns}[4]{(\num[scientific-notation=false]{#1}\pm\num[scientific-notation=false]{#2})\cdot\num[]{e#3}\si{#4}}
+
+% show isbn in bibliography
+\usepackage{natbib}
+
+\begin{document}
+
+
+
+application programming interface (API)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

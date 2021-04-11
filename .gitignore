@@ -1,0 +1,8 @@
+build/
+Include/
+*.out
+*.zip
+*.log
+*.aux
+*.toc
+*.pdf

@@ -1,0 +1,167 @@
+\begin{center}
+\section*{\month}
+\end{center}
+
+\def\day{\textit{April 1st, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+Today I instaled this diary. 
+
+\def\day{\textit{April 3st, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+
+I set up Android Studio and tried to install a KVM (i think it means Kernal Virtual Mashine) with \\
+https://help.ubuntu.com/community/KVM/Installation\\
+
+how to creat a android app with androidstudio \\
+https://developer.android.com/training/basics/firstapp/creating-project \\ 
+
+fundamentals how android apps works \\
+https://developer.android.com/guide/components/fundamentals \\ 
+
+How does an app get permissions for camera etc.\\ 
+https://developer.android.com/guide/topics/permissions/overview\\
+
+Activities\\
+https://developer.android.com/guide/components/activities/intro-activities\\
+
+Services\\
+https://developer.android.com/guide/components/services\\
+
+Notifications\\
+https://developer.android.com/guide/topics/ui/notifiers/notifications\\
+
+Content providers\\
+https://developer.android.com/guide/topics/providers/content-providers\\
+
+\newpage
+
+Each Android app lives in its own security sandbox, protected by the following Android security features: \\ 
+\begin{itemize}
+    \item The Android operating system is a multi-user Linux system in which each app is a different user. \\
+    \item By default, the system assigns each app a unique Linux user ID (the ID is used only by the system and is unknown to the app). \\
+    The system sets permissions for all the files in an app so that only the user ID assigned to that app can access them. \\   
+    \item Each process has its own virtual machine (VM), so an app's code runs in isolation from other apps. \\
+    \item By default, every app runs in its own Linux process.  \\ 
+    The Android system starts the process when any of the app's components need to be executed, \\
+    and then shuts down the process when it's no longer needed or when the system must recover memory for other apps. \\
+\end{itemize}
+
+However, there are ways for an app to share data with other apps and for an app to access system services:\\ 
+\begin{itemize}
+    \item It's possible to arrange for two apps to share the same Linux user ID, in which case they are able to access each other's files. \\
+    To conserve system resources, apps with the same user ID can also arrange to run in the same Linux process and share the same VM. The apps must also be signed with the same certificate.\\
+    \item An app can request permission to access device data such as the device's location, camera, and Bluetooth connection.\\ 
+    The user has to explicitly grant these permissions. For more information, see Working with System Permissions.\\
+\end{itemize}
+
+\newpage    
+There are four different types of app components:\\
+
+    Activities\\
+    Services\\
+    Broadcast receivers\\
+    Content providers\\
+
+\textbf{Activities}
+
+An activity is the entry point for interacting with the user. It represents a single screen with a user interface. For example, an email app might have one activity that shows a list of new emails, 
+another activity to compose an email, and another activity for reading emails. Activities can be stopped and run again. And they can be started from other apps. \\
+
+An activity facilitates the following key interactions between system and app:\\
+\begin{itemize}
+    \item Keeping track of what the user currently cares about (what is on screen) to ensure that the system keeps running the process that is hosting the activity.\\
+    \item Knowing that previously used processes contain things the user may return to (stopped activities), and thus more highly prioritize keeping those processes around.\\
+    \item Helping the app handle having its process killed so the user can return to activities with their previous state restored.\\
+    \item Providing a way for apps to implement user flows between each other, and for the system to coordinate these flows. (The most classic example here being share.)\\
+\end{itemize}
+
+\textbf{Services}
+
+A service is a general-purpose entry point for keeping an app running in the background for all kinds of reasons.
+It is a component that runs in the background to perform long-running operations or to perform work for remote processes.
+A service does not provide a user interface. \\
+
+For example, a service might play music in the background while the user is in a different app, or it might fetch data over the network without blocking user interaction with an activity.
+Another component, such as an activity, can start the service and let it run or bind to it in order to interact with it.\\
+
+\newpage
+
+Syncing data in the background or playing music also represent two different types of started services that modify how the system handles them:\\ 
+\begin{itemize}
+    \item Music playback is something the user is directly aware of, so the app tells the system this by saying it wants to be foreground with a notification to tell the user about it; \\
+    in this case the system knows that it should try really hard to keep that service's process running, because the user will be unhappy if it goes away.\\\\
+    \item A regular background service is not something the user is directly aware as running, so the system has more freedom in managing its process. \\
+    It may allow it to be killed (and then restarting the service sometime later) if it needs RAM for things that are of more immediate concern to the user.\\
+\end{itemize}
+
+Bound services run because some other app (or the system) has said that it wants to make use of the service. This is basically the service providing an API to another process. 
+If one service is importent the bound service will also be important.\\
+
+\textbf{Broadcast receivers}
+
+A broadcast receiver is a component that enables the system to deliver events to the app outside of a regular user flow, allowing the app to respond to system-wide broadcast announcements. \\
+Because broadcast receivers are another well-defined entry into the app, the system can deliver broadcasts even to apps that aren't currently running.\\
+Apps can kinda communicate with broadcast reciever.\\
+More commonly, though, a broadcast receiver is just a gateway to other components and is intended to do a very minimal amount of work. \\
+For instance, it might schedule a JobService to perform some work based on the event with JobScheduler\\
+
+\textbf{Content provider}
+
+A content provider manages a shared set of app data that you can store in the file system, in a SQLite database, on the web, or on any other persistent storage location that your app can access. 
+Through the content provider, other apps can query or modify the data if the content provider allows it.\\
+
+To the system, a content provider is an entry point into an app for publishing named data items, identified by a URI scheme. 
+Thus an app can decide how it wants to map the data it contains to a URI namespace, handing out those URIs to other entities which can in turn use them to access the data. 
+There are a few particular things this allows the system to do in managing an app:
+\begin{itemize}
+    \item Assigning a URI doesn't require that the app remain running, so URIs can persist after their owning apps have exited. 
+    The system only needs to make sure that an owning app is still running when it has to retrieve the app's data from the corresponding URI.
+    \item These URIs also provide an important fine-grained security model. 
+    For example, an app can place the URI for an image it has on the clipboard, but leave its content provider locked up so that other apps cannot freely access it. 
+    When a second app attempts to access that URI on the clipboard, 
+    the system can allow that app to access the data via a temporary URI permission grant so that it is allowed to access the data only behind that URI, but nothing else in the second app.
+\end{itemize}
+Content providers are also useful for reading and writing data that is private to your app and not shared.\\
+A content provider is implemented as a subclass of ContentProvider and must implement a standard set of APIs that enable other apps to perform transactions. 
+For more information, see the Content Providers developer guide.\\\\
+
+%=============================================================================================================================================
+
+A unique aspect of the Android system design is that any app can start another app’s component. 
+For example, if you want the user to capture a photo with the device camera, 
+there's probably another app that does that and your app can use it instead of developing an activity to capture a photo yourself. 
+You don't need to incorporate or even link to the code from the camera app. 
+Instead, you can simply start the activity in the camera app that captures a photo. 
+When complete, the photo is even returned to your app so you can use it. To the user, it seems as if the camera is actually a part of your app.\\
+
+When the system starts a component, it starts the process for that app if it's not already running and instantiates the classes needed for the component. 
+For example, if your app starts the activity in the camera app that captures a photo, that activity runs in the process that belongs to the camera app, not in your app's process. 
+Therefore, unlike apps on most other systems, Android apps don't have a single entry point (there's no main() function).\\
+
+Because the system runs each app in a separate process with file permissions that restrict access to other apps, your app cannot directly activate a component from another app. 
+However, the Android system can. To activate a component in another app, deliver a message to the system that specifies your intent to start a particular component. 
+The system then activates the component for you.
+
+
+\def\day{\textit{April 5st, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+
+I started a dictionary
+
+
+\def\day{\textit{April 11st, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+
+I'm imforming myself about git.
+https://www.youtube.com/watch?v=2sjqTHE0zok
+
+
+
+
+
+
+
