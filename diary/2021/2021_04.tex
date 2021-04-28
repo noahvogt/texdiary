@@ -205,8 +205,6 @@ I successfully installed both NDK and SDK on my Arch Linux Desktop PC. Now Andro
 \subsection*{\weekday, \day}
 Apps provide multiple entry points
 
-Android apps are built as a combination of components that can be invoked individually. For example, an activity is a type of app component that provides a user interface (UI).
-
 The "main" activity starts when the user taps your app's icon. You can also direct the user to an activity from elsewhere, such as from a notification or even from a different app.
 
 Other components, such as broadcast receivers and services, allow your app to perform background tasks without a UI.
@@ -233,31 +231,58 @@ Also I installed Ubuntu, so I could use the same environment as Simon.\\
 
 I wrote the adb guide \url{https://noahvogt.com/resources/adb-guide.html} and corrected all the errors Simon pointed out to me.
 
-\def\day{\textit{April 14st Noah, 2021}}
-\def\weekday{\textit{Wednesday}}
-\subsection*{\weekday, \day}
-
-I updated the adb guide as requested from Simon to include the Activation of the Android USB Debbing. I also made some additional changes.\\
->>>>>>> 83a5ab001ef633991d4412546481921f84886138
-
-I made a Hello World Program, installed it via adb on my phone and captured this screenshot of it also using adb:\\
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.4\textwidth]{media/hello-world-app-noah-screenshot}
-\caption{Hello World App}
-\end{figure}
-
-
-
 \def\day{\textit{April 15st Simon, 2021}}
 \def\weekday{\textit{Thursday}}
 \subsection*{\weekday, \day}
 
 I finally could compile the testapp to an apk file. 
 
+
+\newpage
+\def\day{\textit{April 19st Noah, 2021}}
+\def\weekday{\textit{Monday}}
+\subsection*{\weekday, \day}
+
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{l}{8cm}
+\centering
+\includegraphics[scale=.15]{media/hello-world-app-noah-screenshot}
+\caption{Hello World}
+\end{wrapfigure}
+
+I updated the adb guide as requested from Simon to include the Activation of the Android USB Debbing. I also made some additional changes.\\
+
+I made a Hello World Program, installed it via adb on my phone and captured this screenshot of it also using adb.\\
+
+Also, I made a private github repo \url{https://github.com/noahvogt/mini-project}.\\
+
+On there it is planned to work on features in seperate branches that will only be merged into the master branch, when they are in a usable state.
+
+\endgroup
+
+\vspace{4cm}
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{8cm}
+\centering
+\includegraphics[scale=.15]{media/drawer}
+\caption{Drawer Navigation Menu}
+\end{wrapfigure}
+I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
+
+For this I created a new branch called \texttt{newemail-popup}.
+
+
+\endgroup
+\newpage
+
 \def\day{\textit{April 19st Simon, 2021}}
-\def\weekday{\textit{Thursday}}
+\def\weekday{\textit{Monday}}
 \subsection*{\weekday, \day}
 Interfaces specify what a class must do and not how. It is the blueprint of the class.
 An Interface is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement.
@@ -326,13 +351,40 @@ but I was not able to take Program into the right parts. But now at 9:30 a clock
 
 
 
-\def\day{\textit{April 26st, 2021}}
+\def\day{\textit{April 20 Noah, 2021}}
+\def\weekday{\textit{Wednesday}}
+\subsection*{\weekday, \day}
+
+I continued my work on \texttt{newemail-popup} and looked up more ways how we  could implement this. I am not sure yet, what we will go for right now.\\
+
+I also applied the GNU General Public License v3 on all upstream branches. I think it is useful to choose a free license right away, instead of waiting too long.
+
+\def\day{\textit{April 21 Noah, 2021}}
+\def\weekday{\textit{Wednesday}}
+\subsection*{\weekday, \day}
+
+After Simon mentioned to me that he couldn't install the unsigned release apk from our build, I tried it myself. It turned out you would have to sign this jar/apk, before your android phone will accept to install it.\\
+
+So I searched ways how to do it outside of anroid studio, just on the command line. I did try out some software projects and shell scripts, but none of them worked. ADB told me now, that instead of no certificates, I would have inconsistent ones.\\
+
+So I have successfully wasted 1 - 3 hours on finding out how to sign a apk. But I consider this issue not relevant right now, and in the worst case will be solvable by just using android studio. So I decided to ignore this issue for now and just use the debug apk for now.
+
+
+
+\def\day{\textit{April 26st Simon, 2021}}
 \def\weekday{\textit{Thursday}}
 \subsection*{\weekday, \day}
 
 I deleted the miniProjekt folder and installed the github files again.
 Also I puted the RecycleViewSimple in the programm but it is not finished yet. 
 The List of the emails starts under the app bar and i think it is not interactive. 
+
+
+
+
+
+
+
 
 
 
