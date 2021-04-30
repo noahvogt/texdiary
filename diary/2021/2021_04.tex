@@ -380,10 +380,28 @@ Also I puted the RecycleViewSimple in the programm but it is not finished yet.
 The List of the emails starts under the app bar and i think it is not interactive. 
 
 
+\def\day{\textit{April 28st Simon, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
 
 
+I'm stil trying to make the RecycleView work. It cannot find the Adapter but i'm working on it. But what came in my mind is that 
+this Recycleviewer is not interactive. So it would just be a list where you can't click anything so I look in the other examples and found
+DataBindingDataBoundRecyclerView/ and that might be what we are looking for. Not exactly but there are buttons. 
 
 
+\def\day{\textit{April 29st Simon, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+
+implementation "com.android.support:cardview-v7:28.0.0"
+implementation "com.android.support:appcompat-v7:28.0.0"
+
+I copied this into the build.gradle file for this classes
+
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 
 
