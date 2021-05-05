@@ -403,6 +403,111 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+\def\day{\textit{May 2st Simon, 2021}}
+\def\weekday{\textit{Thursday}}
+\subsection*{\weekday, \day}
+
+I saw we have alot of androidx in our programm and I hope everything works with that. 
+minSdkVersion 16 \\
+targetSdkVersion 30 \\ 
+\\
+these are the versions of our programm. minSdkVersion tells googleplay wich version is as minimum required and tergetSdkVersion is the version we use to programm in. I think thats a little high
+but it is a little bit late to change that now. But when we want to upload the programm to googleplay we need to have this version. \\
+
+https://www.c-sharpcorner.com/article/recyclerview-in-andriod-with-java/
+I finally unterstand how the important things like CustomAdapter or the data insert works with this example programm. And I now know how the
+RecyclerView example programm works. \\
+What I didn't had in mind was that it is java and I know how java works and I don't have to find a example to put in. I just have to unterstand
+how the classes works and where they are going to be used. I was confuced from the form of coding and the libarys.
+\\
+I made a new xml file called recycler\_view\_frag.xml with some things from activity\_main in it. 
+
+\newpage
+
+\begin{lstlisting}
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sample_main_layout">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:gravity="center_vertical"-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+        <!--android:text="@string/element_text"-->
+    </FrameLayout><!--RelativeLayout from https://www.c-sharpcorner.com/article/recyclerview-in-andriod-with-java/
+                        and FrameLayout was befor from https://developer.android.com/guide/topics/ui/layout/recyclerview#java-->
+</LinearLayout><!-- -->
+\end{lstlisting}
+
+this is what i added to MainActivity.java
+\\
+The second block is the important one
+
+\begin{lstlisting}
+
+    protected String[] data;
+    private static final int DATASET_COUNT = 60; //declares how far recyclerview count
+
+
+    //imported by simon 2.mai
+    //idk realy but it kinda uses the adapter
+    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+    CustomAdapter adapter = new CustomAdapter(data);
+    recyclerView.setAdapter(adapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+    /**
+     * Generates Strings for RecyclerView's adapter. This data would usually come
+     * from a local content provider or remote server.
+     * implemented from simon 2.may
+     */
+    private void initDataset() {
+        data = new String[DATASET_COUNT];
+        for (int i = 0; i < DATASET_COUNT; i++) {
+            data[i] = "This is element #" + i;
+        }
+    }
+\end{lstlisting}
+
+The problem right now at 23:46 is that the app crashes all the time
+
+I found some things that made the programm crash. \\
+
+\begin{enumerate}
+
+\item initialing the data maybe has to be done in a finished overitten method 
+
+\item all the important things like Adapter defining has to be done in onCreateView and not onCreate.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
