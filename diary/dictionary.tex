@@ -77,9 +77,31 @@ You can create a bundle, pass it to Intent that starts the activity which then c
 Bundle:- A mapping from String values to various Parcelable types. Bundle is generally used for passing data between various activities of android.
 
 
+protected
+The protected keyword is an access modifier used for attributes, methods and constructors, 
+making them accessible in the same package and subclasses.
 
+bundle
+Resource bundles contain locale-specific objects.
+ When your program needs a locale-specific resource, a String for example,
+ your program can load it from the resource bundle that is appropriate for the current user's locale. In this way, 
+you can write program code that is largely independent of the user's locale isolating most, if not all, 
+of the locale-specific information in resource bundles.
 
+savedInstandeState
+The savedInstanceState is a reference to a Bundle object that is passed into the onCreate method of every Android Activity.
+ Activities have the ability, under special circumstances, 
+to restore themselves to a previous state using the data stored in this bundle.
+ If there is no available instance data, the savedInstanceState will be null. For example, 
+the savedInstanceState will always be null the first time an Activity is started, but may be non-null if an Activity is destroyed during rotation.
 
+private
+The private keyword is an access modifier used for attributes,
+ methods and constructors, 
+making them only accessible within the declared class.
+
+super
+super referes to the parent class and use the construktor from parent class
 
 
 
