@@ -25,3 +25,21 @@ https://guides.codepath.com/android/Using-the-RecyclerView
 
 I changed the CustomAdapter a little bit and somethinks in the xml files.
 It worked after I changed the +id in the manactifity to recyclerView and the one in recycler_view_frag.xml to idk tha dosent exist.
+
+
+\def\day{\textit{May 24st Noah, 2021}}
+\def\weekday{\textit{Monday}}
+\subsection*{\weekday, \day}
+
+I changed \texttt{popup.xml} to use the Material Design ``TextInputLayout'' instead of the default ``TextEdit''. This allows for much more styling usefule extra features. This lead to me restyling the newemailpopup.\\
+
+Then I added input validation: For the Name and Password I only have to check that the string is not empty, but for the email I additionaly used a regex the see if the email is valid. It looks like this:\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=.3\textheight]{media/newemail}
+\end{figure}
+
+When the Input is correct, a new windows will popup that I styled in \texttt{provider\_database\_checker.xml}. I named it that at first, because between the first popup and this it should check if the email domain is in the database of providers. Whatever, in this email you can customize the exact connection settings like port, imap/smtp server and SSL Encryption.\\
+
+I also added two functions to ``MainActivity.java'', namely ``showSnackbar'' and ``showToast''. These are very useful for different debugging output purposes.
