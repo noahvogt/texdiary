@@ -1,0 +1,34 @@
+\begin{center}
+\section*{\month}
+\end{center}
+
+
+\def\day{\textit{Juli 14st, 2021 Simon}}
+\def\weekday{\textit{Wednesday}}
+\subsection*{\weekday, \day}
+
+I'm reading a book right now about Database and I'm making the setting Fragment. The Recyclerviewer is a little bit annoying 
+because I don't want to make a pop-up Window but I don't know how to get rid of the Recyclerviewer. And I'm not sure in what design 
+I want to make the Settings. Also i should borrow a Book for Interface Standarts.
+\\
+https://source.android.com/devices/tech/settings/settings-guidelines
+\\
+This is a guidline to how to make Settings but I'm not sure if this should be our Desingtype
+
+
+\def\day{\textit{Juli 17st, 2021 Simon}}
+\def\weekday{\textit{Saturday}}
+\subsection*{\weekday, \day}
+
+The last days I added a Settings Fragment. You can see through because there is no Background and when you press the back button on the phone
+the App closes. So you can't close the Settings. Also I think we shoul make the Settings at the end because we don't have 
+all functions. 
+
+With android.R.id.content in this use
+
+getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(android.R.id.content, new SettingsFragment())
+                        .commit();
+
+I can replace an old Fragment, without knowing the ID of it, with the new one in de SettingsFragment() class.
