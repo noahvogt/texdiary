@@ -1,5 +1,5 @@
 % standard
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
@@ -87,7 +87,7 @@ includeheadfoot}
 
 \section*{Werkzeuge}
 
-Aufgrund dessen, dass ein umfassendes Programm entstehen soll, wird auch gebrauch von einigen anderen Programmen gemacht. In den nachfolgenden Seiten wird beschrieben welche Programme genutz
+Aufgrund dessen, dass ein umfassendes Programm entstehen soll, wird auch Gebrauch von einigen anderen Programmen gemacht. In den nachfolgenden Seiten wird beschrieben welche Programme genutzt
 werden, wieso diese ausgewählt wurden und wie der Umgang mit Ihnen war.  
 
 
@@ -97,12 +97,37 @@ werden, wieso diese ausgewählt wurden und wie der Umgang mit Ihnen war.
 \subsection*{Git/GitHub}
 
 
-Git und GitHub sind wohl die wichtigsten Programme die genutz wurden. Sie sind Systeme, welche Fileordner (repository) verwalten können und sie für mehrere Computer zur verfügung stellen, 
-wobei sie sehr viele praktische funktionen mit sich bringen. Mit Git können repositorys local auf Computer oder Hardware geteilt werden, mit GitHub könne die repositorys auch 
+Git und GitHub sind wohl die wichtigsten Programme die genutzt wurden. Sie sind Systeme, welche Fileordner (repository) verwalten können und sie für mehrere Computer zur verfügung stellen, 
+wobei sie sehr viele praktische Funktionen mit sich bringen. Mit Git können repositorys local auf Computer oder Hardware geteilt werden, mit GitHub könne die repositorys auch 
 über das Internet geteilt werden. Der einfachheitshalber wird nicht zwischen Git und GitHub unterschieden. 
 
 
 
+
+
+
+\subsection*{Open Source Programme}
+
+Beim Programmieren kann es sehr Hilfreich sein Programme zu haben welche, ähnliche Funktionen haben wie das Programm welches entstehen soll. 
+Solche Vorlagen können beliebig getestet und verändert werden. Simon hatte zu beginn Schwierigkeiten Java zu nutzen, um Programme zu schreiben, da er noch nicht viel 
+Erfahrung mit dem Programmieren hatte. Um sich mit der Art der Sprache und des Programmierens vertieft auseinander zu setzen, begann er Email-Apps, welche Open Source
+waren, genauer zu Betrachten. Im folgenden Text werden wir diese Programme aufführen und zeigen für was wir sie gebraucht haben. 
+
+
+\subsubsection*{RecyclerViewer}
+
+Der Recyclerviewer ist ein Behälter in welchen Daten gepackt werden. Er wird dem Layout hinzugefügt und hat eine grossen Vorteil gegenüber Listen. 
+Eine Liste wird einmalig erstellt und komplett generiert. Das heisst es gibt Behälter, welche existieren, aber nicht auf dem Bildschirm angezeigt werden. 
+Diese Behälter brauchen aber dennoch Speicherplatz, sind aber sinnlos. Hingegen der Recyclerviewer generiert nur so viele Behälter wie auf dem Bildschirm angezeigt werden können. 
+Die Behälter, welche beim Scrollen am Bildschirm ende ankommen werden sogar wieder verwendet, mit neuen Information gespeist und am anderen Ende des Bildschirms angezeigt.
+
+Bild von RecycleView
+
+Ich (Simon) habe viel Zeit in einem template für den Recyclerviewer verbracht, da mir viele Internetseiten nicht helfen konnten. Es waren die ersten Schritte um 
+richtig zu verstehen wie eine App funktioniert und wie sie Aufgebaut ist. Ich habe mich davor schon informiert jedoch wurde es mir dort richtig klar. Ich habe gelernt
+wie Behälter über einen Key von Java Files aufgerufen werden und mit Daten gespeist werden. Ebenso habe ich verstanden, weshalb in Programmen, basierend auf Java, viele 
+Klassen erstellt erstellt werden müssen, weil jeweils nur einmal die Variablen, Funktionen und Konstruktor einer andere Klasse implementiert werden können. Das heisst, 
+wenn eine Klasse zwei Funktionen aus zwei unterschiedlichen Klassen verwendet werden soll, muss eine der beiden Klassen die andere Klasse implementieren. 
 
 
 
