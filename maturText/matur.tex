@@ -3,6 +3,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 % geometry
 \usepackage{geometry}
 \geometry{ headsep=20pt,
@@ -77,24 +87,43 @@ includeheadfoot}
 \tableofcontents
 \pagebreak
 
-\section{Ideenfindung}
+\section{Vorwort}
+\section{Einleitung}
+\subsection{Ideenfindung}
 
+\section{Ziel der Arbeit}
 
+ was, wie und warum [machen wir das?]
 
+\section{Konzept der Arbeit}
 
+\subsection{Funktionsweise}
+\subsubsection{Vergleich mit Konkurrenz}
+\subsection{Quellcode Modell}
+\subsection{Philosophie (suckless)}
+\subsubsection{Hintergründe, Technologisch, UNIX, KISS}
+\subsection{Lizensierung}
+\subsubsection{Hintergründe, philosophisch, technologisch}
 
+\section{Arbeitsprozess}
 
+\subsection{Hardware}
 
-\section{Werkzeuge}
+\subsubsection{Smartphones}
+für testing
+\subsubsection{PC / Laptop}
+für programmierung selber
+
+\subsection{Software}
 
 Aufgrund dessen, dass ein umfassendes Programm entstehen soll, wird auch Gebrauch von einigen anderen Programmen gemacht. In den nachfolgenden Seiten wird beschrieben welche Programme genutzt
 werden, wieso diese ausgewählt wurden und wie der Umgang mit Ihnen war.  
 
 
+\subsubsection{Programme}
 
-
-
-\subsection{Git/GitHub}
+\paragraph{Version Control System}
+\subparagraph{Git}
 
 
 Git und GitHub sind wohl die wichtigsten Programme die genutzt wurden. Sie sind Systeme, welche Fileordner (repository) verwalten können und sie für mehrere Computer zur verfügung stellen, 
@@ -104,17 +133,35 @@ wobei sie sehr viele praktische Funktionen mit sich bringen. Mit Git können rep
 
 
 
+\subparagraph{Github}
+
+\paragraph{IDE}
+android studio
+\paragraph{Texteditor}
+vim
+
+\paragraph{Android Emulator(s)}
+
+\paragraph{Compiler}
+gradle, maven
+
+\paragraph{Installer / Packaging}
+erklären
+
+\subparagraph{signing keys}
+\subparagraph{Android Debugging Bridge}
 
 
-\subsection{Open Source Programme}
+\paragraph{Open Source Programme}
 
 Beim Programmieren kann es sehr Hilfreich sein Programme zu haben welche, ähnliche Funktionen haben wie das Programm welches entstehen soll. 
 Solche Vorlagen können beliebig getestet und verändert werden. Simon hatte zu beginn Schwierigkeiten Java zu nutzen, um Programme zu schreiben, da er noch nicht viel 
 Erfahrung mit dem Programmieren hatte. Um sich mit der Art der Sprache und des Programmierens vertieft auseinander zu setzen, begann er Email-Apps, welche Open Source
 waren, genauer zu Betrachten. Im folgenden Text werden wir diese Programme aufführen und zeigen für was wir sie gebraucht haben. 
 
+\subsubsection{Librarys}
 
-\subsubsection{RecyclerViewer}
+\paragraph{RecyclerViewer}
 
 Der Recyclerviewer ist ein Behälter in welchen Daten gepackt werden. Er wird dem Layout hinzugefügt und hat eine grossen Vorteil gegenüber Listen. 
 Eine Liste wird einmalig erstellt und komplett generiert. Das heisst es gibt Behälter, welche existieren, aber nicht auf dem Bildschirm angezeigt werden. 
@@ -129,10 +176,48 @@ wie Behälter über einen Key von Java Files aufgerufen werden und mit Daten ges
 Klassen erstellt erstellt werden müssen, weil jeweils nur einmal die Variablen, Funktionen und Konstruktor einer andere Klasse implementiert werden können. Das heisst, 
 wenn eine Klasse zwei Funktionen aus zwei unterschiedlichen Klassen verwendet werden soll, muss eine der beiden Klassen die andere Klasse implementieren. 
 
+\subsection{Recherche Tools / Quellen}
+\subsubsection{Internet}
+duckduckgo, arch wiki, stackoverflow
+\subsubsection{Bücher, Artikel}
 
+\subsection{Dokumentation(-stools)}
+\subsubsection{Latex}
+\subsubsection{Pandoc}
 
+\section{Programmstruktur}
 
-\subsection{AndroidStudio}
-\subsection{Librarys}
+\subsection{Sicherheit / Security (Features)}
+\subsubsection{PRIVATE MODE, Sandbox}
+
+\subsection{Code Kompaktheit}
+\subsubsection{Maintaining}
+\subsubsection{less bug/error-prone}
+
+\section{Umsetzung}
+
+\subsection{neutraler Bericht}
+verweis texdiary
+\subsection{Beispiele aus der Umsetzung}
+\subsubsection{Bugs}
+erklärung woher, warum falsch, wie gelöst
+
+\subsubsection{Probleme / Hiccups}
+Gründe
+
+\subsubsection{Kommunikation}
+
+\section{Einschätzung / Schlussfolgerung}
+
+\subsection{Fremdeinschätzung}
+\subsection{Selbsteinschätzung}
+\subsubsection{was lief gut}
+\subsubsection{was lief schlecht}
+\subsubsection{was würden wir gleich machen}
+\subsubsection{was würden wir anders machen}
+\subsubsection{abschliessende persönliche Schlussfolgerung}
+
+\section{Danksagung}
+
 
 \end{document}
