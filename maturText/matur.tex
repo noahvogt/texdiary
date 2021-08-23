@@ -188,21 +188,21 @@ This is our remote git server. But is is more than just a git server, it is a po
 \paragraph{IDE}
 IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
 \paragraph{Texteditor}
-vim
+Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
 
 \paragraph{Android Emulator(s)}
-An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulatur inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
+An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulator inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
 
 \paragraph{Compiler}
 gradle, maven
 
 \paragraph{Installer / Packaging}
-When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The realease Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
+When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The release Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
 
 \subparagraph{signing keys}
-Nearly all Android Systems are configured to only allow application that are signed with a key from the developpers. This is done for various reasons like securtiy, compability checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
+Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
 \subparagraph{Android Debugging Bridge}
-This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screenrecordings, transfering files to and from your computer and installing / removing packages.
+This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screen recordings, transferring files to and from your computer and installing / removing packages.
 
 \paragraph{Open Source Programme}
 
@@ -233,32 +233,37 @@ wenn eine Klasse zwei Funktionen aus zwei unterschiedlichen Klassen verwendet we
 \subsubsection{Internet}
 In the world wide web we use search engines like DDG (duckduckgo.com), the Arch Linux Wiki, Wikipedia and more programming-related websites like SOV (stackoverlow.com).
 \subsubsection{Bücher, Artikel}
-We used different books and articels physically and digitally sometimes for the programming/coding process, but mostly for the text of this paper.
+We used different books and articles physically and digitally sometimes for the programming/coding process, but mostly for the text of this paper.
 
 \subsection{Dokumentation(-stools)}
 \subsubsection{Latex}
-To write more formatting-demanding papers like in this paper it was made use of the typesetting engies LaTEX. This is a hihgly extensible and efficient way for getting your paper to look just like you want it. Also professionals use it to format a big majority of published books since \~ 20 years up to this day(TODO: look up on facts/statistics for this).
+To write more formatting-demanding papers like in this paper it was made use of the typesetting engine LaTeX. This is a highly extensible and efficient way for getting your paper to look just like you want it. Also professionals use it to format a big majority of published books since \~ 20 years up to this day(TODO: look up on facts/statistics for this).
 \subsubsection{Pandoc}
-This is program to convert from one document format to another. This is useful to write a document in format with very simple syntax (e.g. markdown) to convert it to a format that allows much better formatting (e.g. LaTeX) without having to use the more sophiticated syntax of the latter format. This is often used to write documentation or short texts with the mininmal amount of time and effort to do so.
+This is program to convert from one document format to another. This is useful to write a document in format with very simple syntax (e.g. markdown) to convert it to a format that allows much better formatting (e.g. LaTeX) without having to use the more sophisticated syntax of the latter format. This is often used to write documentation or short texts with the minimal amount of time and effort to do so.
 
 \section{Programmstruktur}
 
 \subsection{Sicherheit / Security (Features)}
-Considering that on 99\% of consumer smartphones the users do not even have root access (but which the ``òwner'' of the smartphone software do have), people that are concerned with privacy or secury would not use their important mailboxes on their smartphone anyway, but rather on their better secured computer running a Free Software Operating System etc.\\
+    Considering that on 99\% of consumer smartphones the users do not even have root access (but which the ``owner'' of the smartphone software do have), people that are concerned with privacy or security would not use their important mailboxes on their smartphone anyway, but rather on their better secured computer running a Free Software Operating System etc.\\
 
-Also taking in mind that the email protocol was written in a time with a still very limited access to computers, privacy and security where not in mind of its creaters at the time is quite understandable. Why it still lasted to this day in this state is compromised on one side by networking effects and on the other side that simply most people neither know to technicla detail nor care.\\
+Also taking in mind that the email protocol was written in a time with a still very limited access to computers, privacy and security where not in mind of its creators at the time is quite understandable. Why it still lasted to this day in this state is compromised on one side by networking effects and on the other side that simply most people neither know to technical detail nor care.\\
 
-Nowadays it is possible to encrypt to content (body) of an email, but not the metadata, here the specification of the email protocol is to blame. This and just the fact that is was not BUILT as a secure or private way of messaging, makes emails not useful for these kinds of conversation. If you want to send your friends new plans on overtaking the world and establishing a global cathlic monarchy without wanting anyone to know, your are a fool if you use email for that(granted, this is an overexaggerated example, but I hope the idea is clear).\\
+Nowadays it is possible to encrypt to content (body) of an email, but not the metadata, here the specification of the email protocol is to blame. This and just the fact that is was not BUILT as a secure or private way of messaging, makes emails not useful for these kinds of conversation. If you want to send your friends new plans on overtaking the world and establishing a global catholic monarchy without wanting anyone to know, your are a fool if you use email for that(granted, this is an over exaggerated example, but I hope the idea is clear).\\
 
-So the conclusion for our application project is to not bloat up our app with hard-to-use securtiy functions that just bloat the app and codebase unneccesairly. However we use sane security-focused default now furter explained.
+So the conclusion for our application project is to not bloat up our app with hard-to-use security functions that just bloat the app and codebase unnecessarily. However we use sane security-focused default now further explained.
 \subsubsection{PRIVATE MODE, Sandbox}
 When storing user settings (and data?), you can choose between different permission modes in android. We choose PRIVATE MODE, which means that apps with user permissions  can not see its content. But Google, root users, and apps with root access can easily bypass this restriction of the android permission system.\\
 
-To prevent this type of explotation we would have to encrypt ALL sensitive user data with an encryption key. But when there is a keylogger installed, even this is not safe. So considering that there is not a single android phone free from proprietary operating system and firmware code(when connecting to the internet via wifi), this feature idea has been rejected as out of place and to make our codebase simpler.
+To prevent this type of exploitation we would have to encrypt ALL sensitive user data with an encryption key. But when there is a keylogger installed, even this is not safe. So considering that there is not a single android phone free from proprietary operating system and firmware code(when connecting to the internet via WiFi), this feature idea has been rejected as out of place and to make our codebase simpler.
 
 \subsection{Code Kompaktheit}
+This is something that we have absolutely achieved, we used so much less SLOC than any of the competing email clients on android.(TODO: compare use of libraries, and if we used more or less than the other apps) This is also very crucial to stand with our initial goal and the suckless philosophy. While we used \~ 4000 SLOC, other apps use a whopping 300'000 SLOC.
 \subsubsection{Maintaining}
+Our codebase should be very easy to maintain: The main things you would have to do is check if the dependencies are up to date and if they can be considered deprecated.\\
+
+Even if this project gets abandoned by their original developers - or as some people call that: when it get orphaned - and if someone finds it and likes it, he can easily read through it and understand the code without too much effort needed of understanding the codebase. Would the same be the case for bloated programs like thunderbird? I don't think so either.
 \subsubsection{less bug/error-prone}
+This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of java or android coding.
 
 \section{Umsetzung}
 
@@ -266,21 +271,30 @@ To prevent this type of explotation we would have to encrypt ALL sensitive user 
 verweis texdiary
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
-erklärung woher, warum falsch, wie gelöst
+Erklärung woher, warum falsch, wie gelöst
+GUI stuff -> onliner commit 
 
 \subsubsection{Probleme / Hiccups}
-Gründe
+RecyclerViewer, shit java IMAP libraries
 
 \subsubsection{Kommunikation}
+simon fragen, war Kommunikation zwischen uns gut?
 
 \section{Einschätzung / Schlussfolgerung}
 
 \subsection{Fremdeinschätzung}
 \subsection{Selbsteinschätzung}
 \subsubsection{was lief gut}
+komm., vcs, java syntax (allg.)
 \subsubsection{was lief schlecht}
+******* java shit tier libraries
 \subsubsection{was würden wir gleich machen}
+As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
 \subsubsection{was würden wir anders machen}
+As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability. 
+
+
+use more c libs for speed and less java (that's always a good thing)
 \subsubsection{abschliessende persönliche Schlussfolgerung}
 
 \section{Danksagung}
