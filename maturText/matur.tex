@@ -24,6 +24,9 @@ bottom=15mm,
 footskip=20pt,
 includeheadfoot}
 
+% for using wrapfigures
+\usepackage{wrapfig}
+
 % header and footer
 \usepackage{datetime}
 \newdateformat{dmy}{%
@@ -109,12 +112,40 @@ dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der mass
 
 \section{Konzept der Arbeit}
 
-\subsection{Funktionsweise}
+\subsection{Ziele der Funktionen}
 
-\subsubsection{Vergleich mit Konkurrenz}
+Wir kennen alle die Funktionen eines Email-Clients und unsere App soll auch nicht viel mehr können als die meistens Apps. \\
+
+Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das lesen und schreiben von Emails,
+öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es viele verschiedene Ordner geben, 
+solche wie Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails verwalten zu können, zum beispiel indem die Ordner nach 
+Datum des Empfangs oder dem Absender sortiert werden können. E-Mails könne markiert, gelöscht und weitergeleitet werden. Es soll eine Suchfunktion für jeden Ordner geben. \\
+
+Ebenso soll es einen Account Manager geben, was voraus setzt, dass es möglich ist sich mit verschiedenen 
+Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail soll es dem Nutzer leicht gemacht werden mit eingebauten Konfigurationen für beliebte 
+Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
+
+Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei wird die Nachricht mit dem Absender und der Beginn der 
+E-Mail angezeigt. 
+Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. 
+Dies wird ein weiteres Feature der App sein.
+Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Für dies 
+wird eine Funktion in den Einstellungen  einfügen. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und 
+beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. \\
+
+Das letzte Feature ist, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen das Farblayout der App ändern können, 
+die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten. 
+
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet ist, hinzuzufügen können. 
+Es gibt uns auch die Möglichkeit nach dieser Arbeit die App zu verbessern und auf uns an zu passen. \\ 
+
+Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
+
+
+
+\subsection{Vergleich mit Konkurrenz}
 Disclamier/Note: Da bei dieser App einen Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition [der FSF??]. Somit fallen jegliche Proprietäre Produkte raus, da sie unseren Grundanforderungen eines Email Clients nicht entsprechen.\\
 
-Unsere App soll die Basisfunktionen eines klassischen Email Clients erfüllen. Dazu gehören das lesen und schreiben von Emails, öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen von Entwürfen.
 
 Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, 
 dass diese unglaublich überladen (bloated) sind. Selbst wenn im Internet nach einem möglichst simplen Email Client für Android gesucht wird, 
@@ -148,7 +179,6 @@ To provide such protection of the user freedoms in future forks, there needs to 
 This is where the ``suckless philosophy'' comes in place: It aims at making software with simplicity in mind: Less source lines of code to not render the project unmaintainable in similar way as mentioned above. This way of programming is a lot more difficult, but the struggle is most of the time worth it. This coding philosophy also incentives (quality) code rewrites - which happens a lot less with bloated software counterparts - that gives the user more alternatives to choose from.
 
 \subsubsection{Hintergründe, Technologisch, UNIX, KISS}
-<<<<<<< HEAD
 \subsection{Lizensierung}
 %The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
 
@@ -158,7 +188,7 @@ wurde, ist dass sie eine der bekanntesten und stärksten copyleft Lizenz ist.
 
 \subsubsection{Hintergründe, philosophisch, technologisch}
 
-\section{Arbeitsprozess}
+\section{Hilfsmittel}
 
 \subsection{Hardware}
 
@@ -197,6 +227,7 @@ This is our remote git server. But is is more than just a git server, it is a po
 
 \paragraph{IDE}
 IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
+
 \paragraph{Texteditor}
 Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
 
@@ -277,8 +308,55 @@ This is thanks to the suckless nature of our coding philosophy, but also our exe
 
 \section{Umsetzung}
 
-\subsection{neutraler Bericht}
-verweis texdiary
+\subsection{Informationsbeschaffung}
+
+Zu beginn der Arbeit konnten Noah und Simon noch kein Java. Noah kannte sich gut aus mit Programmiersprachen und konnte es deshalb mit Java ruhig angehen.
+Simon hingegen wusste, dass er noch viel zu lernen hatte. Er erhoffte sich die Grundlagen im Informatik Unterricht zu lernen. 
+Simon lernte auch einige dinge, jedoch ging ihm das zu langsam und er schaute sich nach anderen Lernmöglichkeiten um. 
+Zu diesem Zeitpunkt konnten einige Schüler an einem Programm mitmachen, bei welchem sie in die Uni gingen und gewisse 
+Vorlesungen besuchen konnten. Ein Klassenkamerad von Simon konnte von diesem Programm profitieren und besuchte Informatik. 
+Dort lernte er in einem unglaublichen Tempo Java, weshalb Simon seinen Klassenkameraden fragte ob er seine Unterlagen ausleihen konnte. 
+Sein Klassenkamerad war so freundlich und übermittelte ihm die Unterlagen. So konnte Simon auf effektive weise Java lernen. \\
+
+\textbf{ Noah wie hesch du Java glernt?}<++>
+
+Als nächstes ging es darum wie eine App aufgebaut ist und wie zwei Personen Zweitgleich an einem 
+Programm arbeiten konnten. Dafür musste sich Simon über Git/Github informieren. Noah hatte ihm ein Video empfohlen, welches 
+Simon studieren soll und er soll kleine Übungen mit Git ausprobieren um ein Gefühl dafür zu bekommen. Die beiden Informierten 
+sich über verschiedene Plattformen wie eine App funktioniert und wie sie aufgebaut ist. \\ 
+
+Es ging langsam voran und die beiden begannen mit technischen Einstellungen. Als erstes 
+wurde Android Studio  und eine ADB installiert. Noah hat sogar eine Anleitung zur Installation von ADB geschrieben. 
+Um diese auszuprobieren und die Grundlage zu schaffen auf welcher Simon und Noah die nächsten paar Monaten arbeiten werden, haben sie ein
+Testprogramm erstellt namens "Hello World". Es war ein ganz simples Programm das nur zum Testen der Infrastruktur diente. 
+Sie haben ein Gradle.build file erstellt, dies dauerte erstaunlich lange. Später erkannten sie das diese Verhalten sehr üblich für 
+Gradle ist. Nach einiger Zeit haben es beide geschafft ein apk file zu besitzen, welches erfolgreich die "Hello World" app beinhaltete und ausführt. 
+Anschliessend erstellte Noah ein GitHub repository in welchem die beiden das Programm teilen werden. \\
+
+\textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
+
+\subsection{Interface}
+
+Noah begann dann dieses Programm leicht auszubauen und fügte einige Interface Inhalte hinzu. 
+
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{8cm}
+\centering
+\includegraphics[scale=.15]{media/drawer.png}
+\caption{Drawer Navigation Menu}
+\end{wrapfigure}
+%I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
+
+Die App beinhaltete ein Burgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
+Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen. Für Simon ein guter Anfang sich mit dem 
+richtigen Programmieren zu befassen und sich einleben zu können. 
+Simon begann mit dem RecyclerViewer
+
+
+
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
 Erklärung woher, warum falsch, wie gelöst
