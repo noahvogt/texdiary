@@ -113,6 +113,16 @@ A static method can be accessed without creating an object of the class first
 this
 The this keyword refers to the current object in a method or constructor
 
+synchronized
+Java provides a way of creating threads and synchronizing their task by using synchronized blocks. Synchronized blocks in Java are marked with the synchronized keyword. 
+A synchronized block in Java is synchronized on some object. 
+All synchronized blocks synchronized on the same object can only have one thread executing inside them at a time.
+All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block.
+
+volatile
+Volatile keyword is used to modify the value of a variable by different threads. It is also used to make classes thread safe. 
+It means that multiple threads can use a method and instance of the classes at the same time without any problem.
+
 instanceof
 checks if a variable is type of the following, it returns boolean
 
@@ -121,11 +131,22 @@ The java.lang.System.gc() method runs the garbage collector.
 Calling this suggests that the Java Virtual Machine expend effort 
 toward recycling unused objects in order to make the memory they currently occupy available for quick reuse.
 
+threads
+Threads allows a program to operate more efficiently by doing multiple things at the same time.
+
+one-to-one 
+A one-to-one relationship between two entities is a relationship where each instance of the parent entity corresponds to exactly one instance of the child entity, and vice-versa.
+Relation between Message and Attachment
 
 
+one-to-many
+A one-to-many relationship between two entities is a relationship where each instance of the parent entity corresponds to zero or more instances of the child entity, 
+but each instance of the child entity can only correspond to exactly one instance of the parent entity.
+Maybe needed for Inbox. 
 
 
-
+many-to-many
+A many-to-many relationship between two entities is a relationship where each instance of the parent entity corresponds to zero or more instances of the child entity, and vice-versa.
 
 
 
