@@ -257,10 +257,10 @@ waren, genauer zu Betrachten. Im folgenden Text werden wir diese Programme auff�
 
 \paragraph{RecyclerViewer}
 
-Der Recyclerviewer ist ein Behälter in welchen Daten gepackt werden. Er wird dem Layout hinzugefügt und hat eine grossen Vorteil gegenüber Listen. 
-Eine Liste wird einmalig erstellt und komplett generiert. Das heisst es gibt Behälter, welche existieren, aber nicht auf dem Bildschirm angezeigt werden. 
-Diese Behälter brauchen aber dennoch Speicherplatz, sind aber sinnlos. Hingegen der Recyclerviewer generiert nur so viele Behälter wie auf dem Bildschirm angezeigt werden können. 
-Die Behälter, welche beim Scrollen am Bildschirm ende ankommen werden sogar wieder verwendet, mit neuen Information gespeist und am anderen Ende des Bildschirms angezeigt.
+Der Recyclerviewer ist ein Container in welchen Daten gepackt werden. Er wird dem Layout hinzugefügt und hat eine grossen Vorteil gegenüber Listen. 
+Eine Liste wird einmalig erstellt und komplett generiert. Das heisst es gibt Container, welche existieren, aber nicht auf dem Bildschirm angezeigt werden. 
+Diese Container brauchen aber dennoch Speicherplatz, sind aber sinnlos. Hingegen der Recyclerviewer generiert nur so viele Container wie auf dem Bildschirm angezeigt werden können. 
+Die Container, welche beim Scrollen am Bildschirm ende ankommen werden sogar wieder verwendet, mit neuen Information gespeist und am anderen Ende des Bildschirms angezeigt.
 
 Bild von RecycleView
 
@@ -355,7 +355,33 @@ Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Inte
 richtigen Programmieren zu befassen und sich einleben zu können. 
 Simon begann mit dem RecyclerViewer
 
+\subsection{Recyclerviewer}
 
+Simon begann mit der Recherche zum Recyclerviewer. Er war viel im Internet und fand schnell
+einige Beispiele, welche er ausprobierte und für seinen Nutzen gestaltete. Ein Recyclerviewer ist nicht sehr kompliziert
+hat aber gewisse kniffe auf die Simon traf.
+
+Ein Recyclerviewer ist in fünf grundlegende Teile aufgeteilt. 
+1. Das recyclerview Objekt, welches ein Container ist und in das User Interface eingebaut wird. 
+Es beinhaltet verschiedene Views, welche nochmals unterteilt werden können. In einer View wird in unserem 
+Fall eine Nachricht eingebaut mir dem Absender, der Absende Zeit und einem Betreff. 
+
+2. Der Layout manager. Er ist für die form einer einzelnen View verantwortlich. 
+Der Layout manager kann auch wieder in drei Arten unterteilt werden. Der Linearlayout Manager sorgt für eine 
+Horizontale oder vertikale unterteilung einer View. Hingegen führt der Gridlayout Manger zu einer horizontalen 
+und vertikalen Unterteilung des View. Für den Email-Client bietet er die  
+beste oberfläche um Nachrichten darzustellen. Es gibt nämlich noch den den Staggeredgridlayout Manager, welcher 
+für eine versetzen unterteilung der View kann sorgen. Dies ist aber für eine Email-Client unbrauchbar. 
+
+\textbf{ Drei bilder der Manager mit der View eifügen}
+
+3. Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View
+
+4. Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des View Holder Objekt und
+bindet auch die Daten aus der Database an den View Holder
+
+5. Die Database ist das Herzstück dieser App und wir auch für den Recyclerviewer verwendet um die 
+Views mit den richtig Informationen zu füllen. 
 
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
