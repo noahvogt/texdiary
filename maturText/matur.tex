@@ -163,28 +163,43 @@ Durch die zunehmende Kommerzialisierung und Massentauglichkeit der Computer habe
 
 Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich gut ein zwei Kategorien unterteilen:\\
 
-\textbf{Permissive Licenses:}
-These give you the right to run the program for ANY purpose, study the source code, change it and redistribute the changes. Their names come from the fact, that they are ``permissive'' when it comes to their few restrictions: They do not put of a lot of restrictions on the distribution of the source code, and often allow the software to be forked under ANY terms. This means it is possible to make your fork of a permissive-licensed program proprietary.\\
+\paragraph{Permissive Licenses}
+% ENG: These give you the right to run the program for ANY purpose, study the source code, change it and redistribute the changes. Their names come from the fact, that they are ``permissive'' when it comes to their few restrictions: They do not put of a lot of restrictions on the distribution of the source code, and often allow the software to be forked under ANY terms. This means it is possible to make your fork of a permissive-licensed program proprietary.\\
+Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen.\\
 
-This means they do not protect their code from being taken and used in other projects, even proprietary, without any giving back, which is a definite drawback and the reason people insult these licenses as ``cuck licenses'' as you ``write proprietary code for free for big tech without increasing anyone's computer usage freedom''. A positive point of these licenses however is their simplicity: The MIT license for example only consists of 20 SLOC, while a Copyleft license as the GPL v3 uses more than 600 SLOC and its jurisdictional jargon is much harder to understand.\\
+% ENG: This means they do not protect their code from being taken and used in other projects, even proprietary, without any giving back, which is a definite drawback and the reason people insult these licenses as ``cuck licenses'' as you ``write proprietary code for free for big tech without increasing anyone's computer usage freedom''. A positive point of these licenses however is their simplicity: The MIT license for example only consists of 20 SLOC, while a Copyleft license as the GPL v3 uses more than 600 SLOC and its jurisdictional jargon is much harder to understand.\\
+Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurückzugeben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute diese Lizenzen als ``Cuck Licenses'' beschimpfen, da man ``When you release any code under a Cuck License, you are simply writing free commercial code for corporations that will inevitably use it against you. You might as well just actually get a job with them so you can get paid for what you do instead of just getting cucked.''. Ein positiver Punkt von diesen Lizenzen ist aber ihre Einfachheit: Die MIT-Lizenz zum Beispiel besteht aus nur 20 SLOC, während eine Copyleft Lizenz wie die GPL v3 aus mehr als 600 SLOC und gewissem Juristenjargon besteht und daher viel schwerer zu verstehen ist.\\
 
-\textbf{Copyleft Licenses:}
-This is an obvious play on the word ``Copyright'', as it tries to invert its effects. As with permissive licenses you can run the program for ANY purpose, study, change the source code and redistribute the changes. But the trick comes with their restrictive redistribution terms: You can ONLY redistribute the program if your version provides the same user freedoms. This is usually done in only allowing redistributing using the same license.\\
+\paragraph{Copyleft Licenses}
+% ENG: This is an obvious play on the word ``Copyright'', as it tries to invert its effects. As with permissive licenses you can run the program for ANY purpose, study, change the source code and redistribute the changes. But the trick comes with their restrictive redistribution terms: You can ONLY redistribute the program if your version provides the same user freedoms. This is usually done in only allowing redistributing using the same license.\\
+Wie bei permissiven Lizenzen können Sie das Programm für JEDEN Zweck ausführen, den Quellcode lesen, ändern und die Änderungen zu veröffentlichen. Der Trick liegt jedoch in den restriktiven Redistributionsbedingungen: Sie dürfen das Programm NUR verbreiten, wenn Ihre Version die gleichen Freiheiten bietet. Dies geschieht in der Regel dadurch, dass die Weitergabe nur unter der gleichen Lizenz erlaubt ist.\\
 
-To provide such protection of the user freedoms in future forks, there needs to be a lot of jurisdictional jargon in the license which makes it significantly longer and harder to understand for the average reader. But most of the people in Free Software who care about user freedom say this is the premiere license for your free software projects, as it ensures that freedoms have to be granted forever and stopping proprietary code maker profiting from their written free code.\\
+Der Name ``copyleft'' ist eine offensichtliche Anspielung auf das Wort ``Copyright'', da es versucht, dessen Konzept genau umzukehren: Anstatt die nahezu weltweit vorhandenen Kopierrechtsgesetze dazu zu verwenden, Nutzerfreiheiten einzuschränken, werden Copyleft-Lizenzen dazu eingesetzt diese zu bewahren und erweitern.\\
+
+% ENG: To provide such protection of the user freedoms in future forks, there needs to be a lot of jurisdictional jargon in the license which makes it significantly longer and harder to understand for the average reader. But most of the people in Free Software who care about user freedom say this is the premiere license for your free software projects, as it ensures that freedoms have to be granted forever and stopping proprietary code maker profiting from their written free code.\\
+Wie bereits erwähnt, müssen solche Lizenzen eine Menge juristischen Jargon enthalten, um die vorhandene Gesetzeslage des Kopierrechts auszunutzen. Dies macht die Lizenz um einiges komplexer in Länge und an Verständlichkeit. Viele Unterstützer des Free Software Movements ziehen es aber trotzdem vor Copyleft Lizenzen zu verwenden, sofern möglich, da sie sicherstellen, dass die Freiheiten für immer gewährt werden müssen und die Hersteller von proprietärem Code daran hindert, von ihrem geschriebenen freien Code zu profitieren.\\
+
 
 \subsection{Philosophie (suckless)}
-(Nowadays) a lot of Open Source Developers pride themselves in writing software with much features that cater to the non-technical enduser. This results in having a large codebase, which gets bigger and bigger with every release. This makes it harder to maintaining the ever growing codebase, more and more bugs occurs, security and (most importantly) performance struggles under these conditions. This degrades the quality of software technology as it is the mainstream narrative to ``save time and money''.\\
 
-This is where the ``suckless philosophy'' comes in place: It aims at making software with simplicity in mind: Less source lines of code to not render the project unmaintainable in similar way as mentioned above. This way of programming is a lot more difficult, but the struggle is most of the time worth it. This coding philosophy also incentives (quality) code rewrites - which happens a lot less with bloated software counterparts - that gives the user more alternatives to choose from.
+``Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.''\\
+
+% ENG: (Nowadays) a lot of Open Source Developers pride themselves in writing software with much features that cater to the non-technical enduser. This results in having a large codebase, which gets bigger and bigger with every release. This makes it harder to maintaining the ever growing codebase, more and more bugs occurs, security and (most importantly) performance struggles under these conditions. This degrades the quality of software technology as it is the mainstream narrative to ``save time and money''.\\
+
+Eine grosse Anzahl Open-Source-Entwickler stolz darauf, Software mit scheinbar möglichst vielen Features zu schreiben. Dies führt zu einer großen Codebasis, die mit jedem Release größer und größer wird. Dadurch wird es schwieriger, die ständig wachsende Codebasis zu unterhalten, es treten immer mehr Fehler auf, die Sicherheit und - vor allem - die Leistung leidet unter diesen Bedingungen. Dies führt zu einer Verschlechterung der Code-Qualität der Software, da es die gängige Praxis ist, ``Zeit und Geld zu sparen''.\\
+
+
+% ENG: This is where the \textit{suckless philosophy} comes in place: It aims at making software with simplicity in mind: Less source lines of code to not render the project unmaintainable in similar way as mentioned above. This way of programming is a lot more difficult, but the struggle is most of the time worth it. This coding philosophy also incentives (quality) code rewrites - which happens a lot less with bloated software counterparts - that gives the user more alternatives to choose from.
+
+Hier kommt die Philosophie des \textit{Suckless Philosphy} ins Spiel: Sie zielt darauf ab, Software mit Hinblick auf Einfachheit zu entwickeln: Weniger Quellcodezeilen, um das Projekt nicht in ähnlicher Weise unmaintainable zu machen, wie oben erwähnt. Diese Art zu programmieren ist viel schwieriger, aber der Aufwand ist es meistens wert. Diese Programmierphilosophie bietet auch Anreize für das qualitativ hochwertige Neuschreiben von Programmen - was bei der sogenannter \textit{Bloated Software} viel seltener vorkommt - und gibt dem Benutzer mehr Alternativen zur Auswahl.
+
+
 
 \subsubsection{Hintergründe, Technologisch, UNIX, KISS}
 \subsection{Lizensierung}
-%The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
+% ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
 
-Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren lizenzirrung wurden bereits besprochen. Der Grund weshalb die GNU General Public License Version 3 (kurz: GPL v3) ausgewählt 
-wurde, ist dass sie eine der bekanntesten und stärksten copyleft Lizenz ist.
-
+Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren lizenzirrung wurden bereits besprochen. Für dieses Softwareprojekt wurde sich entschieden die \textit{GNU General Public License (GPL)} der Free Software Foundation zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
 
 \subsubsection{Hintergründe, philosophisch, technologisch}
 
@@ -193,13 +208,13 @@ wurde, ist dass sie eine der bekanntesten und stärksten copyleft Lizenz ist.
 \subsection{Hardware}
 
 \subsubsection{Smartphones}
-%We used different Models of Smartphones running different variants of the android operating system to install and test our app. It was also used to compare it and benchmark it against our competition (the already existing mail clients on android).
+% ENG: We used different Models of Smartphones running different variants of the android operating system to install and test our app. It was also used to compare it and benchmark it against our competition (the already existing mail clients on android).
 
 Es wurden verschiedene Smartphone Modelle genutzt um die App auf verschiedenen Androidversionen testen zu können. Sie wurden auch genutzt um unsere App mit der Konkurrenz zu vergleichen und die 
 Konkurrenz zu begutachten. 
 
 \subsubsection{PC / Laptop}
-%The usage of computers was to the actual work of creating the software, documentation and the text of this paper (?).
+% ENG: The usage of computers was to the actual work of creating the software, documentation and the text of this paper (?).
 
 Der Gebrauch von Computern wurden gemacht um die Software, die Dokumentation und dieses Maturschreiben zu erstellen. 
 \subsection{Software}
@@ -223,7 +238,9 @@ wobei sie sehr viele praktische Funktionen mit sich bringen. Mit Git können rep
 
 \subparagraph{Github}
 
-This is our remote git server. But is is more than just a git server, it is a popular platform with over 50 million (software) repositories that people search to find interesting software. So we can use this to make our software more searched and popular (but this is not considered of great importance).
+% ENG: This is our remote git server. But is is more than just a git server, it is a popular platform with over 50 million (software) repositories that people search to find interesting software. So we can use this to make our software more searched and popular (but this is not considered of great importance).
+Das ist unser Remote Git Server. Aber eigentlich es mehr als nur ein einfacher Git-Server, denn es ist auch eine populäre Plattform mit über 50 Millionen Software Repos welche gerne durchsucht werden, um interessante Software zu finden. Das kann also benutzt werden dieses Softwareprojekt berühmter zu machen, was aber nicht von hoher Wichtigkeit erachtet wird.
+
 
 \paragraph{IDE}
 IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
