@@ -226,41 +226,47 @@ Aufgrund dessen, dass ein umfassendes Programm entstehen soll, wird auch Gebrauc
 
 \paragraph{Version Control System}
 
-For developing software above a certain level of complexity, it helps to use a so called VCS (Version Control System). This is a software/system that manages the versioning of software. This is useful so you don't have to for example create MANUALLY a new folder for every new version and copy the code with the new changes in there. This would be not very user friendly, wasteful of disk space and overall very inefficient. These systems also make it easy to synchronise projects to a remote server to allow for easy collaboration on multiple devices and for different developers.\\
+% ENG: For developing software above a certain level of complexity, it helps to use a so called VCS (Version Control System). This is a software/system that manages the versioning of software. This is useful so you don't have to for example create MANUALLY a new folder for every new version and copy the code with the new changes in there. This would be not very user friendly, wasteful of disk space and overall very inefficient. These systems also make it easy to synchronise projects to a remote server to allow for easy collaboration on multiple devices and for different developers.\\
+Für die Entwicklung von Software ab einer gewissen Komplexität ist es hilfreich, ein so genanntes VCS (Version Control System) zu verwenden. Dabei handelt es sich um eine Software/System, das die Versionierung von Software verwaltet. Das ist nützlich, damit man nicht für jede neue Version manuell einen neuen Ordner anlegen und den Code mit den neuen Änderungen dorthin kopieren muss. Das wäre nicht sehr benutzerfreundlich, würde Speicherplatz verschwenden und wäre insgesamt sehr ineffizient. Diese Systeme erleichtern meist auch die Synchronisierung von Projekten mit einem Webserver, um eine einfache Zusammenarbeit auf mehreren Geräten und für verschiedene Entwickler zu ermöglichen.\\
 
-It also allow for additional advanced features like branching a repository, which means developing multiple features separately from each other to then later merge the changes together, when each of the features are working as expected.
 
 \subparagraph{Git}
-
-Git und GitHub sind wohl die wichtigsten Programme die genutzt wurden. Sie sind Systeme, welche Fileordner (repository) verwalten können und sie für mehrere Computer zur Verfügung stellen, 
-wobei sie sehr viele praktische Funktionen mit sich bringen. Mit Git können repositories local auf Computer oder Hardware geteilt werden, mit GitHub könne die repositories auch 
-über das Internet geteilt werden. Der einfachheitshalber wird nicht zwischen Git und GitHub unterschieden. 
+% ENG: It also allow for additional advanced features like branching a repository, which means developing multiple features separately from each other to then later merge the changes together, when each of the features are working as expected.
+Git ist das für dieses Projekt verwendete VCS. Es ist das meistverbreitete Tool unter Softwareentwicklern und dabei ermöglicht auch zusätzliche fortgeschrittene Funktionen wie das \textit{Branching} eines Repositorys, was bedeutet, dass mehrere Funktionen getrennt voneinander entwickelt werden, um dann später die Änderungen zusammenzuführen, wenn jede der Funktionen wie erwartet funktioniert.\\
 
 \subparagraph{Github}
 
 % ENG: This is our remote git server. But is is more than just a git server, it is a popular platform with over 50 million (software) repositories that people search to find interesting software. So we can use this to make our software more searched and popular (but this is not considered of great importance).
-Das ist unser Remote Git Server. Aber eigentlich es mehr als nur ein einfacher Git-Server, denn es ist auch eine populäre Plattform mit über 50 Millionen Software Repos welche gerne durchsucht werden, um interessante Software zu finden. Das kann also benutzt werden dieses Softwareprojekt berühmter zu machen, was aber nicht von hoher Wichtigkeit erachtet wird.
+Das ist der hier verwendete Git Server. Aber eigentlich es mehr als nur ein einfacher Git-Server, denn es ist auch eine populäre Plattform mit über 50 Millionen Software Repos welche gerne durchsucht werden, um interessante Software zu finden. Das kann also benutzt werden dieses Softwareprojekt berühmter zu machen, was aber nicht von hoher Wichtigkeit erachtet wird.
 
 
 \paragraph{IDE}
-IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
+ % eng IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
+IDE steht für ``Integrated Development Environment''. In diesem Programm editiert und debuggt der Programmiere seinen Code. Solche Software verfügt dabei um mehr Features als nur Texteditierung, sonden auch nützliche Autocompletion Features und gibt Warnungen oder Vorschläge, was der Programmier besser machen sollte. Solche Programme haben zwar viele nützliche Features, wovon wir nur einen Bruchteil kennen oder brauchen, sind aber oft buggy, resourcenhungrig und langsam. So auch die IDE Wahl dieses Projekts: Android Studio. Diese IDE wurde auch gewählt da sie stark optimiert und extra für die Androidentwicklung gemacht wurde.
 
-\paragraph{Texteditor}
-Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
+% \paragraph{Texteditor}
+% Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
 
 \paragraph{Android Emulator(s)}
-An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulator inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
+% ENG: An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulator inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
+
+Ein Emulator ist ein Programm, welches ein Gerät oder Betriebssystem simuliert, sodass man es innerhalb eines anderen Betriebssystems laufen lassen kann. Für dieses Projekt wurde von Android Emulatoren Gebrauch gemacht, um die App gleich auf dem Computer testen zu können, wo man gerade am programmieren ist. So muss nicht ständig die App auf ein Smartphone transferiert werden, wo Android nativ läuft, nur um die App austesten zu können.
 
 \paragraph{Compiler}
 gradle, maven
 
 \paragraph{Installer / Packaging}
-When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The release Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
+% ENG: When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The release Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
+Nachdem die App mit \textit{Gradle} kompliert wurde, erhält man eine .apk-Datei als Output. APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android. Dabei kann man die App aber auf zwei Arten komplilieren: eine \textit{debug APK} oder eine \textit{release APK}. Die Debug Version bekommt extra Features hineinkompliert welche dem Entwickler helfen Bugs zu finden und zu prüfen. Diese Version wird verwendet um neue Features auszutesten, welche noch nicht bereit sind für die Nutzer. Die Release Version enthält die derzeitige Versionsnummer und ist das was man braucht, um eine funktioniernde Version der App den Nutzern zur Verfügung zu stellen.
 
 \subparagraph{signing keys}
-Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
+% ENG: Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
+Fast alle Android-Systeme sind so konfiguriert, dass sie nur Anwendungen zulassen, die mit einem Schlüssel des Entwicklers signiert sind. Dies geschieht aus verschiedenen Gründen wie Sicherheit, Kompatibilitätsprüfungen und anderen (TODO: mehr dazu suchen). Bevor wir also unsere App auf 99\% der Smartphones installieren können, müssen wir sie zunächst mit einem kryptografischen Schlüssel signieren, der von den Entwicklern dieser App erstellt wurde. Dies ist natürlich nur für die tatsächliche Veröffentlichung erforderlich und nicht für die Verwendung der Debugging-Version, z.B. in einem Android-Emulator.
+
 \subparagraph{Android Debugging Bridge}
-This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screen recordings, transferring files to and from your computer and installing / removing packages.
+% ENG: This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screen recordings, transferring files to and from your computer and installing / removing packages.
+
+Dies ist ein Software-Tool für die Interaktion mit Android-Geräten, die per USB mit dem Computer verbunden sind. Damit kann man nützliche Sachen wie Screenshots, Bildschirmaufnahmen, das Übertragen von Dateien und die (De-) Installation von Apps, resp. Softwarepaketen.
 
 \paragraph{Open Source Programme}
 
@@ -289,15 +295,19 @@ wenn eine Klasse zwei Funktionen aus zwei unterschiedlichen Klassen verwendet we
 
 \subsection{Recherche Tools / Quellen}
 \subsubsection{Internet}
-In the world wide web we use search engines like DDG (duckduckgo.com), the Arch Linux Wiki, Wikipedia and more programming-related websites like SOV (stackoverlow.com).
+% ENG: In the world wide web we use search engines like DDG (duckduckgo.com), the Arch Linux Wiki, Wikipedia and more programming-related websites like SOV (stackoverlow.com).
+Um das Netz besser durchsuchen zu können, wurden Suchmaschinen wie DDG (duckduckgo.com), das Arch Linux Wiki, Wikipedia und programmierbezogene Internetseiten wie SOV (stackoverflow.com);
 \subsubsection{Bücher, Artikel}
-We used different books and articles physically and digitally sometimes for the programming/coding process, but mostly for the text of this paper.
+% ENG: We used different books and articles physically and digitally sometimes for the programming/coding process, but mostly for the text of this paper.
+Es wurde auch Nutzen gemacht von Büchern und Artikeln, in digitaler und physischer Form, ein wenig für den Programmierprozess, aber hauptsächlich für den Maturarbeitstext.
 
 \subsection{Dokumentation(-stools)}
 \subsubsection{Latex}
-To write more formatting-demanding papers like in this paper it was made use of the typesetting engine LaTeX. This is a highly extensible and efficient way for getting your paper to look just like you want it. Also professionals use it to format a big majority of published books since \~ 20 years up to this day(TODO: look up on facts/statistics for this).
+% ENG: To write more formatting-demanding papers like in this paper it was made use of the typesetting engine LaTeX. This is a highly extensible and efficient way for getting your paper to look just like you want it. Also professionals use it to format a big majority of published books since \~ 20 years up to this day(TODO: look up on facts/statistics for this).
+Um formatierungsintensivere Texte wie diese Arbeit zu schreiben, wurde das Satzprogramm LaTeX verwendet. Dies ist ein äußerst erweiterbarer und effizienter Weg, um eine Arbeit so aussehen zu lassen, wie man es exakt verlangt. Auch professionelle Fachleute verwenden es, um eine große Mehrheit der veröffentlichten Bücher seit etwa 20 Jahren bis zum heutigen Tag zu formatieren (TODO: Fakten/Statistiken dazu nachschlagen).
 \subsubsection{Pandoc}
-This is program to convert from one document format to another. This is useful to write a document in format with very simple syntax (e.g. markdown) to convert it to a format that allows much better formatting (e.g. LaTeX) without having to use the more sophisticated syntax of the latter format. This is often used to write documentation or short texts with the minimal amount of time and effort to do so.
+% ENG: This is program to convert from one document format to another. This is useful to write a document in format with very simple syntax (e.g. markdown) to convert it to a format that allows much better formatting (e.g. LaTeX) without having to use the more sophisticated syntax of the latter format. This is often used to write documentation or short texts with the minimal amount of time and effort to do so.
+Dies ist ein Programm zur Konvertierung von einem Dokumentformat in ein anderes. Dies ist nützlich, um ein Dokument in einem Format mit sehr einfacher Syntax (z.B. Markdown) zu schreiben und es in ein Format zu konvertieren, welches eine viel bessere Formatierung ermöglicht (z.B. LaTeX), ohne die anspruchsvollere Syntax des komplexeren Formats verwenden zu müssen. Dies wird häufig verwendet, um Dokumentationen oder kurze Texte mit minimalem Zeit- und Arbeitsaufwand zu schreiben. So auch bei dieser Arbeit.
 
 \section{Programmstruktur}
 
