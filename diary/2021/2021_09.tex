@@ -1,0 +1,19 @@
+\begin{center}
+\section*{\month}
+\end{center}
+
+
+\def\day{\textit{September 7st, 2021 Simon}}
+\def\weekday{\textit{Tuesday}}
+\subsection*{\weekday, \day}
+
+Yesterday I added a changing Recyclerviewer when you click a different folder.
+At the beginning I hab big problems because the Recyclerviewer was called in the MainActivity
+in the onCreate function wich was just called when you start the App so I couldn't use a boolean wich was set 
+true when the fragments are called. So i figured out how I can call the Recyclerviewer from the Fragment. So every time 
+the user clicks on a Folder an new Recyclerviewer is called and reads in the Data. I'm not sure if it reads in the Database every time. 
+Maybe it just reads in the UI created by the ViewModel. Still the Programm uses a lot of Memory and it might be because of the 
+different LiveDatas or the different observer because not idk how often the look for changes. Also i cant use a different Database read in function 
+without wiping the Data from the Virtual machine
+
+Today I added new Folders called Spam and Archive. They work the same way like the other Folders. 
