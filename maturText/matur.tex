@@ -71,6 +71,12 @@ includeheadfoot}
 % show isbn in bibliography
 \usepackage{natbib}
 
+\newenvironment{nicequote}[2]{
+    \begin{center}\begin{quote}\textit{#1}\\\par\raggedleft--- {#2}
+    }{
+    \end{quote}\end{center}
+}
+
 \begin{document}
 
 \begin{titlepage}
@@ -182,7 +188,8 @@ Wie bereits erwähnt, müssen solche Lizenzen eine Menge juristischen Jargon ent
 
 \subsection{Philosophie (suckless)}
 
-``Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.''\\
+\begin{nicequote}{Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.}{https://suckless.org Manifest}
+\end{nicequote}
 
 % ENG: (Nowadays) a lot of Open Source Developers pride themselves in writing software with much features that cater to the non-technical enduser. This results in having a large codebase, which gets bigger and bigger with every release. This makes it harder to maintaining the ever growing codebase, more and more bugs occurs, security and (most importantly) performance struggles under these conditions. This degrades the quality of software technology as it is the mainstream narrative to ``save time and money''.\\
 
