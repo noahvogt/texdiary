@@ -8,3 +8,6 @@ Include/
 *.pdf
 *.aux
 *.pdf
+*.idx
+*.ilg
+*.ind
