@@ -120,9 +120,37 @@ includeheadfoot}
     \end{quote}\end{center}
 }
 
-
-% Indexerstellung
 \makeindex
+
+% using \say{} for easier quoting
+\usepackage{dirtytalk}
+
+% for code snippits
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% define java code snippit style
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 
 %==================begin document==========================
 
@@ -316,8 +344,10 @@ Um die \say{.apk}-Datei zu kompilieren, benutzen wir ein \textit{Build Automatio
 Nachdem die App mit \textit{Gradle} kompiliert wurde, erhält man eine .apk-Datei als Output. APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android. Dabei kann man die App aber auf zwei Arten kompilieren: eine \textit{debug APK} oder eine \textit{release APK}. Die Debug Version bekommt extra Features hinein kompiliert welche dem Entwickler helfen Bugs zu finden und zu prüfen. Diese Version wird verwendet um neue Features auszutesten, welche noch nicht bereit sind für die Nutzer. Die Release Version enthält die derzeitige Versionsnummer und ist das was man braucht, um eine funktionierende Version der App den Nutzern zur Verfügung zu stellen.
 
 \subparagraph{signing keys}
-% ENG: Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
-Fast alle Android-Systeme sind so konfiguriert, dass sie nur Anwendungen zulassen, die mit einem Schlüssel des Entwicklers signiert sind. Dies geschieht aus verschiedenen Gründen wie Sicherheit, Kompatibilitätsprüfungen und anderen (TODO: mehr dazu suchen). Bevor wir also unsere App auf 99\% der Smartphones installieren können, müssen wir sie zunächst mit einem kryptografischen Schlüssel signieren, der von den Entwicklern dieser App erstellt wurde. Dies ist natürlich nur für die tatsächliche Veröffentlichung erforderlich und nicht für die Verwendung der Debugging-Version, z.B. in einem Android-Emulator.
+% ENG: Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other . So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
+Fast alle Android-Systeme sind so konfiguriert, dass sie nur Anwendungen zulassen, die mit einem Schlüssel des Entwicklers signiert sind. Die Argumentation, weshalb das bei Android benötigt wird ist Sicherheit: Durch das Kryptographische signieren von Apps werden potenziell schädliche Modifikationen nach Kompilation der App erschwert. Dieses Verhalten stört die meisten Appentwickler nicht und ist sogar eher erwünscht.\\
+
+Bevor wir also unsere App auf 99\% der Smartphones installieren können, müssen wir sie zunächst mit einem kryptografischen Schlüssel signieren, der von den Entwicklern dieser App erstellt wurde. Dies ist natürlich nur für die tatsächliche Veröffentlichung erforderlich und nicht für die Verwendung der Debugging-Version, z.B. in einem Android-Emulator.
 
 \subparagraph{Android Debugging Bridge}
 % ENG: This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screen recordings, transferring files to and from your computer and installing / removing packages.
@@ -433,7 +463,7 @@ Sie haben ein Gradle.build file erstellt, dies dauerte erstaunlich lange. Späte
 Gradle ist. Nach einiger Zeit haben es beide geschafft ein apk file zu besitzen, welches erfolgreich die "Hello World" app beinhaltete und ausführt. 
 Anschliessend erstellte Noah ein GitHub repository in welchem die beiden das Programm teilen werden. \\
 
-\textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
+% \textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
 
 \subsection{Interface}
 
@@ -450,16 +480,16 @@ Noah begann dann dieses Programm leicht auszubauen und fügte einige Interface I
 \end{wrapfigure}
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
 
-Die App beinhaltete ein Burgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
-Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen. Für Simon ein guter Anfang sich mit dem 
+Die App beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
+Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen. Für Simon war das ein guter Anfang sich mit dem 
 richtigen Programmieren zu befassen und sich einleben zu können. 
-Simon begann mit dem RecyclerViewer
+% Simon begann mit dem RecyclerViewer
 
 \subsection{Recyclerviewer}
 
 Simon begann mit der Recherche zum Recyclerviewer. Er war viel im Internet und fand schnell
 einige Beispiele, welche er ausprobierte und für seinen Nutzen gestaltete. Ein Recyclerviewer ist nicht sehr kompliziert
-hat aber gewisse kniffe auf die Simon traf. \\
+hat aber gewisse Kniffe auf die Simon traf. \\
 
 Ein Recyclerviewer ist in fünf grundlegende Teile aufgeteilt. 
 
@@ -516,15 +546,22 @@ In der Mainactivity wurde dies alles in der onCreate() Funktion ausgeführt, was
 nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst noch einmalig mit Informationen versehen werde.
 
 \subsection{Popup Window Noah }
+Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
+
+% TODO: add pic
+Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
 
 \subsection{Database}
 
-Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
-Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
-\textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
+% Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
+% Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
+% \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
 
-Für dieses Ziel las Simon ein Buch 
-\textbf{Name des Buches und link ins verzeichniss}
+Da viele Daten gespeichert werden müssen, musste eine Möglichkeit her, wie diese möglichst schnell, und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine Datenbank für diesen Anwendungszweck und u.a. in Anbetracht der eingrenzenden Umständen, also die Deadline der Arbeitsabgabe, an. Noah hatte schon ein paar wenige Erfahrungen mit Datenbanken, doch da Simon diese Aufgabe übernehmen wollte, las er sich mithilfe eines Buches erfolgreich in die Thematik ein.
+
+% TODO: cite mentioned book
+
+% Für dieses Ziel las Simon ein Buch .
 
 Ein \textit{relational database management system} ist ein Databasesystem in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
@@ -541,7 +578,7 @@ gibt es 9 Attribute und einen Objectkey. \\
  \hline
 \end{tabular} \\
 
-Der Objektkey wird dafür genutzt das Objekt zu identifizieren und auf zu rufen. Es können auch weitere dinge mit dem Objektkey gemacht werde. 
+Der Objektkey wird dafür genutzt das Objekt zu identifizieren und aufzurufen. Es können auch weitere dinge mit dem Objektkey gemacht werde. 
 Je nach dem wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt eine Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
 alle Attribute Strings. 
 
@@ -564,13 +601,22 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
 
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
-Erklärung woher, warum falsch, wie gelöst
-GUI stuff -> onliner commit 
+% Erklärung woher, warum falsch, wie gelöst
+Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler diese Projektes zu kämpfen. Hier dazu ein kleines Beispiel:
+
+% GUI stuff -> oneliner commit 
+Als der RecyclerViewer das erste Mal eingebunden werden konnte, ohne dass die App nach dem Öffnen direkt abstürzt, war aber das Problem, dass am oberen Teil Inhalte abgeschnitten waren. Das konnte gelöst werden, indem diese Codezeile in der Datei \textit{app/src/main/res/layout/activity\_main.xml} an der richtigen Stelle eingefügt wurde:
+
+\lstset{language=XML}
+\begin{lstlisting}
+android:paddingTop="50dp"
+\end{lstlisting}
 
 \subsubsection{Probleme / Hiccups}
-RecyclerViewer, shit java IMAP libraries
+% RecyclerViewer, shit java IMAP libraries
 
 \subsubsection{Kommunikation}
+% TODO: write something here
 simon fragen, war Kommunikation zwischen uns gut?
 
 \section{Einschätzung / Schlussfolgerung}
@@ -578,17 +624,23 @@ simon fragen, war Kommunikation zwischen uns gut?
 \subsection{Fremdeinschätzung}
 \subsection{Selbsteinschätzung}
 \subsubsection{was lief gut}
-komm., vcs, java syntax (allg.)
+% komm., vcs, java syntax (allg.)
+Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut und half ihrer Meinnung nach enorm beim Arbeitsprozess und dessen Strukturierung. Mit der Syntax der verwendeten Programmier- und Markupsprachen Java, Python und XML konnte gut umgegangen werden, obwohl die beiden noch recht wenig Erfahrung mit Java hatten. Die Codestruktur fanden sie den Umständen entsprechen gut und sinnvoll.
 \subsubsection{was lief schlecht}
-******* java shit tier libraries
+% ******* java shit tier libraries
+Dass es keine mit Gradle funktionierede, ausreichend dokumentierte und/ode nicht veraltete IMAP- und Emailbibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Python \say{imap} und {emaillib} aus. Dazu mussten wir eine Library namens \textit{Chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität wär halt die oberste Priorität.
 \subsubsection{was würden wir gleich machen}
-As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
+% As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
 \subsubsection{was würden wir anders machen}
-As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability. 
+% As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability.
+
+Code der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben, um die Geschwindigkeit und Portabilität zu erhöhen.
 
 
-use more c libs for speed and less java (that's always a good thing)
+% use more c libs for speed and less java
 \subsubsection{abschliessende persönliche Schlussfolgerung}
+\paragraph{Simon}
+\paragraph{Noah}
 
 \section{Danksagung}
 
