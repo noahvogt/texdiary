@@ -309,11 +309,11 @@ IDE steht für ``Integrated Development Environment''. In diesem Programm editie
 Ein Emulator ist ein Programm, welches ein Gerät oder Betriebssystem simuliert, sodass man es innerhalb eines anderen Betriebssystems laufen lassen kann. Für dieses Projekt wurde von Android Emulatoren Gebrauch gemacht, um die App gleich auf dem Computer testen zu können, wo man gerade am programmieren ist. So muss nicht ständig die App auf ein Smartphone transferiert werden, wo Android nativ läuft, nur um die App austesten zu können.
 
 \paragraph{Compiler}
-Um die \say{.apk}-Datei zu kompilieren, benutzen wir ein \textit{Build Automation Tool designed for multi-language programs} namens Gradle. Dieses Programm erleichtert den compile Prozess, da der Kompilationsprozess recht komplex wäre, wenn man ihn manuell machen würde. Man müsste alle Dependencies selber angeben, herunterladen und Up-to-Date halten. Durch die Verwendung solche Build-Automatisierungstools sparen wir zwar an Arbeit, und auch viel kürzer wäre das kompilieren ohne Gradle auch nicht.
+gradle, maven
 
 \paragraph{Installer / Packaging}
 % ENG: When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The release Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
-Nachdem die App mit \textit{Gradle} kompiliert wurde, erhält man eine .apk-Datei als Output. APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android. Dabei kann man die App aber auf zwei Arten kompilieren: eine \textit{debug APK} oder eine \textit{release APK}. Die Debug Version bekommt extra Features hinein kompiliert welche dem Entwickler helfen Bugs zu finden und zu prüfen. Diese Version wird verwendet um neue Features auszutesten, welche noch nicht bereit sind für die Nutzer. Die Release Version enthält die derzeitige Versionsnummer und ist das was man braucht, um eine funktionierende Version der App den Nutzern zur Verfügung zu stellen.
+Nachdem die App mit \textit{Gradle} kompliert wurde, erhält man eine .apk-Datei als Output. APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android. Dabei kann man die App aber auf zwei Arten komplilieren: eine \textit{debug APK} oder eine \textit{release APK}. Die Debug Version bekommt extra Features hineinkompliert welche dem Entwickler helfen Bugs zu finden und zu prüfen. Diese Version wird verwendet um neue Features auszutesten, welche noch nicht bereit sind für die Nutzer. Die Release Version enthält die derzeitige Versionsnummer und ist das was man braucht, um eine funktioniernde Version der App den Nutzern zur Verfügung zu stellen.
 
 \subparagraph{signing keys}
 % ENG: Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other (TODO: search more on this). So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
@@ -528,7 +528,7 @@ Für dieses Ziel las Simon ein Buch
 
 Ein \textit{relational database management system} ist ein Databasesystem in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
-gibt es 9 Attribute und einen Objectkey. \\
+gibt es 9 Attribute und einen Objectkey.
 
 
 \begin{tabular}{ |p{1.6cm}  |p{1.1cm} |p{1.1cm} |p{1.05cm} |p{1.15cm} |p{1.15cm} |p{1.25cm} |p{1.75cm} |p{1.25cm} |p{1.15cm}|}
@@ -539,28 +539,10 @@ gibt es 9 Attribute und einen Objectkey. \\
  \hline
      01    &Valentin& null & null & Lennard & 01.03.13 & Schule &  Hallo Herr Konrad ...& Draft & true \\
  \hline
-\end{tabular} \\
+\end{tabular}
 
-Der Objektkey wird dafür genutzt das Objekt zu identifizieren und auf zu rufen. Es können auch weitere dinge mit dem Objektkey gemacht werde. 
-Je nach dem wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt eine Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
-alle Attribute Strings. 
 
-\textit{To} ist das Attribute, welches angibt an wen die Email geschickt werden soll, \textit{From} ist das genaue gegenstück dazu. \textit{Cc} und \textit{bcc} sind die 
-Email-Adressen, welche die Emails auch bekommen. Der einzige unterschied ist, dass bei \textit{bcc} diese Adressen nicht einsehbar sind und somit nicht bekannt ist wer diese Email auch liest. 
 
-\textit{Date} gibt das Datum an, an welchem die Email verschickt wurde. \textit{Subject} ist ein Betreff für die Email und \textit{textContent} ist der Text welcher in der Email verfasst wurde. 
-
-Das Attribut \textit{Seen} ist etwas spezieller. Es gibt an ob eine Nachricht von dem Nutzer Gelesen wurde oder nicht. Diese Info wird dann im Recyclerviewer genutzt um die Textart zu verändern
-in welcher die Email angezeigt wird. Diese Attribut muss verändert werden, wenn eine Email geöffnet wird. \\
-
-Die Attribute \textit{To}, \textit{from}, \textit{date}, \textit{folder} und \textit{seen} wurden im Databaseconstructor als @NonNull definiert, heisst sie müssen eingelesen werden und können 
-nicht null sein. Das macht soweit Sinn, weil eine Email, bis auf "seen", nicht ohne diese Angaben versendet werden können und ohne zu wissen in welchem Ordner die Email einzuordnen ist,
-kann die Email auch nicht richtig angezeigt werden. \\
-
-Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent}   \\
-\textit{Inbox}, \textit{Spam} und \textit{Archive}. Die Database kann nach einzelnen Attributen ausgelesen werden. So können die Emails mit den richtigen
-\textit{folder} Attributen, in den richtigen Ordnern Angezeigt werden. Jeder Ordner hat hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
-Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen. 
 
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
