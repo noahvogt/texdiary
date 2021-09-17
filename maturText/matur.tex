@@ -111,7 +111,7 @@ includeheadfoot}
 \newcommand{\ns}[4]{(\num[scientific-notation=false]{#1}\pm\num[scientific-notation=false]{#2})\cdot\num[]{e#3}\si{#4}}
 
 % show isbn in bibliography
-\usepackage{natbib}
+% \usepackage{natbib}
 
 % for quotes
 \newenvironment{nicequote}[2]{
@@ -151,6 +151,15 @@ includeheadfoot}
   tabsize=3
 }
 
+%\usepackage{biblatex} %Imports biblatex package
+
+%\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{lit/refs.bib}
 
 %==================begin document==========================
 
@@ -175,64 +184,46 @@ includeheadfoot}
 
 \section{Vorwort}
 
-Ich (Simon) habe lange Zeit mich darüber aufgeregt, dass es keine Edubs-Mail-App gibt. Ich musste die Browserversion als Link auf meinem Smartphone Bildschirm 
-einfügen und ich habe mich sehr darüber genervt, dass ich mich jedes mal beim öffnen der Browserversion neu anmelden musste. Als dann die Zeit kam mich für eine 
+Ich (Simon) habe mich lange Zeit darüber aufgeregt, dass es keine Edubs-Mail-App gibt. Denn ich musste die Browserversion als Link auf meinem Smartphone Bildschirm 
+einfügen und habe mich sehr darüber genervt, dass ich mich jedes mal beim öffnen der Browserversion neu anmelden musste. Als dann die Zeit kam mich für eine 
 Maturarbeit zu entscheiden, wollte ich zuerst einen Edubs-Client erstellen, welcher für Schüler gut geeignet ist. 
-Jedoch kannte ich bis dort nur Python und wollte mich mit meiner Idee mit Noah unterhalten, 
-da ich wusste, dass er sicher auch etwas programmieren wird, weil er sich schon seit längerem mit Computern und der Programmiersprachen befasste. Er war der Meinung, ich könnte dies
-doch gleich für jede Art von Email machen. Da ich mich noch nicht gut mit dem Programmieren auskannte, fragte ich ihn, ob er diese Maturarbeit denn mit mir machen würde.
+Jedoch kannte ich bis zu diesem Zeitpunkt nur Python und wollte mich mit meiner Idee mit Noah unterhalten, 
+da ich wusste, dass er wahrscheinlich auch etwas programmieren will als Maturarbeit, weil er sich schon seit längerem gerne mit Computern und Programmiersprachen befasste. Er war der Meinung, die App soll sich nicht nur auf Edubs Mailaddressen beschränken, sondern Emailadressen von jeglichen Providern unterstützen - schliesslich will man ja nicht für jede Mailaccount nicht eine neue App herunterladen müssen.
+Da ich mich noch nicht gut mit dem Programmieren auskannte, fragte ich ihn, ob er diese Maturarbeit denn mit mir machen würde.
 Zu meiner Überraschung war er von der Idee überzeugt und wir einigten uns darauf, einen Email-Client zu erstellen, welcher zwar nicht für Schüler optimiert wurde, aber für 
 den allgemeinen Gebrauch verbessert wurde. 
 
 \section{Einleitung}
-Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Jubiläum noch rege im Alltagsgebrauch vieler Leute in den meisten (industrialisierten) Ländern. Es könnte angenommen werden,
-dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - die Emailsoftware verbessert hat. Doch für das Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für uns.
-
-
-\subsection{Ziel der Arbeit}
-% TODO: machen wir das (noch) ???
-% was, wie und warum [machen wir das?]
+Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute in den meisten Ländern. Nach dem Prinzip des technologischen Fortschrittes könnte angenommen werden, dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für unseren persönlichen Gebrauch.
 
 \section{Konzept der Arbeit}
 
 \subsection{Ziele der Funktionen}
 
-Wir kennen alle die Funktionen eines Email-Clients und unsere App soll auch nicht viel mehr können als die meistens Apps. \\
+Wir wissen, was ein Email Client funktionsmässig so können muss, und haben nicht vor eine Apps zu designen, welche vollkommen überladen ist mit Funktionen, die keiner braucht.\\
 
-Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das lesen und schreiben von Emails,
-öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es viele verschiedene Ordner geben, 
-solche wie Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails verwalten zu können, zum beispiel indem die Ordner nach 
-Datum des Empfangs oder dem Absender sortiert werden können. E-Mails könne markiert, gelöscht und weitergeleitet werden. Es soll eine Suchfunktion für jeden Ordner geben. \\
+Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das Lesen und Schreiben von Emails, das Öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es verschiedene Ordner unterstützen, wie z.B. ein Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails visuell sortieren zu können, beispielsweise indem die Ordner im Client nach Datum des Empfangs oder dem Absender sortiert werden können. E-Mails sollen mit markiert, gelöscht und weitergeleitet werden können. Es soll eine Suchfunktion für jeden Mailordner geben. \\
 
 Ebenso soll es einen Account Manager geben, was voraus setzt, dass es möglich ist sich mit verschiedenen 
 Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail soll es dem Nutzer leicht gemacht werden mit eingebauten Konfigurationen für beliebte 
 Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
 
-Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei wird die Nachricht mit dem Absender und der Beginn der 
-E-Mail angezeigt. 
-Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. 
-Dies wird ein weiteres Feature der App sein.
-Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Für dies 
-wird eine Funktion in den Einstellungen  einfügen. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und 
-beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. \\
+Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei sollen neue Nachrichten mit dem Absender und dem Beginn der E-Mail angezeigt werden. 
+% Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. TODO: delete this???
+Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Dieses Verhalten soll in den App-Einstellungen steuerbar gemacht werden. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. Ob diese Funktion sinnvoll ist, ist fraglich, da auf viele Leute keine Emailaddressen auf der Kontaktapp ihres Handys speichern.\\
 
-Das letzte Feature ist, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen das Farblayout der App ändern können, 
-die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten. 
+Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
 
-Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet ist, hinzuzufügen können. 
-Es gibt uns auch die Möglichkeit nach dieser Arbeit die App zu verbessern und auf uns an zu passen. \\ 
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
 
 Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
 
 
 
 \subsection{Vergleich mit Konkurrenz}
-Disclamier/Note: Da bei dieser App einen Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen.\\
+Disclamier/Note: Da bei dieser App ein Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen.\\
 
-
-Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, 
-dass diese unglaublich überladen (bloated) sind. Selbst wenn im Internet nach einem möglichst simplen Email Client für Android gesucht wird, 
-stösst man dabei meist auf Apps wie k-9 Mail, welche hunderttausende Zeilen Source Code besitzen.\\
+Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, dass diese unglaublich überladen (engl. bloated) sind. Selbst wenn im Internet nach einem möglichst simplen Email Client für Android gesucht wird, stösst man dabei meist auf Apps wie k-9 Mail, welche immerhin noch über stattliche hunderttausende Zeilen Source Code besitzt.\\
 
 Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, 
 aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein.
@@ -266,7 +257,7 @@ Wie bereits erwähnt, müssen solche Lizenzen eine Menge juristischen Jargon ent
 
 \subsection{Philosophie (suckless)}
 
-\begin{nicequote}{Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.}{https://suckless.org Manifest}
+\begin{nicequote}{Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.}{https://suckless.org Manifest \cite{suckless}}
 \end{nicequote}
 
 % ENG: (Nowadays) a lot of Open Source Developers pride themselves in writing software with much features that cater to the non-technical enduser. This results in having a large codebase, which gets bigger and bigger with every release. This makes it harder to maintaining the ever growing codebase, more and more bugs occurs, security and (most importantly) performance struggles under these conditions. This degrades the quality of software technology as it is the mainstream narrative to ``save time and money''.\\
@@ -278,15 +269,18 @@ Eine grosse Anzahl Open-Source-Entwickler stolz darauf, Software mit scheinbar m
 
 Hier kommt die Philosophie des \textit{Suckless Philosphy} ins Spiel: Sie zielt darauf ab, Software mit Hinblick auf Einfachheit zu entwickeln: Weniger Quellcodezeilen, um das Projekt nicht in ähnlicher Weise unmaintainable zu machen, wie oben erwähnt. Diese Art zu programmieren ist viel schwieriger, aber der Aufwand ist es meistens wert. Diese Programmierphilosophie bietet auch Anreize für das qualitativ hochwertige Neuschreiben von Programmen - was bei der sogenannter \textit{Bloated Software} viel seltener vorkommt - und gibt dem Benutzer mehr Alternativen zur Auswahl.
 
+\subsubsection{Hintergründe, Technologisch, UNIX, KISS}
+Die \textit{Suckless Philosophie} ist aber längst nicht die erste Philosophie im Softwarebereich welche auf Simplizität beruht; so beispielsweise eine beliebte Definition der altbekannten \textit{UNIX Philosphy}:
 
+\begin{nicequote}{This is the Unix philosophy. Write programs that do one thing and do it well. Write programs to work together. Write programs that handle text streams, because that is a universal interface.}{A Quarter Century Of UNIX \cite{salus1994}}
+\end{nicequote}
 
-% \subsubsection{Hintergründe, Technologisch, UNIX, KISS}
+Bekannt ist auch das \textit{KISS Prinzip}: \say{Keep it simple, stupid}. Dieses Prinzip kommt ursprünglich vom U.S. Admiral Stroop, der das \say{Project KISS} 1960 ins Leben gerufen hatte, welches die Verlässlichkeit verbessern und die Kosten für amerikanische Militärausrüstungen senken soll. \cite{dalzell2009} Gerne wird diese Prinzip zitiert, wenn jemand der Meining ist, unnötige Komplexität sei vorhanden in einem Softwareprojekt.
+
 \subsection{Lizensierung}
 % ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
 
-Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren lizenzirrung wurden bereits besprochen. Für dieses Softwareprojekt wurde sich entschieden die \textit{GNU General Public License (GPL)} der Free Software Foundation zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
-
-\subsubsection{Hintergründe, philosophisch, technologisch}
+Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren Lizenzierung wurden bereits besprochen. Für dieses Softwareprojekt wurde sich entschieden die \textit{GNU General Public License (GPL) Version 3} \cite{GPLv3} der Free Software Foundation zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
 
 \section{Hilfsmittel}
 
@@ -332,7 +326,7 @@ IDE steht für ``Integrated Development Environment''. In diesem Programm editie
 % \paragraph{Texteditor}
 % Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
 
-\paragraph{Android Emulator(s)}
+\paragraph{Android Emulator}
 % ENG: An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulator inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
 
 Ein Emulator ist ein Programm, welches ein Gerät oder Betriebssystem simuliert, sodass man es innerhalb eines anderen Betriebssystems laufen lassen kann. Für dieses Projekt wurde von Android Emulatoren Gebrauch gemacht, um die App gleich auf dem Computer testen zu können, wo man gerade am programmieren ist. So muss nicht ständig die App auf ein Smartphone transferiert werden, wo Android nativ läuft, nur um die App austesten zu können.
@@ -685,5 +679,5 @@ Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. 
 
 
 
-
+\printbibliography
 \end{document}
