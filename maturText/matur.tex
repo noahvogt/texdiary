@@ -432,7 +432,7 @@ Die Codebasis dieses Projektes sollte sehr einfach zu maintainen sein: Die wicht
 Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern - oder wie manche sagen: ``the project/package gets orphaned'' (TODO: source pls) - und wenn jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
 
 \subsubsection{less bug/error-prone}
-% ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of java or android coding.
+% ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of 
 Es ist grösstenteils der suckless-basierten Codingphilosophie zu verdanken, aber auch der Umsetzung. Es könnte jedoch der Fall sein, dass schlechte \textit{Coding Practices} verwendet wurden, da die beiden initialen Entwickler dieses Projekts nur eine beschränkte Erfahrung mit der Androidentwicklung mit der Java-Programmiersprache hatten.
 
 \section{Umsetzung}
@@ -513,7 +513,7 @@ für eine versetzen unterteilung der View kann sorgen. Dies ist aber für eine E
     \caption{Layout Manager Recyclerview}
 \end{figure}
 
-    \item Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View
+    \item Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View in einem Recyclerviewer
 
     \item Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des View Holder Objekt und
 bindet auch die Daten aus der Database an den View Holder
@@ -544,6 +544,8 @@ In der Klasse des Adapters wurde durch den View-Holder die richtigen Textviews a
 
 In der Mainactivity wurde dies alles in der onCreate() Funktion ausgeführt, was zur Folge hatte, das der ganze vorgang nur beim Öffnen der App ablieft, da die Funktion onCreate()
 nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst noch einmalig mit Informationen versehen werde.
+
+% TODO: schrib über Viewholder und Room etc mit pic
 
 \subsection{Popup Window Noah }
 Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
@@ -591,13 +593,45 @@ Das Attribut \textit{Seen} ist etwas spezieller. Es gibt an ob eine Nachricht vo
 in welcher die Email angezeigt wird. Diese Attribut muss verändert werden, wenn eine Email geöffnet wird. \\
 
 Die Attribute \textit{To}, \textit{from}, \textit{date}, \textit{folder} und \textit{seen} wurden im Databaseconstructor als @NonNull definiert, heisst sie müssen eingelesen werden und können 
-nicht null sein. Das macht soweit Sinn, weil eine Email, bis auf "seen", nicht ohne diese Angaben versendet werden können und ohne zu wissen in welchem Ordner die Email einzuordnen ist,
+nicht null sein. Das macht soweit Sinn, weil eine Email, bis auf \textit{seen}, nicht ohne diese Angaben versendet werden können und ohne zu wissen in welchem Ordner die Email einzuordnen ist,
 kann die Email auch nicht richtig angezeigt werden. \\
 
-Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent}   \\
+Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent} 
 \textit{Inbox}, \textit{Spam} und \textit{Archive}. Die Database kann nach einzelnen Attributen ausgelesen werden. So können die Emails mit den richtigen
-\textit{folder} Attributen, in den richtigen Ordnern Angezeigt werden. Jeder Ordner hat hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
-Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen. 
+folder Attributen, in den richtigen Ordnern angezeigt werden. Jeder Ordner hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
+Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen.  \\
+
+\textbf{ Quelle Room https://dzone.com/articles/room-persistence-library}
+
+Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
+die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
+recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet. Room ist eine Art Schicht über der SQLiteDatabase. 
+Room besteht grundsätzlich aus drei Teilen. Die Database dient als Hauptzugriffspunkt für die gespeicherten Daten der App. Sie ist mit @Database markiert. 
+Eine \textit{Entity} repräsentiert einen \textit{table} in der Database und die \textit{DAO} Klasse beinhaltet die Methoden um auf die Database zu zu greifen. Sie kommuniziert
+mit SQLite. 
+
+%TODO: bild einfügen
+
+\subsubsection{MessageDao}
+
+In der \textit{DAO}-Klasse können SQL statements verwendet werden. Um auf die Database zu zugreifen und nur Gewisse 
+Objekte zu erfassen, hat Simon ein paar wenige SQL statements gebraucht. SQL ist zum Glück in diesem Fall sehr selbsterklärend, 
+dennoch werden wir darauf eingehen.\\
+
+
+\lstset{language=SQL}
+\begin{lstlisting}
+    /* get Draft messages*/
+    @Query("SELECT * FROM message_table WHERE folder LIKE 'Draft' ORDER BY date ASC")
+    LiveData<List<Message>> getDraftMessages();
+\end{lstlisting}
+
+\textit{Querys} sind anfragen an die Database nach Informationen. Sie können auf verschiedene \textit{tables} zugreifen und Informationen abgleichen und auswählen. 
+In einer DAO von Room werden die SQL-statements mit @Query markiert. SELECT heisst, dass etwas ausgewählt werden soll und mir * ist gemeint alles. Mit FROM wird nochmals angegeben von 
+welchem table, in diesem Fall vom message\_table. Die Entity die wir weiter oben schon erklärt haben. Mit WHERE können Spalten der Entity ausgewählt werden. Hier wird die \textit{folder} Spalte 
+gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die ausgabe anhand der Spalte 'date'
+nach dem ASC-code sortiert.
+
 
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
@@ -629,6 +663,14 @@ Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut un
 \subsubsection{was lief schlecht}
 % ******* java shit tier libraries
 Dass es keine mit Gradle funktionierede, ausreichend dokumentierte und/ode nicht veraltete IMAP- und Emailbibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Python \say{imap} und {emaillib} aus. Dazu mussten wir eine Library namens \textit{Chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität wär halt die oberste Priorität.
+
+Etwas das nicht direkt schlecht lief aber sehr viel Zeit brauchte ist, dass wenn ich (Simon) zum Beispiel eine Database für den Recyclerviewer gemacht habe, zwar nur eine Testversion, 
+ich diese im späteren verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion aber dass diese so weit von einer professionelle Database entfernt war, war mit nicht klar. 
+In so einer Situation war ich nicht nur bei der Database. Mit dem Recyclerviewer hatte ich solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert aber ich musste den Recyclerviewer
+öfters komplett umschreiben. Als ich die erste Version hatte, hatte ich eine sehr simple version einer Database und durch dies hat sich auch ein simpler Adapter entwickelt. 
+Aber diesen konnte ich mit der Zeit sehr gut an de Recyclerviewer anpassen. Ich habe ihn auch sehr stark ausgebaut. Als ich jedoch eine vollstendige Version einer Database hatte, musste ich den 
+Adapter so gut wie löschen. Solche Dinge haben den Arbeitsprozess sehr stark ausgebremst und die Arbeit begann mich zu nerven, da teilweise klar war, dass ich das was ich gerade
+mache sowieso nochmals überarbeiten muss. 
 \subsubsection{was würden wir gleich machen}
 % As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
 \subsubsection{was würden wir anders machen}
