@@ -438,8 +438,6 @@ Wenn man Nutzereinstellungen- und Daten speichert in Android, kann der Entwickle
 % Um solch eine Art der Ausnutzung zu verhindern, müsste man ALLE sensiblen Benutzerdaten mit einem Verschlüsselungscode verschlüsseln. Aber wenn ein Keylogger installiert ist, ist selbst dies nicht sicher. In Anbetracht der Tatsache, dass es \textit{kein einziges} Android-Telefon gibt, das frei von proprietärem Betriebssystem- und Firmware-Code ist (wenn es sich über WiFi mit dem Internet verbindet), wurde diese Funktionsidee als fehl am Platz und zur Vereinfachung der Codebasis verworfen.
 % LAST PARAGRAPH COMMENTED OUT BECAUSE TOO MUCH SCHIZO
 
-% TODO: write about sandbox (and its 'lies') ????
-
 \subsection{Code Kompaktheit}
 % ENG: This is something that we have absolutely achieved, we used so much less SLOC than any of the competing email clients on android.(compare use of libraries, and if we used more or less than the other apps) This is also very crucial to stand with our initial goal and the suckless philosophy. While we used \~ 4000 SLOC, other apps use a whopping 300'000 SLOC.
 Das ist etwas, was im Laufe diese Projekts ziemlich gut eingehalten wurde: Es wurden viel weniger SLOC geschrieben als bei den konkurrierenden Email Clients auf Android. Das ist ein sehr wichtiger Massstab um das initiale Ziel der \textit{Suckless Philosophy} so gut wie möglich zu erreichen. Während dieses Projekt nur \~ 4000 SLOC Zeilen Code aufzuweisen hat, sind es bei anderen Apps gar über 300'000 SLOC.
@@ -449,7 +447,7 @@ Die Codebasis dieses Projektes sollte sehr einfach zu maintainen sein: Die wicht
 
 % ENG: Even if this project gets abandoned by their original developers - or as some people call that: when it get orphaned - and if someone finds it and likes it, he can easily read through it and understand the code without too much effort needed of understanding the codebase. Would the same be the case for bloated programs like thunderbird? I don't think so either.
 % TODO: get source to term 'orphaned packages'
-Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern - oder wie manche sagen: \say{the project/package gets orphaned} - und wenn jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
+Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern und jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
 
 \subsubsection{less bug/error-prone}
 % ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of 
@@ -573,9 +571,13 @@ so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment 
 aus der Mainactivity. 
 
 \subsection{Popup Window Noah }
+\begin{wrapfigure}{r}{5cm}
+\centering
+\includegraphics[width=.18\textwidth]{media/inputValidation.png}
+\caption{Input Validation}
+\end{wrapfigure}
 Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
 
-% TODO: add pic
 Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
 
 \subsection{Database}
@@ -794,8 +796,6 @@ Probleme waren die unnötig vielen Layouts, welche entstanden bei unserer App. V
 Mit gewissen Biobliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
 
 \subsubsection{Kommunikation}
-% TODO: write something here
-
 Simon:
 
 Ich finde wir haben etwas wenig kommuniziert aber dafür lief es sehr gut. Ich war sogar eher froh das wir nicht ganz so viel 
