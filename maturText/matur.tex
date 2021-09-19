@@ -235,10 +235,32 @@ die dann in Sprache, welche die Computerhardware interpretieren und ausführen k
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{media/Source2Executable.jpg}
-    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}} 
+    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}}
 \end{figure}
 
-Bei diesem Prozess geht die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
+Hier als Beispiel der Source Code zu einem simplen Programm \textit{helloworld.c} geschrieben in der Programmiersprache C, welches in der Konsole ein simples \say{Hello World} ausgibt:
+
+\lstset{language=C}
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
+\begin{lstlisting}
+0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
+1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100001
+1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100110
+0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110110
+1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111001
+0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011010
+\end{lstlisting}
+
+Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
 
 % maybe too much of a rant about intellectual property (IP) ???
 Durch die zunehmende Kommerzialisierung und Massentauglichkeit der Computer haben sich aber monetäre und andere Anreize gebildet, den Source Code dem Nutzer nicht mehr zur Verfügung zu stellen. Das hat für den Nutzer verschiedene praktische Folgen. Aber vor allem ist er nicht mehr in Kontrolle seines Computers, Betriebssystems und Programms, sondern der Besitzer oder Copyrightholder des Programms. Das ein Programm einen Besitzer haben kann, ist ziemlich absurd und nur durch die Veränderungen der westlichen Kopierschutz-Gesetze und der daraus entstandene kulturelle Umgang mit \say{intellektuellem Eigentum} in den letzten 150 Jahre möglich.\\
