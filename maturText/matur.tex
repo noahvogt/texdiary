@@ -366,22 +366,6 @@ waren, genauer zu Betrachten. Im folgenden Text werden wir diese Programme auff�
 % \subsubsection{Librarys}
 % (bedeutung im glossar erklärt)
 
-\paragraph{RecyclerViewer}
-
-Der Recyclerviewer ist ein Container in welchen Daten gepackt werden. Er wird dem Layout hinzugefügt und hat eine grossen Vorteil gegenüber Listen. 
-Eine Liste wird einmalig erstellt und komplett generiert. Das heisst es gibt Container, welche existieren, aber nicht auf dem Bildschirm angezeigt werden. 
-Diese Container brauchen aber dennoch Speicherplatz, sind aber sinnlos. Hingegen der Recyclerviewer generiert nur so viele Container wie auf dem Bildschirm angezeigt werden können. 
-Die Container, welche beim Scrollen am Bildschirm ende ankommen werden sogar wieder verwendet, mit neuen Information gespeist und am anderen Ende des Bildschirms angezeigt.
-
-Bild von RecycleView
-
-Ich (Simon) habe viel Zeit in einem template für den Recyclerviewer verbracht, da mir viele Internetseiten nicht helfen konnten. Es waren die ersten Schritte um 
-richtig zu verstehen wie eine App funktioniert und wie sie Aufgebaut ist. Ich habe mich davor schon informiert jedoch wurde es mir dort richtig klar. Ich habe gelernt
-wie Behälter über einen Key von Java Files aufgerufen werden und mit Daten gespeist werden. Ebenso habe ich verstanden, weshalb in Programmen, basierend auf Java, viele 
-Klassen erstellt erstellt werden müssen, weil jeweils nur einmal die Variablen, Funktionen und Konstruktor einer andere Klasse implementiert werden können. Das heisst, 
-wenn eine Klasse zwei Funktionen aus zwei unterschiedlichen Klassen verwendet werden soll, muss eine der beiden Klassen die andere Klasse implementieren. 
-
-
 \subsection{Recherche Tools / Quellen}
 \subsubsection{Internet}
 % ENG: In the world wide web we use search engines like DDG (duckduckgo.com), the Arch Linux Wiki, Wikipedia and more programming-related websites like SOV (stackoverlow.com).
@@ -519,7 +503,7 @@ für eine versetzen unterteilung der View kann sorgen. Dies ist aber für eine E
 
     \item Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View in einem Recyclerviewer
 
-    \item Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des View Holder Objekt und
+    \item Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des ViewHolder-Objekt und
 bindet auch die Daten aus der Database an den View Holder
 
     \item Die Database ist das Herzstück dieser App und wir auch für den Recyclerviewer verwendet um die 
@@ -544,12 +528,17 @@ der Adapter definiert. \\
 Die Database bestand zu diesem Zeitpunkt aus nur einer Klasse, welche fünf Strings definierte, diese einlesen konnte und auch wieder ausgeben konnte. Mit dieser Klasse wurde
 ein Objekt erstellt, welches in einer Arraylist, durch einen Loop, eingelesen wurde und jeweils die gleichen fünf Strings überkam. \\
 
-In der Klasse des Adapters wurde durch den View-Holder die richtigen Textviews ausgewählt, die Views kreiert und mit den Informationen, welche der Adapter bekam, gefüllt. \\
+In der Klasse des Adapters wurde durch den ViewHolder die richtigen Textviews ausgewählt, die Views kreiert und mit den Informationen, welche der Adapter bekam, gefüllt. \\
 
 In der Mainactivity wurde dies alles in der onCreate() Funktion ausgeführt, was zur Folge hatte, das der ganze vorgang nur beim Öffnen der App ablieft, da die Funktion onCreate()
-nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst noch einmalig mit Informationen versehen werde.
+nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst nur einmalig mit Informationen versehen werde.
 
-% TODO: schrib über Viewholder und Room etc mit pic
+Der CustomAdapter war am Anfang der App dafür zuständig die Daten, welche in einer einfache Klasse abgespeichert wurden, über den 
+\textit{Constructor} dem ViewHolder weiter zu geben, welcher dann diese Informationen an eine View im Recyclerviewer band. Im verlaufe der Zeit wurde 
+der Adapter angepasst und erweitert. Dies hatte Simon auch sehr grossen Spass gemacht da er auch wirklich alles verstand, jedoch als die Database entstand war der alte 
+CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt seine Aufgaben jetzt ein wenig anderst. Zwar viel effizienter mit weniger Code aber nicht 
+so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment für den zugehörigen \textit{Folder} neu Aufgerufen und überschreibt den CustomAdapter 
+aus der Mainactivity. 
 
 \subsection{Popup Window Noah }
 Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
@@ -563,11 +552,9 @@ Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob 
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
 % \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
 
-Da viele Daten gespeichert werden müssen, musste eine Möglichkeit her, wie diese möglichst schnell, und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine Datenbank für diesen Anwendungszweck und u.a. in Anbetracht der eingrenzenden Umständen, also die Deadline der Arbeitsabgabe, an. Noah hatte schon ein paar wenige Erfahrungen mit Datenbanken, doch da Simon diese Aufgabe übernehmen wollte, las er sich mithilfe eines Buches erfolgreich in die Thematik ein.
+Da viele Daten gespeichert werden müssen, musste eine Möglichkeit her, wie diese möglichst schnell, und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine Datenbank für diesen Anwendungszweck und u.a. in Anbetracht der eingrenzenden Umständen, also die Deadline der Arbeitsabgabe, an. Noah hatte schon ein paar wenige Erfahrungen mit Datenbanken, doch da Simon diese Aufgabe übernehmen wollte, las er sich mithilfe eines Buches erfolgreich in die Thematik ein. \\
 
 % TODO: cite mentioned book
-
-% Für dieses Ziel las Simon ein Buch .
 
 Ein \textit{relational database management system} ist ein Databasesystem in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
@@ -609,12 +596,25 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
 
 Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
 die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
-recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet. Room ist eine Art Schicht über der SQLiteDatabase. 
+recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
+
+
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{8cm}
+    \centering
+    \includegraphics[width=.4\textwidth]{media/RoomStructure.png}
+    \caption{Room Struktur}
+\end{wrapfigure}
+
+
+Room ist eine Art Schicht über der SQLiteDatabase. 
 Room besteht grundsätzlich aus drei Teilen. Die Database dient als Hauptzugriffspunkt für die gespeicherten Daten der App. Sie ist mit @Database markiert. 
 Eine \textit{Entity} repräsentiert einen \textit{table} in der Database und die \textit{DAO} Klasse beinhaltet die Methoden um auf die Database zu zu greifen. Sie kommuniziert
-mit SQLite. 
+mit SQLite um de Zugriff auf die Daten zu ermöglichen 
 
-%TODO: bild einfügen
 
 \subsubsection{MessageDao}
 
@@ -636,6 +636,112 @@ welchem table, in diesem Fall vom message\_table. Die Entity die wir weiter oben
 gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die ausgabe anhand der Spalte 'date'
 nach dem ASC-code sortiert.
 
+\subsection{Repository/ViewModel}
+
+\begingroup
+\setlength{\intextsep}{1pt}
+\setlength{\columnsep}{4pt}
+
+\begin{wrapfigure}{r}{5.5cm}
+    \centering
+    \includegraphics[width=.4\textwidth]{media/ViewModelRepository.png}
+    \caption{EmailViewModel and Repository}
+\end{wrapfigure}
+
+Mit der Database wurden auch ein Repository und ein Viewmodel mit Viewholder erstellt. 
+Das Repository verwaltet die Datenquellen. Im Normalfall würde es Daten von einem Server verwalten und in die Database einlesen. Ebenfalls kann
+es auch Daten die der User direkt eingibt einlesen. Zwar nicht direkt von der Activity aber über ein Viewmodel können Daten in die Database eingelesen werden. Das Repository 
+stellt dazu die Funktionen für das Viewmodel zur Verfügung. 
+Da in diesem Falle keine anständige Java Library gefunden wurde, welche nicht uralt oder eine Dokumentation zur Verfügung hatte mussten die Daten vom Server mit einer 
+Python Library eingelesen werden. Noah Programmierte dazu in Python mit einer Library ein Programm welches die Daten von eine Server herunterlädt und in die Database einliest. 
+
+In diesem Falle das EmailViewModel, stellt Funktionen zur Verfügung, mit welchen auf die Database, über das Repository, zugegriffen werden kann. Ebenfalls gibt es LiveData zurück 
+mit welcher die Mainactivity die observer Verknüpfungen erstellen kann. Mit dem ViewHolder in diesem Fall dem EmailViewHolder können Daten an View gebunden werde. In dem Fall wäre das 
+der Recyclerviewer.
+So wird die Mainactivity informiert, wenn eine Änderung der Database vorgekommen ist. Im Fall dieser App wird zwar 
+ein Recyclerviewer in der Mainactivity mit Observer und Adapter erstellt, jedoch wird dies nur gemacht um das gleiche für jedes Fragment zu machen, welche dann den Recyclerviewer und den 
+observer aus der Mainactivity überschreiben. Die einzelnen \textit{Folder} haben jeweils ein Fragment zugeordnet, in welchen der einzige unterschied ist, dass sie andere 
+Attribute aus der Database abfragen um die den \textit{Folder} entsprechenden \textit{Messages} zu bekommen. 
+
+An diesem Beispiel ist es vielleicht leichter zu verstehen. Dies ist die Funktion welche an einer Variable vom Typ EmailViewModel ausgeführt wird. In dem Fragment HomeFragment in der
+onCreateView Funktion, welcher immer ausgeführt wird wenn dieses Fragment aufgerufen wird. 
+
+
+\lstset{language=java}
+\begin{lstlisting}
+        mEmailViewModel = new ViewModelProvider(this).get(EmailViewModel.class);
+        mEmailViewModel.getInboxMessage().observe(getViewLifecycleOwner(), messages -> {
+            /* Update the cached copy of the messages in the adapter*/
+            adapter.submitList(messages);
+        });
+\end{lstlisting}
+
+Die Funktion getInboxMessage() is im der Klasse EmailViewModel definiert und gibt LiveData<List<Message>> zurück, was soviel ist wie eine Liste der Objekte in der Database, eingebettet 
+in LiveData.
+
+\lstset{language=java}
+\begin{lstlisting}
+
+    public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
+
+\end{lstlisting}
+
+\lstset{language=java}
+\begin{lstlisting}
+
+        private LiveData<List<Message>> mInboxMessage;
+
+        public EmailViewModel(Application application) {
+        super(application);
+        mEmailRepository = new EmailRepository(application);
+        mInboxMessage = mEmailRepository.getInboxMessages();
+        }
+
+        public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
+
+\end{lstlisting}
+
+
+\lstset{language=java}
+\begin{lstlisting}
+
+    private LiveData<List<Message>> mInboxMessage;
+
+    public EmailRepository(Application application) {
+        EmailRoomDatabase db = EmailRoomDatabase.getDatabase(application);
+        messageDao = db.messageDao();
+        mInboxMessage = messageDao.getInboxMessages();
+    }
+
+        public LiveData<List<Message>> getInboxMessages() {
+        return mInboxMessage;
+    }
+
+
+\end{lstlisting}
+
+Im \textit{Cunstroctor} von dem EmailViewModel wird der Variable mInboxMessage die Daten aus dem Repository übergeben welche diese wieder im \textit{Constructor} von dem MessageDAO überkommt.
+
+\newpage
+
+\subsection{Draft Messages}
+
+\begingroup
+\setlength{\intextsep}{3pt}
+\setlength{\columnsep}{4pt}
+
+
+\begin{wrapfigure}{r}{6cm}
+    \includegraphics[width=.4\textwidth]{media/AppStructure.png}
+\end{wrapfigure}
+
+Der ganze Aufbau der in den Kapitel von vorhin erklärt wurde, hatte nur zwei Ziele. Einmal das einlesen von Emails von einem Server und das Einlesen von Emails
+über ein Fragment genannt messageCreateFragment. Diese Fragment interagiert mit einer Activity genannt NewDraftMessageActivity. Die Mainactivity startet beim Klicken auf einen Button 
+das messageCreateFragment. Dieses liest die Daten ein welche der User in das Fragment schreibt und übergibt sie mit Hilfe der NewDraftMessageActivity direkt an die Message Klasse und somit in die 
+Database.  \\
+
+Dies ist der grobe Aufbau um Messages anzuzeigen. Wenn etwas durch die NewDraftActivity verändert wird, wird der Observer informiert, welcher den CostumAdpater informiert und bis nach 
+ganz unten die neuen Informationen ausliest.
 
 \subsection{Beispiele aus der Umsetzung}
 \subsubsection{Bugs}
@@ -694,13 +800,28 @@ Wenn wir diese in die Vergangenheit reisen könnten und die App von Neuem machen
 \subsubsection{Was Wir Anders Machen Würden}
 % As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability.
 
-Code der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben, um die Geschwindigkeit und Portabilität zu erhöhen.Java komplett wegzulassen ist aber weder vorgesehen noch praktisch sinnvoll umsetzbar.
+Code der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben werden, um die Geschwindigkeit und Portabilität zu erhöhen. Java komplett wegzulassen ist aber weder vorgesehen noch praktisch sinnvoll umsetzbar. \\
+
+Uns ist öfters gesagt worden, dass das managen der Zeit sehr wichtig ist. Wir sind davon ausgegangen, dass wir dies auch gut eingeplant haben. Dem war leider nicht so und wir 
+würden uns mehr gedankten machen beim Planen wie auch, wie lange wir an einem Problem arbeiten bevor wir das Feature entfernen, als das wir sehr lange daran arbeiten. 
 
 
 % use more c libs for speed and less java
 \subsubsection{abschliessende persönliche Schlussfolgerung}
 \paragraph{Simon}
-% TODO: write something here
+Ich bin selbst etwas enttäuscht wie wenige Ziele wir erreichen konnten und ich bin überrascht wie stark wir unterschätzt haben, wie 
+viel Arbeit es ist eine stabile funktionierende App zu erstellen. Herr Yakonthov hat uns am Anfang gewarnt, dass wir uns doch etwas zu viel vornehmen. Jetzt bin ich an dem Punkt, an dem 
+ich glaube ich könnte den rest unserer Ziele in vielleicht zwei Monaten verwirklichen, jedoch ist leider dafür keine Zeit.\\
+
+Mir hat es im Spass gemacht diese App zu erstellen und den Arbeitsprozess zu verfolgen. Das schöne an GitHub ist auch, dass ich mich mit mir selber vergleichen kann und aber auch denn 
+fortschritt unserer App erkennen kann. Ich denke ich hätte nicht direkt mit einem so grossen Projekt zum Programmieren anfangen sollen, was mir auch Noah empfohlen hat. Er meinte ich solle 
+doch noch ein Paar kleine Programme schreiben bevor wir mit dieser App anfangen. Dies habe ich leider nicht gemacht auch wenn ich denke wes hätte keinen grossen unterschied gemacht,
+weil ich dies eher vor der Wahl des Projektes hätte machen müssen. \\
+
+Ich habe sehr viel gelernt und auch über meine Maturarbeit mit Freunden und Familie gesprochen, wodurch ich wiederum neue Möglichkeiten bekommen habe. Das nächste Projekt wir vielleicht eine 
+Website mit einem Freund von Mir.
+
+
 \paragraph{Noah}
 Ich habe persönlich das Gefühl, einen guten Einblick in die native Android Programmierung mit Java bekommen zu haben. Mir erschien es nicht so spannened oder interessant wie ich erhofft hatte, sondern gewisse Befürchtungen über den Stand der Software und Entwicklungsumbebung auf Smartphones bestätigten sich.\\
 
