@@ -172,7 +172,9 @@ sorting=ynt
 	
 	{\huge\bfseries Eine Email-Client-App entwickeln \par}
 	\vspace{0.5cm}
-	{\Large Noah Vogt \& Simon Hammer\par}
+	{\Large Noah Vogt \& Simon Hammer Klasse 4cg\par}
+    \vspace{0.5cm}
+    {\Large Victor Yakhontov \& Daniel Bühler \par }
 	\vspace{17cm}
 
 	{\large Geschrieben im Jahr 2021\par}
@@ -371,7 +373,22 @@ Dies ist ein Software-Tool für die Interaktion mit Android-Geräten, die per US
 Beim Programmieren kann es sehr hilfreich sein Programme zu haben welche, ähnliche Funktionen haben wie das Programm welches entstehen soll. 
 Solche Vorlagen können beliebig getestet und verändert werden. Simon hatte zu Beginn Schwierigkeiten Java zu nutzen, um Programme zu schreiben, da er noch nicht viel 
 Erfahrung mit dem Programmieren hatte. Um sich mit der Art der Sprache und des Programmierens vertieft auseinander zu setzen, begann er Email-Apps, welche Open Source
-waren, genauer zu Betrachten. Im folgenden Text werden wir diese Programme aufführen und zeigen für was wir sie gebraucht haben. 
+waren, genauer zu Betrachten. Zu beginn haben diese Programme grosse Teile des Programms ausgemacht doch gegen Ende wurde sie so oft überarbeitet, dass es
+kaum noch eins zu eins Ausschnitte aus diesen Programmen gibt. \\
+
+Als Basisprogramm für die Roomdatabase hat Simon ein Open source Programm gebraucht, welches als Tutorial diente. \cite{roomApp}
+
+Stark davon betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
+und NewDraftMessageActivity.java. Bei diesen
+Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und sie werden von anderen Funktionen aufgerufen. 
+Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle fünf Zeilen beginnend mit der 
+Variabel mEmailViewModel vom Typ EmailViewModel. Diese fünf Zeilen sind jeweils auch aus dem Basisprogramm. 
+Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult von Zeile 183-215, welche auch aus dem Basisprogramm stammen. 
+Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 120-140. Diese Stammen ursprünglich auch aus dem Basisprogramm, wurden aber natürlich bearbeitet. \\
+
+
+
+
 
 % \subsubsection{Librarys}
 % (bedeutung im glossar erklärt)
@@ -445,7 +462,6 @@ Vorlesungen besuchen konnten. Ein Klassenkamerad von Simon konnte von diesem Pro
 Dort lernte er in einem unglaublichen Tempo Java, weshalb Simon seinen Klassenkameraden fragte ob er seine Unterlagen ausleihen konnte. 
 Sein Klassenkamerad war so freundlich und übermittelte ihm die Unterlagen. So konnte Simon auf effektive weise Java lernen. \\
 
-\textbf{ Noah wie hesch du Java glernt?}
 Persönlich hatte Noah schon Erfahrung mit verschieden Programmiersprachn. Am ähnlichsten zu Java waren dabei meiner Einschätzung nach C und C++, welche eine teilweise ähnliche Sytax gegenüber Java aufweisen. Wirklich etwas mit Java gemacht hat er bei der Pluginprogrammierung für Minecraft und im EF (Ergänzungsfach Informatik) am GKG (Gymnasium Kirschgarten).\\
 
 Als nächstes ging es darum wie eine App aufgebaut ist und wie zwei Personen Zweitgleich an einem 
@@ -462,6 +478,8 @@ Gradle ist. Nach einiger Zeit haben es beide geschafft ein apk file zu besitzen,
 Anschliessend erstellte Noah ein GitHub repository in welchem die beiden das Programm teilen werden. \\
 
 % \textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
+
+\newpage
 
 \subsection{Interface}
 
@@ -508,7 +526,7 @@ für eine versetzen unterteilung der View kann sorgen. Dies ist aber für eine E
 \begin{figure}[H]
     \centering
     \includegraphics[width=.4\textwidth]{media/RecyclerviewLayoutManagerCropt.jpeg}
-    \caption{Layout Manager Recyclerview}
+    \caption{Layout Manager Recyclerview \cite{LayoutManagerPicture}}
 \end{figure}
 
     \item Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View in einem Recyclerviewer
@@ -601,11 +619,12 @@ Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher A
 folder Attributen, in den richtigen Ordnern angezeigt werden. Jeder Ordner hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
 Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen.  \\
 
-\textbf{ Quelle Room https://dzone.com/articles/room-persistence-library}
 
 Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
 die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
 recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
+
+\newpage
 
 
 \begingroup
@@ -615,14 +634,14 @@ recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit 
 \begin{wrapfigure}{r}{8cm}
     \centering
     \includegraphics[width=.4\textwidth]{media/RoomStructure.png}
-    \caption{Room Struktur}
+    \caption{Room Struktur \cite{appStructurePicture}}
 \end{wrapfigure}
 
 
 Room ist eine Art Schicht über der SQLiteDatabase. 
 Room besteht grundsätzlich aus drei Teilen. Die Database dient als Hauptzugriffspunkt für die gespeicherten Daten der App. Sie ist mit @Database markiert. 
 Eine \textit{Entity} repräsentiert einen \textit{table} in der Database und die \textit{DAO} Klasse beinhaltet die Methoden um auf die Database zu zu greifen. Sie kommuniziert
-mit SQLite um de Zugriff auf die Daten zu ermöglichen 
+mit SQLite um de Zugriff auf die Daten zu ermöglichen \cite{roomStructure}
 
 
 \subsubsection{MessageDao}
@@ -642,8 +661,8 @@ dennoch werden wir darauf eingehen.\\
 \textit{Querys} sind anfragen an die Database nach Informationen. Sie können auf verschiedene \textit{tables} zugreifen und Informationen abgleichen und auswählen. 
 In einer DAO von Room werden die SQL-statements mit @Query markiert. SELECT heisst, dass etwas ausgewählt werden soll und mir * ist gemeint alles. Mit FROM wird nochmals angegeben von 
 welchem table, in diesem Fall vom message\_table. Die Entity die wir weiter oben schon erklärt haben. Mit WHERE können Spalten der Entity ausgewählt werden. Hier wird die \textit{folder} Spalte 
-gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die ausgabe anhand der Spalte 'date'
-nach dem ASC-code sortiert.
+gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die Ausgabe anhand der Spalte 'date'
+nach dem ASC-code sortiert. \cite{appStructure}
 
 \subsection{Repository/ViewModel}
 
@@ -654,7 +673,8 @@ nach dem ASC-code sortiert.
 \begin{wrapfigure}{r}{5.5cm}
     \centering
     \includegraphics[width=.4\textwidth]{media/ViewModelRepository.png}
-    \caption{EmailViewModel and Repository}
+    \caption{EmailViewModel and Repository
+    \cite{appStructurePicture}}
 \end{wrapfigure}
 
 Mit der Database wurden auch ein Repository und ein Viewmodel mit Viewholder erstellt. 
@@ -736,12 +756,14 @@ Im \textit{Cunstroctor} von dem EmailViewModel wird der Variable mInboxMessage d
 \subsection{Draft Messages}
 
 \begingroup
-\setlength{\intextsep}{3pt}
+\setlength{\intextsep}{1pt}
 \setlength{\columnsep}{4pt}
 
 
-\begin{wrapfigure}{r}{6cm}
-    \includegraphics[width=.4\textwidth]{media/AppStructure.png}
+\begin{wrapfigure}{r}{9cm}
+    \centering
+    \includegraphics[width=.55\textwidth, height=.55\textwidth]{media/AppStructure.png}
+    \caption{App Structure \cite{appStructurePicture}}
 \end{wrapfigure}
 
 Der ganze Aufbau der in den Kapitel von vorhin erklärt wurde, hatte nur zwei Ziele. Einmal das einlesen von Emails von einem Server und das Einlesen von Emails
@@ -843,17 +865,17 @@ Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. 
 
 %=======================================
 
-%\pagebreak
+\pagebreak
 
-%\section{Stichwortverzeichnis}
+\section{Stichwortverzeichnis}
 
 %index Verzeichnis
 % Index soll Stichwortverzeichnis heissen
-%\renewcommand{\indexname}{Stichwortverzeichnis}
+\renewcommand{\indexname}{Stichwortverzeichnis}
 
 % Stichwortverzeichnis endgueltig anzeigen
 
-%\printindex % run: makeindex
+\printindex % run: makeindex
             % Aufgaben_zum_LaTeX_Kurs.idx; und nochmals latex
 
 

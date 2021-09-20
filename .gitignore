@@ -11,3 +11,9 @@ Include/
 *.idx
 *.ilg
 *.ind
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.bbl
+*.run.xml
