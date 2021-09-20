@@ -237,10 +237,32 @@ die dann in Sprache, welche die Computerhardware interpretieren und ausführen k
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\textwidth]{media/Source2Executable.jpg}
-    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}} 
+    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}}
 \end{figure}
 
-Bei diesem Prozess geht die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
+Hier als Beispiel der Source Code zu einem simplen Programm \textit{helloworld.c} geschrieben in der Programmiersprache C, welches in der Konsole ein simples \say{Hello World} ausgibt:
+
+\lstset{language=C}
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
+\begin{lstlisting}
+0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
+1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100001
+1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100110
+0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110110
+1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111001
+0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011010
+\end{lstlisting}
+
+Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
 
 % maybe too much of a rant about intellectual property (IP) ???
 Durch die zunehmende Kommerzialisierung und Massentauglichkeit der Computer haben sich aber monetäre und andere Anreize gebildet, den Source Code dem Nutzer nicht mehr zur Verfügung zu stellen. Das hat für den Nutzer verschiedene praktische Folgen. Aber vor allem ist er nicht mehr in Kontrolle seines Computers, Betriebssystems und Programms, sondern der Besitzer oder Copyrightholder des Programms. Das ein Programm einen Besitzer haben kann, ist ziemlich absurd und nur durch die Veränderungen der westlichen Kopierschutz-Gesetze und der daraus entstandene kulturelle Umgang mit \say{intellektuellem Eigentum} in den letzten 150 Jahre möglich.\\
@@ -433,8 +455,6 @@ Wenn man Nutzereinstellungen- und Daten speichert in Android, kann der Entwickle
 % Um solch eine Art der Ausnutzung zu verhindern, müsste man ALLE sensiblen Benutzerdaten mit einem Verschlüsselungscode verschlüsseln. Aber wenn ein Keylogger installiert ist, ist selbst dies nicht sicher. In Anbetracht der Tatsache, dass es \textit{kein einziges} Android-Telefon gibt, das frei von proprietärem Betriebssystem- und Firmware-Code ist (wenn es sich über WiFi mit dem Internet verbindet), wurde diese Funktionsidee als fehl am Platz und zur Vereinfachung der Codebasis verworfen.
 % LAST PARAGRAPH COMMENTED OUT BECAUSE TOO MUCH SCHIZO
 
-% TODO: write about sandbox (and its 'lies') ????
-
 \subsection{Code Kompaktheit}
 % ENG: This is something that we have absolutely achieved, we used so much less SLOC than any of the competing email clients on android.(compare use of libraries, and if we used more or less than the other apps) This is also very crucial to stand with our initial goal and the suckless philosophy. While we used \~ 4000 SLOC, other apps use a whopping 300'000 SLOC.
 Das ist etwas, was im Laufe diese Projekts ziemlich gut eingehalten wurde: Es wurden viel weniger SLOC geschrieben als bei den konkurrierenden Email Clients auf Android. Das ist ein sehr wichtiger Massstab um das initiale Ziel der \textit{Suckless Philosophy} so gut wie möglich zu erreichen. Während dieses Projekt nur \~ 4000 SLOC Zeilen Code aufzuweisen hat, sind es bei anderen Apps gar über 300'000 SLOC.
@@ -444,7 +464,7 @@ Die Codebasis dieses Projektes sollte sehr einfach zu maintainen sein: Die wicht
 
 % ENG: Even if this project gets abandoned by their original developers - or as some people call that: when it get orphaned - and if someone finds it and likes it, he can easily read through it and understand the code without too much effort needed of understanding the codebase. Would the same be the case for bloated programs like thunderbird? I don't think so either.
 % TODO: get source to term 'orphaned packages'
-Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern - oder wie manche sagen: \say{the project/package gets orphaned} - und wenn jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
+Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern und jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
 
 \subsubsection{less bug/error-prone}
 % ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of 
@@ -569,9 +589,13 @@ so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment 
 aus der Mainactivity. 
 
 \subsection{Popup Window Noah }
+\begin{wrapfigure}{r}{5cm}
+\centering
+\includegraphics[width=.18\textwidth]{media/inputValidation.png}
+\caption{Input Validation}
+\end{wrapfigure}
 Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
 
-% TODO: add pic
 Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
 
 \subsection{Database}
@@ -794,8 +818,6 @@ Probleme waren die unnötig vielen Layouts, welche entstanden bei unserer App. V
 Mit gewissen Biobliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
 
 \subsubsection{Kommunikation}
-% TODO: write something here
-
 Simon:
 
 Ich finde wir haben etwas wenig kommuniziert aber dafür lief es sehr gut. Ich war sogar eher froh das wir nicht ganz so viel 
