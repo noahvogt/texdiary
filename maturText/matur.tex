@@ -36,10 +36,12 @@ breaklinks=true,anchorcolor=green
 }
 
 % für Stichwortverzeichnis
-\usepackage{imakeidx}
+%\usepackage{imakeidx}
 
 % Indexerstellung
-\makeindex
+%\makeindex
+
+\usepackage{glossaries}
 
 % für Listings für Java
 \usepackage{listings}
@@ -160,6 +162,16 @@ style=alphabetic,
 sorting=ynt
 ]{biblatex}
 \addbibresource{lit/refs.bib}
+
+\makeglossaries
+\newglossaryentry{fsf}{
+    name=Free Software Foundation,
+    description={This is the Foundation created by Richards Stallman, the Starter of the free software movement. It is dedicated to the preservation, creation, and to fight for free software all around the globe.}
+}
+\newglossaryentry{Freie Software}{
+    name=Free Software,
+    description={Freie Software ist nach der Definition der \gls{fsf} ...}
+}
 
 %==================begin document==========================
 
@@ -883,34 +895,23 @@ Das Dependency Managment ist im Vergleich zu UNIX-ähnlichen Betriebssystemen sc
 Ich persönlich habe mich über diese in meinen Augen schlechten Umständen aufgeregt, und das hat mir auch ein gutes Stück an Motivation genommen. So ausgeprägt hatte ich das kaum bei einem meiner Softwareprojekte, und davon habe ich schon einige. Doch ich bin froh, diese Erfahrung gemacht zu haben, als beispielsweise eine ganze Ausbildung in dieses Richtung anzufangen.
 
 \section{Danksagung}
-Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.
+Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.\gls{fsf}\gls{Freie Software}
 
 %=======================================
 
-\pagebreak
-
-\section{Stichwortverzeichnis}
+\clearpage
 
 %index Verzeichnis
 % Index soll Stichwortverzeichnis heissen
-\renewcommand{\indexname}{Stichwortverzeichnis}
+%\renewcommand{\indexname}{Stichwortverzeichnis}
 
 % Stichwortverzeichnis endgueltig anzeigen
 
-\printindex % run: makeindex
+%\index{\textbf{COOLDx}} asdsadad
+%\printindex % run: makeindex
             % Aufgaben_zum_LaTeX_Kurs.idx; und nochmals latex
 
-
-
-
-
-
-
-
-
-
-
-
+\printglossary
 \newpage
 \printbibliography
 \end{document}
