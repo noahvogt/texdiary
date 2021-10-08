@@ -1,0 +1,935 @@
+% standard
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\titleformat{\paragraph} {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%for linkt page numbers in table f content
+\usepackage[linktocpage=true]{hyperref}
+
+\hypersetup{%
+unicode,pdffitwindow,
+pdfkeywords = {pdf, LaTeX, hyperref, thumbnails}, 
+pdfauthor = {Brüder Grimm},
+bookmarksopen = true,
+bookmarksnumbered = true,
+pdfcenterwindow=true,
+pdffitwindow = true,
+pdfstartview=FitBV,
+pdfcreator = {pdflatex},
+colorlinks=true, breaklinks=true, %
+urlcolor=magenta, % color for \url
+filecolor=cyan, % color for file
+linkcolor=black, % color for \ref
+citecolor=magenta, %color for \cite
+menucolor=darkblue,
+breaklinks=true,anchorcolor=green
+}
+
+% für Stichwortverzeichnis
+%\usepackage{imakeidx}
+
+% Indexerstellung
+%\makeindex
+
+\usepackage{glossaries}
+
+% für Listings für Java
+\usepackage{listings}
+\lstset{numbers=left, %
+  numberstyle=\tiny, %
+  numbersep=5pt, %
+  keywordstyle=\color{black}\bfseries, %
+  stringstyle=\ttfamily, %
+  showstringspaces=false, %
+  basicstyle=\footnotesize, %
+  captionpos=b}
+\lstset{language=java}
+
+% geometry
+\usepackage{geometry}
+\geometry{ headsep=20pt,
+headheight=20pt,
+left=21mm,
+top=15mm,
+right=21mm,
+bottom=15mm,
+footskip=20pt,
+includeheadfoot}
+
+% for using wrapfigures
+\usepackage{wrapfig}
+
+% header and footer
+\usepackage{datetime}
+\newdateformat{dmy}{%
+\THEDAY.~\monthname[\THEMONTH] \THEYEAR}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Noah Vogt \& Simon Hammer}
+\chead{}
+%\rhead{\dmy\today}
+\lfoot{}
+\cfoot{Gymnasium Kirschgarten}
+\rfoot{Seite \thepage}
+\renewcommand{\footrulewidth}{.4pt}
+
+% fix figure positioning
+\usepackage{float}
+
+% larger inner table margin
+\renewcommand{\arraystretch}{1.4}
+
+% no paragraph indent
+\setlength{\parindent}{0em}
+
+% graphics package
+\usepackage{graphicx}
+
+\usepackage{multicol}
+
+\usepackage{multirow}
+
+% use sans serif font
+\usepackage{tgheros}
+\usepackage{mathptmx}
+
+% don't even ask what this is for, I have no idea (noah)
+\usepackage{bm} %italic \bm{\mathit{•}}
+\usepackage[hang]{footmisc}
+\usepackage{siunitx}
+\usepackage[font={small,it}]{caption}
+\sisetup{locale = DE, per-mode = fraction, separate-uncertainty,   exponent-to-prefix, prefixes-as-symbols = false, scientific-notation=false
+}
+\newcommand{\ns}[4]{(\num[scientific-notation=false]{#1}\pm\num[scientific-notation=false]{#2})\cdot\num[]{e#3}\si{#4}}
+
+% show isbn in bibliography
+% \usepackage{natbib}
+
+% for quotes
+\newenvironment{nicequote}[2]{
+    \begin{center}\begin{quote}\textit{#1}\\\par\raggedleft--- {#2}
+    }{
+    \end{quote}\end{center}
+}
+
+\makeindex
+
+% using \say{} for easier quoting
+\usepackage{dirtytalk}
+
+% for code snippits
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% define java code snippit style
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%\usepackage{biblatex} %Imports biblatex package
+
+%\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{lit/refs.bib}
+
+\makeglossaries
+\newglossaryentry{fsf}{
+    name=Free Software Foundation,
+    description={This is the Foundation created by Richards Stallman, the Starter of the free software movement. It is dedicated to the preservation, creation, and to fight for free software all around the globe.}
+}
+\newglossaryentry{Freie Software}{
+    name=Free Software,
+    description={Freie Software ist nach der Definition der \gls{fsf} ...}
+}
+
+\usepackage{comment}
+
+%==================begin document==========================
+
+\begin{document}
+
+\begin{titlepage}
+% TODO: weniger asketisch, «sexier»
+
+\vspace*{1cm}
+	\centering
+	
+	{\huge\bfseries Eine Email-Client-App entwickeln \par}
+	\vspace{0.5cm}
+	{\Large Noah Vogt \& Simon Hammer Klasse 4cg\par}
+    \vspace{0.5cm}
+    {\Large Victor Yakhontov \& Daniel Bühler \par }
+	\vspace{17cm}
+
+	{\large Geschrieben im Jahr 2021\par}
+	
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+
+\section{Vorwort}
+% TODO: weniger persönlich + stil
+Ich (Simon) habe mich lange Zeit darüber aufgeregt, dass es keine Edubs-Mail-App gibt. Denn ich musste die Browserversion als Link auf meinem Smartphone Bildschirm 
+einfügen und habe mich sehr darüber genervt, dass ich mich jedes mal beim öffnen der Browserversion neu anmelden musste. Als dann die Zeit kam mich für eine 
+Maturarbeit zu entscheiden, wollte ich zuerst einen Edubs-Client erstellen, welcher für Schüler gut geeignet ist. 
+Jedoch kannte ich bis zu diesem Zeitpunkt nur Python und wollte mich mit meiner Idee mit Noah unterhalten, 
+da ich wusste, dass er wahrscheinlich auch etwas programmieren will als Maturarbeit, weil er sich schon seit längerem gerne mit Computern und Programmiersprachen befasste. Er war der Meinung, die App soll sich nicht nur auf Edubs Mailaddressen beschränken, sondern Emailadressen von jeglichen Providern unterstützen - schliesslich will man ja nicht für jede Mailaccount nicht eine neue App herunterladen müssen.
+Da ich mich noch nicht gut mit dem Programmieren auskannte, fragte ich ihn, ob er diese Maturarbeit denn mit mir machen würde.
+Zu meiner Überraschung war er von der Idee überzeugt und wir einigten uns darauf, einen Email-Client zu erstellen, welcher zwar nicht für Schüler optimiert wurde, aber für 
+den allgemeinen Gebrauch verbessert wurde. 
+
+\section{Einleitung}
+Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute in den meisten Ländern. Nach dem Prinzip des technologischen Fortschrittes könnte angenommen werden, dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für unseren persönlichen Gebrauch.
+
+\subsection{Arbeitsziele}
+
+Wir wissen, was ein Email Client funktionsmässig so können muss, und haben nicht vor eine Apps zu designen, welche vollkommen überladen ist mit Funktionen, die keiner braucht.\\
+
+Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das Lesen und Schreiben von Emails, das Öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es verschiedene Ordner unterstützen, wie z.B. ein Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails visuell sortieren zu können, beispielsweise indem die Ordner im Client nach Datum des Empfangs oder dem Absender sortiert werden können. E-Mails sollen mit markiert, gelöscht und weitergeleitet werden können. Es soll eine Suchfunktion für jeden Mailordner geben. \\
+
+Ebenso soll es einen Account Manager geben, was voraus setzt, dass es möglich ist sich mit verschiedenen 
+Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail soll es dem Nutzer leicht gemacht werden mit eingebauten Konfigurationen für beliebte 
+Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
+
+Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei sollen neue Nachrichten mit dem Absender und dem Beginn der E-Mail angezeigt werden. 
+% Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. TODO: delete this???
+Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Dieses Verhalten soll in den App-Einstellungen steuerbar gemacht werden. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. Ob diese Funktion sinnvoll ist, ist fraglich, da auf viele Leute keine Emailaddressen auf der Kontaktapp ihres Handys speichern.\\
+
+Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
+
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
+
+Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
+
+\subsection{Arbeitskonzept}
+
+
+
+
+\subsubsection{Vergleich mit der Konkurrenz}
+% TODO: soll dieser paragraph gelöscht werden / complete rewrite ????
+Disclamier/Note: Da bei dieser App ein Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen, denn es soll hier absolut nicht das Ziel sein eine App zu programmieren, welches versucht die Freiheiten der Nutzer einzuschränken. Dies aus praktischen, technologischen und sog. ethischen Gründen, doch darauf wird noch näher eingegangen.\\
+
+Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, dass diese unglaublich überladen (engl. bloated) - an Funktionen oder Sourcecode-Zielen - sind. Selbst wenn man im Internet nach einem möglichst simplen Email Client für Android gesucht, stösst man dabei meist auf Apps wie k-9 Mail, welche immerhin noch über stattliche hunderttausende Zeilen Source Code besitzt.\\
+
+Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein.
+
+\subsubsection{Quellcode Modell}
+% TODO: too long, short a little (insg. ?)
+Um ein Programm zu programmieren, werden menschenlesbare Instruktionen in ein oder mehrere Textdateien geschrieben,
+die dann in Sprache, welche die Computerhardware interpretieren und ausführen zu kann, übersetzt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{media/Source2Executable.jpg}
+    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}}
+\end{figure}
+
+Hier als Beispiel der Source Code zu einem simplen Programm \textit{helloworld.c} geschrieben in der Programmiersprache C, welches in der Konsole ein simples \say{Hello World} ausgibt:
+
+\lstset{language=C}
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
+\begin{lstlisting}
+0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
+1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100001
+1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100110
+0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110110
+1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111001
+0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011010
+\end{lstlisting}
+
+Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
+
+% maybe too much of a rant about intellectual property (IP) ???
+
+Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich ziemlich gut in zwei Kategorien unterteilen:\\
+
+% TODO: license comparison apparently too irrelevant ?
+
+\paragraph{Permissive Licenses}
+% ENG: These give you the right to run the program for ANY purpose, study the source code, change it and redistribute the changes. Their names come from the fact, that they are ``permissive'' when it comes to their few restrictions: They do not put of a lot of restrictions on the distribution of the source code, and often allow the software to be forked under ANY terms. This means it is possible to make your fork of a permissive-licensed program proprietary.\\
+Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen.\\
+
+% ENG: This means they do not protect their code from being taken and used in other projects, even proprietary, without any giving back, which is a definite drawback and the reason people insult these licenses as ``cuck licenses'' as you ``write proprietary code for free for big tech without increasing anyone's computer usage freedom''. A positive point of these licenses however is their simplicity: The MIT license for example only consists of 20 SLOC, while a Copyleft license as the GPL v3 uses more than 600 SLOC and its jurisdictional jargon is much harder to understand.\\
+Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurückzugeben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute - meist auf Imageboards \cite{8chan.moe} - diese Lizenzen als ``Cuck Licenses'' beschimpfen, hier ein populäres Argument aus einem Blogpost:
+\begin{nicequote}{When you release any code under a Cuck License, you are simply writing free commercial code for corporations that will inevitably use it against you. You might as well just actually get a job with them so you can get paid for what you do instead of just getting cucked.}{Luke Smiths Blogpost \cite{cuckblog}}
+\end{nicequote}
+
+Ein positiver Punkt von diesen Lizenzen ist aber ihre Einfachheit: Die MIT-Lizenz zum Beispiel besteht aus nur 20 SLOC, während eine Copyleft Lizenz wie die GPL v3 aus mehr als 600 SLOC und gewissem Juristenjargon besteht und daher viel schwerer zu verstehen ist.\\
+
+\paragraph{Copyleft Licenses}
+% ENG: This is an obvious play on the word ``Copyright'', as it tries to invert its effects. As with permissive licenses you can run the program for ANY purpose, study, change the source code and redistribute the changes. But the trick comes with their restrictive redistribution terms: You can ONLY redistribute the program if your version provides the same user freedoms. This is usually done in only allowing redistributing using the same license.\\
+Wie bei permissiven Lizenzen können Sie das Programm für JEDEN Zweck ausführen, den Quellcode lesen, ändern und die Änderungen zu veröffentlichen. Der Trick liegt jedoch in den restriktiven Redistributionsbedingungen: Sie dürfen das Programm NUR verbreiten, wenn Ihre Version die gleichen Freiheiten bietet. Dies geschieht in der Regel dadurch, dass die Weitergabe nur unter der gleichen Lizenz erlaubt ist.\\
+
+Der Name ``copyleft'' ist eine offensichtliche Anspielung auf das Wort ``Copyright'', da es versucht, dessen Konzept genau umzukehren: Anstatt die nahezu weltweit vorhandenen Kopierrechtsgesetze dazu zu verwenden, Nutzerfreiheiten einzuschränken, werden Copyleft-Lizenzen dazu eingesetzt diese zu bewahren und erweitern. \cite{kumar2011}\\
+
+% ENG: To provide such protection of the user freedoms in future forks, there needs to be a lot of jurisdictional jargon in the license which makes it significantly longer and harder to understand for the average reader. But most of the people in Free Software who care about user freedom say this is the premiere license for your free software projects, as it ensures that freedoms have to be granted forever and stopping proprietary code maker profiting from their written free code.\\
+Wie bereits erwähnt, müssen solche Lizenzen eine Menge juristischen Jargon enthalten, um die vorhandene Gesetzeslage des Kopierrechts auszunutzen. Dies macht die Lizenz um einiges komplexer in Länge und an Verständlichkeit. Viele Unterstützer des Free Software Movements ziehen es aber trotzdem vor Copyleft Lizenzen zu verwenden, sofern möglich, da sie sicherstellen, dass die Freiheiten für immer gewährt werden müssen und die Hersteller von proprietärem Code daran hindert, von ihrem geschriebenen freien Code zu profitieren.\\
+
+
+\subsubsection{Philosophie (suckless)}
+
+\begin{nicequote}{Many (open source) hackers are proud if they achieve large amounts of code, because they believe the more lines of code they've written, the more progress they have made. The more progress they have made, the more skilled they are. This is simply a delusion.}{https://suckless.org Manifest \cite{suckless}}
+\end{nicequote}
+
+% ENG: (Nowadays) a lot of Open Source Developers pride themselves in writing software with much features that cater to the non-technical enduser. This results in having a large codebase, which gets bigger and bigger with every release. This makes it harder to maintaining the ever growing codebase, more and more bugs occurs, security and (most importantly) performance struggles under these conditions. This degrades the quality of software technology as it is the mainstream narrative to ``save time and money''.\\
+
+Eine grosse Anzahl Open-Source-Entwickler stolz darauf, Software mit scheinbar möglichst vielen Features zu schreiben. Dies führt zu einer großen Codebasis, die mit jedem Release größer und größer wird. Dadurch wird es schwieriger, die ständig wachsende Codebasis zu unterhalten, es treten immer mehr Fehler auf, die Sicherheit und - vor allem - die Leistung leidet unter diesen Bedingungen. Dies führt zu einer Verschlechterung der Code-Qualität der Software, da es die gängige Praxis ist, ``Zeit und Geld zu sparen''. \cite{bhattacharya2020}\\
+
+
+% ENG: This is where the \textit{suckless philosophy} comes in place: It aims at making software with simplicity in mind: Less source lines of code to not render the project unmaintainable in similar way as mentioned above. This way of programming is a lot more difficult, but the struggle is most of the time worth it. This coding philosophy also incentives (quality) code rewrites - which happens a lot less with bloated software counterparts - that gives the user more alternatives to choose from.
+
+Hier kommt die Philosophie des \textit{Suckless Philosphy} ins Spiel: Sie zielt darauf ab, Software mit Hinblick auf Einfachheit zu entwickeln: Weniger Quellcodezeilen, um das Projekt nicht in ähnlicher Weise unmaintainable zu machen, wie oben erwähnt. Diese Art zu programmieren ist viel schwieriger, aber der Aufwand ist es meistens wert. Diese Programmierphilosophie bietet auch Anreize für das qualitativ hochwertige Neuschreiben von Programmen - was bei der sogenannten \textit{Bloated Software \cite{bhattacharya2020}} viel seltener vorkommt - und gibt dem Benutzer mehr Alternativen zur Auswahl.
+
+\paragraph{Hintergründe, Technologisch, UNIX, KISS}
+Die \textit{Suckless Philosophie} ist aber längst nicht die erste Philosophie im Softwarebereich welche auf Simplizität beruht; so beispielsweise eine beliebte Definition der altbekannten \textit{UNIX Philosphy}:
+
+\begin{nicequote}{This is the Unix philosophy. Write programs that do one thing and do it well. Write programs to work together. Write programs that handle text streams, because that is a universal interface.}{A Quarter Century Of UNIX \cite{salus1994}}
+\end{nicequote}
+
+Bekannt ist auch das \textit{KISS Prinzip}: \say{Keep it simple, stupid}. Dieses Prinzip kommt ursprünglich vom U.S. Admiral Stroop, der das \say{Project KISS} 1960 ins Leben gerufen hatte, welches die Verlässlichkeit verbessern und die Kosten für amerikanische Militärausrüstungen senken soll. \cite{dalzell2009} Gerne wird diese Prinzip zitiert, wenn jemand der Meining ist, unnötige Komplexität sei vorhanden in einem Softwareprojekt.
+
+\subsubsection{Lizensierung}
+% ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
+
+Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren Lizenzierung wurden bereits besprochen. Für dieses Softwareprojekt wurde sich entschieden die \textit{GNU General Public License (GPL) Version 3} \cite{GPLv3} der Free Software Foundation zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
+
+\begin{comment}
+\section{Programmier-Tools}
+
+\subsection{Hardware}
+
+\subsubsection{Smartphones}
+% ENG: We used different Models of Smartphones running different variants of the android operating system to install and test our app. It was also used to compare it and benchmark it against our competition (the already existing mail clients on android).
+
+Es wurden verschiedene Smartphone Modelle genutzt um die App auf verschiedenen Androidversionen testen zu können. Sie wurden auch genutzt um unsere App mit der Konkurrenz zu vergleichen und die 
+Konkurrenz zu begutachten. 
+
+\subsubsection{PC / Laptop}
+% ENG: The usage of computers was to the actual work of creating the software, documentation and the text of this paper (?).
+
+Der Gebrauch von Computern wurden gemacht um die Software, die Dokumentation und dieses Maturschreiben zu erstellen. 
+\subsection{Software}
+
+Aufgrund dessen, dass ein umfassendes Programm entstehen soll, wird auch Gebrauch von einigen anderen Programmen, Bibliotheken und sonstigen Tools gemacht. In den nachfolgenden Seiten wird beschrieben welche Programme genutzt werden, wieso diese ausgewählt wurden und wie der Umgang mit ihnen war.  
+
+
+\subsubsection{Programme}
+
+\paragraph{Version Control System}
+
+% ENG: For developing software above a certain level of complexity, it helps to use a so called VCS (Version Control System). This is a software/system that manages the versioning of software. This is useful so you don't have to for example create MANUALLY a new folder for every new version and copy the code with the new changes in there. This would be not very user friendly, wasteful of disk space and overall very inefficient. These systems also make it easy to synchronise projects to a remote server to allow for easy collaboration on multiple devices and for different developers.\\
+Für die Entwicklung von Software ab einer gewissen Komplexität ist es hilfreich, ein so genanntes VCS (Version Control System) zu verwenden. Dabei handelt es sich um eine Software/System, das die Versionierung von Software verwaltet. Das ist nützlich, damit man nicht für jede neue Version manuell einen neuen Ordner anlegen und den Code mit den neuen Änderungen dorthin kopieren muss. Das wäre nicht sehr benutzerfreundlich, würde Speicherplatz verschwenden und wäre insgesamt sehr ineffizient. Diese Systeme erleichtern meist auch die Synchronisierung von Projekten mit einem Webserver, um eine einfache Zusammenarbeit auf mehreren Geräten und für verschiedene Entwickler zu ermöglichen.\\
+
+
+\subparagraph{Git}
+% ENG: It also allow for additional advanced features like branching a repository, which means developing multiple features separately from each other to then later merge the changes together, when each of the features are working as expected.
+Git ist das für dieses Projekt verwendete VCS. Es ist das meistverbreitete Tool unter Softwareentwicklern und dabei ermöglicht auch zusätzliche fortgeschrittene Funktionen wie das \textit{Branching} eines Repositorys, was bedeutet, dass mehrere Funktionen getrennt voneinander entwickelt werden, um dann später die Änderungen zusammenzuführen, wenn jede der Funktionen wie erwartet funktioniert. So etwas sieht der \textit{Git Flow} generell und auch in diesem Projekt aus:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{media/gitflow.png}
+    \caption{parallele Featureentwicklung mit Git \cite{gitflowBlog}}
+\end{figure}
+
+\subparagraph{Github}
+
+% ENG: This is our remote git server. But is is more than just a git server, it is a popular platform with over 50 million (software) repositories that people search to find interesting software. So we can use this to make our software more searched and popular (but this is not considered of great importance).
+Das ist der hier verwendete Git Server. Aber eigentlich es mehr als nur ein einfacher Git-Server, denn es ist auch eine populäre Plattform mit über 238 Millionen Software Repos (Stand September 2021 \cite{githubRepoQuery}) welche gerne durchsucht werden, um interessante Software zu finden. Das kann also benutzt werden dieses Softwareprojekt berühmter zu machen, was aber nicht von hoher Wichtigkeit erachtet wird.
+
+
+\paragraph{IDE}
+ % eng IDE stands for ``Integrated Development Environment''. This means a program where the coder edits, debugs the code. It provides more features than just editing text, but also advanced autocompletion features and warnings/suggestions that the programmer should do something differently because of various reasons of bad programming practice. These programs have a lot of great features, but are often buggy, resource hungry and slow, like our choice of IDE: Android Studio.
+IDE steht für ``Integrated Development Environment''. In diesem Programm editiert und debuggt der Programmiere seinen Code. Solche Software verfügt dabei um mehr Features als nur Texteditierung, sonden auch nützliche Autocompletion Features und gibt Warnungen oder Vorschläge, was der Programmier besser machen sollte. Solche Programme haben zwar viele nützliche Features, wovon wir nur einen Bruchteil kennen oder brauchen, sind aber oft buggy, resourcenhungrig und langsam. So auch die IDE Wahl dieses Projekts: Android Studio. Diese IDE wurde auch gewählt da sie stark optimiert und extra für die Androidentwicklung gemacht wurde.
+
+% \paragraph{Texteditor}
+% Text editors to have less ``advanced'' coding-related features, so they are not optimal for big projects with lots of files and graphical content.
+
+\paragraph{Android Emulator}
+% ENG: An emulator is a program that simulates an device/operating system so that you can run inside another operation system. We use an Android Emulator inside of our GNU/Linux running on our computer, so that we do can test our app without always having to transfer it to an actual phone running android natively.
+
+Ein Emulator ist ein Programm, welches ein Gerät oder Betriebssystem simuliert, sodass man es innerhalb eines anderen Betriebssystems laufen lassen kann. Für dieses Projekt wurde von Android Emulatoren Gebrauch gemacht, um die App gleich auf dem Computer testen zu können, wo man gerade am programmieren ist. So muss nicht ständig die App auf ein Smartphone transferiert werden, wo Android nativ läuft, nur um die App austesten zu können.
+
+\paragraph{Compiler}
+Um die \say{.apk}-Datei zu kompilieren, benutzen wir ein \textit{Build Automation Tool designed for multi-language programs} namens Gradle. Dieses Programm erleichtert den compile Prozess, da der Kompilationsprozess recht komplex wäre, wenn man ihn manuell machen würde. Man müsste alle Dependencies selber angeben, herunterladen und Up-to-Date halten. Durch die Verwendung solche Build-Automatisierungstools sparen wir zwar an Arbeit, und auch viel kürzer wäre das kompilieren ohne Gradle auch nicht.
+
+\paragraph{Installer / Packaging}
+% ENG: When we compiled our app using gradle, we get an .apk file as its output. APK stands for Android Package, which is the Package Format used for installing most of the software in Android. However, there are to sorts of apk that are compiled: a debug apk and a release apk. The debug version has extra features compiled in that help auditing bugs and new features not ready for using in the app available to users. The release Version has the current version number (?) added to it and is what you need to distribute of your working version to your users.
+Nachdem die App mit \textit{Gradle} kompiliert wurde, erhält man eine .apk-Datei als Output. APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android. Dabei kann man die App aber auf zwei Arten kompilieren: eine \textit{debug APK} oder eine \textit{release APK}. Die Debug Version bekommt extra Features hinein kompiliert welche dem Entwickler helfen Bugs zu finden und zu prüfen. Diese Version wird verwendet um neue Features auszutesten, welche noch nicht bereit sind für die Nutzer. Die Release Version enthält die derzeitige Versionsnummer und ist das was man braucht, um eine funktionierende Version der App den Nutzern zur Verfügung zu stellen.
+
+\subparagraph{signing keys}
+% ENG: Nearly all Android Systems are configured to only allow application that are signed with a key from the developers. This is done for various reasons like security, compatibility checks and other . So before we can install our app on 99\% of Smartphones, we first have to sign it with our cryptographic key we have created. Of course, this is only needed for actual releases and not for using debugging version e.g. in your android emulator.
+Fast alle Android-Systeme sind so konfiguriert, dass sie nur Anwendungen zulassen, die mit einem Schlüssel des Entwicklers signiert sind. Die Argumentation, weshalb das bei Android benötigt wird ist Sicherheit: Durch das Kryptographische signieren von Apps werden potenziell schädliche Modifikationen nach Kompilation der App erschwert. Dieses Verhalten stört die meisten Appentwickler nicht und ist sogar eher erwünscht.\\
+
+Bevor wir also unsere App auf 99\% der Smartphones installieren können, müssen wir sie zunächst mit einem kryptografischen Schlüssel signieren, der von den Entwicklern dieser App erstellt wurde. Dies ist natürlich nur für die tatsächliche Veröffentlichung erforderlich und nicht für die Verwendung der Debugging-Version, z.B. in einem Android-Emulator.
+
+\subparagraph{Android Debugging Bridge}
+% ENG: This is a software tool to interact with android devices that are connected to a computer via usb. With it you can do useful thinks like screenshots, screen recordings, transferring files to and from your computer and installing / removing packages.
+
+Dies ist ein Software-Tool für die Interaktion mit Android-Geräten, die per USB mit dem Computer verbunden sind. Damit kann man nützliche Sachen wie Screenshots, Bildschirmaufnahmen, das Übertragen von Dateien und die (De-) Installation von Apps, resp. Softwarepaketen.
+
+\paragraph{Open Source Programme}
+
+Beim Programmieren kann es sehr hilfreich sein Programme zu haben welche, ähnliche Funktionen haben wie das Programm welches entstehen soll. 
+Solche Vorlagen können beliebig getestet und verändert werden. Simon hatte zu Beginn Schwierigkeiten Java zu nutzen, um Programme zu schreiben, da er noch nicht viel 
+Erfahrung mit dem Programmieren hatte. Um sich mit der Art der Sprache und des Programmierens vertieft auseinander zu setzen, begann er Email-Apps, welche Open Source
+waren, genauer zu Betrachten. Zu beginn haben diese Programme grosse Teile des Programms ausgemacht doch gegen Ende wurde sie so oft überarbeitet, dass es
+kaum noch eins zu eins Ausschnitte aus diesen Programmen gibt. \\
+
+Als Basisprogramm für die Roomdatabase hat Simon ein Open source Programm gebraucht, welches als Tutorial diente. \cite{roomApp}
+
+Stark davon betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
+und NewDraftMessageActivity.java. Bei diesen
+Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und sie werden von anderen Funktionen aufgerufen. 
+Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle fünf Zeilen beginnend mit der 
+Variabel mEmailViewModel vom Typ EmailViewModel. Diese fünf Zeilen sind jeweils auch aus dem Basisprogramm. 
+Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult von Zeile 183-215, welche auch aus dem Basisprogramm stammen. 
+Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 120-140. Diese Stammen ursprünglich auch aus dem Basisprogramm, wurden aber natürlich bearbeitet. \\
+
+
+
+
+
+% \subsubsection{Librarys}
+% (bedeutung im glossar erklärt)
+
+\subsection{Recherche Tools / Quellen}
+\subsubsection{Internet}
+% ENG: In the world wide web we use search engines like DDG (duckduckgo.com), the Arch Linux Wiki, Wikipedia and more programming-related websites like SOV (stackoverlow.com).
+Um das Netz besser durchsuchen zu können, wurden Suchmaschinen wie DDG (duckduckgo.com), das Arch Linux Wiki, Wikipedia und programmierbezogene Internetseiten wie SOV (stackoverflow.com);
+\subsubsection{Bücher, Artikel}
+% ENG: We used different books and articles physically and digitally sometimes for the programming/coding process, but mostly for the text of this paper.
+Es wurde auch Nutzen gemacht von Büchern und Artikeln, in digitaler und physischer Form, ein wenig für den Programmierprozess, aber hauptsächlich für den Maturarbeitstext.
+
+\subsection{Dokumentation(-stools)}
+\subsubsection{Latex}
+% ENG: To write more formatting-demanding papers like in this paper it was made use of the typesetting engine LaTeX. This is a highly extensible and efficient way for getting your paper to look just like you want it.
+Um formatierungsintensivere Texte wie diese Arbeit zu schreiben, wurde das Satzprogramm LaTeX verwendet. Dies ist ein äußerst erweiterbarer und effizienter Weg, um eine Arbeit so aussehen zu lassen, wie man es exakt verlangt. Es wird nicht umsonst extensiv verwendet in naturwissenschaftlichen Artikeln, Büchern und Verlagen.
+\subsubsection{Pandoc}
+% ENG: This is program to convert from one document format to another. This is useful to write a document in format with very simple syntax (e.g. markdown) to convert it to a format that allows much better formatting (e.g. LaTeX) without having to use the more sophisticated syntax of the latter format. This is often used to write documentation or short texts with the minimal amount of time and effort to do so.
+Dies ist ein Programm zur Konvertierung von einem Dokumentformat in ein anderes. Dies ist nützlich, um ein Dokument in einem Format mit sehr einfacher Syntax (z.B. Markdown) zu schreiben und es in ein Format zu konvertieren, welches eine viel bessere Formatierung ermöglicht (z.B. LaTeX), ohne die anspruchsvollere Syntax des komplexeren Formats verwenden zu müssen. Dies wird häufig verwendet, um Dokumentationen oder kurze Texte mit minimalem Zeit- und Arbeitsaufwand zu schreiben. So auch bei dieser Arbeit.
+
+\end{comment}
+
+\section{Arbeitsprozess}
+
+\subsection{Programmiermittel}
+
+\subsection{Programmstruktur}
+
+\subsubsection{Sicherheit / Security (Features)}
+% ENG: Considering that on 99\% of consumer smartphones the users do not even have root access (but which the ``owner'' of the smartphone software do have), people that are concerned with privacy or security would not use their important mailboxes on their smartphone anyway, but rather on their better secured computer running a Free Software Operating System etc.\\
+In Anbetracht der Tatsache, dass auf 99\% der Consumer-Smartphones die Benutzer nicht einmal Root-Zugriff haben (den aber der ``Besitzer'' der Smartphone-Software hat), würden Leute, die auf Privatsphäre oder Sicherheit bedacht sind, ihre wichtigen Mailboxen ohnehin nicht auf ihrem Smartphone benutzen, sondern eher auf ihrem besser gesicherten Computer, auf dem ein reines Freies-Software-Betriebssystem läuft usw.\\
+
+% ENG: Also taking in mind that the email protocol was written in a time with a still very limited access to computers, privacy and security where not in mind of its creators at the time is quite understandable. Why it still lasted to this day in this state is compromised on one side by networking effects and on the other side that simply most people neither know to technical detail nor care.\\
+wenn man bedenkt, dass das E-Mail-Protokoll in einer Zeit geschrieben wurde, in der der Zugang zu Computern noch sehr eingeschränkt war und Datenschutz und Sicherheit nicht im Sinne seiner Schöpfer waren, ist das durchaus verständlich. Warum es sich bis heute in diesem Zustand gehalten hat, liegt zum einen an den \textit{Networking Effects} und zum anderen daran, dass die meisten Menschen die technischen Details einfach nicht kennen und/oder sich nicht darum kümmern.\\
+
+
+% ENG: Nowadays it is possible to encrypt to content (body) of an email, but not the metadata, here the specification of the email protocol is to blame. This and just the fact that is was not BUILT as a secure or private way of messaging, makes emails not useful for these kinds of conversation. If you want to send your friends new plans on overtaking the world and establishing a global catholic monarchy without wanting anyone to know, your are a fool if you use email for that(granted, this is an over exaggerated example, but I hope the idea is clear).\\
+Heutzutage ist es möglich, den Inhalt (Text) einer E-Mail zu verschlüsseln, nicht aber die Metadaten; hier ist die Spezifikation des E-Mail-Protokolls schuld. Dies und die Tatsache, dass es nicht als sichere oder private Art der Nachrichtenübermittlung konzipiert wurde, macht E-Mails für diese Art von Konversation unbrauchbar. Wenn Sie Ihren Freunden neue Pläne für die Übernahme der Welt und die Errichtung einer globalen katholischen Monarchie schicken wollen, ohne dass jemand davon erfährt, sind Sie ein Narr, wenn Sie dafür E-Mails verwenden (zugegeben, das ist ein übertriebenes Beispiel, aber ich hoffe, der Gedanke ist klar).\\
+
+% ENG: So the conclusion for our application project is to not bloat up our app with hard-to-use security functions that just bloat the app and codebase unnecessarily. However we use sane security-focused default now further explained.
+Die Schlussfolgerung für unser Anwendungsprojekt ist also, unsere Anwendung nicht mit schwer zu verwendenden Sicherheitsfunktionen aufzublähen, die die Anwendung und die Codebasis nur unnötig aufblähen. Es sollten jedoch vernünftige, auf Sicherheit ausgerichtete Standardeinstellungen genutzt werden, die u.a. jetzt näher erläutert werden.
+
+%\subsubsection{PRIVATE MODE, Sandbox}
+% ENG: When storing user settings (and data?), you can choose between different permission modes in android. We choose PRIVATE MODE, which means that apps with user permissions  can not see its content. But Google, root users, and apps with root access can easily bypass this restriction of the android permission system.\\
+%Wenn man Nutzereinstellungen- und Daten speichert in Android, kann der Entwickler zwischen verschieden Berechtigungsmodi wählen. In diesem Project wurde der sogenannte \textit{PRIVATE MODE} gewählt. Dieser bewirkt, dass andere Apps mit Nutzerberechtigungen (also a alle von einem Nutzer installierten Apps) den Inhalt dieser Daten nicht sehen können. Aber Google, Root-Nutzer und Apps mit Root-Zugriff können diese Einschränkung des \textit{Android Permission Systems} ohne weitere Probleme umgehen.\\
+
+\subsubsection{Code Kompaktheit}
+% ENG: This is something that we have absolutely achieved, we used so much less SLOC than any of the competing email clients on android.(compare use of libraries, and if we used more or less than the other apps) This is also very crucial to stand with our initial goal and the suckless philosophy. While we used \~ 4000 SLOC, other apps use a whopping 300'000 SLOC.
+Das ist etwas, was im Laufe diese Projekts ziemlich gut eingehalten wurde: Es wurden viel weniger SLOC geschrieben als bei den konkurrierenden Email Clients auf Android. Das ist ein sehr wichtiger Massstab um das initiale Ziel der \textit{Suckless Philosophy} so gut wie möglich zu erreichen. Während dieses Projekt nur \~ 4000 SLOC Zeilen Code aufzuweisen hat, sind es bei anderen Apps gar über 300'000 SLOC.
+\subsubsection{Maintaining}
+% ENG: Our codebase should be very easy to maintain: The main things you would have to do is check if the dependencies are up to date and if they can be considered deprecated.\\
+Die Codebasis dieses Projektes sollte sehr einfach zu maintainen sein: Die wichtigsten Punkte dabei sind, dass der Maintainer schaut, dass die Dependencies auf der neusten Version sind und ob sie als obsolet oder veraltet angesehen werden müssten.\\
+
+% ENG: Even if this project gets abandoned by their original developers - or as some people call that: when it get orphaned - and if someone finds it and likes it, he can easily read through it and understand the code without too much effort needed of understanding the codebase. Would the same be the case for bloated programs like thunderbird? I don't think so either.
+% TODO: get source to term 'orphaned packages'
+Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entwicklern und jemand das Projekt findet und es ihm gefällt kann er dann recht einfach und schnell die Codebase durchlesen und sie ohne allzu grossen Aufwand verstehen. Wäre das auch der Fall bei bloated Software wie thunderbird? Das glaube ich auch nicht.
+
+\subsubsection{less bug/error-prone}
+% ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of 
+Es ist grösstenteils der suckless-basierten Codingphilosophie zu verdanken, aber auch der Umsetzung. Es könnte jedoch der Fall sein, dass schlechte \textit{Coding Practices} verwendet wurden, da die beiden initialen Entwickler dieses Projekts nur eine beschränkte Erfahrung mit der Androidentwicklung mit der Java-Programmiersprache hatten.
+
+
+%\subsection{Informationsbeschaffung}
+% TODO: in den rest des texts integrieren
+
+%Zu beginn der Arbeit konnten Noah und Simon noch kein Java. Noah kannte sich gut aus mit Programmiersprachen und konnte es deshalb mit Java ruhig angehen.
+%Simon hingegen wusste, dass er noch viel zu lernen hatte. Er erhoffte sich die Grundlagen im Informatik Unterricht zu lernen. 
+%Simon lernte auch einige dinge, jedoch ging ihm das zu langsam und er schaute sich nach anderen Lernmöglichkeiten um. 
+%Zu diesem Zeitpunkt konnten einige Schüler an einem Programm mitmachen, bei welchem sie in die Uni gingen und gewisse 
+%Vorlesungen besuchen konnten. Ein Klassenkamerad von Simon konnte von diesem Programm profitieren und besuchte Informatik. 
+%Dort lernte er in einem unglaublichen Tempo Java, weshalb Simon seinen Klassenkameraden fragte ob er seine Unterlagen ausleihen konnte. 
+%Sein Klassenkamerad war so freundlich und übermittelte ihm die Unterlagen. So konnte Simon auf effektive weise Java lernen. \\
+%
+%Persönlich hatte Noah schon Erfahrung mit verschieden Programmiersprachen. Am ähnlichsten zu Java waren dabei meiner Einschätzung nach C und C++, welche eine teilweise ähnliche Sytax gegenüber Java aufweisen. Wirklich etwas mit Java gemacht hat er bei der Pluginprogrammierung für Minecraft und im EF (Ergänzungsfach Informatik) am GKG (Gymnasium Kirschgarten).\\
+%
+%Als nächstes ging es darum wie eine App aufgebaut ist und wie zwei Personen Zweitgleich an einem 
+%Programm arbeiten konnten. Dafür musste sich Simon über Git/Github informieren. Noah hatte ihm ein Video empfohlen, welches 
+%Simon studieren soll und er soll kleine Übungen mit Git ausprobieren um ein Gefühl dafür zu bekommen. Die beiden Informierten 
+%sich über verschiedene Plattformen wie eine App funktioniert und wie sie aufgebaut ist. \\ 
+%
+%Es ging langsam voran und die beiden begannen mit technischen Einstellungen. Als erstes 
+%wurde Android Studio  und eine ADB installiert. Noah hat sogar eine Anleitung zur Installation von ADB geschrieben. 
+%Um diese auszuprobieren und die Grundlage zu schaffen auf welcher Simon und Noah die nächsten paar Monaten arbeiten werden, haben sie ein
+%Testprogramm erstellt namens "Hello World". Es war ein ganz simples Programm das nur zum Testen der Infrastruktur diente. 
+%Sie haben ein Gradle.build file erstellt, dies dauerte erstaunlich lange. Später erkannten sie das diese Verhalten sehr üblich für 
+%Gradle ist. Nach einiger Zeit haben es beide geschafft ein apk file zu besitzen, welches erfolgreich die "Hello World" app beinhaltete und ausführt. 
+%Anschliessend erstellte Noah ein GitHub repository in welchem die beiden das Programm teilen werden. \\
+
+% \textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
+
+\newpage
+
+\subsubsection{Interface}
+
+Noah begann dann dieses Programm leicht auszubauen und fügte einige Interface Inhalte hinzu. 
+
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{8cm}
+\centering
+\includegraphics[scale=.15]{media/drawer.png}
+\caption{Drawer Navigation Menu}
+\end{wrapfigure}
+%I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
+
+Die App beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
+Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen.
+
+\subsubsection{Recyclerviewer}
+% TODO: mehr allgemein erklären
+
+Simon begann mit der Recherche zum Recyclerviewer. Er war viel im Internet und fand schnell
+einige Beispiele, welche er ausprobierte und für seinen Nutzen gestaltete. Ein Recyclerviewer ist nicht sehr kompliziert
+hat aber gewisse Kniffe auf die Simon traf. \\
+
+Ein Recyclerviewer ist in fünf grundlegende Teile aufgeteilt. 
+
+\begin{enumerate}
+
+
+    \item Das recyclerview Objekt, welches ein Container ist und in das User Interface eingebaut wird. 
+Es beinhaltet verschiedene Views, welche nochmals unterteilt werden können. In einer View wird in unserem 
+Fall eine Nachricht eingebaut mir dem Absender, der Absende Zeit und einem Betreff. 
+
+    \item Der Layout manager. Er ist für die form einer einzelnen View verantwortlich. 
+Der Layout manager kann auch wieder in drei Arten unterteilt werden. Der Linearlayout Manager sorgt für eine 
+Horizontale oder vertikale unterteilung einer View. Hingegen führt der Gridlayout Manager zu einer horizontalen 
+und vertikalen Unterteilung des View. Für den Email-Client bietet er die  
+beste oberfläche um Nachrichten darzustellen. Es gibt nämlich noch den den Staggeredgridlayout Manager, welcher 
+für eine versetzen unterteilung der View kann sorgen. Dies ist aber für eine Email-Client unbrauchbar. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\textwidth]{media/RecyclerviewLayoutManagerCropt.jpeg}
+    \caption{Layout Manager Recyclerview \cite{LayoutManagerPicture}}
+\end{figure}
+
+    \item Der View Holder bietet die Möglichkeit jedes einzelne Raster der View mit einem Item auszustatten mit wiederum einer View in einem Recyclerviewer
+
+    \item Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des ViewHolder-Objekt und
+bindet auch die Daten aus der Database an den View Holder
+
+    \item Die Database ist das Herzstück dieser App und wir auch für den Recyclerviewer verwendet um die 
+Views mit den richtig Informationen zu füllen. 
+
+\end{enumerate}
+
+Die Wahl des Layout Manager wurde sehr schnell getroffen. Es war klar, dass eine Nachricht nicht nur eine Information auf horizontaler Ebene anzeigen muss sondern
+z.b auch das Datum nicht versetzt angezeigt werden soll. Weshalb der Gridlayout Manager gewählt wurde. Nun hat sich Simon in einem Tutorial über den Recyclerviewer informiert
+und konnte sich auch ein beispiel anschauen, woran sich der Recyclerviewer der Email-App zu beginn sehr stark orientierte. \\
+
+% \textbf{https://github.com/android/views-widgets-samples/tree/main/RecyclerView} Recyclerviewer beispiel \\
+
+Nach dem sich Simon über den Recyclerviewer informiert hat, sollte er endlich in das Programm eingefügt werden. Leider gab es da einige Probleme. Der erste Versuch scheiterte daran,
+dass die App abstürzte ohne einen Error zu melden. Und nach einiger Zeit war die beste Lösung wieder an einen Punkt zu gehen, an welchem die noch funktionierte, nur ohne vollständigen 
+Recyclerviewer. Es dauerte einen ganzen Monat bis eine weitere Version mit Recyclerviewer bereit war. Nur diesmal funktionierte die App. \\
+
+Der Recyclerviewer war an diesem Punkt sehr simpel. Er konnte eine vorbestimmte menge an Views anzeigen, welche in einem Loop generiert wurden, lass die Informationen aus
+einer sehr simplen Database aus und er konnte noch nicht aktualisiert werden. Die Informationen konnten nur einmal eingelesen werden und der View-Holder wurde in der gleichen Klasse wie 
+der Adapter definiert. \\
+
+Die Database bestand zu diesem Zeitpunkt aus nur einer Klasse, welche fünf Strings definierte, diese einlesen konnte und auch wieder ausgeben konnte. Mit dieser Klasse wurde
+ein Objekt erstellt, welches in einer Arraylist, durch einen Loop, eingelesen wurde und jeweils die gleichen fünf Strings überkam. \\
+
+In der Klasse des Adapters wurde durch den ViewHolder die richtigen Textviews ausgewählt, die Views kreiert und mit den Informationen, welche der Adapter bekam, gefüllt. \\
+
+In der Mainactivity wurde dies alles in der onCreate() Funktion ausgeführt, was zur Folge hatte, das der ganze vorgang nur beim Öffnen der App ablieft, da die Funktion onCreate()
+nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst nur einmalig mit Informationen versehen werde.
+
+Der CustomAdapter war am Anfang der App dafür zuständig die Daten, welche in einer einfache Klasse abgespeichert wurden, über den 
+\textit{Constructor} dem ViewHolder weiter zu geben, welcher dann diese Informationen an eine View im Recyclerviewer band. Im verlaufe der Zeit wurde 
+der Adapter angepasst und erweitert. Dies hatte Simon auch sehr grossen Spass gemacht da er auch wirklich alles verstand, jedoch als die Database entstand war der alte 
+CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt seine Aufgaben jetzt ein wenig anderst. Zwar viel effizienter mit weniger Code aber nicht 
+so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment für den zugehörigen \textit{Folder} neu Aufgerufen und überschreibt den CustomAdapter 
+aus der Mainactivity. 
+
+\subsubsection{Popup Window}
+% TODO: explain chain of popup windows
+\begin{wrapfigure}{r}{5cm}
+\centering
+\includegraphics[width=.18\textwidth]{media/inputValidation.png}
+\caption{Input Validation}
+\end{wrapfigure}
+Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
+
+Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
+
+\subsubsection{Database}
+
+% Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
+% Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
+% \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
+
+Da viele Daten gespeichert werden müssen, musste eine Möglichkeit her, wie diese möglichst schnell, und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine Datenbank für diesen Anwendungszweck und u.a. in Anbetracht der eingrenzenden Umständen, also die Deadline der Arbeitsabgabe, an. Noah hatte schon ein paar wenige Erfahrungen mit Datenbanken, doch da Simon diese Aufgabe übernehmen wollte, las er sich mithilfe eines Buches \cite{riccardi2001} erfolgreich in die Thematik ein.
+
+
+Ein \textit{relational database management system} ist ein Databasesystem in welchem die Informationen als \textit{tables} gespeichert werden. 
+Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
+gibt es 9 Attribute und einen Objectkey. \\
+
+
+\begin{tabular}{ |p{1.6cm}  |p{1.1cm} |p{1.1cm} |p{1.05cm} |p{1.15cm} |p{1.15cm} |p{1.25cm} |p{1.75cm} |p{1.25cm} |p{1.15cm}|}
+ \hline
+ \multicolumn{10}{|c|}{Database Table} \\
+ \hline
+    ObejctKey &To & cc & bcc & from & date & subject & textContent & folder & seen  \\
+ \hline
+     01    &Valentin& null & null & Lennard & 01.03.13 & Schule &  Hallo Herr Konrad ...& Draft & true \\
+ \hline
+\end{tabular} \\
+
+Der Objektkey wird dafür genutzt das Objekt zu identifizieren und aufzurufen. Es können auch weitere dinge mit dem Objektkey gemacht werde. 
+Je nach dem wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt eine Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
+alle Attribute Strings. 
+
+\textit{To} ist das Attribute, welches angibt an wen die Email geschickt werden soll, \textit{From} ist das genaue gegenstück dazu. \textit{Cc} und \textit{bcc} sind die 
+Email-Adressen, welche die Emails auch bekommen. Der einzige unterschied ist, dass bei \textit{bcc} diese Adressen nicht einsehbar sind und somit nicht bekannt ist wer diese Email auch liest. 
+
+\textit{Date} gibt das Datum an, an welchem die Email verschickt wurde. \textit{Subject} ist ein Betreff für die Email und \textit{textContent} ist der Text welcher in der Email verfasst wurde. 
+
+Das Attribut \textit{Seen} ist etwas spezieller. Es gibt an ob eine Nachricht von dem Nutzer Gelesen wurde oder nicht. Diese Info wird dann im Recyclerviewer genutzt um die Textart zu verändern
+in welcher die Email angezeigt wird. Diese Attribut muss verändert werden, wenn eine Email geöffnet wird. \\
+
+Die Attribute \textit{To}, \textit{from}, \textit{date}, \textit{folder} und \textit{seen} wurden im Databaseconstructor als @NonNull definiert, heisst sie müssen eingelesen werden und können 
+nicht null sein. Das macht soweit Sinn, weil eine Email, bis auf \textit{seen}, nicht ohne diese Angaben versendet werden können und ohne zu wissen in welchem Ordner die Email einzuordnen ist,
+kann die Email auch nicht richtig angezeigt werden. \\
+
+Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent} 
+\textit{Inbox}, \textit{Spam} und \textit{Archive}. Die Database kann nach einzelnen Attributen ausgelesen werden. So können die Emails mit den richtigen
+folder Attributen, in den richtigen Ordnern angezeigt werden. Jeder Ordner hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
+Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen.  \\
+
+
+Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
+die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
+recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
+
+\newpage
+
+
+\begingroup
+\setlength{\intextsep}{10pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{8cm}
+    \centering
+    \includegraphics[width=.4\textwidth]{media/RoomStructure.png}
+    \caption{Room Struktur \cite{appStructurePicture}}
+\end{wrapfigure}
+
+
+Room ist eine Art Schicht über der SQLiteDatabase. 
+Room besteht grundsätzlich aus drei Teilen. Die Database dient als Hauptzugriffspunkt für die gespeicherten Daten der App. Sie ist mit @Database markiert. 
+Eine \textit{Entity} repräsentiert einen \textit{table} in der Database und die \textit{DAO} Klasse beinhaltet die Methoden um auf die Database zu zu greifen. Sie kommuniziert
+mit SQLite um de Zugriff auf die Daten zu ermöglichen \cite{roomStructure}
+
+
+\paragraph{MessageDao}
+
+In der \textit{DAO}-Klasse können SQL statements verwendet werden. Um auf die Database zu zugreifen und nur Gewisse 
+Objekte zu erfassen, hat Simon ein paar wenige SQL statements gebraucht. SQL ist zum Glück in diesem Fall sehr selbsterklärend, 
+dennoch werden wir darauf eingehen.\\
+
+
+\lstset{language=SQL}
+\begin{lstlisting}
+    /* get Draft messages*/
+    @Query("SELECT * FROM message_table WHERE folder LIKE 'Draft' ORDER BY date ASC")
+    LiveData<List<Message>> getDraftMessages();
+\end{lstlisting}
+
+\textit{Querys} sind anfragen an die Database nach Informationen. Sie können auf verschiedene \textit{tables} zugreifen und Informationen abgleichen und auswählen. 
+In einer DAO von Room werden die SQL-statements mit @Query markiert. SELECT heisst, dass etwas ausgewählt werden soll und mir * ist gemeint alles. Mit FROM wird nochmals angegeben von 
+welchem table, in diesem Fall vom message\_table. Die Entity die wir weiter oben schon erklärt haben. Mit WHERE können Spalten der Entity ausgewählt werden. Hier wird die \textit{folder} Spalte 
+gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die Ausgabe anhand der Spalte 'date'
+nach dem ASC-code sortiert. \cite{appStructure}
+
+\subsubsection{Repository/ViewModel}
+
+\begingroup
+\setlength{\intextsep}{1pt}
+\setlength{\columnsep}{4pt}
+
+\begin{wrapfigure}{r}{5.5cm}
+    \centering
+    \includegraphics[width=.4\textwidth]{media/ViewModelRepository.png}
+    \caption{EmailViewModel and Repository
+    \cite{appStructurePicture}}
+\end{wrapfigure}
+
+Mit der Database wurden auch ein Repository und ein Viewmodel mit Viewholder erstellt. 
+Das Repository verwaltet die Datenquellen. Im Normalfall würde es Daten von einem Server verwalten und in die Database einlesen. Ebenfalls kann
+es auch Daten die der User direkt eingibt einlesen. Zwar nicht direkt von der Activity aber über ein Viewmodel können Daten in die Database eingelesen werden. Das Repository 
+stellt dazu die Funktionen für das Viewmodel zur Verfügung. 
+Da in diesem Falle keine anständige Java Library gefunden wurde, welche nicht uralt oder eine Dokumentation zur Verfügung hatte mussten die Daten vom Server mit einer 
+Python Library eingelesen werden. Noah Programmierte dazu in Python mit einer Library ein Programm welches die Daten von eine Server herunterlädt und in die Database einliest. 
+
+In diesem Falle das EmailViewModel, stellt Funktionen zur Verfügung, mit welchen auf die Database, über das Repository, zugegriffen werden kann. Ebenfalls gibt es LiveData zurück 
+mit welcher die Mainactivity die observer Verknüpfungen erstellen kann. Mit dem ViewHolder in diesem Fall dem EmailViewHolder können Daten an View gebunden werde. In dem Fall wäre das 
+der Recyclerviewer.
+So wird die Mainactivity informiert, wenn eine Änderung der Database vorgekommen ist. Im Fall dieser App wird zwar 
+ein Recyclerviewer in der Mainactivity mit Observer und Adapter erstellt, jedoch wird dies nur gemacht um das gleiche für jedes Fragment zu machen, welche dann den Recyclerviewer und den 
+observer aus der Mainactivity überschreiben. Die einzelnen \textit{Folder} haben jeweils ein Fragment zugeordnet, in welchen der einzige unterschied ist, dass sie andere 
+Attribute aus der Database abfragen um die den \textit{Folder} entsprechenden \textit{Messages} zu bekommen. 
+
+An diesem Beispiel ist es vielleicht leichter zu verstehen. Dies ist die Funktion welche an einer Variable vom Typ EmailViewModel ausgeführt wird. In dem Fragment HomeFragment in der
+onCreateView Funktion, welcher immer ausgeführt wird wenn dieses Fragment aufgerufen wird. 
+
+
+\lstset{language=java}
+\begin{lstlisting}
+        mEmailViewModel = new ViewModelProvider(this).get(EmailViewModel.class);
+        mEmailViewModel.getInboxMessage().observe(getViewLifecycleOwner(), messages -> {
+            /* Update the cached copy of the messages in the adapter*/
+            adapter.submitList(messages);
+        });
+\end{lstlisting}
+
+Die Funktion getInboxMessage() is im der Klasse EmailViewModel definiert und gibt LiveData<List<Message>> zurück, was soviel ist wie eine Liste der Objekte in der Database, eingebettet 
+in LiveData.
+
+\lstset{language=java}
+\begin{lstlisting}
+
+    public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
+
+\end{lstlisting}
+
+\lstset{language=java}
+\begin{lstlisting}
+
+        private LiveData<List<Message>> mInboxMessage;
+
+        public EmailViewModel(Application application) {
+        super(application);
+        mEmailRepository = new EmailRepository(application);
+        mInboxMessage = mEmailRepository.getInboxMessages();
+        }
+
+        public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
+
+\end{lstlisting}
+
+
+\lstset{language=java}
+\begin{lstlisting}
+
+    private LiveData<List<Message>> mInboxMessage;
+
+    public EmailRepository(Application application) {
+        EmailRoomDatabase db = EmailRoomDatabase.getDatabase(application);
+        messageDao = db.messageDao();
+        mInboxMessage = messageDao.getInboxMessages();
+    }
+
+        public LiveData<List<Message>> getInboxMessages() {
+        return mInboxMessage;
+    }
+
+
+\end{lstlisting}
+
+Im \textit{Cunstroctor} von dem EmailViewModel wird der Variable mInboxMessage die Daten aus dem Repository übergeben welche diese wieder im \textit{Constructor} von dem MessageDAO überkommt.
+
+\newpage
+
+\subsubsection{Draft Messages}
+
+\begingroup
+\setlength{\intextsep}{1pt}
+\setlength{\columnsep}{4pt}
+
+
+\begin{wrapfigure}{r}{9cm}
+    \centering
+    \includegraphics[width=.55\textwidth, height=.55\textwidth]{media/AppStructure.png}
+    \caption{App Structure \cite{appStructurePicture}}
+\end{wrapfigure}
+
+Der ganze Aufbau der in den Kapitel von vorhin erklärt wurde, hatte nur zwei Ziele. Einmal das einlesen von Emails von einem Server und das Einlesen von Emails
+über ein Fragment genannt messageCreateFragment. Diese Fragment interagiert mit einer Activity genannt NewDraftMessageActivity. Die Mainactivity startet beim Klicken auf einen Button 
+das messageCreateFragment. Dieses liest die Daten ein welche der User in das Fragment schreibt und übergibt sie mit Hilfe der NewDraftMessageActivity direkt an die Message Klasse und somit in die 
+Database.  \\
+
+Dies ist der grobe Aufbau um Messages anzuzeigen. Wenn etwas durch die NewDraftActivity verändert wird, wird der Observer informiert, welcher den CostumAdpater informiert und bis nach 
+ganz unten die neuen Informationen ausliest.
+
+\subsection{Umsetzung}
+\subsubsection{Bugs}
+% Erklärung woher, warum falsch, wie gelöst
+Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler diese Projektes zu kämpfen. Hier dazu ein kleines Beispiel:
+
+% GUI stuff -> oneliner commit 
+Als der RecyclerViewer das erste Mal eingebunden werden konnte, ohne dass die App nach dem Öffnen direkt abstürzt, war aber das Problem, dass am oberen Teil Inhalte abgeschnitten waren. Das konnte gelöst werden, indem diese Codezeile in der Datei \textit{app/src/main/res/layout/activity\_main.xml} an der richtigen Stelle eingefügt wurde:
+
+\lstset{language=XML}
+\begin{lstlisting}
+android:paddingTop="50dp"
+\end{lstlisting}
+
+\subsubsection{Probleme / Hiccups}
+% RecyclerViewer, shit java IMAP libraries
+Probleme waren die unnötig vielen Layouts, welche entstanden bei unserer App. Vielleicht hätten diese minimiert werden können, wenn die Entwickler eine siginfikant höhere Erfahrung im Bereich der Android Entwicklung hätten, oder wenn die verschiedenen Inhalte beim Aufrufen weniger Layouts generieren würden, oder diese könnten besser wieder referenziert werden.\\
+
+Mit gewissen Biobliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
+
+\subsubsection{Kommunikation}
+Simon:
+
+Ich finde wir haben etwas wenig kommuniziert aber dafür lief es sehr gut. Ich war sogar eher froh das wir nicht ganz so viel 
+Kommuniziert haben. Teilweise war ich auch deswegen gestresst aber ich konnte Noah so gut vertrauen, wenn ich ihm sagte wir sollten etwas bis zu einer gewissen Zeit schaffen
+hatte er es auch eingehalten oder Probleme mir gemeldet. Wir hatten gewisse Strukturen um die Kommunikation zu vereinfache. Wir haben 
+eine \textit{diary} geschrieben, in welcher wir unseren Prozess dokumentiert haben. Und auf welchem auch grossteile der Dokumentation in der Maturarbeit basiert. 
+Ebenfalls haben wir uns im Programm oder in unseren Texten Notizen überlassen um fragen an den anderen zu stellen oder Aufgaben zu geben. Teilweise haben wir uns auch jeden Montag zusammengesetzt
+und die Woche besprochen. Jetzt wo ich alles Aufzähle merke ich wir haben nicht ganz so wenig Kommuniziert aber es hat sich sehr danach angefühlt. Unter anderem, weil Noah selten erreichbar
+war. Dennoch Lief es sehr gut, auch weil wir uns das Programm grob aufgeteilt haben und sich alle Teile zusammenfügen, was auch einen gewissen touch der Linuxphilosophie in sich hat. 
+
+\subsection{Testing}
+
+\section{Resultate}
+% TODO: Vergleich mit ursprünglichen Zielen und Gegenüberstellung den vorliegenden Programmen ähnlicher Art,
+% Beschreibung der vorliegenden getesteten  Funktionalitäten, Pros,Kontras, ...
+\subsection{Vergleich mit unseren ursprünglichen Zielen}
+\subsection{Vergleich mit der Konkurrenz}
+\subsection{Beschreibung der vorliegenden getesteten Funktionalitäten}
+\subsection{Vor- und Nachteile unserer App}
+\subsubsection{Pro}
+\subsubsection{Kontra}
+
+\section{Selbstreflexion}
+% TODO: maybe add 'fremdeinschätzung'
+
+\subsection{Was Gut Lief}
+% komm., vcs, java syntax (allg.)
+Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut und half ihrer Meinnung nach enorm beim Arbeitsprozess und dessen Strukturierung. Mit der Syntax der verwendeten Programmier- und Markupsprachen Java, Python und XML konnte gut umgegangen werden, obwohl die beiden noch recht wenig Erfahrung mit Java hatten. Die Codestruktur fanden sie den Umständen entsprechen gut und sinnvoll.
+\subsection{Was Schlecht Lief}
+% ******* java shit tier libraries
+Dass es keine mit Gradle funktionierede, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Emailbibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Pythonbibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{Chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität wär halt die oberste Priorität.\\
+
+Etwas das nicht direkt schlecht lief aber sehr viel Zeit brauchte ist, dass wenn ich (Simon) zum Beispiel eine Database für den Recyclerviewer gemacht habe, zwar nur eine Testversion, 
+ich diese im späteren verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion aber dass diese so weit von einer professionelle Database entfernt war, war mit nicht klar. 
+In so einer Situation war ich nicht nur bei der Database. Mit dem Recyclerviewer hatte ich solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert aber ich musste den Recyclerviewer
+öfters komplett umschreiben. Als ich die erste Version hatte, hatte ich eine sehr simple version einer Database und durch dies hat sich auch ein simpler Adapter entwickelt. 
+Aber diesen konnte ich mit der Zeit sehr gut an de Recyclerviewer anpassen. Ich habe ihn auch sehr stark ausgebaut. Als ich jedoch eine vollstendige Version einer Database hatte, musste ich den 
+Adapter so gut wie löschen. Solche Dinge haben den Arbeitsprozess sehr stark ausgebremst und die Arbeit begann mich zu nerven, da teilweise klar war, dass ich das was ich gerade
+mache sowieso nochmals überarbeiten muss. 
+
+\subsection{Was Wir Gleich Machen Würden}
+% As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
+Wenn wir diese in die Vergangenheit reisen könnten und die App von Neuem machen könnten, würden wir am Userdesign nichts ändern, und auch weiterhin mit \textit{Git} als \textit{VCS} arbeiten und für jedes noch nicht einsatzbereite Feature einen neuen \textit{Branch} machen. Die Arbeitsweise an sich hat sich aus unserer Sicht bewährt und ist ein passabler Weg, kollaborativ an einem Softwareprojekt zu arbeiten.
+\subsection{Was Wir Anders Machen Würden}
+% As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability.
+
+Code der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben werden, um die Geschwindigkeit und Portabilität zu erhöhen. Java komplett wegzulassen ist aber weder vorgesehen noch praktisch sinnvoll umsetzbar. \\
+
+Uns ist öfters gesagt worden, dass das managen der Zeit sehr wichtig ist. Wir sind davon ausgegangen, dass wir dies auch gut eingeplant haben. Dem war leider nicht so und wir 
+würden uns mehr gedankten machen beim Planen wie auch, wie lange wir an einem Problem arbeiten bevor wir das Feature entfernen, als das wir sehr lange daran arbeiten. 
+
+
+% use more c libs for speed and less java
+\subsection{abschliessende persönliche Schlussfolgerung}
+\paragraph{Simon}
+Ich bin selbst etwas enttäuscht wie wenige Ziele wir erreichen konnten und ich bin überrascht wie stark wir unterschätzt haben, wie 
+viel Arbeit es ist eine stabile funktionierende App zu erstellen. Herr Yakonthov hat uns am Anfang gewarnt, dass wir uns doch etwas zu viel vornehmen. Jetzt bin ich an dem Punkt, an dem 
+ich glaube ich könnte den rest unserer Ziele in vielleicht zwei Monaten verwirklichen, jedoch ist leider dafür keine Zeit.\\
+
+Mir hat es im Spass gemacht diese App zu erstellen und den Arbeitsprozess zu verfolgen. Das schöne an GitHub ist auch, dass ich mich mit mir selber vergleichen kann und aber auch denn 
+fortschritt unserer App erkennen kann. Ich denke ich hätte nicht direkt mit einem so grossen Projekt zum Programmieren anfangen sollen, was mir auch Noah empfohlen hat. Er meinte ich solle 
+doch noch ein Paar kleine Programme schreiben bevor wir mit dieser App anfangen. Dies habe ich leider nicht gemacht auch wenn ich denke wes hätte keinen grossen unterschied gemacht,
+weil ich dies eher vor der Wahl des Projektes hätte machen müssen. \\
+
+Ich habe sehr viel gelernt und auch über meine Maturarbeit mit Freunden und Familie gesprochen, wodurch ich wiederum neue Möglichkeiten bekommen habe. Das nächste Projekt wir vielleicht eine 
+Website mit einem Freund von Mir.
+
+
+\paragraph{Noah}
+Ich habe persönlich das Gefühl, einen guten Einblick in die native Android Programmierung mit Java bekommen zu haben. Mir erschien es nicht so spannened oder interessant wie ich erhofft hatte, sondern gewisse Befürchtungen über den Stand der Software und Entwicklungsumgebung auf Smartphones bestätigten sich.\\
+
+Das Dependency Managment ist im Vergleich zu UNIX-ähnlichen Betriebssystemen schrecklich, der Resourcenverbrauch im Verhältniss zur Komplexität der Apps riesig. Wenn man das Android Betriebsystem nicht auf Java sondern auf in der Exekutierung schnelleren Programmiersprachen wie C oder Rust aufgebaut hätte, wären zwar die Programme etwas schwerer zu programmieren für die Entwickler, aber dafür wären die Akkulauftzeit und Performance deutlich besser.\\
+
+Ich persönlich habe mich über diese in meinen Augen schlechten Umständen aufgeregt, und das hat mir auch ein gutes Stück an Motivation genommen. So ausgeprägt hatte ich das kaum bei einem meiner Softwareprojekte, und davon habe ich schon einige. Doch ich bin froh, diese Erfahrung gemacht zu haben, als beispielsweise eine ganze Ausbildung in dieses Richtung anzufangen.
+
+\section{Danksagung}
+Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.\gls{fsf}\gls{Freie Software}
+
+%=======================================
+
+\clearpage
+
+%index Verzeichnis
+% Index soll Stichwortverzeichnis heissen
+%\renewcommand{\indexname}{Stichwortverzeichnis}
+
+% Stichwortverzeichnis endgueltig anzeigen
+
+%\index{\textbf{COOLDx}} asdsadad
+%\printindex % run: makeindex
+            % Aufgaben_zum_LaTeX_Kurs.idx; und nochmals latex
+
+\printglossary
+\newpage
+\printbibliography
+\end{document}
