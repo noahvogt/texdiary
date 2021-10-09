@@ -33,13 +33,8 @@ menucolor=darkblue,
 breaklinks=true,anchorcolor=green
 }
 
-% für Stichwortverzeichnis
-%\usepackage{imakeidx}
-
-% Indexerstellung
-%\makeindex
-
-\usepackage{glossaries}
+% for the Glossar
+\usepackage[acronym]{glossaries}
 
 % für Listings für Java
 \usepackage{listings}
@@ -89,6 +84,8 @@ includeheadfoot}
 
 % no paragraph indent
 \setlength{\parindent}{0em}
+
+\usepackage{comment}
 
 % graphics package
 \usepackage{graphicx}
@@ -161,21 +158,64 @@ sorting=ynt
 ]{biblatex}
 \addbibresource{lit/refs.bib}
 
+%========================Glossaries======================
+
 \makeglossaries
+
 \newglossaryentry{fsf}{
     name=Free Software Foundation,
     description={This is the Foundation created by Richards Stallman, the Starter of the free software movement. It is dedicated to the preservation, creation, and to fight for free software all around the globe.}
 }
+
 \newglossaryentry{Freie Software}{
     name=Free Software,
     description={Freie Software ist nach der Definition der \gls{fsf} ...}
 }
 
-\usepackage{comment}
+\newglossaryentry{vcs}{
+    plural=VCS,
+    name=Version Control System,
+    description={Ein System/Programm, welches die Versionierung einer Software verwaltet}
+}
+
+%TODO: noah explain it better then me
+\newglossaryentry{git}{
+    name=Git,
+    description={Ein \Gls{vcs} auf einem localen Gerät \cite{git}}
+}
+
+\newglossaryentry{github}{
+    name=GitHub,
+    description={Ein Server für Git \cite{github}}
+}
+
+\newglossaryentry{branch}{
+    name=Branch,
+    description={Eine abgetrente Arbeitsachse, welche nicht mit der Hauptachse, auf welcher das Hauptprogramm ist, interagiert \cite{branch}}
+}
+
+\newglossaryentry{merge}{
+    name=Merge,
+    plural=mergen,
+    description={Mehrere branche zusammenfügen. \cite{github}}
+}
+%TODO: anstendige quelle finden
+\newglossaryentry{ide}{
+    name=IDE,
+    plural=Integrated Development Environment,
+    description={Ein Programm, welches den Programmierer beim Programieren unterstütz indem es z.b textvorschläge gibt oder das compilen des codes übernimmt.}
+}
+
+\newglossaryentry{android-studio}{
+    name=Android Studio,
+    description={Ein \gls{ide}, welches für Android spezialisiert wurde. \cite{android-studio}}
+}
+
 
 %==================begin document==========================
 
 \begin{document}
+
 
 \begin{titlepage}
 % TODO: weniger asketisch, «sexier»
@@ -215,7 +255,7 @@ Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag
 
 \subsection{Arbeitsziele}
 
-Wir wissen, was ein Email Client funktionsmässig so können muss, und haben nicht vor eine Apps zu designen, welche vollkommen überladen ist mit Funktionen, die keiner braucht.\\
+Wir wissen, was ein Email Client können muss, und haben nicht vor eine Apps zu designen, welche vollkommen überladen ist mit Funktionen, die keiner braucht.\\
 
 Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das Lesen und Schreiben von Emails, das Öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es verschiedene Ordner unterstützen, wie z.B. ein Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails visuell sortieren zu können, beispielsweise indem die Ordner im Client nach Datum des Empfangs oder dem Absender sortiert werden können. E-Mails sollen mit markiert, gelöscht und weitergeleitet werden können. Es soll eine Suchfunktion für jeden Mailordner geben. \\
 
@@ -229,8 +269,11 @@ Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients o
 
 Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
 
-Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
 
+Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein. \\
+
+
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
 Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
 
 \subsection{Arbeitskonzept}
@@ -238,13 +281,13 @@ Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen könn
 
 
 
-\subsubsection{Vergleich mit der Konkurrenz}
-% TODO: soll dieser paragraph gelöscht werden / complete rewrite ????
-Disclamier/Note: Da bei dieser App ein Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen, denn es soll hier absolut nicht das Ziel sein eine App zu programmieren, welches versucht die Freiheiten der Nutzer einzuschränken. Dies aus praktischen, technologischen und sog. ethischen Gründen, doch darauf wird noch näher eingegangen.\\
-
-Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, dass diese unglaublich überladen (engl. bloated) - an Funktionen oder Sourcecode-Zielen - sind. Selbst wenn man im Internet nach einem möglichst simplen Email Client für Android gesucht, stösst man dabei meist auf Apps wie k-9 Mail, welche immerhin noch über stattliche hunderttausende Zeilen Source Code besitzt.\\
-
-Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein.
+%\subsubsection{Vergleich mit der aktuellen Konkurrenz}
+%% TODO: soll dieser paragraph gelöscht werden / complete rewrite ????
+%Disclamier/Note: Da bei dieser App ein Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen, denn es soll hier absolut nicht das Ziel sein eine App zu programmieren, welches versucht die Freiheiten der Nutzer einzuschränken. Dies aus praktischen, technologischen und sog. ethischen Gründen, doch darauf wird noch näher eingegangen.\\
+%
+%Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, dass diese unglaublich überladen (engl. bloated) - an Funktionen oder Sourcecode-Zielen - sind. Selbst wenn man im Internet nach einem möglichst simplen Email Client für Android gesucht, stösst man dabei meist auf Apps wie k-9 Mail, welche immerhin noch über stattliche hunderttausende Zeilen Source Code besitzt.\\
+%
+%Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein.
 
 \subsubsection{Quellcode Modell}
 % TODO: too long, short a little (insg. ?)
@@ -268,7 +311,7 @@ int main() {
     return 0;
 }
 \end{lstlisting}
-
+%TODO: idk mir sötte grundlegendi sache ned erkläre
 Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
 \begin{lstlisting}
 0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
@@ -285,7 +328,7 @@ Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den 
 
 Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich ziemlich gut in zwei Kategorien unterteilen:\\
 
-% TODO: license comparison apparently too irrelevant ?
+% TODO: license comparison apparently too irrelevant ? I guess. Los eif unseri erkläre und wurum Copyright uf programm shit isch
 
 \paragraph{Permissive Licenses}
 % ENG: These give you the right to run the program for ANY purpose, study the source code, change it and redistribute the changes. Their names come from the fact, that they are ``permissive'' when it comes to their few restrictions: They do not put of a lot of restrictions on the distribution of the source code, and often allow the software to be forked under ANY terms. This means it is possible to make your fork of a permissive-licensed program proprietary.\\
@@ -339,6 +382,8 @@ Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren Lizenzier
 \section{Programmier-Tools}
 
 \subsection{Hardware}
+
+
 
 \subsubsection{Smartphones}
 % ENG: We used different Models of Smartphones running different variants of the android operating system to install and test our app. It was also used to compare it and benchmark it against our competition (the already existing mail clients on android).
@@ -455,6 +500,22 @@ Dies ist ein Programm zur Konvertierung von einem Dokumentformat in ein anderes.
 \section{Arbeitsprozess}
 
 \subsection{Programmiermittel}
+
+Um ein Programm, mir grösserem Umfang, zu Entwickel, braucht es Hilfsmittel die sich auf genau das spezialisiert haben. 
+Eines dieser Hilfsmittel sind \gls{vcs}. Diese sind eine sehr praktische Methode um Funktionen in ein Programm einzubauen ohne das Risiko 
+das Programm komplett zu Überarbeiten, wenn diese Funktion einen Fehler hervorruft. In diesem Fall wurde \Gls{git} als \Glspl{vcs} genutzt, um für jegliche Funktionen
+einen eigenen \gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu \glspl{merge} wenn die Funktion fertig ist.\cite{git} \cite{github} \\
+
+Um an einem Projekt zu Zweit gleichzeitig zu arbeiten, gibt, auf kleinere Projekte bezogen, viel Möglichkeiten. Die einfachste ist sich das 
+Projekt immer wieder zu Mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
+verwendet wurde. Über \gls{github} konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
+Auf \gls{github} ist das Programm öffentlich und wird dadurch open-source. Es kann aber nicht durch eine dritte Person, ohne Einwilligung von Noah, in den Source-Code
+des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf \gls{github} aufgelistet werden. \cite{github} \\
+
+Beim Programmieren einer grösseren Arbeit erweist es sich besonders nützlich ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses \gls{ide}
+speziell auf die android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtert. Zum beispiel ist der
+"Visual Layout Editor" eine grosse Hilfe beim Designen. \cite{android-studio}
+
 
 \subsection{Programmstruktur}
 
