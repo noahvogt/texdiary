@@ -34,7 +34,8 @@ breaklinks=true,anchorcolor=green
 }
 
 % for the Glossar
-\usepackage[acronym]{glossaries}
+\usepackage{glossaries}
+\renewcommand*{\glstextformat}[1]{\textcolor{blue}{#1}}
 
 % für Listings für Java
 \usepackage{listings}
@@ -174,7 +175,7 @@ sorting=ynt
 
 \newglossaryentry{vcs}{
     plural=VCS,
-    name=Version Control System,
+    name=Version Control Systems,
     description={Ein System/Programm, welches die Versionierung einer Software verwaltet}
 }
 
@@ -209,6 +210,27 @@ sorting=ynt
 \newglossaryentry{android-studio}{
     name=Android Studio,
     description={Ein \gls{ide}, welches für Android spezialisiert wurde. \cite{android-studio}}
+}
+
+\newglossaryentry{adb}{
+    name=Android Debugging Bridge,
+    description={Eine Software mit welcher z.b APK dateien über USB-Anschluss auf ein Andorid Gerät geladen werden kann}
+}
+
+\newglossaryentry{emulator}{
+    name=Emulator, plural=Emulatoren,
+    description={Ein Emulator ist ein Programm, welches ein Gerät oder Betriebssystem simuliert, sodass man es innerhalb eines anderen Betriebssystems laufen lassen kann.}
+}
+
+\newglossaryentry{apk}{
+    name=APK,
+    description={APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android}
+}
+
+%TODO: Noah pleas explain better the me
+\newglossaryentry{compiler}{
+    name=Compiler,
+    description={Ein Programm, welches den Source-Code in die APK From bringt}
 }
 
 
@@ -502,19 +524,28 @@ Dies ist ein Programm zur Konvertierung von einem Dokumentformat in ein anderes.
 \subsection{Programmiermittel}
 
 Um ein Programm, mir grösserem Umfang, zu Entwickel, braucht es Hilfsmittel die sich auf genau das spezialisiert haben. 
-Eines dieser Hilfsmittel sind \gls{vcs}. Diese sind eine sehr praktische Methode um Funktionen in ein Programm einzubauen ohne das Risiko 
+Eines dieser Hilfsmittel sind \gls{vcs}. Diese sind eine sehr praktische Methode um Funktionen in ein Programm einzubauen, ohne das Risiko 
 das Programm komplett zu Überarbeiten, wenn diese Funktion einen Fehler hervorruft. In diesem Fall wurde \Gls{git} als \Glspl{vcs} genutzt, um für jegliche Funktionen
-einen eigenen \gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu \glspl{merge} wenn die Funktion fertig ist.\cite{git} \cite{github} \\
+einen eigenen \gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu \glspl{merge}, wenn die Funktion fertig ist.\cite{git} \cite{github} \\
 
-Um an einem Projekt zu Zweit gleichzeitig zu arbeiten, gibt, auf kleinere Projekte bezogen, viel Möglichkeiten. Die einfachste ist sich das 
+Um zu Zweit an einem Projekt gleichzeitig zu arbeiten, gibt es viel Möglichkeiten sich das aktualisierte Projekt zur Verfügung zu stellen. Die einfachste ist sich das 
 Projekt immer wieder zu Mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
 verwendet wurde. Über \gls{github} konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
-Auf \gls{github} ist das Programm öffentlich und wird dadurch open-source. Es kann aber nicht durch eine dritte Person, ohne Einwilligung von Noah, in den Source-Code
+Auf \gls{github} ist das Programm öffentlich und wird dadurch auch open-source. Es kann aber nicht durch eine dritte Person, ohne Einwilligung von Noah, in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf \gls{github} aufgelistet werden. \cite{github} \\
 
 Beim Programmieren einer grösseren Arbeit erweist es sich besonders nützlich ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses \gls{ide}
 speziell auf die android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtert. Zum beispiel ist der
-"Visual Layout Editor" eine grosse Hilfe beim Designen. \cite{android-studio}
+"Visual Layout Editor"\ eine grosse Hilfe beim Designen. \gls{android-studio} bringt auch einen \gls{compiler} und einen \gls{emulator} mit sich, womit eine \textit{debug} \gls{apk} und eine
+\textit{release} \gls{apk} version der App erstellt werden kann. Um die App zu testen wurde öfters ein \textit{debug} \gls{apk} File erstellt und auf dem \gls{emulator} aus \gls{android-studio}
+getestet. Mit \gls{android-studio} können auch Apps mit speziellen Keys unterzeichnet werden, damit sie im GooglePlayStore veröffentlicht werden können.
+Die App sollte aber nicht nur auf Emulatoren laufen, um auch das Gefühl des designs besser zu empfinde oder den Gebrauch im Alltag zu testen, wurde eine \gls{adb} genutzt.
+\cite{android-studio} \\
+
+Open-Source Programme wurden bei dieser Arbeit öfters genutzt, um gewisse Funktionen einzubauen und ein Gefühl für das Programmieren solche Funktionen. Sie waren sehr 
+hilfreich beim Lernen, da wir teilweise noch gar keine Erfahrung bei gewissen Bereichen hatten. Was genau aus diesen Programmen entnommen wurde und welche Programme es sind wird 
+genauer im Anhang besprochen. 
+
 
 
 \subsection{Programmstruktur}
