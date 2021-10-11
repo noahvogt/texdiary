@@ -4,9 +4,9 @@
 \glossaryentry{Branch?\glossentry{branch}|setentrycounter[]{page}\glsnumberformat}{5}
 \glossaryentry{Merge?\glossentry{merge}|setentrycounter[]{page}\glsnumberformat}{5}
 \glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{Git?\glossentry{git}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Git?\glossentry{git}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{6}
 \glossaryentry{GitHub?\glossentry{github}|setentrycounter[]{page}\glsnumberformat}{6}
 \glossaryentry{IDE?\glossentry{ide}|setentrycounter[]{page}\glsnumberformat}{6}
 \glossaryentry{Android Studio?\glossentry{android-studio}|setentrycounter[]{page}\glsnumberformat}{6}
@@ -22,8 +22,20 @@
 \glossaryentry{Android Studio?\glossentry{android-studio}|setentrycounter[]{page}\glsnumberformat}{6}
 \glossaryentry{Android Studio?\glossentry{android-studio}|setentrycounter[]{page}\glsnumberformat}{6}
 \glossaryentry{Android Debugging Bridge?\glossentry{adb}|setentrycounter[]{page}\glsnumberformat}{6}
-\glossaryentry{Free Software Foundation?\glossentry{fsf}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{Free Software?\glossentry{Freie Software}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{IDE?\glossentry{ide}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{Free Software Foundation?\glossentry{fsf}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{Version Control Systems?\glossentry{vcs}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{Android Studio?\glossentry{android-studio}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Server?\glossentry{server}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Library?\glossentry{library}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Database?\glossentry{database}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{SQL?\glossentry{sql}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{SQLight?\glossentry{sqlite}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Query?\glossentry{query}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Entity?\glossentry{entity}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Recyclerview?\glossentry{recyclerview}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Liste?\glossentry{liste}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{View?\glossentry{view}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{User Interface?\glossentry{user interface}|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{Free Software Foundation?\glossentry{fsf}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{Free Software?\glossentry{Freie Software}|setentrycounter[]{page}\glsnumberformat}{14}
+\glossaryentry{IDE?\glossentry{ide}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{Free Software Foundation?\glossentry{fsf}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{Version Control Systems?\glossentry{vcs}|setentrycounter[]{page}\glsnumberformat}{15}

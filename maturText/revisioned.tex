@@ -176,23 +176,23 @@ sorting=ynt
 \newglossaryentry{vcs}{
     plural=VCS,
     name=Version Control Systems,
-    description={Ein System/Programm, welches die Versionierung einer Software verwaltet}
+    description={Ein System/Programm, welches die Versionierung einer Software verwaltet.}
 }
 
 %TODO: noah explain it better then me
 \newglossaryentry{git}{
     name=Git,
-    description={Ein \Gls{vcs} auf einem localen Gerät \cite{git}}
+    description={Ein \Gls{vcs} auf einem localen Gerät. \cite{git}}
 }
 
 \newglossaryentry{github}{
     name=GitHub,
-    description={Ein Server für Git \cite{github}}
+    description={Ein Server für Git. \cite{github}}
 }
 
 \newglossaryentry{branch}{
     name=Branch,
-    description={Eine abgetrente Arbeitsachse, welche nicht mit der Hauptachse, auf welcher das Hauptprogramm ist, interagiert \cite{branch}}
+    description={Eine abgetrente Arbeitsachse, welche nicht mit der Hauptachse, auf welcher das Hauptprogramm ist, interagiert. \cite{branch}}
 }
 
 \newglossaryentry{merge}{
@@ -214,7 +214,7 @@ sorting=ynt
 
 \newglossaryentry{adb}{
     name=Android Debugging Bridge,
-    description={Eine Software mit welcher z.b APK dateien über USB-Anschluss auf ein Andorid Gerät geladen werden kann}
+    description={Eine Software mit welcher z.b APK dateien über USB-Anschluss auf ein Andorid Gerät geladen werden kann.}
 }
 
 \newglossaryentry{emulator}{
@@ -224,15 +224,70 @@ sorting=ynt
 
 \newglossaryentry{apk}{
     name=APK,
-    description={APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android}
+    description={APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android.}
 }
 
 %TODO: Noah pleas explain better the me
 \newglossaryentry{compiler}{
     name=Compiler,
-    description={Ein Programm, welches den Source-Code in die APK From bringt}
+    description={Ein Programm, welches den Source-Code in die APK From bringt.}
 }
 
+\newglossaryentry{sql}{
+    name=SQL,
+    description={Structure Query Language, eine Spache um mit der Database zu Kommunizieren. \cite{sqlInfo}}
+}
+
+%TODO: Quelle simon
+\newglossaryentry{sqlite}{
+    name=SQLight,
+    description={SQLite unterstütz viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist leichter.}
+}
+
+\newglossaryentry{library}{
+    name=Library,plural=libraries,
+    description={Eine Library kann auf Programme, Skripts oder Funktionen verweisen, welche direkt im Code verwendet werden könne. \cite{library}}
+}
+%TODO: noah erklär du das bitte
+\newglossaryentry{server}{
+    name=Server,
+    description={<++>}
+}
+
+\newglossaryentry{database}{
+    name=Database,
+    description={Ein System welches Daten speichern kann.}
+}
+
+\newglossaryentry{query}{
+    name=Query,plural=queries,
+    description={Eine Anfrage nach etwas an die Database.}
+}
+
+\newglossaryentry{entity}{
+    name=Entity,plural=entities,
+    description={Eine Entity speichert Informationen über ein Objekt ab. Z.b über eine Person wird ihr Alter und name gespeichert. Die Person ist das Objekt.}
+}
+
+\newglossaryentry{liste}{
+    name=Liste,
+    description={Eine Library um eine Liste zu erstellen und bearbeiten.}
+}
+
+\newglossaryentry{recyclerview}{
+    name=Recyclerview,
+    description={Eine Klasse die verschiedene Views, wie in eine dynamische Liste, darstellen kann.}
+}
+
+\newglossaryentry{view}{
+    name=View,
+    description={Eine View ist ein recheckiges Fenseter, welches auf dem Display, meist mit einem Inhalt, angezeigt wird. \cite{view}}
+}
+%TODO: Noah explain pleas
+\newglossaryentry{user interface}{
+    name=User Interface,
+    description={<++>}
+}
 
 %==================begin document==========================
 
@@ -260,48 +315,25 @@ sorting=ynt
 \pagebreak
 
 \section{Vorwort}
-% TODO: weniger persönlich + stil
 Noah hatte schon länger grosses Interesse am Programmieren. Ich hingegen begann Interesse an den Programmiersprachen zu entwickeln als wir im Unterricht 
 Python lernten. Als die Zeit kam sich für ein Maturthema zu entscheiden, war für mich klar, ich würde eine App programmieren. Anfangs ging es mir darum eine 
 nützliche App zu kreieren, welche ich selbst verbessern kann und meine Bedürfnisse perfekt abdeckt.
 Zu diesem Zeitpunkt störte es mich, dass es keine effiziente Edubs-Mail-App fürs Smartphone gab und ich wollte Sie selbst kreieren. 
 Da ich aber wusste, dass ich mich nicht so gut auskenne, fragte ich bei Noah nach, wie er die Idee findet und ob er vielleicht mit mir diese Arbeit 
 angehen würde. Er war der Meinung, dass wir eine solche App auch für alle Emailanbieter erstellen können. Wir haben uns dann Konkreter über die App unterhalten und entschieden, diese auch zu Zweit 
-zu Programmieren. Wir waren uns einig eine App zu erstellen, welche keine Schwierigkeiten machte, wenn sie auf älteren Geräten lief - schliesslich hatte noch z.Z. auch nur ein sehr altes Android Gerät - und sie sollte Open Source sein. Dafür sprechen viele praktische und philosphisch-ethische Gründe, aber dazu später mehr.
-Bei den Funktionen waren wir uns sehr einig und wir hatten eine Menge an Ideen um einen vollumfänglichen Emailclient zu erstellen. Das Design liessen wir zu beginn 
-zu Seite, da wir es schlicht und funktional halten wollten. 
+zu Programmieren. Wir waren uns einig eine App zu erstellen, welche keine Schwierigkeiten machte, wenn sie auf älteren Geräten lief - schliesslich hatte Noah z.B. auch nur ein sehr altes Android Gerät - und sie sollte Open Source sein. Dafür sprechen viele praktische und philosphisch-ethische Gründe, aber dazu später mehr.
+Bei den Funktionen waren wir uns auch einig und wir hatten eine Menge an Ideen um einen vollumfänglichen Emailclient zu erstellen. Gedanke zu dem Design machten wir uns zuerst nicht,
+, da wir es schlicht und funktional halten wollten. 
 Wir hatten beide eine gewisse Vorstellung unserer App vor uns und ob wir diese erreicht haben wird sich im laufe dieser Arbeit herausstellen. 
 
 \section{Einleitung}
-Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute in den meisten Ländern. Nach dem Prinzip des technologischen Fortschrittes könnte angenommen werden, dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für unseren persönlichen Gebrauch.
+Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute in den meisten Ländern. 
+Nach dem Prinzip des technologischen Fortschrittes könnte angenommen werden, dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - 
+die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. 
+Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für unseren persönlichen Gebrauch. \\
 
-\subsection{Arbeitsziele}
-
-Wir wissen, was ein Email Client können muss, und haben nicht vor eine Apps zu designen, welche vollkommen überladen ist mit Funktionen, die keiner braucht.\\
-
-Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das Lesen und Schreiben von Emails, das Öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. Ebenso soll es verschiedene Ordner unterstützen, wie z.B. ein Spam/Junk oder ein Archiv Ordner. Dazu soll es möglich sein E-Mails visuell sortieren zu können, beispielsweise indem die Ordner im Client nach Datum des Empfangs oder dem Absender sortiert werden können. E-Mails sollen mit markiert, gelöscht und weitergeleitet werden können. Es soll eine Suchfunktion für jeden Mailordner geben. \\
-
-Ebenso soll es einen Account Manager geben, was voraus setzt, dass es möglich ist sich mit verschiedenen 
-Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail soll es dem Nutzer leicht gemacht werden mit eingebauten Konfigurationen für beliebte 
-Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
-
-Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei sollen neue Nachrichten mit dem Absender und dem Beginn der E-Mail angezeigt werden. 
-% Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. TODO: delete this???
-Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Dieses Verhalten soll in den App-Einstellungen steuerbar gemacht werden. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. Ob diese Funktion sinnvoll ist, ist fraglich, da auf viele Leute keine Emailaddressen auf der Kontaktapp ihres Handys speichern.\\
-
-Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
-
-
-Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein. \\
-
-
-Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
-Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
-
+%TODO: motivation imm sinne kritik an den anderen Apps und wie mir uf die ziel ko sind
 \subsection{Arbeitskonzept}
-
-
-
 
 %\subsubsection{Vergleich mit der aktuellen Konkurrenz}
 %% TODO: soll dieser paragraph gelöscht werden / complete rewrite ????
@@ -519,6 +551,35 @@ Dies ist ein Programm zur Konvertierung von einem Dokumentformat in ein anderes.
 
 \end{comment}
 
+\subsection{Arbeitsziele}
+
+Wir wissen, was ein Email Client können muss, und haben nicht vor eine App zu designen, welche vollkommen überladen ist, mit Funktionen die keiner braucht.\\
+
+Die App soll die Basisfunktionen eines klassischen Email-Clients erfüllen. Dazu gehören das Lesen, Schreiben, Empfangen und Versenden von Emails, 
+das Öffnen und Anfügen von Anlagen, die Setzung einer Email-Signatur und das Erstellen und Speichern von Entwürfen. 
+Ebenso soll es verschiedene Ordner unterstützen, wie z.B. ein Spam/Junk oder ein Archiv Ordner. 
+Dazu soll es möglich sein E-Mails visuell sortieren zu können, beispielsweise indem die Ordner im Client nach Datum des Empfangs oder dem Absender sortiert werden können. E-Mails sollen markiert, gelöscht und weitergeleitet werden können und es soll eine Suchfunktion für jeden Mailordner geben. \\
+
+Ebenso soll es einen Account Manager geben, was voraus setzt, dass es möglich ist sich mit verschiedenen 
+Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail, soll es dem Nutzer leicht gemacht werden, mit eingebauten Konfigurationen für beliebte 
+Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
+
+Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei sollen neue Nachrichten mit dem Absender und dem Beginn der E-Mail angezeigt werden. 
+% Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. TODO: delete this???
+Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Dieses Verhalten soll in den App-Einstellungen steuerbar gemacht werden. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. Ob diese Funktion sinnvoll ist, ist fraglich, da auf viele Leute keine Emailaddressen auf der Kontaktapp ihres Handys speichern.\\
+
+Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
+
+
+Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein. \\
+
+
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf uns an Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
+Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
+
+
+
+
 \section{Arbeitsprozess}
 
 \subsection{Programmiermittel}
@@ -537,19 +598,23 @@ des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde
 Beim Programmieren einer grösseren Arbeit erweist es sich besonders nützlich ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses \gls{ide}
 speziell auf die android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtert. Zum beispiel ist der
 "Visual Layout Editor"\ eine grosse Hilfe beim Designen. \gls{android-studio} bringt auch einen \gls{compiler} und einen \gls{emulator} mit sich, womit eine \textit{debug} \gls{apk} und eine
-\textit{release} \gls{apk} version der App erstellt werden kann. Um die App zu testen wurde öfters ein \textit{debug} \gls{apk} File erstellt und auf dem \gls{emulator} aus \gls{android-studio}
+\textit{release} \gls{apk} version der App erstellt werden kann. Um die App zu testen, wurde öfters ein \textit{debug} \gls{apk} File erstellt und auf dem \gls{emulator} aus \gls{android-studio}
 getestet. Mit \gls{android-studio} können auch Apps mit speziellen Keys unterzeichnet werden, damit sie im GooglePlayStore veröffentlicht werden können.
-Die App sollte aber nicht nur auf Emulatoren laufen, um auch das Gefühl des designs besser zu empfinde oder den Gebrauch im Alltag zu testen, wurde eine \gls{adb} genutzt.
+Die App sollte aber nicht nur auf Emulatoren laufen, um auch das Gefühl des Designs besser zu empfinden oder den Gebrauch im Alltag zu testen, wurde eine \gls{adb} genutzt.
+Mit \gls{android-studio} können auch Daten über die Effizienz der App aufgenommen werden. 
 \cite{android-studio} \\
 
-Open-Source Programme wurden bei dieser Arbeit öfters genutzt, um gewisse Funktionen einzubauen und ein Gefühl für das Programmieren solche Funktionen. Sie waren sehr 
-hilfreich beim Lernen, da wir teilweise noch gar keine Erfahrung bei gewissen Bereichen hatten. Was genau aus diesen Programmen entnommen wurde und welche Programme es sind wird 
+Open-Source Programme wurden bei dieser Arbeit öfters genutzt, um gewisse Funktionen einzubauen und ein Gefühl für das Programmieren solcher Funktionen zu bekommen. Die Programme
+waren sehr 
+hilfreich beim Lernen, da wir teilweise noch gar keine Erfahrung in gewissen Bereichen hatten. Was genau aus diesen Programmen entnommen wurde und um welche Programme es sich handelt, wird 
 genauer im Anhang besprochen. 
 
 
 
 \subsection{Programmstruktur}
 
+
+\begin{comment}
 \subsubsection{Sicherheit / Security (Features)}
 % ENG: Considering that on 99\% of consumer smartphones the users do not even have root access (but which the ``owner'' of the smartphone software do have), people that are concerned with privacy or security would not use their important mailboxes on their smartphone anyway, but rather on their better secured computer running a Free Software Operating System etc.\\
 In Anbetracht der Tatsache, dass auf 99\% der Consumer-Smartphones die Benutzer nicht einmal Root-Zugriff haben (den aber der ``Besitzer'' der Smartphone-Software hat), würden Leute, die auf Privatsphäre oder Sicherheit bedacht sind, ihre wichtigen Mailboxen ohnehin nicht auf ihrem Smartphone benutzen, sondern eher auf ihrem besser gesicherten Computer, auf dem ein reines Freies-Software-Betriebssystem läuft usw.\\
@@ -582,6 +647,7 @@ Selbst wenn das Projekt aufgegeben werden sollte bei seinen ursprünglichen Entw
 \subsubsection{less bug/error-prone}
 % ENG: This is thanks to the suckless nature of our coding philosophy, but also our execution. It could be the case however that bad practices may have been used as the initial project owner did not have a lot of experience of 
 Es ist grösstenteils der suckless-basierten Codingphilosophie zu verdanken, aber auch der Umsetzung. Es könnte jedoch der Fall sein, dass schlechte \textit{Coding Practices} verwendet wurden, da die beiden initialen Entwickler dieses Projekts nur eine beschränkte Erfahrung mit der Androidentwicklung mit der Java-Programmiersprache hatten.
+\end{comment}
 
 
 %\subsection{Informationsbeschaffung}
@@ -612,7 +678,31 @@ Es ist grösstenteils der suckless-basierten Codingphilosophie zu verdanken, abe
 
 % \textbf{ https://www.youtube.com/watch?v=2sjqTHE0zok} nur um später zu makieren.
 
-\newpage
+\subsubsection{Hauptziele}
+Gemäss den Zielen soll die App eine Verbindung mit einem Server erstellen können und mit ihm Interagieren können. Heisst sie soll die Informationen über einen Account, die der 
+Nutzer eingibt überprüfen können und weiter die Emails die ein Nutzer auf einem \gls{server} hat herunterladen. Ebenso soll die App Nachrichten weiter über einen Server verschicken können. 
+Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Zu ihrem bedauern gibt es nur zwei libraries die in Frage kommen. 
+%TODO: noah schrib wurum mir die libraries ned gange sind und wurum mir uf python umgstiege sind.
+
+Weil nach dem herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
+und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen 
+liest sich einer der Autoren in ein Buch ein. Dieses Buch soll ihm Aufschluss über das erstellen einer Database geben. 
+Es wurde klar, dass eine Database für Android meist mit \gls{sql} oder \gls{sqlite} geschrieben wird. Jedoch sind diese Sprachen nicht wirklich handlich und es
+liess sich auch nicht mit dem Zeitplan verknüpfen eine weitere Programmiersprache zu lernen. Weshalb zu Room gegriffen wurde. Room ist eine abstrakte Klasse über SQLite 
+und kann mit dieser Kommunizieren. Mit ihr können SQL \glspl{query} fast vollständig in Java geschrieben und ausgeführt werden. Ebenso ist Room für die Fehlersucher besser geeignet, 
+weil es beim Compilen der App die SQL queries und \glspl{entity} überprüft. \cite{roomInfo} \\
+
+Um die heruntergeladenen und gespeicherten Nachrichten auch Anzeigen zu könne wird ein Interface benötigt. Dieses sollte so schlicht und ordentlich wie möglich gehalten werden. 
+Die \gls{recyclerview} Library ist eine optimale Möglichkeit Daten in Form von Nachrichten als eine Auflistung zu zeigen. Sie bringt einen Vorteil gegenüber einer \gls{liste} mit und zwar
+verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle}
+
+Neben der Recyclerview Library werden auch andere libraries gebraucht um das \gls{user interface} zu erstellen. Einer dieser libraries ist Material oder Material Design. 
+Den Autoren hat sie schlicht gefallen und sie ist nicht schwer zu benutzen, weshalb diese Library genutzt wurde. Sie ist nach ganz klaren Prinzipien aufgebaut 
+und von Google erstellt worden um hochwertige Designs zu kreieren. \cite{materialDesigne}
+
+
+%\subsubsection{Aufbau}
+
 
 \subsubsection{Interface}
 
@@ -717,6 +807,7 @@ Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob 
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
 % \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
 
+%TODO: überarbeiten weil in Hauptziel drin
 Da viele Daten gespeichert werden müssen, musste eine Möglichkeit her, wie diese möglichst schnell, und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine Datenbank für diesen Anwendungszweck und u.a. in Anbetracht der eingrenzenden Umständen, also die Deadline der Arbeitsabgabe, an. Noah hatte schon ein paar wenige Erfahrungen mit Datenbanken, doch da Simon diese Aufgabe übernehmen wollte, las er sich mithilfe eines Buches \cite{riccardi2001} erfolgreich in die Thematik ein.
 
 
@@ -757,11 +848,10 @@ folder Attributen, in den richtigen Ordnern angezeigt werden. Jeder Ordner hat s
 Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen.  \\
 
 
-Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
-die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
-recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
+%Für Android gibt es nicht viele Sprachen um eine Database zu erstellen. Die bekannteste ist SQLite .Jedoch ist SQLite nicht sehr simple und es kann sehr komplex werden, wenn
+%die Database bis auf bytes genau Programmiert werden soll. Ebenfalls lag es nicht im Zeitplan eine weitere Programmiersprache zu lernen. Nach kurzer 
+%recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
 
-\newpage
 
 
 \begingroup
@@ -888,7 +978,6 @@ in LiveData.
 
 Im \textit{Cunstroctor} von dem EmailViewModel wird der Variable mInboxMessage die Daten aus dem Repository übergeben welche diese wieder im \textit{Constructor} von dem MessageDAO überkommt.
 
-\newpage
 
 \subsubsection{Draft Messages}
 
@@ -910,6 +999,9 @@ Database.  \\
 
 Dies ist der grobe Aufbau um Messages anzuzeigen. Wenn etwas durch die NewDraftActivity verändert wird, wird der Observer informiert, welcher den CostumAdpater informiert und bis nach 
 ganz unten die neuen Informationen ausliest.
+
+%TODO: alles um de Server mit Python und repository etc. Dänkfähler mit Aktualisierung vo de Ordner
+\subsubsection{Server}
 
 \subsection{Umsetzung}
 \subsubsection{Bugs}
@@ -940,6 +1032,7 @@ eine \textit{diary} geschrieben, in welcher wir unseren Prozess dokumentiert hab
 Ebenfalls haben wir uns im Programm oder in unseren Texten Notizen überlassen um fragen an den anderen zu stellen oder Aufgaben zu geben. Teilweise haben wir uns auch jeden Montag zusammengesetzt
 und die Woche besprochen. Jetzt wo ich alles Aufzähle merke ich wir haben nicht ganz so wenig Kommuniziert aber es hat sich sehr danach angefühlt. Unter anderem, weil Noah selten erreichbar
 war. Dennoch Lief es sehr gut, auch weil wir uns das Programm grob aufgeteilt haben und sich alle Teile zusammenfügen, was auch einen gewissen touch der Linuxphilosophie in sich hat. 
+
 
 \subsection{Testing}
 
