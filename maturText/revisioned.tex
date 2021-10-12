@@ -681,8 +681,8 @@ Es ist grösstenteils der suckless-basierten Codingphilosophie zu verdanken, abe
 \subsubsection{Hauptziele}
 Gemäss den Zielen soll die App eine Verbindung mit einem Server erstellen können und mit ihm Interagieren können. Heisst sie soll die Informationen über einen Account, die der 
 Nutzer eingibt überprüfen können und weiter die Emails die ein Nutzer auf einem \gls{server} hat herunterladen. Ebenso soll die App Nachrichten weiter über einen Server verschicken können. 
-Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Zu ihrem bedauern gibt es nur zwei libraries die in Frage kommen. 
-%TODO: noah schrib wurum mir die libraries ned gange sind und wurum mir uf python umgstiege sind.
+Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Das Resultat dieser Suche waren zwei Libraries. 
+%TODO: noah schrib wurum mir die libraries ned gange sind und wurum mir uf python umgstiege sind. 
 
 Weil nach dem herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
 und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen 
@@ -694,15 +694,37 @@ weil es beim Compilen der App die SQL queries und \glspl{entity} überprüft. \c
 
 Um die heruntergeladenen und gespeicherten Nachrichten auch Anzeigen zu könne wird ein Interface benötigt. Dieses sollte so schlicht und ordentlich wie möglich gehalten werden. 
 Die \gls{recyclerview} Library ist eine optimale Möglichkeit Daten in Form von Nachrichten als eine Auflistung zu zeigen. Sie bringt einen Vorteil gegenüber einer \gls{liste} mit und zwar
-verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle}
+verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle} \\
 
 Neben der Recyclerview Library werden auch andere libraries gebraucht um das \gls{user interface} zu erstellen. Einer dieser libraries ist Material oder Material Design. 
 Den Autoren hat sie schlicht gefallen und sie ist nicht schwer zu benutzen, weshalb diese Library genutzt wurde. Sie ist nach ganz klaren Prinzipien aufgebaut 
 und von Google erstellt worden um hochwertige Designs zu kreieren. \cite{materialDesigne}
 
 
-%\subsubsection{Aufbau}
+\subsubsection{Aufbau}
 
+Die App kann grob in drei Teile unterteil werden. In \textit{User Interface}, in \textit{Database} und in \textit{Serververbindung}. 
+
+\begingroup
+\setlength{\intextsep}{7pt}
+\setlength{\columnsep}{15pt}
+
+\begin{wrapfigure}{r}{10cm}
+\centering
+    \includegraphics[scale=.52]{media/AppStructureFull.png}
+\caption{Grob Aufbau der App}
+\end{wrapfigure}
+
+\nohyphenation
+
+Diese drei Komponenten bilden zusammen die App, wobei der Teil der Serververbindung nicht immer aktiv ist. Er wird von dem User Interface
+aufgerufen, wenn zum Beispiel sich ein neuer Nutzer mit einem Emailaccount anmelden möchte. Dann werden die Accountdaten an de Server geschickt und überprüft.
+Wenn diese korrekt sind werden alle Nachrichten, die dieser Nutzer auf dem Server hat, heruntergeladen und weiter an die Database gegeben. Abgesehen von dem 
+Speichern der Nachrichten die frisch vom Server kommen, macht die Database nur noch zwei dinge. Sie kann, durch das Interface entstandene, Nachrichten so abspeichern, dass sie 
+vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \textit{Database} kann weiter gespeicherte Nachrichten bearbeiten so, dass sie vom 
+\textit{User Interface} in eine anderen Ordner angezeigt werden.
+
+\endgroup
 
 \subsubsection{Interface}
 
@@ -718,6 +740,7 @@ Noah begann dann dieses Programm leicht auszubauen und fügte einige Interface I
 \caption{Drawer Navigation Menu}
 \end{wrapfigure}
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
+
 
 Die App beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
 Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen.
