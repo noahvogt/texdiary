@@ -163,6 +163,16 @@ sorting=ynt
 
 \makeglossaries
 
+\newglossaryentry{copyleft}{
+    name=Copyleft-Softwarelizenzen,
+    description={Wie bei permissiven Lizenzen können Sie das Programm für JEDEN Zweck ausführen, den Quellcode lesen, ändern und die Änderungen zu veröffentlichen. Der Trick liegt jedoch in den restriktiven Redistributionsbedingungen: Sie dürfen das Programm NUR verbreiten, wenn Ihre Version die gleichen Freiheiten bietet. Dies geschieht in der Regel dadurch, dass die Weitergabe nur unter der gleichen Lizenz erlaubt ist. Der Name ``copyleft'' ist eine offensichtliche Anspielung auf das Wort ``Copyright'', da es versucht, dessen Konzept genau umzukehren: Anstatt die nahezu weltweit vorhandenen Kopierrechtsgesetze dazu zu verwenden, Nutzerfreiheiten einzuschränken, werden Copyleft-Lizenzen dazu eingesetzt diese zu bewahren und erweitern. \cite{kumar2011}}
+}
+
+\newglossaryentry{permissive}{
+    name=Permissive Softwarelizenzen,
+    description={Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen. Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurückzugeben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute - meist auf Imageboards \cite{8chan.moe} - diese Lizenzen als ``Cuck Licenses'' beschimpfen, so werden sich auch reichlich kritisiert auf diversen technologiebezogenen Blogposts\cite{cuckblog}.}
+}
+
 \newglossaryentry{fsf}{
     name=Free Software Foundation,
     description={This is the Foundation created by Richards Stallman, the Starter of the free software movement. It is dedicated to the preservation, creation, and to fight for free software all around the globe.}
@@ -176,31 +186,32 @@ sorting=ynt
 \newglossaryentry{vcs}{
     plural=VCS,
     name=Version Control Systems,
-    description={Ein System/Programm, welches die Versionierung einer Software verwaltet.}
+    description={Ein System oder Programm, welches die Versionierung des Quellcodes einer Software verwaltet.}
 }
 
 %TODO: noah explain it better then me
 \newglossaryentry{git}{
     name=Git,
-    description={Ein \Gls{vcs} auf einem localen Gerät. \cite{git}}
+    description={Ein populäres Programm, welches die Funktion eines \Gls{vcs} übernimmt und auf einem lokalen Gerät benutzt und installiert wird. Zusätzlich kann es auch auf einem Server installiert werden um die eigenen lokalen Änderungen hochzuladen, neue fremde Änderungen herunterladen und Änderungen zu synchronisieren, um mit mehreren Leuten kollaborativ an einem Softwareprojekt arbeiten zu können.\cite{git}}
 }
 
 \newglossaryentry{github}{
     name=GitHub,
-    description={Ein Server für Git. \cite{github}}
+    description={Die grösste, global öffentlich zugängliche Plattform für Hosting von Git Repositories. \cite{github}}
 }
 
 \newglossaryentry{branch}{
-    name=Branch,
-    description={Eine abgetrente Arbeitsachse, welche nicht mit der Hauptachse, auf welcher das Hauptprogramm ist, interagiert. \cite{branch}}
+    name=Git Branch,
+    plural=branches,
+    description={Beim \Gls{vcs} \Gls{git} handelt es sich hier um Eine abgetrennte Arbeitsachse, welche erlaubt verschieden Aufgaben in der Softwareentwicklung wie z.B. das Programmieren neuer Features getrennt oder parallel voneinander zu entwickeln um sie später wieder zusammenzuführen in einem \Gls{merge}. Weiterführend: \cite{branch}.}
 }
 
 \newglossaryentry{merge}{
-    name=Merge,
+    name=Git Merge,
     plural=mergen,
-    description={Mehrere branche zusammenfügen. \cite{github}}
+    description={Beim \Gls{vcs} \Gls{git} unterschiedliche \Gls{branch}es zusammenzuführen in einen neuen, ähnlich dem Reissverschlussprinzip bei der zwei Strassenspuren in eine einzige zusammengeführt werden \cite{github}.}
 }
-%TODO: anstendige quelle finden
+%TODO: anständige quelle finden
 \newglossaryentry{ide}{
     name=IDE,
     plural=Integrated Development Environment,
@@ -209,12 +220,12 @@ sorting=ynt
 
 \newglossaryentry{android-studio}{
     name=Android Studio,
-    description={Ein \gls{ide}, welches für Android spezialisiert wurde. \cite{android-studio}}
+    description={Ein von Google entwickeltes \gls{ide}, welches auf dem Editor IntelliJ IDEA basiert und für die Android Entwicklung spezialisiert wurde. \cite{android-studio}}
 }
 
 \newglossaryentry{adb}{
     name=Android Debugging Bridge,
-    description={Eine Software mit welcher z.b APK dateien über USB-Anschluss auf ein Andorid Gerät geladen werden kann.}
+    description={Eine Software mit verschiedenen Tools, mit der man mit einem physischen Android Gerät interagieren kann, welches per USB-Anschluss an den PC angeschlossen ist. Man kann z.B. Apps des angeschlossenen vom Computer aus löschen und neue installieren, Screenshots aufnehmen, oder Dateien transferieren.}
 }
 
 \newglossaryentry{emulator}{
@@ -224,44 +235,44 @@ sorting=ynt
 
 \newglossaryentry{apk}{
     name=APK,
-    description={APK steht für Android Package, was das Packaging Format ist um Software zu installieren auf Android.}
+    description={APK steht für \say{Android Package}, welches dem Format entsprechen soll, in dem Software dem Android Betriebssystem entwickelt wird.}
 }
 
-%TODO: Noah pleas explain better the me
 \newglossaryentry{compiler}{
     name=Compiler,
-    description={Ein Programm, welches den Source-Code in die APK From bringt.}
+    description={Ein Programm, welches den vom Menschen lesbaren Quellcode in die vom Computer ausführbare Form bringt.}
 }
 
 \newglossaryentry{sql}{
     name=SQL,
-    description={Structure Query Language, eine Spache um mit der Database zu Kommunizieren. \cite{sqlInfo}}
+    description={Kurz für \say{Structure Query Language}, eine Sprache um einer Datenbank Befehle oder Anweisungen zu übermitteln. \cite{sqlInfo}}
 }
 
 %TODO: Quelle simon
 \newglossaryentry{sqlite}{
     name=SQLight,
-    description={SQLite unterstütz viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist leichter.}
+    description={SQLite unterstütz viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist deshalb leichter an Systemressourcen.}
 }
 
 \newglossaryentry{library}{
-    name=Library,plural=libraries,
-    description={Eine Library kann auf Programme, Skripts oder Funktionen verweisen, welche direkt im Code verwendet werden könne. \cite{library}}
+    name=Library,
+    plural=libraries,
+    description={Eine Library (dt. Bibliothek) kann ist eine Sammlung von Programmen, Programmfunktionen und Skripts welche in einem anderen Programm verlinkt werden, um gewisse generische Funktionalitäten nicht jedes mal neu entwickeln zu müssen oder unnötig ein Klon davon in den Quellcode einfügen zu müssen. \cite{library}}
 }
-%TODO: noah erklär du das bitte
+
 \newglossaryentry{server}{
     name=Server,
-    description={<++>}
+    description={Damit beschreibt man in der IT hauptsächlich diese beiden Dinge: Ein Programm, welches die ganze Zeit läuft, damit ein anderes Programm mit diesem interagieren kann, was dynamische Änderungen erlaubt. Die andere Bedeutung ist ein dedizierter Computer, auf welchem Serverprozesse laufen, beispielsweise ein Mailserver oder eine Website.}
 }
 
 \newglossaryentry{database}{
     name=Database,
-    description={Ein System welches Daten speichern kann.}
+    description={dt. Datenbank, ist ein System welches Daten effizient speichern und abrufbar machen kann.}
 }
 
 \newglossaryentry{query}{
     name=Query,plural=queries,
-    description={Eine Anfrage nach etwas an die Database.}
+    description={Eine Anfrage inklusive Wert, welche an ein Programm, z.B. eine Datenbank gesendet werden.}
 }
 
 \newglossaryentry{entity}{
@@ -269,25 +280,27 @@ sorting=ynt
     description={Eine Entity speichert Informationen über ein Objekt ab. Z.b über eine Person wird ihr Alter und name gespeichert. Die Person ist das Objekt.}
 }
 
-\newglossaryentry{liste}{
-    name=Liste,
-    description={Eine Library um eine Liste zu erstellen und bearbeiten.}
+\newglossaryentry{list}{
+    name=List,
+    description={Ein Datentyp welcher erlaubt mehrere einzelne Variablen aneinander zu ketten, was beispielsweise etwa so dargestellt werden kann: \texttt{List<Integer> = \{1, 3, 4, 5}\}.}
 }
 
 \newglossaryentry{recyclerview}{
     name=Recyclerview,
-    description={Eine Klasse die verschiedene Views, wie in eine dynamische Liste, darstellen kann.}
+    description={Eine stark anpassbare ,durchscrollbare, dynamisch veränderbare Liste von die verschiedene Views und (Text-)Objekten.}
 }
 
 \newglossaryentry{view}{
     name=View,
-    description={Eine View ist ein recheckiges Fenseter, welches auf dem Display, meist mit einem Inhalt, angezeigt wird. \cite{view}}
+    description={Im Kontext der Android Entwicklung ist eine View ein rechteckiges Fenster, welches auf dem Display, wobei es diverse Inhalte wie Buttons, Switches oder Text enthalten kann, angezeigt wird. \cite{view}}
 }
-%TODO: Noah explain pleas
+
 \newglossaryentry{user interface}{
     name=User Interface,
-    description={<++>}
+    description={Oberbegriff für die ganze graphische Oberfläche, bestehend aus Inhalten wie Buttons, Text, Bildern mit welcher der Nutzer interagieren kann durch tippen, scrollen oder Tastatureingaben in Textfeldern.}
 }
+
+\usepackage{csquotes}
 
 %==================begin document==========================
 
@@ -380,30 +393,13 @@ Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den 
 
 % maybe too much of a rant about intellectual property (IP) ???
 
-Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich ziemlich gut in zwei Kategorien unterteilen:\\
+\subsubsection{Lizensierung}
+% ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
+Grundsätzlich gibt es die  Unterscheidung zwischen freien Softwarelizenzen proprietären Softwarelizenzen. Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich ziemlich gut in zwei Kategorien unterteilen: in \gls{permissive} und in \gls{copyleft}.\\
+
+Die Autoren dieser App halten Copyleft Software in ethischer und praktischer Hinsicht für die beste Wahl bei der Softwarelizensierung, wehalb entschieden wurde für dieses Softwareprojekt die \textit{GNU General Public License (GPL) Version 3} \cite{GPLv3} der \gls{fsf} zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
 
 % TODO: license comparison apparently too irrelevant ? I guess. Los eif unseri erkläre und wurum Copyright uf programm shit isch
-
-\paragraph{Permissive Licenses}
-% ENG: These give you the right to run the program for ANY purpose, study the source code, change it and redistribute the changes. Their names come from the fact, that they are ``permissive'' when it comes to their few restrictions: They do not put of a lot of restrictions on the distribution of the source code, and often allow the software to be forked under ANY terms. This means it is possible to make your fork of a permissive-licensed program proprietary.\\
-Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen.\\
-
-% ENG: This means they do not protect their code from being taken and used in other projects, even proprietary, without any giving back, which is a definite drawback and the reason people insult these licenses as ``cuck licenses'' as you ``write proprietary code for free for big tech without increasing anyone's computer usage freedom''. A positive point of these licenses however is their simplicity: The MIT license for example only consists of 20 SLOC, while a Copyleft license as the GPL v3 uses more than 600 SLOC and its jurisdictional jargon is much harder to understand.\\
-Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurückzugeben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute - meist auf Imageboards \cite{8chan.moe} - diese Lizenzen als ``Cuck Licenses'' beschimpfen, hier ein populäres Argument aus einem Blogpost:
-\begin{nicequote}{When you release any code under a Cuck License, you are simply writing free commercial code for corporations that will inevitably use it against you. You might as well just actually get a job with them so you can get paid for what you do instead of just getting cucked.}{Luke Smiths Blogpost \cite{cuckblog}}
-\end{nicequote}
-
-Ein positiver Punkt von diesen Lizenzen ist aber ihre Einfachheit: Die MIT-Lizenz zum Beispiel besteht aus nur 20 SLOC, während eine Copyleft Lizenz wie die GPL v3 aus mehr als 600 SLOC und gewissem Juristenjargon besteht und daher viel schwerer zu verstehen ist.\\
-
-\paragraph{Copyleft Licenses}
-% ENG: This is an obvious play on the word ``Copyright'', as it tries to invert its effects. As with permissive licenses you can run the program for ANY purpose, study, change the source code and redistribute the changes. But the trick comes with their restrictive redistribution terms: You can ONLY redistribute the program if your version provides the same user freedoms. This is usually done in only allowing redistributing using the same license.\\
-Wie bei permissiven Lizenzen können Sie das Programm für JEDEN Zweck ausführen, den Quellcode lesen, ändern und die Änderungen zu veröffentlichen. Der Trick liegt jedoch in den restriktiven Redistributionsbedingungen: Sie dürfen das Programm NUR verbreiten, wenn Ihre Version die gleichen Freiheiten bietet. Dies geschieht in der Regel dadurch, dass die Weitergabe nur unter der gleichen Lizenz erlaubt ist.\\
-
-Der Name ``copyleft'' ist eine offensichtliche Anspielung auf das Wort ``Copyright'', da es versucht, dessen Konzept genau umzukehren: Anstatt die nahezu weltweit vorhandenen Kopierrechtsgesetze dazu zu verwenden, Nutzerfreiheiten einzuschränken, werden Copyleft-Lizenzen dazu eingesetzt diese zu bewahren und erweitern. \cite{kumar2011}\\
-
-% ENG: To provide such protection of the user freedoms in future forks, there needs to be a lot of jurisdictional jargon in the license which makes it significantly longer and harder to understand for the average reader. But most of the people in Free Software who care about user freedom say this is the premiere license for your free software projects, as it ensures that freedoms have to be granted forever and stopping proprietary code maker profiting from their written free code.\\
-Wie bereits erwähnt, müssen solche Lizenzen eine Menge juristischen Jargon enthalten, um die vorhandene Gesetzeslage des Kopierrechts auszunutzen. Dies macht die Lizenz um einiges komplexer in Länge und an Verständlichkeit. Viele Unterstützer des Free Software Movements ziehen es aber trotzdem vor Copyleft Lizenzen zu verwenden, sofern möglich, da sie sicherstellen, dass die Freiheiten für immer gewährt werden müssen und die Hersteller von proprietärem Code daran hindert, von ihrem geschriebenen freien Code zu profitieren.\\
-
 
 \subsubsection{Philosophie (suckless)}
 
@@ -427,10 +423,6 @@ Die \textit{Suckless Philosophie} ist aber längst nicht die erste Philosophie i
 
 Bekannt ist auch das \textit{KISS Prinzip}: \say{Keep it simple, stupid}. Dieses Prinzip kommt ursprünglich vom U.S. Admiral Stroop, der das \say{Project KISS} 1960 ins Leben gerufen hatte, welches die Verlässlichkeit verbessern und die Kosten für amerikanische Militärausrüstungen senken soll. \cite{dalzell2009} Gerne wird diese Prinzip zitiert, wenn jemand der Meining ist, unnötige Komplexität sei vorhanden in einem Softwareprojekt.
 
-\subsubsection{Lizensierung}
-% ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
-
-Die Unterschiede zwischen verschiedenen Source-Code Modellen und deren Lizenzierung wurden bereits besprochen. Für dieses Softwareprojekt wurde sich entschieden die \textit{GNU General Public License (GPL) Version 3} \cite{GPLv3} der Free Software Foundation zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
 
 \begin{comment}
 \section{Programmier-Tools}
@@ -693,8 +685,8 @@ und kann mit dieser Kommunizieren. Mit ihr können SQL \glspl{query} fast vollst
 weil es beim Compilen der App die SQL queries und \glspl{entity} überprüft. \cite{roomInfo} \\
 
 Um die heruntergeladenen und gespeicherten Nachrichten auch Anzeigen zu könne wird ein Interface benötigt. Dieses sollte so schlicht und ordentlich wie möglich gehalten werden. 
-Die \gls{recyclerview} Library ist eine optimale Möglichkeit Daten in Form von Nachrichten als eine Auflistung zu zeigen. Sie bringt einen Vorteil gegenüber einer \gls{liste} mit und zwar
-verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle} \\
+Die \gls{recyclerview} Library ist eine optimale Möglichkeit Daten in Form von Nachrichten als eine Auflistung zu zeigen. Sie bringt einen Vorteil gegenüber einer \gls{list} mit und zwar
+verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle}
 
 Neben der Recyclerview Library werden auch andere libraries gebraucht um das \gls{user interface} zu erstellen. Einer dieser libraries ist Material oder Material Design. 
 Den Autoren hat sie schlicht gefallen und sie ist nicht schwer zu benutzen, weshalb diese Library genutzt wurde. Sie ist nach ganz klaren Prinzipien aufgebaut 
@@ -726,41 +718,44 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 
 \endgroup
 
+\newpage
 \subsubsection{Interface}
 
-Noah begann dann dieses Programm leicht auszubauen und fügte einige Interface Inhalte hinzu. 
 
 \begingroup
-\setlength{\intextsep}{10pt}
-\setlength{\columnsep}{15pt}
+\setlength{\intextsep}{1pt}
+\setlength{\columnsep}{12pt}
 
-\begin{wrapfigure}{r}{8cm}
+\begin{wrapfigure}{r}{6cm}
 \centering
 \includegraphics[scale=.15]{media/drawer.png}
 \caption{Drawer Navigation Menu}
 \end{wrapfigure}
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
+Als erstes wurde das Interface angegangen mit dem Gedanke, dass die Funktionen sich dann an das Interface anpassen werden.
 
-
-Die App beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah als würde es möglich sein sich anzumelden.  
-Die Basis für die App wurde gelegt und die beiden entschieden sich mit dem Interface anzufangen.
+Begonnen wurde mit einer Vorlage von Android-Studio. Diese beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, 
+welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah, als würde es möglich sein sich anzumelden.  
 
 \subsubsection{Recyclerviewer}
 % TODO: mehr allgemein erklären
-
-Simon begann mit der Recherche zum Recyclerviewer. Er war viel im Internet und fand schnell
-einige Beispiele, welche er ausprobierte und für seinen Nutzen gestaltete. Ein Recyclerviewer ist nicht sehr kompliziert
-hat aber gewisse Kniffe auf die Simon traf. \\
 
 Ein Recyclerviewer ist in fünf grundlegende Teile aufgeteilt. 
 
 \begin{enumerate}
 
-
+%TODO: dütsch? +Bild
     \item Das recyclerview Objekt, welches ein Container ist und in das User Interface eingebaut wird. 
 Es beinhaltet verschiedene Views, welche nochmals unterteilt werden können. In einer View wird in unserem 
 Fall eine Nachricht eingebaut mir dem Absender, der Absende Zeit und einem Betreff. 
 
+\end{enumerate}
+
+\endgroup
+
+\begin{enumerate}
+
+    \setcounter{enumi}{1}
     \item Der Layout manager. Er ist für die form einer einzelnen View verantwortlich. 
 Der Layout manager kann auch wieder in drei Arten unterteilt werden. Der Linearlayout Manager sorgt für eine 
 Horizontale oder vertikale unterteilung einer View. Hingegen führt der Gridlayout Manager zu einer horizontalen 

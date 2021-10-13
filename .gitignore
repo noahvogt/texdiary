@@ -17,3 +17,6 @@ Include/
 *.fls
 *.bbl
 *.run.xml
+*.glg
+*.glo
+*.gls
