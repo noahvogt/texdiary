@@ -189,7 +189,6 @@ sorting=ynt
     description={Ein System oder Programm, welches die Versionierung des Quellcodes einer Software verwaltet.}
 }
 
-%TODO: noah explain it better then me
 \newglossaryentry{git}{
     name=Git,
     description={Ein populäres Programm, welches die Funktion eines \Gls{vcs} übernimmt und auf einem lokalen Gerät benutzt und installiert wird. Zusätzlich kann es auch auf einem Server installiert werden um die eigenen lokalen Änderungen hochzuladen, neue fremde Änderungen herunterladen und Änderungen zu synchronisieren, um mit mehreren Leuten kollaborativ an einem Softwareprojekt arbeiten zu können.\cite{git}}
@@ -211,7 +210,7 @@ sorting=ynt
     plural=mergen,
     description={Beim \Gls{vcs} \Gls{git} unterschiedliche \Gls{branch}es zusammenzuführen in einen neuen, ähnlich dem Reissverschlussprinzip bei der zwei Strassenspuren in eine einzige zusammengeführt werden \cite{github}.}
 }
-%TODO: anständige quelle finden
+%TODO: anständige quelle finden, Noah: why ????
 \newglossaryentry{ide}{
     name=IDE,
     plural=Integrated Development Environment,
@@ -248,7 +247,7 @@ sorting=ynt
     description={Kurz für \say{Structure Query Language}, eine Sprache um einer Datenbank Befehle oder Anweisungen zu übermitteln. \cite{sqlInfo}}
 }
 
-%TODO: Quelle simon
+%TODO: Quelle simon, Noah: @who?
 \newglossaryentry{sqlite}{
     name=SQLight,
     description={SQLite unterstütz viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist deshalb leichter an Systemressourcen.}
@@ -340,26 +339,17 @@ Bei den Funktionen waren wir uns auch einig und wir hatten eine Menge an Ideen u
 Wir hatten beide eine gewisse Vorstellung unserer App vor uns und ob wir diese erreicht haben wird sich im laufe dieser Arbeit herausstellen. 
 
 \section{Einleitung}
-Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute in den meisten Ländern. 
+Das Kommunikationsmittel Email ist auch nach seinem fünfzigjährigen Geburtstag noch rege im Alltagsgebrauch vieler Leute auf dieser Welt.
 Nach dem Prinzip des technologischen Fortschrittes könnte angenommen werden, dass sich auch in den letzten zehn Jahren - nämlich seit dem Aufkommen der massentauglichen Smartphones - 
-die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. 
-Diese Maturarbeit ist unser Teil, daran etwas zu ändern, wenigstens für unseren persönlichen Gebrauch. \\
+die Emailsoftware verbessert hat. Doch auf dem Smartphone war es für uns, die Ersteller dieser Maturarbeit, schwer einen guten Email Client zu finden. So schlimm sogar, dass wir teilweise gar keinen Mailclient auf dem Handy installiert hatten, und stattdessen nur auf dem PC einen installiert hatten. Doch was macht man als Programmierer wenn einem die bereits erhältlichen Softwarelösungen nicht gefallen? Richtig, man schreibt seine eigene. Diese Maturarbeit ist also unser Teil, daran etwas zu ändern.
 
 %TODO: motivation imm sinne kritik an den anderen Apps und wie mir uf die ziel ko sind
 \subsection{Arbeitskonzept}
 
-%\subsubsection{Vergleich mit der aktuellen Konkurrenz}
-%% TODO: soll dieser paragraph gelöscht werden / complete rewrite ????
-%Disclamier/Note: Da bei dieser App ein Wert auf Sicherheit und Endnutzer-Freiheit gesetzt wird, wird sie dementsprechend nur mit Apps verglichen, welche auch Freie Software sind, nach Definition der \textit{Free Software Foundation (FSF)}. Somit fallen jegliche Proprietäre Produkte raus, da sie unsere Grundanforderungen an ein generelles Programm nicht erfüllen, denn es soll hier absolut nicht das Ziel sein eine App zu programmieren, welches versucht die Freiheiten der Nutzer einzuschränken. Dies aus praktischen, technologischen und sog. ethischen Gründen, doch darauf wird noch näher eingegangen.\\
-%
-%Wenn wir die meisten anderen quelloffenen, noch maintainten Open Source Email Clients anschauen fällt sofort auf, dass diese unglaublich überladen (engl. bloated) - an Funktionen oder Sourcecode-Zielen - sind. Selbst wenn man im Internet nach einem möglichst simplen Email Client für Android gesucht, stösst man dabei meist auf Apps wie k-9 Mail, welche immerhin noch über stattliche hunderttausende Zeilen Source Code besitzt.\\
-%
-%Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein.
-
 \subsubsection{Quellcode Modell}
 % TODO: too long, short a little (insg. ?)
 Um ein Programm zu programmieren, werden menschenlesbare Instruktionen in ein oder mehrere Textdateien geschrieben,
-die dann in Sprache, welche die Computerhardware interpretieren und ausführen zu kann, übersetzt.
+die dann in Sprache, welche die Computerhardware interpretieren und ausführen kann, übersetzt.
 
 \begin{figure}[H]
     \centering
@@ -391,15 +381,11 @@ Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./hellow
 
 Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
 
-% maybe too much of a rant about intellectual property (IP) ???
-
 \subsubsection{Lizensierung}
 % ENG: The differences of different source code models and their licenses have been already discussed in this paper (?). The reason the GNU General Public License Version 3 (short: GPL v3) was chosen because it is one of the most popular and strongest copyleft licenses that suits the application.
 Grundsätzlich gibt es die  Unterscheidung zwischen freien Softwarelizenzen proprietären Softwarelizenzen. Doch auch bei Open Source Software gibt es verschiedene Lizenzmodelle welche gewählt werden können. Diese lassen sich ziemlich gut in zwei Kategorien unterteilen: in \gls{permissive} und in \gls{copyleft}.\\
 
 Die Autoren dieser App halten Copyleft Software in ethischer und praktischer Hinsicht für die beste Wahl bei der Softwarelizensierung, wehalb entschieden wurde für dieses Softwareprojekt die \textit{GNU General Public License (GPL) Version 3} \cite{GPLv3} der \gls{fsf} zu verwenden, da diese eine der bekanntesten, strengsten und somit effektivsten Copyleft-Lizenzen ist.
-
-% TODO: license comparison apparently too irrelevant ? I guess. Los eif unseri erkläre und wurum Copyright uf programm shit isch
 
 \subsubsection{Philosophie (suckless)}
 
@@ -557,7 +543,6 @@ Accounts anzumelden und diese bei bedarf zu wechseln. Beim Anmelden einer E-Mail
 Emailprovider in der Schweiz. Darunter diese Anbieter: stud.edubs.ch, gmail.com, gmx.ch, outlook.com, yahoo.com, icloud.com, hotmail.com, web.de. \\
 
 Ein Element, welches fast jede App Heutzutage hat, sind Pushnachrichten, welche auch eingebaut werden sollen. Dabei sollen neue Nachrichten mit dem Absender und dem Beginn der E-Mail angezeigt werden. 
-% Eine Funktion die nicht jeder Email-Client hat ist, dass die Gesprächsverläufe in der Struktur wie auf Reddit oder Thunderbird gezeigt werden. TODO: delete this???
 Dies soll ein weiteres Feature der App sein. Wie es für leichte Email-Clients oft üblich ist, werden Bilder erst angezeigt, sobald es der Nutzer ausdrücklich möchte. Dieses Verhalten soll in den App-Einstellungen steuerbar gemacht werden. Eine sehr praktische Funktion soll sein, dass E-Mail-Adressen gespeichert werden und beim schreiben einer neuen E-Mail direkt verfügbar sind und ausgewählt werden können. Ob diese Funktion sinnvoll ist, ist fraglich, da auf viele Leute keine Emailaddressen auf der Kontaktapp ihres Handys speichern.\\
 
 Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werden können. Die Einstellungen sollen zudem das Farblayout der App ändern können, die Synchronisationsintervalle ändern können, Einstellungen an den Pushnachrichten ändern können, Kontaktlisten verwalten und Einstellungen zu Privatsphäre beinhalten.
@@ -1032,14 +1017,25 @@ war. Dennoch Lief es sehr gut, auch weil wir uns das Programm grob aufgeteilt ha
 % TODO: Vergleich mit ursprünglichen Zielen und Gegenüberstellung den vorliegenden Programmen ähnlicher Art,
 % Beschreibung der vorliegenden getesteten  Funktionalitäten, Pros,Kontras, ...
 \subsection{Vergleich mit unseren ursprünglichen Zielen}
+Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel rausgekommen ohne irgendwelchen unnötigen Schnickschnack. Simpel is das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt sie sollen einen Mailaccount einrichten um dies herauszufinden. Dabei haben sich die meisten gut und schenll zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
+
+Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst es wurde herausgefunden, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek aber proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen: Es wurde zwar nicht expilizit angegeben, dass die alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne eine nichtfreie Library zu haben. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Misstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
+
+Die wichtigsten Funktionen der App wurden erreicht, man kann Emails schreiben, lesen, hat verschiedene Mailboxes getrennt ansehen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features wie Pushnachrichten, Suchfunktionen fehlen noch ganz und Funktionen wie die Einstellungen sind noch nicht fertiggestellt.\\
+
+Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug\cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es als weitaus sinnvoller und effizienter angesehen wurde von den Autoren einfach klassische Patches zu verwenden für solche Dinge ähnlich wie dies bei der suckless.org Software \cite{dwm}.
+
 \subsection{Vergleich mit der Konkurrenz}
-\subsection{Beschreibung der vorliegenden getesteten Funktionalitäten}
+Es ist gar nicht so einfach diese App zu vergleichen mit ihrer Konkurrenz, da sie ja noch nicht fertig entwickelt ist. Aus diesem Standpunkt heraus vergleichen wir nur die fertigen Funktionen mit der Konkurrenz.\\
+
+Im Vergleich mit der Konkurrenz sticht sie heraus durch ihre simple Art, so wie das geplant war. Die Funktionalitäten sind dabei auch wesentlich rüdimentärer, oder besser gesagt mehr \say{suckless} als die der Konkurrenz. Die Farben und das Layout des User Interface sollte zwar simpel sein, doch das visuelle Zusammenspielen von Farben und dem Layout haben gewisse Konkurrenzprodukte, welche immerhin auch von Fortune 500 Unternehmen entwickelt werden, zweifelsohne besser umgesetzt als die Autoren dieser App.
 \subsection{Vor- und Nachteile unserer App}
 \subsubsection{Pro}
+Für die Nutzung der App sprechen simple Nutzeroberfläche und Codebasis, welche nach Fertigstellung der initialen Entwicklung eine der besten simplen Email Client werden sollte.
 \subsubsection{Kontra}
+Dagegen sprechen, dass gewisse Funktionen welche laut den Autoren nicht in einen Emailclient gehören nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient \cite{thunderbird}.
 
 \section{Selbstreflexion}
-% TODO: maybe add 'fremdeinschätzung'
 
 \subsection{Was Gut Lief}
 % komm., vcs, java syntax (allg.)
