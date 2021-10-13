@@ -310,17 +310,28 @@ sorting=ynt
 \begin{titlepage}
 % TODO: weniger asketisch, «sexier»
 
-\vspace*{1cm}
 	\centering
 	
+    {\slshape\large snailmail \par}
+    \vspace{0.1cm}
 	{\huge\bfseries Eine Email-Client-App entwickeln \par}
 	\vspace{0.5cm}
-	{\Large Noah Vogt \& Simon Hammer Klasse 4cg\par}
+	{\Large Von Noah Vogt \& Simon Hammer \par}
+    {\Large Aus Klasse 4cg \par}
     \vspace{0.5cm}
-    {\Large Victor Yakhontov \& Daniel Bühler \par }
-	\vspace{17cm}
-
-	{\large Geschrieben im Jahr 2021\par}
+    %{\Large Victor Yakhontov \& Daniel Bühler \par }
+   
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{../logo/version3d.png}
+    \end{figure}
+   
+    \vspace{0.5cm}
+    {\Large Betruungslehrkraft: Victor Yakhontov \par }
+    {\Large Koreferent: Daniel Bühler \par}
+    \vspace{0.5cm}
+	{\large Geschrieben im Jahr 2021 \par}
+    {\large Im Gymnasium Kirschgarten \par}
 	
 \end{titlepage}
 
@@ -904,10 +915,10 @@ dennoch werden wir darauf eingehen.\\
 \end{lstlisting}
 
 \textit{Querys} sind anfragen an die Database nach Informationen. Sie können auf verschiedene \textit{tables} zugreifen und Informationen abgleichen und auswählen. 
-In einer DAO von Room werden die SQL-statements mit @Query markiert. SELECT heisst, dass etwas ausgewählt werden soll und mir * ist gemeint alles. Mit FROM wird nochmals angegeben von 
-welchem table, in diesem Fall vom message\_table. Die Entity die wir weiter oben schon erklärt haben. Mit WHERE können Spalten der Entity ausgewählt werden. Hier wird die \textit{folder} Spalte 
+In einer DAO von Room werden die SQL-statements mit @Query markiert. SELECT heisst, dass etwas ausgewählt werden soll und mit * ist gemeint alles. Mit FROM wird angegeben von 
+welchem table, in diesem Fall vom message\_table. Mit WHERE können Spalten der Entity ausgewählt werden. Hier wird die \textit{folder} Spalte 
 gewählt um mit LIKE ein Attribut zu bestimmen. So wird nun ein Attribut namens 'Draft' gewählt. Mit ORDER By kann die Ausgabe noch sortiert werden. So wird die Ausgabe anhand der Spalte 'date'
-nach dem ASC-code sortiert. \cite{appStructure}
+aufsteigen Sortiert. \cite{queryExpl}
 
 \subsubsection{Repository/ViewModel}
 
