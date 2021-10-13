@@ -175,12 +175,12 @@ sorting=ynt
 
 \newglossaryentry{fsf}{
     name=Free Software Foundation,
-    description={This is the Foundation created by Richards Stallman, the Starter of the free software movement. It is dedicated to the preservation, creation, and to fight for free software all around the globe.}
+    description={dt. \say{Stiftung für freie Software}, ist eine von Richard Stallman\cite{rms} gegründete Stiftung, ursprünglich mit dem Ziel die Entwicklung des GNU Projekts zu finanzieren, was mittlerweile erweitert und erstetzt wurde durch die allgemeine Förderung und Entwicklung von \gls{freie Software}.} % TODO: change somehow to "freier"
 }
 
-\newglossaryentry{Freie Software}{
-    name=Free Software,
-    description={Freie Software ist nach der Definition der \gls{fsf} ...}
+\newglossaryentry{freie Software}{
+    name=Freie Software,
+    description={engl. \say{free software}, ist nach der Definition der \gls{fsf} Software, welche die vier von ihnen definierten Grundfreiheiten garantiert: Das Verwenden der Software für jeden Zweck (keine willkürlichen, z.B. geografischen Einschränkungen etc.), der Quellcode darf ohne Vertraulichkeitsvereinbarungen oder ähnliche Einschränkungen von allen untersucht und gelesen werden, darf beliebig modifiziert und angepasst werden und alle modifizierten sowie nichtmodifizierten Versionen der Software dürfen weitergegeben werden.\cite{freesoftware}}
 }
 
 \newglossaryentry{vcs}{
@@ -1015,7 +1015,7 @@ Dies ist der grobe Aufbau um Messages anzuzeigen. Wenn etwas durch die NewDraftA
 ganz unten die neuen Informationen ausliest.
 
 %TODO: alles um de Server mit Python und repository etc. Dänkfähler mit Aktualisierung vo de Ordner
-\subsubsection{Server}
+\subsubsection{Server Connection}
 
 \subsection{Umsetzung}
 \subsubsection{Bugs}
@@ -1037,16 +1037,17 @@ Probleme waren die unnötig vielen Layouts, welche entstanden bei unserer App. V
 Mit gewissen Biobliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
 
 \subsubsection{Kommunikation}
-Simon:
 
-Ich finde wir haben etwas wenig kommuniziert aber dafür lief es sehr gut. Ich war sogar eher froh das wir nicht ganz so viel 
-Kommuniziert haben. Teilweise war ich auch deswegen gestresst aber ich konnte Noah so gut vertrauen, wenn ich ihm sagte wir sollten etwas bis zu einer gewissen Zeit schaffen
-hatte er es auch eingehalten oder Probleme mir gemeldet. Wir hatten gewisse Strukturen um die Kommunikation zu vereinfache. Wir haben 
-eine \textit{diary} geschrieben, in welcher wir unseren Prozess dokumentiert haben. Und auf welchem auch grossteile der Dokumentation in der Maturarbeit basiert. 
-Ebenfalls haben wir uns im Programm oder in unseren Texten Notizen überlassen um fragen an den anderen zu stellen oder Aufgaben zu geben. Teilweise haben wir uns auch jeden Montag zusammengesetzt
-und die Woche besprochen. Jetzt wo ich alles Aufzähle merke ich wir haben nicht ganz so wenig Kommuniziert aber es hat sich sehr danach angefühlt. Unter anderem, weil Noah selten erreichbar
-war. Dennoch Lief es sehr gut, auch weil wir uns das Programm grob aufgeteilt haben und sich alle Teile zusammenfügen, was auch einen gewissen touch der Linuxphilosophie in sich hat. 
+Die Menge an Kommunikation hat sich eingependelt zwischen den Anforderungen, Bedürfnissen und sozialen Kapazitäten der beiden Autoren. Einer wollte eher etwas mehr Dialog, der andere weniger. Das gegenseitige Vertrauen war aber auch soweit vorhanden, dass man sicher ziemlich sicher sein konnte, dass der andere gewisse abgemachte Zeiten einhält und Nachrichten nicht unnötig lange unbeantwortet lässt.\\
 
+Es konnten auch gute Strukturen für die Kommunikation geschaffen werden, so wurde eine \textit{diary}, also eine Art Tage- oder Logbuch verwendet, um den Arbeitsprozess zu dokumentieren, was sich insbesondere bei den Anfängen des Projektes als nützlich herausstellte. Auf diesem Dokument und der \textit{Git Commit History} basiert die Dokumentation dieser Arbeit.\\
+
+Sowohl im Programm-Quellcode der App als auch im Quellcode dieser Arbeit haben die beiden Autoren Notizen in Form von Codekommentaren gemacht - teilweise sich sogar gegenseitig- voll nach dem Motto: \say{Hey, kannst du das dann dort noch einfügen? Du kannst das ja besser als ich.}\\
+
+Auch haben sich die beiden zeitweise Montags zusammen hingesetzt und den Arbeitsprozess in dieser Weise zu besprechen und um sich die nächsten Aufgaben zu verteilen.\\
+
+Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes um daran zu entwickeln um dann die Komponenten wieder zusammenzufügen hatte etwas von dem typischen Modularität und des Touches der Linuxphilosophie.
+% TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid
 
 \subsection{Testing}
 
@@ -1058,7 +1059,7 @@ Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen
 
 Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst es wurde herausgefunden, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek aber proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen: Es wurde zwar nicht expilizit angegeben, dass die alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne eine nichtfreie Library zu haben. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Misstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
 
-Die wichtigsten Funktionen der App wurden erreicht, man kann Emails schreiben, lesen, hat verschiedene Mailboxes getrennt ansehen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features wie Pushnachrichten, Suchfunktionen fehlen noch ganz und Funktionen wie die Einstellungen sind noch nicht fertiggestellt.\\
+Die wichtigsten Funktionen der App wurden erreicht, man kann Emails schreiben, lesen, hat verschiedene Mailboxes getrennt ansehen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features, nämlich Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Atribut, wo man sieht ob eine Nachricht gelesen wurde in der Mailbox fehlen noch ganz und Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhangfunkionalität sind noch nicht fertiggestellt und es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten, einzelnen Emails.\\
 
 Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug\cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es als weitaus sinnvoller und effizienter angesehen wurde von den Autoren einfach klassische Patches zu verwenden für solche Dinge ähnlich wie dies bei der suckless.org Software \cite{dwm}.
 
@@ -1103,27 +1104,6 @@ würden uns mehr gedankten machen beim Planen wie auch, wie lange wir an einem P
 
 % use more c libs for speed and less java
 \subsection{abschliessende persönliche Schlussfolgerung}
-%\paragraph{Simon}
-%Ich bin selbst etwas enttäuscht wie wenige Ziele wir erreichen konnten und ich bin überrascht wie stark wir unterschätzt haben, wie 
-%viel Arbeit es ist eine stabile funktionierende App zu erstellen. Herr Yakonthov hat uns am Anfang gewarnt, dass wir uns doch etwas zu viel vornehmen. Jetzt bin ich an dem Punkt, an dem 
-%ich glaube ich könnte den rest unserer Ziele in vielleicht zwei Monaten verwirklichen, jedoch ist leider dafür keine Zeit.\\
-%
-%Mir hat es im Spass gemacht diese App zu erstellen und den Arbeitsprozess zu verfolgen. Das schöne an GitHub ist auch, dass ich mich mit mir selber vergleichen kann und aber auch denn 
-%fortschritt unserer App erkennen kann. Ich denke ich hätte nicht direkt mit einem so grossen Projekt zum Programmieren anfangen sollen, was mir auch Noah empfohlen hat. Er meinte ich solle 
-%doch noch ein Paar kleine Programme schreiben bevor wir mit dieser App anfangen. Dies habe ich leider nicht gemacht auch wenn ich denke wes hätte keinen grossen unterschied gemacht,
-%weil ich dies eher vor der Wahl des Projektes hätte machen müssen. \\
-%
-%Ich habe sehr viel gelernt und auch über meine Maturarbeit mit Freunden und Familie gesprochen, wodurch ich wiederum neue Möglichkeiten bekommen habe. Das nächste Projekt wir vielleicht eine 
-%Website mit einem Freund von Mir.
-%
-%
-%\paragraph{Noah}
-%Ich habe persönlich das Gefühl, einen guten Einblick in die native Android Programmierung mit Java bekommen zu haben. Mir erschien es nicht so spannened oder interessant wie ich erhofft hatte, sondern gewisse Befürchtungen über den Stand der Software und Entwicklungsumgebung auf Smartphones bestätigten sich.\\
-%
-%Das Dependency Managment ist im Vergleich zu UNIX-ähnlichen Betriebssystemen schrecklich, der Resourcenverbrauch im Verhältniss zur Komplexität der Apps riesig. Wenn man das Android Betriebsystem nicht auf Java sondern auf in der Exekutierung schnelleren Programmiersprachen wie C oder Rust aufgebaut hätte, wären zwar die Programme etwas schwerer zu programmieren für die Entwickler, aber dafür wären die Akkulauftzeit und Performance deutlich besser.\\
-%
-%Ich persönlich habe mich über diese in meinen Augen schlechten Umständen aufgeregt, und das hat mir auch ein gutes Stück an Motivation genommen. So ausgeprägt hatte ich das kaum bei einem meiner Softwareprojekte, und davon habe ich schon einige. Doch ich bin froh, diese Erfahrung gemacht zu haben, als beispielsweise eine ganze Ausbildung in dieses Richtung anzufangen.
-
 Wir haben das Gefühl, einen guten ersten Einblick in die native Android Programmierung mit Java und Python bekommen zu haben. Wir haben uns vertraut gemacht mit den Vorzügen aber auch Nachteilen dieser Art von Programmierung und der Plattform Android.\\
 
 Wir sind zwar etwas enttäuscht, dass wir nicht alle geplanten Ziele erreicht haben, doch wir haben noch genug Motivation die App in den nächsten paar Wochen und Monaten fertigzustellen. Denn die Arbeit hat uns insgesamt doch gefallen, trotz einigen Motivationstiefs, sodass wir auch gerne unseren Freunden und Familie von ihr erzählt haben.\\
@@ -1131,23 +1111,11 @@ Wir sind zwar etwas enttäuscht, dass wir nicht alle geplanten Ziele erreicht ha
 Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattfrom \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonderns Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
 
 \section{Danksagung}
-Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.\gls{fsf}\gls{Freie Software}
-
-%=======================================
+Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.\gls{fsf}\gls{freie Software}
 
 \clearpage
-
-%index Verzeichnis
-% Index soll Stichwortverzeichnis heissen
-%\renewcommand{\indexname}{Stichwortverzeichnis}
-
-% Stichwortverzeichnis endgueltig anzeigen
-
-%\index{\textbf{COOLDx}} asdsadad
-%\printindex % run: makeindex
-            % Aufgaben_zum_LaTeX_Kurs.idx; und nochmals latex
-
 \printglossary
+
 \newpage
 \printbibliography
 \end{document}
