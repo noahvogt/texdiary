@@ -723,18 +723,57 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=.32\textwidth]{media/inbox.jpeg}
 \includegraphics[width=.32\textwidth]{media/drawer.jpeg}
+\includegraphics[width=.32\textwidth]{media/inbox.jpeg}
 \includegraphics[width=.32\textwidth]{media/fitted-create-message.png}
 \caption{die Startup UI von snailmail}
 
 \end{figure}
 
-Wenn man die App startet sieht man als allererstes die durchscrollbare Inbox (siehe Bild links), hier mit vollkommen arbiträren Testdaten. Bei den 3 Menüpunkten soll im weiteren Laufe der Entwicklung noch die Funktionalität hinzufügt werden, Emails zu sortieren und durchsuchen.\\
+Wenn man die App startet sieht man als allererstes die durchscrollbare Inbox (siehe mittleres Bild links), hier mit vollkommen arbiträren Testdaten. Bei den 3 Menüpunkten soll im weiteren Laufe der Entwicklung noch die Funktionalität hinzugefügt werden, Emails zu sortieren und durchsuchen.\\
 
-Wenn man im Bild links unten rechts das Pluszeichen antippt, erscheint ein Fenster, wo man eine neue Email schreiben kann (Bild rechts). Man kann sie entweder versenden, oder als Entwurf speichern.\\
+Wenn man im Bild in der Mitte unten rechts das Pluszeichen antippt, erscheint ein Fenster, wo man eine neue Email schreiben kann (Bild rechts). Man kann sie entweder versenden, oder als Entwurf speichern. Wenn der Nutzer sich mit einem Account angemeldet hat, wird die Adresse des Absenders, im Bild entspricht das dem Textfeld mit dem Platzhalter \say{From (Email)}, automatisch mit der aktuellen Email Adresse vervollständigt.\\
 
-Wenn man im linken Bild oben links auf das sogenannte \say{Hamburgermenü} drückt, oder wie auf vielen anderen Apps auch von links nach rechts swiped (dt. streicht) erscheint der sog. \say{Drawer}. Dort sieht man den eingeloggten Account, die verschiedenen Mailboxen und ein paar Buttons, um zu den Einstellungen zu gelangen (unten links), einen neuen Email Account hinzufügen (unten Mitte) und um zum Account Manager zu gelangen (durchs tippen auf das Profilbild). Dort kann auf eine andere Mailbox klicken, sodass diese ausgewählt und geöffnet wird.
+Wenn man im mittleren Bild oben links auf das sogenannte \say{Hamburgermenü} drückt, oder wie auf vielen anderen Apps auch von links nach rechts swiped (dt. streicht) erscheint der sog. \say{Drawer} (im Bild links ersichtlich). Dort sieht man den eingeloggten Account, die verschiedenen Mailboxen und ein paar Buttons, um zu den Einstellungen zu gelangen (unten links), einen neuen Email Account hinzufügen (unten Mitte) und um zum Account Manager zu gelangen (durchs tippen auf das Profilbild). Dort kann auf eine andere Mailbox klicken, sodass diese ausgewählt und geöffnet wird.
+
+\subsubsection{Account Management}
+
+Wenn man im Drawer den \textit{Add Email Button} drückt, erscheint ein Pop-up Fenster , wo man seine Anmeldedaten für ein neues Email Konto angeben kann. Da ein Mailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 (wie definiert von der Internet Society in der IMAP Spezifikation rfc9501 \cite{rfc9501}) abweichen kann, werden in diesem Fenster die zuerst die Standardeinstellungen getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Zuerst wird geschaut, dass nicht bereits ein Account mit der gleichen Email Adresse wie der zu Hinzufügende, wobei dann eine Meldung erscheint für den Nutzer. Dann werden die Anmeldedaten anschliessend mit der Funktion \textit{checkConnection} überprüft, um zu schauen ob man sich mit diesen zum Mailserver verbinden kann.\\
+
+\lstset{language=python}
+\begin{lstlisting}
+def checkConnection(host, username, password, port):
+    try:
+        connection = imaplib.IMAP4_SSL(host, port)
+        connection.login(username, password)
+        connection.logout()
+        return True
+    except Exception as e:
+        print("host: " + host)
+        print("username: " + username)
+        print("port: " + str(port))
+        print(str(e))
+        return False
+
+\end{lstlisting}
+
+Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Dialogfenster, wo der Nutzer gefragt wird, ob er noch erweiterte Angaben angeben will um die diese dann testen zu können.\\
+
+Wie schon in Punkt 3.2.3 erwähnt, muss man im \textit{Drawer} auf das Profil klicken, umd zum Account Manager zu gelangen wo dann ein Dialogfenster erscheint. Zuerst wird der Benutzer vom Programm angewiesen mit der Nachricht \say{select Account} ein Konto im, wenn man darauf tippt, Drop-Down Menü auszuwählen. Dann kann er eine Aktion ausführen, indem er einer der korrespondierenden Knöpfe drückt, oder mit \say{exit}-Button das Dialogfenster wieder schliessen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.32\textwidth]{media/plain-add-email.jpeg}
+\includegraphics[width=.32\textwidth]{media/advanced-add-email.jpeg}
+\includegraphics[width=.32\textwidth]{media/plain-account-manager.jpeg}
+\caption{das Account Management}
+
+\end{figure}
+
+Der Nutzer kann entweder den ausgewählten Account löschen, zu ihm wechseln, oder seine Server Settings ändern. Beim letzteren erscheint das gleiche Menü wie den erweiterten Einstellungen, um einen neuen Account hinzuzufügen. Wenn der Nutzer seine neuen Mailservereinstellungen speichern will, wird zuerst geschaut, ob die App sich immer noch verbinden kann mit dem Mailserver. Wenn nicht, erscheint eine Fehlermeldung für den Nutzer und die neuen Angaben werden \textit{nicht} gespeichert.\\
+
+Zur Hilfe wir im Dialog des Account Managers die ganze Zeit zur Hilfe den aktuell aktiven Account anzeigt. Nach jeder der Account Manager Aktionen werden immer noch diese Anzeige und die Textfelder im Drawer, wo der Nutzer seinen zur Zeit aktiven Email Account sehen kann, in Echtzeit aktualisiert.
+
 
 \subsubsection{Recyclerviewer}
 % TODO: mehr allgemein erklären
@@ -807,18 +846,17 @@ CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt sei
 so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment für den zugehörigen \textit{Folder} neu Aufgerufen und überschreibt den CustomAdapter 
 aus der Mainactivity. 
 
-\subsubsection{Account Management}
+\subsubsection{Input Validation}
 % TODO: explain chain of popup windows
 \begin{wrapfigure}{r}{5cm}
 \centering
 \includegraphics[width=.18\textwidth]{media/inputValidation.png}
 \caption{Input Validation}
 \end{wrapfigure}
-Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
 
-Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
+Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann gibt es in snailmail und es sinnvoll gecheckt werden kann gibt es eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine z.B. gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss. Diese Praxis ist mittlerweile weitverbreitet und auf mobilen graphischen Oberflächen wurde diese von den Autoren als sinnvoll erachtet, weshalb sie auch in ihrer App davon Nutzen gemacht haben.
 
-\subsubsection{Database}
+\subsubsection{Datenbank}
 
 % Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
@@ -1053,7 +1091,7 @@ Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Au
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid
 
 \subsubsection{Namensfindung}
-Für die App musste auch noch ein Name her, doch die allerlängste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten wiederspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
+Für die App musste auch noch ein Name her, doch die allerlängste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten wiederspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
 
 \url{https://github.com/noahvogt/snailmail}
 
