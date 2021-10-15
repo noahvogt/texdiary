@@ -307,22 +307,23 @@ sorting=ynt
 
 
 \begin{titlepage}
-% TODO: weniger asketisch, «sexier»
 
 	\centering
 	
+    \vspace{5cm}
     {\slshape\large snailmail \par}
     \vspace{0.1cm}
 	{\huge\bfseries Eine Email-Client-App entwickeln \par}
 	\vspace{0.5cm}
-	{\Large Von Noah Vogt \& Simon Hammer \par}
-    {\Large Aus Klasse 4cg \par}
+	{\Large eine Maturarbeit von \par}
+	{\Large Noah Vogt \& Simon Hammer \par}
+    {\Large aus der Klasse 4cg \par}
     \vspace{0.5cm}
     %{\Large Victor Yakhontov \& Daniel Bühler \par }
    
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{../logo/version3d.png}
+        \includegraphics[width=.7\textwidth]{../logo/version3d.png}
     \end{figure}
    
     \vspace{0.5cm}
@@ -330,7 +331,7 @@ sorting=ynt
     {\Large Koreferent: Daniel Bühler \par}
     \vspace{0.5cm}
 	{\large Geschrieben im Jahr 2021 \par}
-    {\large Im Gymnasium Kirschgarten \par}
+    {\large Gymnasium Kirschgarten, Basel, CH \par}
 	
 \end{titlepage}
 
@@ -715,23 +716,25 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 \endgroup
 
 \newpage
-\subsubsection{Interface}
+\subsubsection{Startup UI}
 
 
-\begingroup
-\setlength{\intextsep}{1pt}
-\setlength{\columnsep}{12pt}
-
-\begin{wrapfigure}{r}{6cm}
-\centering
-\includegraphics[scale=.15]{media/drawer.png}
-\caption{Drawer Navigation Menu}
-\end{wrapfigure}
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
-Als erstes wurde das Interface angegangen mit dem Gedanke, dass die Funktionen sich dann an das Interface anpassen werden.
 
-Begonnen wurde mit einer Vorlage von Android-Studio. Diese beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, 
-welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah, als würde es möglich sein sich anzumelden.  
+\begin{figure}[H]
+\centering
+\includegraphics[width=.32\textwidth]{media/inbox.jpeg}
+\includegraphics[width=.32\textwidth]{media/drawer.jpeg}
+\includegraphics[width=.32\textwidth]{media/fitted-create-message.png}
+\caption{die Startup UI von snailmail}
+
+\end{figure}
+
+Wenn man die App startet sieht man als allererstes die durchscrollbare Inbox (siehe Bild links), hier mit vollkommen arbiträren Testdaten. Bei den 3 Menüpunkten soll im weiteren Laufe der Entwicklung noch die Funktionalität hinzufügt werden, Emails zu sortieren und durchsuchen.\\
+
+Wenn man im Bild links unten rechts das Pluszeichen antippt, erscheint ein Fenster, wo man eine neue Email schreiben kann (Bild rechts). Man kann sie entweder versenden, oder als Entwurf speichern.\\
+
+Wenn man im linken Bild oben links auf das sogenannte \say{Hamburgermenü} drückt, oder wie auf vielen anderen Apps auch von links nach rechts swiped (dt. streicht) erscheint der sog. \say{Drawer}. Dort sieht man den eingeloggten Account, die verschiedenen Mailboxen und ein paar Buttons, um zu den Einstellungen zu gelangen (unten links), einen neuen Email Account hinzufügen (unten Mitte) und um zum Account Manager zu gelangen (durchs tippen auf das Profilbild). Dort kann auf eine andere Mailbox klicken, sodass diese ausgewählt und geöffnet wird.
 
 \subsubsection{Recyclerviewer}
 % TODO: mehr allgemein erklären
@@ -747,7 +750,7 @@ Fall eine Nachricht eingebaut mir dem Absender, der Absende Zeit und einem Betre
 
 \end{enumerate}
 
-\endgroup
+%\endgroup
 
 \begin{enumerate}
 
@@ -804,7 +807,7 @@ CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt sei
 so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem Fragment für den zugehörigen \textit{Folder} neu Aufgerufen und überschreibt den CustomAdapter 
 aus der Mainactivity. 
 
-\subsubsection{Popup Window}
+\subsubsection{Account Management}
 % TODO: explain chain of popup windows
 \begin{wrapfigure}{r}{5cm}
 \centering
@@ -1049,11 +1052,15 @@ Auch haben sich die beiden zeitweise Montags zusammen hingesetzt und den Arbeits
 Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes um daran zu entwickeln um dann die Komponenten wieder zusammenzufügen hatte etwas von dem typischen Modularität und des Touches der Linuxphilosophie.
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid
 
+\subsubsection{Namensfindung}
+Für die App musste auch noch ein Name her, doch die allerlängste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten wiederspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
+
+\url{https://github.com/noahvogt/snailmail}
+
 \subsection{Testing}
+% TODO: provide testing data + text
 
 \section{Resultate}
-% TODO: Vergleich mit ursprünglichen Zielen und Gegenüberstellung den vorliegenden Programmen ähnlicher Art,
-% Beschreibung der vorliegenden getesteten  Funktionalitäten, Pros,Kontras, ...
 \subsection{Vergleich mit unseren ursprünglichen Zielen}
 Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel rausgekommen ohne irgendwelchen unnötigen Schnickschnack. Simpel is das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt sie sollen einen Mailaccount einrichten um dies herauszufinden. Dabei haben sich die meisten gut und schenll zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
 
@@ -1111,7 +1118,7 @@ Wir sind zwar etwas enttäuscht, dass wir nicht alle geplanten Ziele erreicht ha
 Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattfrom \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonderns Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
 
 \section{Danksagung}
-Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.\gls{fsf}\gls{freie Software}
+Wir (Simon und Noah) möchten uns bedanken bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen.
 
 \clearpage
 \printglossary
