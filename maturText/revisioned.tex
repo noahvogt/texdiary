@@ -11,7 +11,7 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-%for linkt page numbers in table f content
+%for linkt page numbers in table of content
 \usepackage[linktocpage=true]{hyperref}
 
 \hypersetup{%
@@ -33,21 +33,10 @@ menucolor=darkblue,
 breaklinks=true,anchorcolor=green
 }
 
-% for the Glossar
-\usepackage{glossaries}
+% for the Glossar, toc for table of Content visibility
+\usepackage[toc]{glossaries}
 \renewcommand*{\glstextformat}[1]{\textcolor{blue}{#1}}
 
-% für Listings für Java
-\usepackage{listings}
-%lstset{numbers=left, %
-% numberstyle=\tiny, %
-% numbersep=5pt, %
-% keywordstyle=\color{black}\bfseries, %
-% stringstyle=\ttfamily, %
-% showstringspaces=false, %
-% basicstyle=\footnotesize, %
-% captionpos=b}
-%lstset{language=java}
 
 % geometry
 \usepackage{geometry}
@@ -86,7 +75,13 @@ includeheadfoot}
 % no paragraph indent
 \setlength{\parindent}{0em}
 
+%for longer comments
 \usepackage{comment}
+
+%for appendix
+\usepackage[toc, page]{appendix}
+\renewcommand{\appendixtocname}{Anhang}
+
 
 %for spacing
 \usepackage{setspace}
@@ -138,23 +133,6 @@ includeheadfoot}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \definecolor{background}{rgb}{0.36,0.36,0.36}
 
-% define java code snippit style
-%\lstset{frame=tb,
-  %language=Java,
-  %aboveskip=3mm,
-  %belowskip=3mm,
-  %showstringspaces=false,
-  %columns=flexible,
-  %basicstyle={\small\ttfamily},
-  %numbers=none,
-  %numberstyle=\tiny\color{gray},
-  %keywordstyle=\color{blue},
-  %commentstyle=\color{dkgreen},
-  %stringstyle=\color{mauve},
-  %breaklines=true,
-  %breakatwhitespace=true,
-  %tabsize=3
-%}
 \lstset{
     numbersep=3pt,
     keywordstyle=\color{blue},
@@ -177,7 +155,7 @@ includeheadfoot}
 \usepackage[
 backend=biber,
 style=alphabetic,
-sorting=ynt
+sorting=ynt,
 ]{biblatex}
 \addbibresource{lit/refs.bib}
 
@@ -1355,19 +1333,122 @@ Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Ya
 \printglossary
 
 \newpage
-\printbibliography
+\printbibliography[heading=bibnumbered, title={Literaturverzeichnis}]
 
-\appendix
+\begin{appendices}
+\subsection{Open-Source Programme}
+Es wurden Open-Source Programme genutzt um verschiedene Elemente einbauen zu können. 
 
-\section{Open-Source Programme}
-Stark davon betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
+Für die Library Room haben sich die Autoren an diesem Programm bedient. \cite{roomApp}
+Stark betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
 und NewDraftMessageActivity.java. Bei diesen
-Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und sie werden von anderen Funktionen aufgerufen. 
-Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle fünf Zeilen beginnend mit der 
-Variabel mEmailViewModel vom Typ EmailViewModel. Diese fünf Zeilen sind jeweils auch aus dem Basisprogramm. 
-Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult von Zeile 183-215, welche auch aus dem Basisprogramm stammen. 
-Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 120-140. Diese Stammen ursprünglich auch aus dem Basisprogramm, wurden aber natürlich bearbeitet. \\
+Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und dazu werden sie von anderen Funktionen aufgerufen. 
+Die Dateien von denen sie Inspiriert wurden, heissen fast gleich. Es muss nur Email und Message durch Word ersetzt werden und Sie finden die Dateien.
+Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle vier Zeilen beginnend mit der 
+Variabel mEmailViewModel vom Typ EmailViewModel. Diese vier Zeilen sind jeweils auch aus dem Basisprogramm. 
+Die Zeilen sehen Etwa so aus
+\lstset{language=java}
+\begin{lstlisting}
+    mEmailViewModel = new ViewModelProvider(this).get(EmailViewModel.class);
+    mEmailViewModel.getArchiveMessage().observe(getViewLifecycleOwner(), messages -> {
+        /* Update the cached copy of the messages in the adapter*/
+        adapter.submitList(messages);
 
+\end{lstlisting}
+
+
+Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult, welche auch aus dem Basisprogramm stammt. 
+    \lstset{language=java}
+    \begin{lstlisting}
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+            mWordViewModel.insert(word);
+        } else {
+            Toast.makeText(
+                    getApplicationContext(),
+                    R.string.empty_not_saved,
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+    \end{lstlisting}
+Diese Zeilen waren Grundlage für die Nachfolgenden Zeilen.
+
+\lstset{language=java}
+\begin{lstlisting}
+ public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, MessageCreateFragment.replyIntent);
+
+        /* Creates class for the Date when Email is written */
+        Date dNow = new Date();
+        SimpleDateFormat ft =
+                new SimpleDateFormat("dd.MM.yy");
+        System.out.println(dNow);
+
+            Message word = new Message(userGlobal,
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_TO),
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_CC),
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_BCC),
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_FROM),
+                ft.format(dNow),
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_SUBJECT),
+                MessageCreateFragment.replyIntent.getStringExtra(MessageCreateFragment.EXTRA_MESSAGE),
+                "Draft",false);
+            mEmailViewModel.insert(word);
+        }
+\end{lstlisting}
+
+Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 150-171. Diese Stammen ursprünglich auch aus dem Basisprogramm, 
+wurden aber überarbeitet. \\
+
+\lstset{language=java}
+\begin{lstlisting}
+final Button button = findViewById(R.id.button_save);
+        button.setOnClickListener(view -> {
+            Intent replyIntent = new Intent();
+            if (TextUtils.isEmpty(mEditWordView.getText())) {
+                setResult(RESULT_CANCELED, replyIntent);
+            } else {
+                String word = mEditWordView.getText().toString();
+                replyIntent.putExtra(EXTRA_REPLY, word);
+                setResult(RESULT_OK, replyIntent);
+            }
+            finish();
+        });
+\end{lstlisting}
+
+Diese Zeilen waren grundlagen für die Nachfolgenden Zeilen.
+
+\lstset{language=java}
+\begin{lstlisting}
+activity.setResult(RESULT_CANCELED, replyIntent);
+
+    String from = sendingAddressObject.getText().toString();
+    String to = receivingAddressObject.getText().toString();
+    String subject = subjectObject.getText().toString();
+    String message = messageBodyObject.getText().toString();
+    String cc = ccObject.getText().toString();
+    String bcc = bccObject.getText().toString();
+
+
+    replyIntent.putExtra(EXTRA_FROM, from);
+    replyIntent.putExtra(EXTRA_TO, to);
+    replyIntent.putExtra(EXTRA_CC, cc);
+    replyIntent.putExtra(EXTRA_BCC, bcc);
+    replyIntent.putExtra(EXTRA_SUBJECT, subject);
+    replyIntent.putExtra(EXTRA_MESSAGE, message);
+    activity.setResult(RESULT_OK, replyIntent);
+
+    activity.finish();
+
+        Intent intent = new Intent(getContext(), NewDraftMessageActivity.class);
+        startActivityForResult(intent, MainActivity.NEW_WORD_ACTIVITY_REQUEST_CODE);
+
+\end{lstlisting}
+
+\end{appendices}
 
 
 \end{document}
