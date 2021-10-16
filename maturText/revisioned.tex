@@ -337,7 +337,7 @@ sorting=ynt
 
 \newglossaryentry{livedata}{
     name=LiveData,
-    description={Eine Klasse, welche beobachtbar in einem gewissen Lebenszyklus ist und Daten speichern kann. \cite{livedata}}
+    description={Eine Klasse, welche beobachtbar in einem gewissen Lebenszyklus ist und Daten speichern kann. \cite{liveData}}
 }
 
 \newglossaryentry{email writer}{
@@ -836,7 +836,6 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 
 \endgroup
 
-\newpage
 \subsubsection{Startup UI}
 
 
@@ -1356,4 +1355,18 @@ Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Ya
 
 \newpage
 \printbibliography
+
+\appendix
+
+\section{Open-Source Programme}
+Stark davon betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
+und NewDraftMessageActivity.java. Bei diesen
+Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und sie werden von anderen Funktionen aufgerufen. 
+Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle fünf Zeilen beginnend mit der 
+Variabel mEmailViewModel vom Typ EmailViewModel. Diese fünf Zeilen sind jeweils auch aus dem Basisprogramm. 
+Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult von Zeile 183-215, welche auch aus dem Basisprogramm stammen. 
+Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 120-140. Diese Stammen ursprünglich auch aus dem Basisprogramm, wurden aber natürlich bearbeitet. \\
+
+
+
 \end{document}
