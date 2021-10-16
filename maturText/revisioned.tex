@@ -39,15 +39,15 @@ breaklinks=true,anchorcolor=green
 
 % für Listings für Java
 \usepackage{listings}
-\lstset{numbers=left, %
-  numberstyle=\tiny, %
-  numbersep=5pt, %
-  keywordstyle=\color{black}\bfseries, %
-  stringstyle=\ttfamily, %
-  showstringspaces=false, %
-  basicstyle=\footnotesize, %
-  captionpos=b}
-\lstset{language=java}
+%lstset{numbers=left, %
+% numberstyle=\tiny, %
+% numbersep=5pt, %
+% keywordstyle=\color{black}\bfseries, %
+% stringstyle=\ttfamily, %
+% showstringspaces=false, %
+% basicstyle=\footnotesize, %
+% captionpos=b}
+%lstset{language=java}
 
 % geometry
 \usepackage{geometry}
@@ -134,26 +134,43 @@ includeheadfoot}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{background}{rgb}{0.36,0.36,0.36}
 
 % define java code snippit style
-\lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
+%\lstset{frame=tb,
+  %language=Java,
+  %aboveskip=3mm,
+  %belowskip=3mm,
+  %showstringspaces=false,
+  %columns=flexible,
+  %basicstyle={\small\ttfamily},
+  %numbers=none,
+  %numberstyle=\tiny\color{gray},
+  %keywordstyle=\color{blue},
+  %commentstyle=\color{dkgreen},
+  %stringstyle=\color{mauve},
+  %breaklines=true,
+  %breakatwhitespace=true,
+  %tabsize=3
+%}
+\lstset{
+    numbersep=3pt,
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    backgroundcolor = \color{background},
+    breaklines=true,
+    numbers=left,
+    numberstyle=\scriptsize\color{black},
+    frame=none,
+    basicstyle = \small\ttfamily,
+    breaklines=true
+    breakatwhitespace=false,
+    columns=flexible,
+    xleftmargin=0.5cm,framesep=8pt,framerule=0pt,
+    aboveskip=3mm,
+    belowskip=3mm,
 }
-
-%\usepackage{biblatex} %Imports biblatex package
 
 %\usepackage[backend=biber,style=apa]{biblatex}
 \usepackage[
@@ -364,22 +381,24 @@ sorting=ynt
 
 
 \begin{titlepage}
-% TODO: weniger asketisch, «sexier»
 
 	\centering
 	
+    \vspace{5cm}
     {\slshape\large snailmail \par}
     \vspace{0.1cm}
 	{\huge\bfseries Eine Email-Client-App entwickeln \par}
 	\vspace{0.5cm}
-	{\Large Von Noah Vogt \& Simon Hammer \par}
-    {\Large Aus Klasse 4cg \par}
+	{\Large eine Maturarbeit von \par}
+	{\Large Noah Vogt \& Simon Hammer \par}
+    {\Large aus der Klasse 4cg \par}
     \vspace{0.5cm}
     %{\Large Victor Yakhontov \& Daniel Bühler \par }
    
     \begin{figure}[H]
         \centering
-        \includegraphics[width=.8\textwidth]{../logo/version3d.png}
+        %\includegraphics[width=.8\textwidth]{../logo/version3d.png}
+        \includegraphics[width=.7\textwidth]{../logo/version3d.png}
     \end{figure}
    
     \vspace{0.5cm}
@@ -387,7 +406,7 @@ sorting=ynt
     {\Large Koreferent: Daniel Bühler \par}
     \vspace{0.5cm}
 	{\large Geschrieben im Jahr 2021 \par}
-    {\large Im Gymnasium Kirschgarten \par}
+    {\large Gymnasium Kirschgarten, Basel, CH \par}
 	
 \end{titlepage}
 
@@ -459,12 +478,12 @@ int main() {
 %TODO: idk mir sötte grundlegendi sache ned erkläre
 Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
 \begin{lstlisting}
-0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
-1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100001
-1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100110
-0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110110
-1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111001
-0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011010
+0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100
+1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100
+1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100
+0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110
+1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111
+0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011
 \end{lstlisting}
 
 Wie zu sehen ist, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Dinge im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
@@ -817,23 +836,65 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 
 \endgroup
 
-\subsubsection{Interface}
+\newpage
+\subsubsection{Startup UI}
 
 
-\begingroup
-\setlength{\intextsep}{1pt}
-\setlength{\columnsep}{12pt}
-
-\begin{wrapfigure}{r}{6cm}
-\centering
-\includegraphics[scale=.15]{media/drawer.png}
-\caption{Drawer Navigation Menu}
-\end{wrapfigure}
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
-Als erstes wurde das Interface angegangen mit dem Gedanke, dass die Funktionen sich dann an das Interface anpassen werden.
 
-Begonnen wurde mit einer Vorlage von Android-Studio. Diese beinhaltete ein Hamburgermenü mit drei Ordnern und einem Knopf, 
-welcher den Nutzer zu einem Popupwindow führte, in welchem es so aussah, als würde es möglich sein sich anzumelden.  
+\begin{figure}[H]
+\centering
+\includegraphics[width=.32\textwidth]{media/drawer.jpeg}
+\includegraphics[width=.32\textwidth]{media/inbox.jpeg}
+\includegraphics[width=.32\textwidth]{media/fitted-create-message.png}
+\caption{die Startup UI von snailmail}
+
+\end{figure}
+
+Wenn man die App startet sieht man als allererstes die durchscrollbare Inbox (siehe mittleres Bild links), hier mit vollkommen arbiträren Testdaten. Bei den 3 Menüpunkten soll im weiteren Laufe der Entwicklung noch die Funktionalität hinzugefügt werden, Emails zu sortieren und durchsuchen.\\
+
+Wenn man im Bild in der Mitte unten rechts das Pluszeichen antippt, erscheint ein Fenster, wo man eine neue Email schreiben kann (Bild rechts). Man kann sie entweder versenden, oder als Entwurf speichern. Wenn der Nutzer sich mit einem Account angemeldet hat, wird die Adresse des Absenders, im Bild entspricht das dem Textfeld mit dem Platzhalter \say{From (Email)}, automatisch mit der aktuellen Email Adresse vervollständigt.\\
+
+Wenn man im mittleren Bild oben links auf das sogenannte \say{Hamburgermenü} drückt, oder wie auf vielen anderen Apps auch von links nach rechts swiped (dt. streicht) erscheint der sog. \say{Drawer} (im Bild links ersichtlich). Dort sieht man den eingeloggten Account, die verschiedenen Mailboxen und ein paar Buttons, um zu den Einstellungen zu gelangen (unten links), einen neuen Email Account hinzufügen (unten Mitte) und um zum Account Manager zu gelangen (durchs tippen auf das Profilbild). Dort kann auf eine andere Mailbox klicken, sodass diese ausgewählt und geöffnet wird.
+
+\subsubsection{Account Management}
+
+Wenn man im Drawer den \textit{Add Email Button} drückt, erscheint ein Pop-up Fenster , wo man seine Anmeldedaten für ein neues Email Konto angeben kann. Da ein Mailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 (wie definiert von der Internet Society in der IMAP Spezifikation rfc9501 \cite{rfc9501}) abweichen kann, werden in diesem Fenster die zuerst die Standardeinstellungen getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Zuerst wird geschaut, dass nicht bereits ein Account mit der gleichen Email Adresse wie der zu Hinzufügende, wobei dann eine Meldung erscheint für den Nutzer. Dann werden die Anmeldedaten anschliessend mit der Funktion \textit{checkConnection} überprüft, um zu schauen ob man sich mit diesen zum Mailserver verbinden kann.\\
+
+\lstset{language=python}
+\begin{lstlisting}
+def checkConnection(host, username, password, port):
+    try:
+        connection = imaplib.IMAP4_SSL(host, port)
+        connection.login(username, password)
+        connection.logout()
+        return True
+    except Exception as e:
+        print("host: " + host)
+        print("username: " + username)
+        print("port: " + str(port))
+        print(str(e))
+        return False
+
+\end{lstlisting}
+
+Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Dialogfenster, wo der Nutzer gefragt wird, ob er noch erweiterte Angaben angeben will um die diese dann testen zu können.\\
+
+Wie schon in Punkt 3.2.3 erwähnt, muss man im \textit{Drawer} auf das Profil klicken, umd zum Account Manager zu gelangen wo dann ein Dialogfenster erscheint. Zuerst wird der Benutzer vom Programm angewiesen mit der Nachricht \say{select Account} ein Konto im, wenn man darauf tippt, Drop-Down Menü auszuwählen. Dann kann er eine Aktion ausführen, indem er einer der korrespondierenden Knöpfe drückt, oder mit \say{exit}-Button das Dialogfenster wieder schliessen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.32\textwidth]{media/plain-add-email.jpeg}
+\includegraphics[width=.32\textwidth]{media/advanced-add-email.jpeg}
+\includegraphics[width=.32\textwidth]{media/plain-account-manager.jpeg}
+\caption{das Account Management}
+
+\end{figure}
+
+Der Nutzer kann entweder den ausgewählten Account löschen, zu ihm wechseln, oder seine Server Settings ändern. Beim letzteren erscheint das gleiche Menü wie den erweiterten Einstellungen, um einen neuen Account hinzuzufügen. Wenn der Nutzer seine neuen Mailservereinstellungen speichern will, wird zuerst geschaut, ob die App sich immer noch verbinden kann mit dem Mailserver. Wenn nicht, erscheint eine Fehlermeldung für den Nutzer und die neuen Angaben werden \textit{nicht} gespeichert.\\
+
+Zur Hilfe wir im Dialog des Account Managers die ganze Zeit zur Hilfe den aktuell aktiven Account anzeigt. Nach jeder der Account Manager Aktionen werden immer noch diese Anzeige und die Textfelder im Drawer, wo der Nutzer seinen zur Zeit aktiven Email Account sehen kann, in Echtzeit aktualisiert.
+
 
 \subsubsection{Recyclerviewer}
 % TODO: mehr allgemein erklären
@@ -849,7 +910,7 @@ Fall eine Nachricht eingebaut mir dem Absender, der Absende Zeit, einem Betreff 
 
 \end{enumerate}
 
-\endgroup
+%\endgroup
 
 \begin{enumerate}
 
@@ -909,18 +970,17 @@ CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt sei
 so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem \gls{fragment} für den zugehörigen \textit{Ordner} neu Aufgerufen und überschreibt den CustomAdapter 
 aus der Mainactivity. 
 
-\subsubsection{Popup Window}
+\subsubsection{Input Validation}
 % TODO: explain chain of popup windows
 \begin{wrapfigure}{r}{5cm}
 \centering
 \includegraphics[width=.18\textwidth]{media/inputValidation.png}
 \caption{Input Validation}
 \end{wrapfigure}
-Wenn man den \textit{Add Email Button} drückt, soll ein Popup Fenster erscheinen, wo man seine Anmeldedaten für ein neues Emailkonto hinzufügen kann. Da ein Emailserver aber auch von gewissen Standardeinstellungen wie beispielsweise vom standardmässigen IMAP Port 993 abweichen kann, wirden in diesem Fenster die Standardeinstellungne getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert. Wenn nicht, erscheint ein neues Fenster, wo man die genauren Emailserver Einstellungen testen kann.\\
 
-Zusätzlich gibt es noch eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss.
+Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann gibt es in snailmail und es sinnvoll gecheckt werden kann gibt es eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine z.B. gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss. Diese Praxis ist mittlerweile weitverbreitet und auf mobilen graphischen Oberflächen wurde diese von den Autoren als sinnvoll erachtet, weshalb sie auch in ihrer App davon Nutzen gemacht haben.
 
-\subsubsection{Database}
+\subsubsection{Datenbank}
 
 % Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
@@ -1059,14 +1119,12 @@ in LiveData.
 
 \lstset{language=java}
 \begin{lstlisting}
-
     public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
 
 \end{lstlisting}
 
 \lstset{language=java}
 \begin{lstlisting}
-
         private LiveData<List<Message>> mInboxMessage;
 
         public EmailViewModel(Application application) {
@@ -1081,7 +1139,6 @@ in LiveData.
 
 \lstset{language=java}
 \begin{lstlisting}
-
     private LiveData<List<Message>> mInboxMessage;
 
     public EmailRepository(Application application) {
@@ -1136,10 +1193,41 @@ mit dem \textit{Folder} Attribut 'Draft' in die Database eingelesen.\\
 %TODO: alles um de Server mit Python und repository etc. Dänkfähler mit Aktualisierung vo de Ordner
 \subsubsection{Server Connection}
 
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{media/connection-diagram.png}
+\caption{Diagramm Email Versand}
+\end{figure}
+
+\phantom{.} \\ % hack to fix line wrapping in the next paragraph
+Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer der eine Email versenden will interagiert mit seinem Mail Client und gibt durch ihn den Befehlt die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
+
+Das Versenden von Mails wird in der App einzeln gemacht: Für jede zu sendende Email wird die Funktion \textit{sendStarttls} (siehe folgend) aufgerufen. Zuerst wird der der SSL Kontext initialisiert, dann werden die Angaben der Mail zu einer korrekt kodierten und formatierten Nachricht umgewandelt und schliesslich mit der \textit{smtplib} Bibliothek versendet.
+
+\lstset{language=python}
+\begin{lstlisting}
+def sendStarttls(host, sendingMail, receivingMail, password, message="",
+                 subject="", port=587, cc=[], bcc=[]):
+    context = ssl.create_default_context()
+
+    if type(cc) is not str:
+        cc = ",".join(cc)
+    if type(bcc) is not str:
+        bcc = ",".join(bcc)
+    utf8Message = ("Subject: " + subject + "\nCC: " + cc + "\nBCC: " + bcc +
+                   "\n\n" + message)
+    decoded = utf8Message.encode('cp1252').decode('utf-8')
+
+    with smtplib.SMTP(host, port) as serverConnection:
+        serverConnection.starttls(context=context)
+        serverConnection.login(sendingMail, password)
+        serverConnection.sendmail(sendingMail, receivingMail, decoded)
+\end{lstlisting}
+
 \subsection{Umsetzung}
 \subsubsection{Bugs}
 % Erklärung woher, warum falsch, wie gelöst
-Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler dieses Projektes zu kämpfen. Hier dazu ein kleines Beispiel:
+Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler diese Projektes zu kämpfen. Hier dazu ein kleines Beispiel:\\
 
 % GUI stuff -> oneliner commit 
 Als der RecyclerViewer das erste Mal eingebunden werden konnte, ohne dass die App nach dem Öffnen direkt abstürzt, war das Problem, dass am oberen Teil des UI, Inhalte abgeschnitten waren. Das konnte gelöst werden, indem diese Codezeile in der Datei \textit{app/src/main/res/layout/activity\_main.xml} an der richtigen Stelle eingefügt wurde:
@@ -1184,7 +1272,13 @@ Auch haben sich die beiden zeitweise Montags zusammen hingesetzt und den Arbeits
 Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes um daran zu entwickeln um dann die Komponenten wieder zusammenzufügen hatte etwas von dem typischen Modularität und des Touches der Linuxphilosophie.
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid. Doch ich find dä super
 
+\subsubsection{Namensfindung}
+Für die App musste auch noch ein Name her, doch die allerlängste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten wiederspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
+
+\url{https://github.com/noahvogt/snailmail}
+
 \subsection{Testing}
+% TODO: provide testing data + text
 
 Zum Testen gibt es soweit nicht sehr viel zu sagen, da die Autoren fortlaufen das Programm ausprobiert haben und die Resultate direkt wieder in das Programm flossen.
 Es hätte keinen wirklich mehrwert gehabt die 'Ergebnisse' solcher einfachen Test zu dokumentieren. Wofür die Zeit leider nicht richtig gereicht hat, war das 
@@ -1192,8 +1286,6 @@ richtige testen der App im Alltag. Da die App noch nicht wirklich fertig ist und
 und ein Paar Tage getestet werden. Das Interface wurde getestet aber darüber hinaus leider nicht viel.
 
 \section{Resultate}
-% TODO: Vergleich mit ursprünglichen Zielen und Gegenüberstellung den vorliegenden Programmen ähnlicher Art,
-% Beschreibung der vorliegenden getesteten  Funktionalitäten, Pros,Kontras, ...
 \subsection{Vergleich mit unseren ursprünglichen Zielen}
 Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel ohne irgendwelchen unnötigen Schnickschnack. Simpel ist das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt sie sollen einen Mailaccount einrichten, um dies herauszufinden. Dabei haben sich die meisten gut und schnell zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
 
@@ -1225,7 +1317,7 @@ Dass es keine mit Gradle funktionierede, ausreichend dokumentierte und/oder nich
 Etwas das nicht direkt schlecht lief aber sehr viel Zeit brauchte ist, dass wenn ich (Simon) zum Beispiel eine Database für den Recyclerviewer gemacht habe, zwar nur eine Testversion, 
 ich diese im späteren verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion aber dass diese so weit von einer professionelle Database entfernt war, war mit nicht klar. 
 In so einer Situation war ich nicht nur bei der Database. Mit dem Recyclerviewer hatte ich solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert aber ich musste den Recyclerviewer
-öfters komplett umschreiben. 
+öfters komplett umschreiben. \\
 
 
 %TODO:@Noah dinni Meinig dezue?
@@ -1255,7 +1347,9 @@ Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control Sys
 Dazu war das eine sehr gute Lehre wie später in grösseren Teams solche Programme entstehen. Wir sind jetzt sicher etwas besser ausgerüstet als andere.
 
 \section{Danksagung}
-Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit erlaubt haben durchzuführen und ihre Bereitschaft, zu Helfen bei allfälligen Fragen gezeigt haben.\gls{fsf}\gls{freie Software}
+Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit haben durchführen lassen und ihre Bereitschaft, zu helfen bei allfälligen Fragen, gezeigt haben.
+
+%TODO:Anhang
 
 \clearpage
 \printglossary
