@@ -39,15 +39,15 @@ breaklinks=true,anchorcolor=green
 
 % für Listings für Java
 \usepackage{listings}
-\lstset{numbers=left, %
-  numberstyle=\tiny, %
-  numbersep=5pt, %
-  keywordstyle=\color{black}\bfseries, %
-  stringstyle=\ttfamily, %
-  showstringspaces=false, %
-  basicstyle=\footnotesize, %
-  captionpos=b}
-\lstset{language=java}
+%lstset{numbers=left, %
+% numberstyle=\tiny, %
+% numbersep=5pt, %
+% keywordstyle=\color{black}\bfseries, %
+% stringstyle=\ttfamily, %
+% showstringspaces=false, %
+% basicstyle=\footnotesize, %
+% captionpos=b}
+%lstset{language=java}
 
 % geometry
 \usepackage{geometry}
@@ -130,26 +130,43 @@ includeheadfoot}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{background}{rgb}{0.36,0.36,0.36}
 
 % define java code snippit style
-\lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
+%\lstset{frame=tb,
+  %language=Java,
+  %aboveskip=3mm,
+  %belowskip=3mm,
+  %showstringspaces=false,
+  %columns=flexible,
+  %basicstyle={\small\ttfamily},
+  %numbers=none,
+  %numberstyle=\tiny\color{gray},
+  %keywordstyle=\color{blue},
+  %commentstyle=\color{dkgreen},
+  %stringstyle=\color{mauve},
+  %breaklines=true,
+  %breakatwhitespace=true,
+  %tabsize=3
+%}
+\lstset{
+    numbersep=3pt,
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    backgroundcolor = \color{background},
+    breaklines=true,
+    numbers=left,
+    numberstyle=\scriptsize\color{black},
+    frame=none,
+    basicstyle = \small\ttfamily,
+    breaklines=true
+    breakatwhitespace=false,
+    columns=flexible,
+    xleftmargin=0.5cm,framesep=8pt,framerule=0pt,
+    aboveskip=3mm,
+    belowskip=3mm,
 }
-
-%\usepackage{biblatex} %Imports biblatex package
 
 %\usepackage[backend=biber,style=apa]{biblatex}
 \usepackage[
@@ -383,12 +400,12 @@ int main() {
 %TODO: idk mir sötte grundlegendi sache ned erkläre
 Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
 \begin{lstlisting}
-0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100010
-1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100001
-1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100110
-0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110110
-1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111001
-0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011010
+0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100
+1111101101111011101000111001101110010011000010101111100000000000000110100011100000111100
+1101010110001100000000011011010110111101101100011100000111010001100101011001000110010100
+0000010111001011111000000000000000000000011010010000000011001000101111101011111011011110
+1100011001110110001001101111011011000110000101100100010111110110111101110100011100110111
+0000000000000001101001001000001100001010111110111100001110101011001100101111101101110011
 \end{lstlisting}
 
 Wie man sieht, geht bei diesem Prozess des Kompilierens die Lesbarkeit für den Menschen grösstenteils verloren. Um ein Programm ausführen können braucht der Nutzer also keinen Zugang zum Quellcode. Doch wenn er wissen will, was das Programm macht - es könnte ihn ausspionieren oder andere bösartige Sachen im Hintergrund machen - oder einfach das Programm verändern will, braucht er unbedingt Zugang zum Source Code.\\
@@ -992,14 +1009,12 @@ in LiveData.
 
 \lstset{language=java}
 \begin{lstlisting}
-
     public LiveData<List<Message>> getInboxMessage(){ return mInboxMessage;}
 
 \end{lstlisting}
 
 \lstset{language=java}
 \begin{lstlisting}
-
         private LiveData<List<Message>> mInboxMessage;
 
         public EmailViewModel(Application application) {
@@ -1013,9 +1028,8 @@ in LiveData.
 \end{lstlisting}
 
 
-\lstset{language=java}
+\lstset{language=java,numbers=none}
 \begin{lstlisting}
-
     private LiveData<List<Message>> mInboxMessage;
 
     public EmailRepository(Application application) {
@@ -1058,10 +1072,41 @@ ganz unten die neuen Informationen ausliest.
 %TODO: alles um de Server mit Python und repository etc. Dänkfähler mit Aktualisierung vo de Ordner
 \subsubsection{Server Connection}
 
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{media/connection-diagram.png}
+\caption{Diagramm Email Versand}
+\end{figure}
+
+\phantom{.} \\ % hack to fix line wrapping in the next paragraph
+Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer der eine Email versenden will interagiert mit seinem Mail Client und gibt durch ihn den Befehlt die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
+
+Das Versenden von Mails wird in der App einzeln gemacht: Für jede zu sendende Email wird die Funktion \textit{sendStarttls} (siehe folgend) aufgerufen. Zuerst wird der der SSL Kontext initialisiert, dann werden die Angaben der Mail zu einer korrekt kodierten und formatierten Nachricht umgewandelt und schliesslich mit der \textit{smtplib} Bibliothek versendet.
+
+\lstset{language=python}
+\begin{lstlisting}
+def sendStarttls(host, sendingMail, receivingMail, password, message="",
+                 subject="", port=587, cc=[], bcc=[]):
+    context = ssl.create_default_context()
+
+    if type(cc) is not str:
+        cc = ",".join(cc)
+    if type(bcc) is not str:
+        bcc = ",".join(bcc)
+    utf8Message = ("Subject: " + subject + "\nCC: " + cc + "\nBCC: " + bcc +
+                   "\n\n" + message)
+    decoded = utf8Message.encode('cp1252').decode('utf-8')
+
+    with smtplib.SMTP(host, port) as serverConnection:
+        serverConnection.starttls(context=context)
+        serverConnection.login(sendingMail, password)
+        serverConnection.sendmail(sendingMail, receivingMail, decoded)
+\end{lstlisting}
+
 \subsection{Umsetzung}
 \subsubsection{Bugs}
 % Erklärung woher, warum falsch, wie gelöst
-Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler diese Projektes zu kämpfen. Hier dazu ein kleines Beispiel:
+Programmierfehler schleichen sich in jedem Softwareprojekt ab einer gewissen Komplexitätsstufe ein. Damit hatten auch die Entwickler diese Projektes zu kämpfen. Hier dazu ein kleines Beispiel:\\
 
 % GUI stuff -> oneliner commit 
 Als der RecyclerViewer das erste Mal eingebunden werden konnte, ohne dass die App nach dem Öffnen direkt abstürzt, war aber das Problem, dass am oberen Teil Inhalte abgeschnitten waren. Das konnte gelöst werden, indem diese Codezeile in der Datei \textit{app/src/main/res/layout/activity\_main.xml} an der richtigen Stelle eingefügt wurde:
