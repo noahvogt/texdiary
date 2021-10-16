@@ -90,7 +90,9 @@ includeheadfoot}
 
 %for spacing
 \usepackage{setspace}
-\renewcommand{\baselinestretch}{1.5}
+%\renewcommand{\baselinestretch}{1.5}
+%\onehalfspacing
+\linespread{1.25}
 
 % graphics package
 \usepackage{graphicx}
@@ -158,7 +160,6 @@ includeheadfoot}
     keywordstyle=\color{blue},
     commentstyle=\color{dkgreen},
     stringstyle=\color{mauve},
-    backgroundcolor = \color{background},
     breaklines=true,
     numbers=left,
     numberstyle=\scriptsize\color{black},
@@ -414,7 +415,7 @@ sorting=ynt
 \pagebreak
 
 \section{Vorwort}
-Die Informatik ist heutzutage all gegenwärtig. Sie umfasst schon einen sehr grossen Teil unseres Alltags und der Anteil wächst immer weiter. Da ist es Sinnvoll sich 
+Die Informatik ist heutzutage allgegenwärtig. Sie umfasst schon einen sehr grossen Teil unseres Alltags und der Anteil wächst immer weiter. Da ist es sinnvoll sich 
 eine Zeit mit der Informatik beschäftigt zu haben. Und zur Informatik gehört natürlich auch das Programmieren. Die Fähigkeit zu Programmieren wird uns sicher in der
 Zukunft behilflich sein. Auch wenn es nur darum geht einfache Prozesse im eigenen Alltag zu automatisieren, wird es hilfreich sein. 
 
@@ -425,14 +426,14 @@ Zu diesem Zeitpunkt störte es mich, dass es keine effiziente Edubs-Mail-App fü
 Da ich aber wusste, dass ich mich nicht so gut auskenne, fragte ich bei Noah nach, wie er die Idee findet und ob er vielleicht mit mir diese Arbeit 
 angehen würde.
 Da Noah schon länger keinen \gls{email client} auf seinem Smartphone installiert hatte, weil ihm keine der gerade verfügbaren Apps gefiel und er den Gedanke 
-schon länger hatte, sich seinen eigene Email Client zu programmieren, traf sich das sehr gut und wir konnten uns einigen. 
+schon länger hatte, sich seinen eigenen Email Client zu programmieren, traf sich das sehr gut und wir konnten uns einigen. 
 Wir haben uns zusammen getan um einen Email Client zu programmieren, der auch auf älteren Geräten ohne Schwierigkeiten läuft. Schliesslich hatten wir beide
 eher ältere Smartphones, ebenfalls sollte die App Open Source sein. 
 Dafür sprechen viele praktische und philosophisch-ethische Gründe, aber dazu später mehr.
-Bei den Funktionen waren wir uns auch einig und wir hatten eine Menge an Ideen, um einen vollumfänglichen Email Client zu erstellen. Der Name \textit{snail mail} ist in einem 
-Brainstorming aus der wörtlichen Übersetzung von \textit{Schnecken Post} entstanden. Gedanke zu dem Design machten wir uns zuerst nicht,
+Bei den Funktionen waren wir uns auch einig und wir hatten eine Menge an Ideen, um einen vollumfänglichen Email Client zu erstellen. Der Name \textit{snailmail} ist in einem 
+Brainstorming aus der wörtlichen Übersetzung vom deutschen Wort \textit{Schneckenpost} entstanden. Gedanke zu dem Design machten wir uns zuerst nicht,
 da wir es schlicht und funktional halten wollten. 
-Wir hatten beide eine gewisse Vorstellung unserer App vor uns und ob wir diese erreicht haben wird sich im laufe dieser Arbeit herausstellen. \\
+Wir hatten beide eine gewisse Vorstellung unserer App vor uns und inwiefern wir diese bisher erreicht haben wird sich im Laufe dieser Arbeit herausstellen. \\
 
 {\setstretch{1.0}
 \textit{Hiermit erklären wir, die vorliegende Maturaarbeit selbst verfasst (sowie das in der Arbeit
@@ -506,7 +507,7 @@ Eine grosse Anzahl Open-Source-Entwickler sind stolz darauf, Software mit schein
 
 % ENG: This is where the \textit{suckless philosophy} comes in place: It aims at making software with simplicity in mind: Less source lines of code to not render the project unmaintainable in similar way as mentioned above. This way of programming is a lot more difficult, but the struggle is most of the time worth it. This coding philosophy also incentives (quality) code rewrites - which happens a lot less with bloated software counterparts - that gives the user more alternatives to choose from.
 
-Hier kommt die Philosophie des \textit{Suckless Philosphy} ins Spiel: Sie zielt darauf ab, Software mit Hinblick auf Einfachheit zu entwickeln: Weniger Quellcodezeilen, um das Projekt nicht in ähnlicher Weise unüberschaubar zu machen, wie oben erwähnt. Diese Art zu programmieren ist viel schwieriger, aber der Aufwand ist es meistens wert. Diese Programmierphilosophie bietet auch Anreize für das qualitativ hochwertige Neuschreiben von Programmen, was bei der sogenannten \textit{Bloated Software \cite{bhattacharya2020}} viel seltener vorkommt, dazu gibt es dem Benutzer mehr Alternativen zur Auswahl.
+Hier kommt nun die \textit{Suckless Philosphie} ins Spiel: Sie zielt darauf ab, Software mit Hinblick auf Einfachheit zu entwickeln: Weniger Quellcodezeilen, um das Projekt nicht in ähnlicher Weise unüberschaubar zu machen, wie oben erwähnt. Diese Art zu programmieren ist viel schwieriger, aber der Aufwand ist es meistens wert. Diese Programmierphilosophie bietet auch Anreize für das qualitativ hochwertige Neuschreiben von Programmen, was bei der sogenannten \textit{Bloated Software \cite{bhattacharya2020}} viel seltener vorkommt, dazu gibt es dem Benutzer mehr Alternativen zur Auswahl.
 
 \newpage
 
@@ -663,7 +664,7 @@ Das letzte Feature soll sein, dass Links direkt in einem Browser geöffnet werde
 Im Unterschied zur Konkurrenz soll diese App so programmiert werden, dass sie alle nötigen Grundfunktionen für einen Email Client auf dem Smartphone beinhaltet, aber schneller starten soll als die Apps der Konkurrenz, weniger Speicherplatz und Resourcen verbrauchen soll und nicht mit unnötigen Funktionen überladen sein. \\
 
 
-Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funkionalität besser zu beleuchten.\\
+Ein Pluginmanager soll auch eingebaut werden, um weitere Funktionen, welche das Programm verlangsamen würden oder nicht für jedermann geeignet sind, hinzuzufügen können. Es existiert natürlich auch die Möglichkeit nach Abschluss dieser Arbeit die App zu verbessern und auf Nutzerwünsche anzupassen, doch hier wurden jetzt die ungefähren, geplanten Grundfunktionen genannt, um die Ziele der Funktionalität besser zu beleuchten.\\
 Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen können. Weshalb dies nicht der Fall ist wird noch genauer betrachtet. 
 
 \newpage
@@ -672,9 +673,9 @@ Wir haben uns viele Ziele gesetzt und dachten, dass wir auch mehr schaffen könn
 
 \subsection{Programmiermittel}
 
-Um ein Programm, mir grösserem Umfang, zu Entwickel, braucht es Hilfsmittel die sich auf genau das spezialisiert haben. 
+Um ein Programm, mir grösserem Umfang, zu entwickeln, ist es nützlich Hilfsmittel zu verwenden welche sich darauf spezialisiert haben. 
 Eines dieser Hilfsmittel sind \gls{vcs}. Diese sind eine sehr praktische Methode um Funktionen in ein Programm einzubauen, ohne das Risiko 
-das Programm komplett zu Überarbeiten, wenn diese Funktion einen Fehler hervorruft. In diesem Fall wurde \Gls{git} als VCS genutzt, um für jegliche Funktionen
+das Programm komplett Überarbeiten zu müssen, wenn eine einzige Funktion einen Fehler hervorruft. In diesem Fall wurde \Gls{git} als VCS genutzt, um für jegliche Funktionen
 einen eigenen \gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu \glspl{merge}, wenn die Funktion fertig ist.\cite{git} \cite{github} \\
 
 \begin{figure}[H]
@@ -683,18 +684,18 @@ einen eigenen \gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu
     \caption{parallele Featureentwicklung mit Git \cite{gitflowBlog}}
 \end{figure}
 
-Um zu Zweit an einem Projekt gleichzeitig zu arbeiten, gibt es viel Möglichkeiten sich das aktualisierte Projekt zur Verfügung zu stellen. Die einfachste ist sich das 
-Projekt immer wieder zu Mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
+Um zu zweit an einem Projekt gleichzeitig zu arbeiten, gibt es viel Möglichkeiten sich das aktualisierte Projekt zur Verfügung zu stellen. Die \say{einfachste} ist sich das 
+Projekt immer wieder zu mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
 verwendet wurde. Über GitHub konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
 Auf GitHub ist das Programm öffentlich und wird dadurch auch Open-Source. Es kann aber nicht durch eine dritte Person, ohne Einwilligung von Noah, in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf GitHub aufgelistet werden. \cite{github} \\
 
 Beim Programmieren einer Arbeit dieser Grösse, erweist es sich besonders nützlich ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses 
-IDE speziell auf die android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtert. Zum beispiel ist der
+IDE speziell auf die Android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtern. Zum beispiel ist der
 "Visual Layout Editor"\ eine grosse Hilfe beim Designen. \gls{android-studio} bringt auch einen \gls{compiler} und einen \gls{emulator} mit sich, womit eine \textit{debug} \gls{apk} und eine
 \textit{release} \gls{apk} version der App erstellt werden kann. Um die App zu testen, wurde öfters ein \textit{debug} APK File erstellt und auf einem \gls{emulator} aus \gls{android-studio}
-getestet. Mit \gls{android-studio} können auch Apps mit speziellen Keys unterzeichnet werden, damit sie im GooglePlayStore veröffentlicht werden können.
-Die App sollte aber nicht nur auf Emulatoren laufen, um auch das Gefühl des Designs besser zu empfinden oder den Gebrauch im Alltag zu testen, wurde eine \gls{adb} genutzt.
+getestet. Mit \gls{android-studio} können auch Apps mit speziellen Keys unterzeichnet werden, damit sie im Google Play Store veröffentlicht werden können.
+Die App sollte aber nicht nur auf Emulatoren laufen, um auch das Gefühl des Designs besser zu empfinden oder den Gebrauch im Alltag zu testen, wurde die \gls{adb} benutzt.
 Mit \gls{android-studio} können auch Daten über die Effizienz der App aufgenommen werden. 
 \cite{android-studio} \\
 
@@ -782,12 +783,12 @@ Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} fü
 
 Weil nach dem herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
 und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen 
-lass sich einer der Autoren in ein Buch ein. Dieses Buch soll ihm Aufschluss über das erstellen einer Database geben. 
+las sich einer der Autoren in ein Buch ein. Dieses Buch sollte ihm Aufschluss über das erstellen einer Database geben. 
 
 Es wurde klar, dass eine Database für Android meist mit \gls{sql} oder \gls{sqlite} geschrieben wird. Jedoch sind diese Sprachen nicht wirklich handlich und es
-liess sich auch nicht mit dem Zeitplan verknüpfen eine weitere Programmiersprache zu lernen. Weshalb zu Room gegriffen wurde. Room ist eine abstrakte Klasse über SQLite 
+liess sich auch nicht mit dem Zeitplan verknüpfen eine weitere Programmiersprache zu lernen, weshalb zu Room gegriffen wurde. Room ist eine abstrakte Klasse über SQLite 
 und kann mit dieser Kommunizieren. Mit ihr können SQL \glspl{query} fast vollständig in Java geschrieben und ausgeführt werden. Ebenso ist Room für die Fehlersucher besser geeignet, 
-weil es beim Compilen der App die SQL queries und \glspl{entity} überprüft. \cite{roomInfo} \\
+weil es beim compilen der App die SQL queries und \glspl{entity} überprüft. \cite{roomInfo} \\
 
 \begingroup
 \setlength{\intextsep}{7pt}
@@ -801,11 +802,11 @@ weil es beim Compilen der App die SQL queries und \glspl{entity} überprüft. \c
 
 \nohyphenation
 
-Damit die heruntergeladenen und gespeicherten Nachrichten auch Angezeigt werden können benötigt es ein Interface. Dieses sollte so schlicht und ordentlich wie möglich gehalten werden. 
+Damit die heruntergeladenen und gespeicherten Nachrichten auch angezeigt werden können benötigt es ein Interface. Dieses sollte so schlicht und ordentlich wie möglich gehalten werden. 
 Die \gls{recyclerview} Library ist eine optimale Möglichkeit Daten in Form von Nachrichten als eine Auflistung zu zeigen. Sie bringt einen Vorteil gegenüber einer \gls{list} mit und zwar
 verwendet sie \glspl{view}, die Angezeigt wurden, wieder. Was dem Recyclerviewer einen Vorteil im Punkt Effizienz gegenüber der Liste bringt. \cite{recyclerViewRecycle}
 
-Neben der Recyclerview Library werden auch andere libraries gebraucht um das \gls{user interface} zu erstellen. Einer dieser libraries ist Material oder Material Design. 
+Neben der Recyclerview Library werden auch andere Bibliotheken gebraucht um das \gls{user interface} zu erstellen. Einer dieser libraries ist Material oder Material Design. 
 Den Autoren hat sie schlicht gefallen und sie ist nicht schwer zu benutzen, weshalb diese Library genutzt wurde. Sie ist nach ganz klaren Prinzipien aufgebaut 
 und von Google erstellt worden um hochwertige Designs zu kreieren. \cite{materialDesigne}
 
@@ -822,7 +823,7 @@ Die App kann grob in drei Teile unterteil werden. In \textit{User Interface}, in
 \begin{wrapfigure}{r}{10cm}
 \centering
     \includegraphics[scale=.52]{media/AppStructureFull.png}
-\caption{Grob Aufbau der App}
+\caption{grober Aufbau der App}
 \end{wrapfigure}
 
 \nohyphenation
@@ -930,7 +931,7 @@ für eine versetze unterteilung der View sorgen kann. Dies ist aber für einen E
 
     \item Der View Holder beschreibt die Position einer View oder Metadaten innerhalb des Recyclerviewers.
 
-    \item Der Adaper ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des ViewHolder-Objekt und
+    \item Der Adapter ist wohl eines der wichtigsten Teile des Recyclerviewer. Er sorgt für das erstellen des ViewHolder-Objekt und
 bindet auch die Daten aus der Database an den View Holder
 
     \item Die Database ist das Herzstück dieser App und wird auch für den Recyclerviewer verwendet um die 
@@ -949,7 +950,7 @@ Der erste Versuch scheiterte daran,
 dass die App abstürzte ohne einen Error zu melden. Und nach einiger Zeit war die beste Lösung wieder an einen Punkt zu gehen, an welchem die App noch funktionierte, nur ohne vollständigen 
 Recyclerviewer. Es dauerte einen ganzen Monat bis eine weitere Version mit Recyclerviewer bereit war. Nur diesmal funktionierte die App. \\
 
-\textbf{Weiss ned ob de abschnitt so sinn macht @Simon}
+\textbf{Weiss ned ob de abschnitt so Sinn macht @Simon}
 
 Der Recyclerviewer war an diesem Punkt sehr simpel. Er konnte eine vorbestimmte menge an Views anzeigen, welche in einem Loop generiert wurden, lass die Informationen aus
 einer sehr simplen Database aus und er konnte noch nicht aktualisiert werden. Die Informationen konnten nur einmal eingelesen werden und der View-Holder wurde in der gleichen Klasse wie 
@@ -966,7 +967,7 @@ nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Rec
 Der CustomAdapter war am Anfang der App dafür zuständig die Daten, welche in einer einfache Klasse abgespeichert wurden, über den 
 \textit{Constructor} dem ViewHolder weiter zu geben, welcher dann diese Informationen an eine View im Recyclerviewer band. Im verlaufe der Zeit wurde 
 der Adapter angepasst und erweitert. Dies hatte Simon auch sehr grossen Spass gemacht da er auch wirklich alles verstand, jedoch als die Database entstand war der alte 
-CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt seine Aufgaben jetzt ein wenig anderst. Zwar viel effizienter mit weniger Code aber nicht 
+CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt seine Aufgaben jetzt ein wenig anders. Zwar viel effizienter mit weniger Code aber nicht 
 so Transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem \gls{fragment} für den zugehörigen \textit{Ordner} neu Aufgerufen und überschreibt den CustomAdapter 
 aus der Mainactivity. 
 
@@ -978,7 +979,7 @@ aus der Mainactivity.
 \caption{Input Validation}
 \end{wrapfigure}
 
-Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann gibt es in snailmail und es sinnvoll gecheckt werden kann gibt es eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine z.B. gütlige Emailaddresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss. Diese Praxis ist mittlerweile weitverbreitet und auf mobilen graphischen Oberflächen wurde diese von den Autoren als sinnvoll erachtet, weshalb sie auch in ihrer App davon Nutzen gemacht haben.
+Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann gibt es in snailmail und es sinnvoll gecheckt werden kann gibt es eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine z.B. gültige Email Adresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss. Diese Praxis ist mittlerweile weitverbreitet und auf mobilen graphischen Oberflächen wurde diese von den Autoren als sinnvoll erachtet, weshalb sie auch in ihrer App davon Nutzen gemacht haben.
 
 \subsubsection{Datenbank}
 
@@ -988,7 +989,7 @@ Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann gibt es in snai
 
 %TODO: zeigen wie Nachrichten eingelesen werden
 
-Ein \textit{relational database management system} ist ein Databasesystem in welchem die Informationen als \textit{tables} gespeichert werden. 
+Ein \textit{relational database management system} ist ein Datenbank-System in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
 gibt es 9 Attribute und einen Objectkey. \cite{riccardi2001} \\
 
@@ -1043,7 +1044,7 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
 \end{wrapfigure}
 
 
-Room ist eine Art Schicht über der SQLiteDatabase. 
+Room ist eine Art Schicht über der SQLite database. 
 Room besteht grundsätzlich aus drei Teilen. Die Database dient als Hauptzugriffspunkt für die gespeicherten Daten der App. Sie ist mit @Database markiert. 
 Eine \textit{Entity} repräsentiert einen \textit{table} in der Database und die \textit{DAO} Klasse beinhaltet die Methoden um auf die Database zu zu greifen. Sie kommuniziert
 mit SQLite um de Zugriff auf die Daten zu ermöglichen \cite{roomStructure}
@@ -1091,7 +1092,7 @@ werden in diesem Fall keine Daten vom Server direkt im Repository eingelesen, de
 Weil das herunterladen der Daten vom Mailserver leider erst sehr spät funktioniert hatte, 
 haben sich die Autoren dazu entschlossen das einlesen der Daten über das Viewmodel zu mache. Dieses hat eine sehr ähnliche Funktion, 
 es leitet die Daten ebenfalls weiter, nur gibt es \gls{livedata} zurück, was dazu führt, dass in der Mainactivity oder im entsprechenden Fragment ein \gls{observer} 
-eingebaut werden kann. Dieser informiert die klasse dann über Veränderungen in der Databse, um sie dann im Recyclerviewer anzeigen zu lassen. 
+eingebaut werden kann. Dieser informiert die klasse dann über Veränderungen in der database, um sie dann im Recyclerviewer anzeigen zu lassen. 
 \cite{appStructurePicture}
 
 Dies ist die Funktion welche an einer Variable vom Typ EmailViewModel ausgeführt wird. In dem Fragment 'HomeFragment' in der
@@ -1257,7 +1258,7 @@ Wir sind uns ziemlich sicher, dass es weiter Bugs in der App geben wird, da wir 
 % RecyclerViewer, shit java IMAP libraries
 Probleme waren die unnötig vielen Layouts, welche entstanden bei unserer App. Vielleicht hätten diese minimiert werden können, wenn die Entwickler eine siginfikant höhere Erfahrung im Bereich der Android Entwicklung hätten, oder wenn die verschiedenen Inhalte beim Aufrufen weniger Layouts generieren würden, oder diese könnten besser wieder referenziert werden.\\
 
-Mit gewissen Biobliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
+Mit gewissen Bibliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
 
 \subsubsection{Kommunikation}
 
@@ -1273,7 +1274,7 @@ Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Au
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid. Doch ich find dä super
 
 \subsubsection{Namensfindung}
-Für die App musste auch noch ein Name her, doch die allerlängste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten wiederspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
+Für die App musste auch noch ein Name her, doch die aller längste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater fragte nach Namensideen, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das letzte entschieden, da dies das wichtigste Designkonzept der App am besten widerspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
 
 \url{https://github.com/noahvogt/snailmail}
 
@@ -1287,23 +1288,23 @@ und ein Paar Tage getestet werden. Das Interface wurde getestet aber darüber hi
 
 \section{Resultate}
 \subsection{Vergleich mit unseren ursprünglichen Zielen}
-Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel ohne irgendwelchen unnötigen Schnickschnack. Simpel ist das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt sie sollen einen Mailaccount einrichten, um dies herauszufinden. Dabei haben sich die meisten gut und schnell zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
+Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel ohne irgendwelchen unnötigen Schnickschnack. Simpel ist das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt sie sollen einen Mail Account einrichten, um dies herauszufinden. Dabei haben sich die meisten gut und schnell zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
 
-Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst kürzlich kam auf, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen steht: Es wurde zwar nicht expilizit angegeben, dass alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne der Autoren eine nichtfreie Library zu verwenden. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Missstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
+Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst kürzlich kam auf, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen steht: Es wurde zwar nicht explizit angegeben, dass alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne der Autoren eine nichtfreie Library zu verwenden. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Missstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
 
-Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es hat verschiedene Mailboxen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features, nämlich Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Atribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz und Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhangfunkionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten, einzelnen Emails.\\
+Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es hat verschiedene Mailboxen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features, nämlich Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz und Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten, einzelnen Emails.\\
 
 Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug\cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es als weitaus sinnvoller und effizienter, von den Autoren, angesehen wurde, einfach klassische Patches zu verwenden. Ähnlich wie dies bei der suckless.org Software ist. \cite{dwm}
 
 \subsection{Vergleich mit der Konkurrenz}
 Es ist gar nicht so einfach diese App zu vergleichen mit ihrer Konkurrenz, da sie noch nicht fertig entwickelt ist. Aus diesem Standpunkt heraus vergleichen wir nur die fertigen Funktionen mit der Konkurrenz.\\
 
-Im Vergleich mit der Konkurrenz, sticht sie heraus durch ihre simple Art, so wie das geplant war. Die Funktionalitäten sind dabei auch wesentlich rüdimentärer, oder besser gesagt mehr \say{suckless} als die der Konkurrenz. Die Farben und das Layout des User Interface sollte zwar simpel sein, doch das visuelle Zusammenspielen von Farben und dem Layout haben gewisse Konkurrenzprodukte, welche immerhin auch von Fortune 500 Unternehmen entwickelt werden, zweifelsohne besser umgesetzt als die Autoren dieser App.
+Im Vergleich mit der Konkurrenz, sticht sie heraus durch ihre simple Art, so wie das geplant war. Die Funktionalitäten sind dabei auch wesentlich rudimentärer, oder besser gesagt mehr \say{suckless} als die der Konkurrenz. Die Farben und das Layout des User Interface sollte zwar simpel sein, doch das visuelle Zusammenspielen von Farben und dem Layout haben gewisse Konkurrenzprodukte, welche immerhin auch von Fortune 500 Unternehmen entwickelt werden, zweifelsohne besser umgesetzt als die Autoren dieser App.
 \subsection{Vor- und Nachteile unserer App}
 \subsubsection{Pro}
 Für die Nutzung der App sprechen simple Nutzeroberfläche und Codebasis, welche nach Fertigstellung der initialen Entwicklung eine der besten simplen Email Client werden sollte.
 \subsubsection{Kontra}
-Dagegen sprechen, dass gewisse Funktionen welche laut den Autoren nicht in einen Emailclient gehören nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient Thunderbird .\cite{thunderbird}
+Dagegen sprechen, dass gewisse Funktionen welche laut den Autoren nicht in einen Email client gehören nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient Thunderbird .\cite{thunderbird}
 
 \section{Selbstreflexion}
 
@@ -1312,7 +1313,7 @@ Dagegen sprechen, dass gewisse Funktionen welche laut den Autoren nicht in einen
 Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut und half enorm beim Arbeitsprozess und dessen Strukturierung. Mit der Syntax der verwendeten Programmier- und Markupsprachen Java, Python und XML konnte gut umgegangen werden, obwohl die beiden noch recht wenig Erfahrung mit Java hatten. Die Codestruktur fanden sie den Umständen entsprechen gut und sinnvoll.
 \subsection{Was Schlecht Lief}
 % ******* java shit tier libraries
-Dass es keine mit Gradle funktionierede, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Emailbibliotheken für Java gibt. Deshalb wichen wir auf die um Welten besser funktionierende Pythonbibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{Chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
+Dass es keine mit Gradle funktionierende, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Email Bibliotheken für Java gibt. Deshalb wichen wir auf die um Welten besser funktionierende Python Bibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
 
 Etwas das nicht direkt schlecht lief aber sehr viel Zeit brauchte ist, dass wenn ich (Simon) zum Beispiel eine Database für den Recyclerviewer gemacht habe, zwar nur eine Testversion, 
 ich diese im späteren verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion aber dass diese so weit von einer professionelle Database entfernt war, war mit nicht klar. 
@@ -1326,7 +1327,7 @@ noch vor uns liegt. Wir waren fast immer in Zeitverzögerung. Immer Sommer dacht
 als wir aus den Sommerferien kamen, wurde uns bewusst wie viel es noch zu tu gibt. Wir haben alles gegeben, jedoch wurde die App leider nicht Fertig. 
 \subsection{Was Wir Gleich Machen Würden}
 % As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
-Wenn wir diese in die Vergangenheit reisen könnten und die App von Neuem machen könnten, würden wir am Userdesign nichts ändern, und auch weiterhin mit \textit{Git} als \textit{VCS} arbeiten und für jedes noch nicht einsatzbereite Feature einen neuen \textit{Branch} machen. Die Arbeitsweise an sich hat sich aus unserer Sicht bewährt und ist ein passabler Weg, kollaborativ an einem Softwareprojekt zu arbeiten.
+Wenn wir diese in die Vergangenheit reisen könnten und die App von Neuem machen könnten, würden wir am User Design nichts ändern, und auch weiterhin mit \textit{Git} als \textit{VCS} arbeiten und für jedes noch nicht einsatzbereite Feature einen neuen \textit{Branch} machen. Die Arbeitsweise an sich hat sich aus unserer Sicht bewährt und ist ein passabler Weg, kollaborativ an einem Softwareprojekt zu arbeiten.
 \subsection{Was Wir Anders Machen Würden}
 % As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability.
 
@@ -1343,7 +1344,7 @@ Wir haben das Gefühl, einen guten ersten Einblick in die native Android Program
 Wir sind zwar etwas enttäuscht, dass wir nicht alle geplanten Ziele erreicht haben, doch wir haben noch genug Motivation die App in den nächsten paar Wochen und Monaten fertigzustellen. Denn die Arbeit hat uns insgesamt doch gefallen, trotz einigen Motivationstiefs, sodass wir auch gerne unseren Freunden und Familie von ihr erzählt haben.
 Wir können sicher sage, dass wir jetzt eine Smartphone App als grösseres Projekt ansehen als das was wir dachten. Eine App ist nicht so simple wie wir erwartet haben.\\
 
-Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattfrom \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonderns Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
+Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattform \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonders Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
 Dazu war das eine sehr gute Lehre wie später in grösseren Teams solche Programme entstehen. Wir sind jetzt sicher etwas besser ausgerüstet als andere.
 
 \section{Danksagung}
