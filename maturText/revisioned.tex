@@ -816,7 +816,7 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
 %recherche stellte sich heraus, dass es eine Library gibt, welche den Umgang mit SQLite vereinfacht und diese sogar mehr Sicherheit bietet.\\
 
 
-
+\newpage
 \begingroup
 \setlength{\intextsep}{10pt}
 \setlength{\columnsep}{15pt}
@@ -826,6 +826,7 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
     \includegraphics[width=.4\textwidth]{media/RoomStructure.png}
     \caption{Room Struktur \cite{appStructurePicture}}
 \end{wrapfigure}
+
 
 
 Room ist eine Art Schicht über der SQLite database. 
@@ -876,8 +877,11 @@ werden in diesem Fall keine Daten vom Server direkt im Repository eingelesen, de
 Weil das Herunterladen der Daten vom Mailserver leider erst sehr spät funktioniert hatte, 
 haben sich die Autoren dazu entschlossen, das Einlesen der Daten über das Viewmodel zu machen. Dieses hat eine sehr ähnliche Funktion, 
 es leitet die Daten ebenfalls weiter, nur gibt es \gls{livedata} zurück, was dazu führt, dass in der Mainactivity oder im entsprechenden Fragment ein \gls{observer} 
-eingebaut werden kann. Dieser informiert die Klasse dann über Veränderungen in der Database, um sie dann im Recyclerviewer anzeigen zu lassen. 
-\cite{appStructurePicture}
+eingebaut werden kann. Dieser informiert die Klasse dann über Veränderungen in der Database, um sie dann
+
+im Recyclerviewer anzeigen zu lassen.
+\cite{appStructurePicture}\\
+
 
 Dies ist die Funktion, welche an einer Variable vom Typ EmailViewModel ausgeführt wird. In dem Fragment 'HomeFragment' in der
 onCreateView Funktion, welcher immer ausgeführt wird wenn dieses Fragment aufgerufen wird. 
@@ -976,6 +980,7 @@ mit dem \textit{Folder} Attribut \say{Draft} in die Database eingelesen.\\
 \endgroup
 
 %TODO: alles um de Server mit Python und repository etc. Dänkfähler mit Aktualisierung vo de Ordner
+\vspace*{2cm}
 \subsubsection{Server Connection}
 
 \begin{figure}[H]
@@ -1054,7 +1059,7 @@ Sowohl im Programm-Quellcode der App als auch im Quellcode dieser Arbeit haben d
 
 Auch haben sich die beiden zeitweise Montags zusammen hingesetzt um den Arbeitsprozess in dieser Weise zu besprechen und um die nächsten Aufgaben zu verteilen.\\
 
-Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes, um daran zu entwickeln und die Komponenten wieder zusammenzufügen, hatte etwas von der typischen Modularität und des Touches der Linuxphilosophie.
+Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurch-schnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes, um daran zu entwickeln und die Komponenten wieder zusammenzufügen, hatte etwas von der typischen Modularität von Linux.
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid. Doch ich find dä super
 
 \subsubsection{Namensfindung}
@@ -1075,8 +1080,8 @@ Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen
 
 Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst kürzlich kam auf, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen steht: Es wurde zwar nicht explizit angegeben, dass alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne der Autoren eine nichtfreie Library zu verwenden. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Missstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
 
-%TODO @noah glossar -> HTML Output parsing
-Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es bestehen verschiedene Mailboxen und jeder kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Gewisse Features, wie Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz. Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten einzelnen Emails.\\
+%TODO @noah glossar -> HTML Output parsing -> not mentioned
+Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es bestehen verschiedene Mailboxen und jeder kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Gewisse Features, wie Pushnachrichten, Suchfunktionen, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz. Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten einzelnen Emails.\\
 
 Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug \cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es weitaus sinnvoller und effizienter von den Autoren angesehen wurde, einfach klassische Patches zu verwenden. Ähnlich wie dies bei der suckless.org Software ist. \cite{dwm}
 
@@ -1107,8 +1112,7 @@ mehrmals komplett umschreiben. \\
 
 
 %TODO:@Noah dinni Meinig dezue? -> erklären
-Etwas, das sicher hätte besser laufen sollen, war das Zeitmanagement. Wir glauben auch, dass uns nicht ganz klar war, wie viel 
-noch vor uns liegt. Wir waren beinahe immer in Zeitverzug. Im Sommer dachten wir noch, wir wären perfekt in der Zeit und dies wurde uns auch bestätigt. Jedoch
+Etwas, das sicher hätte besser laufen sollen, war das Zeitmanagement. Wir hatten zwar mögliche Komplikationen miteinberechnet im Zeitplan, doch wir hatten viel mehr und verheerendere Probleme, welche unseren Zeitplan regelrecht herausforderten, schlisslich waren wir beinahe immer in Zeitverzug. Im Sommer dachten wir noch, wir wären perfekt in der Zeit und dies wurde uns auch bestätigt. Jedoch
 als wir aus den Sommerferien kamen, wurde uns bewusst, wie viel es noch zu tun gab. Wir haben alles gegeben, jedoch wurde die App leider nicht fertig. 
 
 \subsection{Was Wir Gleich Machen Würden}
@@ -1150,13 +1154,13 @@ Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Ya
 Es wurden Open-Source Programme genutzt um verschiedene Elemente einbauen zu können. 
 
 Für die Library Room haben sich die Autoren an diesem Programm bedient. \cite{roomApp}
-Stark betroffen sind die Dateien EmailViewModel.java, EmailViewHolder.java, CustomAdapter.java, EmailRepository.java, EmailRoomDatabase.java, Message.java, MessageDao.java
-und NewDraftMessageActivity.java. Bei diesen
-Dateien handelt es sich um fast Kopien des Basisprogramms, sie wurden stark erweitert und dazu werden sie von anderen Funktionen aufgerufen. 
-Die Dateien von denen sie Inspiriert wurden, heissen fast gleich. Es muss nur Email und Message durch Word ersetzt werden und Sie finden die Dateien.
-Die Dateien ArchiveFragment.java, GalleryFragment.java, HomeFragment.java, DraftFragment.java, SpamFragment.java und MainActivity.java beinhalten alle vier Zeilen beginnend mit der 
-Variabel mEmailViewModel vom Typ EmailViewModel. Diese vier Zeilen sind jeweils auch aus dem Basisprogramm. 
-Die Zeilen sehen Etwa so aus
+Stark betroffen sind die Dateien \textit{EmailViewModel.java}, \textit{EmailViewHolder.java}, \textit{CustomAdapter.java}, \textit{EmailRepository.java}, \textit{EmailRoomDatabase.java}, \textit{Message.java}, \textit{MessageDao.java}
+und \textit{NewDraftMessageActivity.java}. Bei diesen
+Dateien handelt es sich um Templates, sie wurden stark erweitert und dazu werden sie von anderen Funktionen aufgerufen. 
+Die Dateien von denen sie inspiriert wurden, heissen fast gleich. Es muss nur \say{Email} und \say{Message} durch \say{Word} ersetzt werden und Sie finden die Dateien.
+Die Dateien \textit{ArchiveFragment.java}, \textit{GalleryFragment.java}, \textit{HomeFragment.java}, \textit{DraftFragment.java}, \textit{SpamFragment.java} und \textit{MainActivity.java} beinhalten alle vier Zeilen beginnend mit der 
+Variabel \say{mEmailViewModel} vom Typ \say{EmailViewModel}. Diese vier Zeilen sind jeweils auch aus dem Basisprogramm. 
+Die Zeilen sehen etwa so aus:
 \lstset{language=java}
 \begin{lstlisting}
     mEmailViewModel = new ViewModelProvider(this).get(EmailViewModel.class);
@@ -1167,7 +1171,7 @@ Die Zeilen sehen Etwa so aus
 \end{lstlisting}
 
 
-Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityResult, welche auch aus dem Basisprogramm stammt. 
+Weiter beinhaltet die Datei \textit{MainActivity.java} eine Funktion namens \say{onActivityResult}, welche auch aus dem Basisprogramm stammt. 
     \lstset{language=java}
     \begin{lstlisting}
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -1184,7 +1188,7 @@ Weiter beinhaltet die Datei MainActivity.java eine Funktion namens onActivityRes
         }
     }
     \end{lstlisting}
-Diese Zeilen waren Grundlage für die Nachfolgenden Zeilen.
+Diese Zeilen waren Grundlage für die nachfolgenden Zeilen.
 
 \lstset{language=java}
 \begin{lstlisting}
@@ -1210,7 +1214,7 @@ Diese Zeilen waren Grundlage für die Nachfolgenden Zeilen.
         }
 \end{lstlisting}
 
-Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 150-171. Diese Stammen ursprünglich auch aus dem Basisprogramm, 
+Sehr ähnliche Zeilen befinden sich auch in der \textit{messageCreateFragment.java} Datei von Zeile 150-171. Diese stammen ursprünglich auch aus dem Basisprogramm, 
 wurden aber überarbeitet. 
 
 \lstset{language=java}
@@ -1229,7 +1233,7 @@ final Button button = findViewById(R.id.button_save);
         });
 \end{lstlisting}
 
-Diese Zeilen waren grundlagen für die Nachfolgenden Zeilen.
+Diese Zeilen waren Grundlagen für die nachfolgenden Zeilen.
 
 \lstset{language=java}
 \begin{lstlisting}
