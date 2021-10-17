@@ -575,6 +575,7 @@ Nutzer eingibt, überprüfen können und weiter die Emails, die ein Nutzer auf e
 Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Das Resultat dieser Suche waren zwei Libraries. \\
 
 
+
 Weil nach dem Herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
 und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen, 
 las sich einer der Autoren in ein Buch ein. Dieses Buch sollte ihm Aufschluss über das Erstellen einer Database geben.  \\
@@ -1086,6 +1087,7 @@ Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut un
 \subsection{Was Schlecht Lief}
 Es gab keine mit Gradle funktionierende, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Email Bibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Python Bibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
 
+%TODO: wir person
 Etwas, das nicht direkt schlecht lief, aber sehr viel Zeit raubte ist, dass wenn einer der Autoren zum Beispiel eine Database für den Recyclerviewer gemacht hatte, zwar nur eine Testversion, 
 er diese im späteren Verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion, aber, dass diese so weit von einer professionelle Database entfernt war, war ihm nicht klar. 
 In so einer Situation war er nicht nur bei der Database. Mit dem Recyclerviewer hatte er solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert, aber er musste den Recyclerviewer
