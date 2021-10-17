@@ -63,7 +63,7 @@ includeheadfoot}
 \THEDAY.~\monthname[\THEMONTH] \THEYEAR}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{Noah Vogt \& Simon Hammer}
+\lhead{N. V. \& S. H.}
 \chead{}
 %\rhead{\dmy\today}
 \lfoot{}
@@ -352,7 +352,7 @@ sorting=ynt,
 %==================Commands===============================
 
 %Signatur
-\newcommand{\doublesignature}[3][Simon Hammer]{%
+\newcommand{\doublesignature}[3][S. H.]{%
   \parbox{\textwidth}{
     \vspace{2cm}
     \centering Datum: #3 \\
@@ -387,20 +387,13 @@ sorting=ynt,
 	{\huge\bfseries Eine Email-Client-App entwickeln \par}
 	\vspace{0.5cm}
 	{\Large eine Maturarbeit von \par}
-	{\Large Noah Vogt \& Simon Hammer \par}
+	{\Large N. V. \& S. M. \par}
     {\Large aus der Klasse 4cg \par}
     \vspace{0.5cm}
-    %{\Large Victor Yakhontov \& Daniel Bühler \par }
-   
-    \begin{figure}[H]
-        \centering
-        %\includegraphics[width=.8\textwidth]{../logo/version3d.png}
-        \includegraphics[width=.7\textwidth]{../logo/version3d.png}
-    \end{figure}
    
     \vspace{0.5cm}
-    {\Large Betreungslehrkraft: Victor Yakhontov \par }
-    {\Large Koreferent: Daniel Bühler \par}
+    {\Large Betreungslehrkraft: V. Y. \par }
+    {\Large Koreferent: D. B. \par}
     \vspace{0.5cm}
 	{\large Geschrieben im Jahr 2021 \par}
     {\large Gymnasium Kirschgarten, Basel-Stadt CH \par}
@@ -415,13 +408,13 @@ Die Informatik ist heutzutage allgegenwärtig. Sie umfasst schon einen sehr gros
 eine Zeit mit der Informatik beschäftigt zu haben. Zur Informatik gehört natürlich auch das Programmieren. Die Fähigkeit zu Programmieren wird uns sicher in der
 Zukunft behilflich sein. Auch wenn es nur darum geht, einfache Prozesse im eigenen Alltag zu automatisieren, wird es hilfreich sein. 
 
-Noah hatte schon länger grosses Interesse am Programmieren. Simon hingegen begann Interesse an den Programmiersprachen zu entwickeln, als die beiden im Unterricht 
+N. hatte schon länger grosses Interesse am Programmieren. S. hingegen begann Interesse an den Programmiersprachen zu entwickeln, als die beiden im Unterricht 
 Python lernten. Als die Zeit kam, sich für ein Maturthema zu entscheiden, war für ihn klar, er würde eine App programmieren. Anfangs ging es ihm darum, eine 
 nützliche App zu kreieren, welche er selbst verbessern kann und seine Bedürfnisse perfekt abdeckt.
 Zu diesem Zeitpunkt störte es ihn, dass es keine effiziente Edubs-Mail-App fürs Smartphone gab und er wollte sie selbst kreieren. 
-Da er aber wusste, dass er sich nicht so gut auskenne, fragte er bei Noah nach, wie er die Idee findet und ob er vielleicht mit ihm diese Arbeit 
+Da er aber wusste, dass er sich nicht so gut auskenne, fragte er bei N. nach, wie er die Idee findet und ob er vielleicht mit ihm diese Arbeit 
 angehen möchte.
-Da Noah schon länger keinen \gls{email client} auf seinem Smartphone installiert hatte, weil ihm keine der gerade verfügbaren Apps gefiel, und er den Gedanken 
+Da N. schon länger keinen \gls{email client} auf seinem Smartphone installiert hatte, weil ihm keine der gerade verfügbaren Apps gefiel, und er den Gedanken 
 schon länger hatte, sich seinen eigenen Email Client zu programmieren, traf sich das sehr gut und die beiden konnten sich einigen. 
 Also habe sie sich zusammen getan, um einen Email Client zu programmieren, der auch auf älteren Geräten ohne Schwierigkeiten läuft. Schliesslich hatten beide
 eher ältere Smartphones, ebenfalls sollte die App \gls{freie Software} sein. 
@@ -440,7 +433,7 @@ erkenntlich gemacht. Alle diese Quellen sind vollständig und abschliessend im
 Literaturverzeichnis aufgeführt. Die vorliegende Arbeit ist in gleicher oder ähnlicher Form noch
 nicht veröffentlicht. } \\
 
-\doublesignature{Noah Vogt}{18.10.21}
+\doublesignature{N. V.}{18.10.21}
 
 }
 
@@ -454,11 +447,6 @@ nicht veröffentlicht. } \\
 Um ein Programm zu programmieren, werden menschenlesbare Instruktionen in ein oder mehrere Textdateien geschrieben,
 die dann in Sprache, welche die Computerhardware interpretieren und ausführen kann, übersetzt.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.8\textwidth]{media/Source2Executable.jpg}
-    \caption{Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite{stallman2002}}
-\end{figure}
 
 Hier als Beispiel der Source Code zu einem simplen Programm \textit{helloworld.c} geschrieben in der Programmiersprache C, welches in der Konsole ein simples \say{Hello World} ausgibt:
 
@@ -553,16 +541,11 @@ Eines dieser Hilfsmittel sind \gls{vcs}. Diese sind eine sehr praktische Methode
 das Programm komplett Überarbeiten zu müssen, wenn eine einzige Funktion einen Fehler hervorruft. In diesem Fall wurde \Gls{git} als VCS genutzt, um für jegliche Funktionen
 einen eigenen \Gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu \glspl{merge}, wenn die Funktion fertig ist.\cite{git} \cite{github} \\
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.8\textwidth]{media/gitflow2.png}
-    \caption{parallele Featureentwicklung mit Git \cite{gitflowBlog}}
-\end{figure}
 
 Um zu zweit an einem Projekt gleichzeitig zu arbeiten, gibt es viel Möglichkeiten, sich das aktualisierte Projekt zur Verfügung zu stellen. Die \say{Einfachste} ist, sich das 
 Projekt immer wieder zu mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
 verwendet wurde. Über GitHub konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
-Auf GitHub ist das Programm öffentlich und wird dadurch auch quelloffen. Es kann aber nicht durch eine dritte Person ohne Einwilligung von Noah in den Source-Code
+Auf GitHub ist das Programm öffentlich und wird dadurch auch quelloffen. Es kann aber nicht durch eine dritte Person ohne Einwilligung von N. in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf GitHub aufgelistet werden. \cite{github} \\
 
 Beim Programmieren einer Arbeit dieser Grösse, erweist es sich besonders nützlich, ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses 
@@ -605,11 +588,6 @@ weil es beim compilen der App die SQL queries und \glspl{entity} überprüft. \c
 \setlength{\intextsep}{7pt}
 \setlength{\columnsep}{15pt}
 
-\begin{wrapfigure}{r}{6cm}
-\centering
-    \includegraphics[scale=.12]{media/RecyclerViewScreenshot.png}
-\caption{Beispiel vom RecyclerView}
-\end{wrapfigure}
 
 \nohyphenation
 
@@ -631,11 +609,6 @@ Die App kann grob in drei Teile unterteil werden. In \textit{User Interface}, in
 \setlength{\intextsep}{7pt}
 \setlength{\columnsep}{15pt}
 
-\begin{wrapfigure}{r}{10cm}
-\centering
-    \includegraphics[scale=.52]{media/AppStructureFull.png}
-\caption{grober Aufbau der App}
-\end{wrapfigure}
 
 \nohyphenation
 
@@ -653,14 +626,6 @@ vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \
 
 %I then made the app more functional, so that you have a base GUI with a drawer, a menu in the bottom and in the drawer navigation menu you can tap on the «Add Email» Button and a popup window will come up asking you for name, email and password. Even the save and cancel button work. Now we only need a functionality to save this information to a string somewhere in the main activity.\\
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.32\textwidth]{media/drawer.jpeg}
-\includegraphics[width=.32\textwidth]{media/inbox.jpeg}
-\includegraphics[width=.32\textwidth]{media/emailWriter.png}
-\caption{die Startup UI von snailmail}
-
-\end{figure}
 
 Wenn man die App startet, sieht man als allererstes die durchscrollbare Inbox (siehe mittleres Bild), hier mit vollkommen arbiträren Testdaten. Bei den 3 Menüpunkten soll im weiteren Verlauf der Entwicklung die Funktionalität hinzugefügt werden, Emails zu sortieren und zu durchsuchen.\\
 
@@ -696,14 +661,6 @@ Wenn die Anfrage erfolgreich ist, werden die Anmeldedaten in der App gespeichert
 
 Wie schon in Punkt 3.2.3 erwähnt, muss man im \textit{Drawer} auf das Profil klicken, um zum Account Manager zu gelangen, wo dann ein Dialogfenster erscheint. Zuerst wird der Benutzer vom Programm angewiesen mit der Nachricht \say{select Account} ein Konto im Drop-Down Menü auszuwählen. Dann kann er eine Aktion ausführen, indem er einen der korrespondierenden Knöpfe drückt, oder mit \say{exit}-Button das Dialogfenster wieder schliessen.\\
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.32\textwidth]{media/plain-add-email.jpeg}
-\includegraphics[width=.32\textwidth]{media/advanced-add-email.jpeg}
-\includegraphics[width=.32\textwidth]{media/plain-account-manager.jpeg}
-\caption{das Account Management}
-
-\end{figure}
 
 Der Nutzer kann entweder den ausgewählten Account löschen, zu ihm wechseln, oder seine Server Settings ändern. Beim Letzteren erscheint das gleiche Menü wie in den erweiterten Einstellungen, um einen neuen Account hinzuzufügen. Wenn der Nutzer seine neuen Mailservereinstellungen speichern will, wird zuerst geschaut, ob die App sich immer noch mit dem Mailserver verbinden kann. Wenn nicht, erscheint eine Fehlermeldung für den Nutzer und die neuen Angaben werden \textit{nicht} gespeichert.\\
 
@@ -732,11 +689,6 @@ und vertikalen Unterteilung der View. Für den Email-Client bietet er die
 beste Oberfläche, um Nachrichten darzustellen. Es gibt nämlich noch den den Staggeredgridlayoutmanager, welcher 
 für eine versetzte Unterteilung der View sorgen kann. Dies ist aber für einen Email-Client unbrauchbar. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.4\textwidth]{media/RecyclerviewLayoutManagerCropt.jpeg}
-    \caption{Layout Manager Recyclerview \cite{LayoutManagerPicture}}
-\end{figure}
 
     \item Der View Holder beschreibt die Position einer View oder Metadaten innerhalb des Recyclerviewers.
 
@@ -759,11 +711,6 @@ Recyclerviewer. Es dauerte einen ganzen Monat bis eine weitere Version mit Recyc
 
 \subsubsection{Input Validation}
 
-\begin{wrapfigure}{r}{5cm}
-\centering
-\includegraphics[width=.18\textwidth]{media/inputValidation.png}
-\caption{Input Validation}
-\end{wrapfigure}
 
 Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann und es sinnvoll gecheckt werden kann gibt es in snailmail eine \textit{Input Validation}. Dort wird gecheckt, ob die Eingabe korrekt ist, also ob der Nutzer eine z.B. gültige Email Adresse eingegeben hat oder dass er ein Eingabefeld nicht leer lässt. Das Feld mit der falschen Eingabe wird rot markiert und der Nutzer weiss somit, an welcher Stelle er seine Eingabe korrigieren muss. Diese Praxis ist mittlerweile weitverbreitet und auf mobilen graphischen Oberflächen wurde diese von den Autoren als sinnvoll erachtet, weshalb sie auch in ihrer App davon Nutzen gemacht haben.
 
@@ -778,15 +725,6 @@ Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jew
 gibt es 9 Attribute und einen Objectkey. \cite{riccardi2001} \\
 
 
-\begin{tabular}{ |p{1.6cm}  |p{1.1cm} |p{1.1cm} |p{1.05cm} |p{1.15cm} |p{1.15cm} |p{1.25cm} |p{1.75cm} |p{1.25cm} |p{1.15cm}|}
- \hline
- \multicolumn{10}{|c|}{Database Table} \\
- \hline
-    ObejctKey &To & cc & bcc & from & date & subject & textContent & folder & seen  \\
- \hline
-     01    &Valentin& null & null & Lennard & 01.03.13 & Schule &  Hallo Herr & Draft & true \\
- \hline
-\end{tabular} \\
 
 Der Objektkey wird dafür genutzt, das Objekt zu identifizieren und aufzurufen. Es können auch weitere Dinge mit dem Objektkey gemacht werden. 
 Je nachdem, wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt ein Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
@@ -821,11 +759,6 @@ Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richti
 \setlength{\intextsep}{10pt}
 \setlength{\columnsep}{15pt}
 
-\begin{wrapfigure}{r}{8cm}
-    \centering
-    \includegraphics[width=.4\textwidth]{media/RoomStructure.png}
-    \caption{Room Struktur \cite{appStructurePicture}}
-\end{wrapfigure}
 
 
 
@@ -864,12 +797,6 @@ auf den Ordner Draft drückt. Also ist es so, wenn dieser Ordner aufgerufen wird
 \setlength{\intextsep}{1pt}
 \setlength{\columnsep}{4pt}
 
-\begin{wrapfigure}{r}{6.5cm}
-    \centering
-    \includegraphics[width=.4\textwidth]{media/RepositoryDataInput.png}
-    \caption{EmailViewModel and Repository
-    \cite{appStructurePicture}}
-\end{wrapfigure}
 
 
 Damit die Database die Daten einlesen kann, braucht es eine Repository. Über das Repository werden normalerweise Daten aus aller Art von Datenquellen eingelesen. Jedoch
@@ -954,11 +881,6 @@ wird.
 \setlength{\intextsep}{5pt}
 \setlength{\columnsep}{4pt}
 
-\begin{wrapfigure}{r}{6cm}
-    \centering
-        \includegraphics[width=.3\textwidth]{media/EWAttention.png}
-        \caption{Email Writer}
-\end{wrapfigure}
 
 
 %\begin{wrapfigure}{r}{9cm}
@@ -983,11 +905,6 @@ mit dem \textit{Folder} Attribut \say{Draft} in die Database eingelesen.\\
 \vspace*{2cm}
 \subsubsection{Server Connection}
 
-\begin{figure}[H]
-\center
-\includegraphics[width=.7\textwidth]{media/connection-diagram.png}
-\caption{Diagramm Email Versand}
-\end{figure}
 
 \phantom{.} \\ % hack to fix line wrapping in the next paragraph
 Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer, der eine Email versenden will, interagiert mit seinem Mail-Client und gibt durch ihn den Befehl, die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
@@ -1137,17 +1054,15 @@ Was uns auch noch sehr gefallen hat, ist das Arbeiten mit dem Version Control Sy
 Dazu war das eine sehr gute Lehre wie später in grösseren Teams solche Programme entstehen. Wir sind jetzt sicher etwas besser ausgerüstet als andere.
 
 \section{Danksagung}
-Wir - Simon und Noah - möchten uns bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit haben durchführen lassen und ihre Bereitschaft gezeigt haben, bei allfälligen Fragen zu helfen.\\
+Wir - S. und N. - möchten uns bei unserer Betreuungslehrperson V. Y., und unserem Koreferenten D. B. bedanken, dass sie uns die Arbeit haben durchführen lassen und ihre Bereitschaft gezeigt haben, bei allfälligen Fragen zu helfen.\\
 
-Ein besonderer Dank gilt auch unseren beiden Müttern, welche den Text durchgelesen haben und versucht haben, unsere sprachlichen Fehler zu korrigieren. Ausserdem möchten wir uns noch bei Noahs Vater bedanken, welcher uns die Namenidee für unsere App gab.
+Ein besonderer Dank gilt auch unseren beiden Müttern, welche den Text durchgelesen haben und versucht haben, unsere sprachlichen Fehler zu korrigieren. Ausserdem möchten wir uns noch bei N.s Vater bedanken, welcher uns die Namenidee für unsere App gab.
 
 \clearpage
 \printglossary
 
 \newpage
 \printbibliography[heading=bibnumbered, title={Literaturverzeichnis}]
-
-\listoffigures
 
 \newpage
 \begin{appendices}
