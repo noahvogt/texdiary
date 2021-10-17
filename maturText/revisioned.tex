@@ -80,7 +80,8 @@ includeheadfoot}
 
 %for appendix
 \usepackage[toc, page]{appendix}
-\renewcommand{\appendixtocname}{Anhang}
+\renewcommand\appendixpagename{Anhang}
+\renewcommand\appendixtocname{Anhang}
 
 
 %for spacing
@@ -162,6 +163,8 @@ sorting=ynt,
 %========================Glossaries======================
 
 \makeglossaries
+% make glossary show up in toc
+\renewcommand*{\glossarysection}[2][]{\section{#1}}
 
 \newglossaryentry{copyleft}{
     name=Copyleft-Softwarelizenzen,
@@ -1336,8 +1339,9 @@ Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Ya
 \newpage
 \printbibliography[heading=bibnumbered, title={Literaturverzeichnis}]
 
+\newpage
 \begin{appendices}
-\subsection{Open-Source Programme}
+\subsection*{Open-Source Programme}
 Es wurden Open-Source Programme genutzt um verschiedene Elemente einbauen zu können. 
 
 Für die Library Room haben sich die Autoren an diesem Programm bedient. \cite{roomApp}
