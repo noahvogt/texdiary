@@ -215,7 +215,6 @@ sorting=ynt,
     plural=mergen,
     description={Beim \Gls{vcs} \Gls{git} unterschiedliche \Gls{branch}es zusammenzuführen in einen neuen, ähnlich dem Reissverschlussprinzip bei der zwei Strassenspuren in eine einzige zusammengeführt werden \cite{github}.}
 }
-%TODO: anständige quelle finden, Noah: why ????
 \newglossaryentry{ide}{
     name=IDE,
     plural=Integrated Development Environment,
@@ -437,7 +436,6 @@ nicht veröffentlicht. } \\
 \subsection{Arbeitskonzept}
 
 \subsubsection{Quellcode Modell}
-% TODO: too long, short a little (insg. ?)
 Um ein Programm zu programmieren, werden menschenlesbare Instruktionen in ein oder mehrere Textdateien geschrieben,
 die dann in Sprache, welche die Computerhardware interpretieren und ausführen kann, übersetzt.
 
@@ -552,7 +550,6 @@ Projekt immer wieder zu mailen, wobei schon nur bei Textarbeiten dabei Probleme 
 verwendet wurde. Über GitHub konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
 Auf GitHub ist das Programm öffentlich und wird dadurch auch Open-Source. Es kann aber nicht durch eine dritte Person ohne Einwilligung von Noah in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf GitHub aufgelistet werden. \cite{github} \\
-% TODO: das mit iwilligung stimmt nid sinngemäss -> forks
 
 Beim Programmieren einer Arbeit dieser Grösse, erweist es sich besonders nützlich, ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses 
 IDE speziell auf die Android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtern. Zum Beispiel ist der
@@ -578,7 +575,6 @@ Nutzer eingibt, überprüfen können und weiter die Emails, die ein Nutzer auf e
 Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Das Resultat dieser Suche waren zwei Libraries. \\
 
 
-%TODO: noah schrib wurum mir die libraries ned gange sind und wurum mir uf python umgstiege sind. 
 
 Weil nach dem Herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
 und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen, 
@@ -766,7 +762,6 @@ Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann und es sinnvoll
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
 % \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
 
-%TODO: zeigen wie Nachrichten eingelesen werden
 
 Ein \textit{relational database management system} ist ein Datenbank-System, in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
@@ -1098,6 +1093,7 @@ Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut un
 \subsection{Was Schlecht Lief}
 Es gab keine mit Gradle funktionierende, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Email Bibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Python Bibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
 
+%TODO: wir person
 Etwas, das nicht direkt schlecht lief, aber sehr viel Zeit raubte ist, dass wenn einer der Autoren zum Beispiel eine Database für den Recyclerviewer gemacht hatte, zwar nur eine Testversion, 
 er diese im späteren Verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion, aber, dass diese so weit von einer professionelle Database entfernt war, war ihm nicht klar. 
 In so einer Situation war er nicht nur bei der Database. Mit dem Recyclerviewer hatte er solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert, aber er musste den Recyclerviewer
