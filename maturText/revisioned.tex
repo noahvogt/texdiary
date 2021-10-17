@@ -195,6 +195,16 @@ sorting=ynt,
     description={Ein System oder Programm, welches die Versionierung des Quellcodes einer Software verwaltet.}
 }
 
+\newglossaryentry{ssl}{
+    name=SSL/TLS,
+    description={SSL (Secure Sockets Layer) \cite{rfc7568} und TLS (Transport Layer Security) \cite{rfc8996} sind kryptografische Protokolle, welche von der \Gls{ietf} entwickelt wurden, um über das Internet laufenden Netzwerkverkehr zu verschlüsseln.}
+}
+
+\newglossaryentry{ietf}{
+    name=Internet Engineering Task Force (IETF),
+    description={Laut ihrer Website sind sie ein internationaler Zusammenschluss von verschiedenen Experten, welche u.a. offene Standards entwickeln, um das Internet flüssig am laufen zu halten. \cite{ietf}}
+}
+
 \newglossaryentry{git}{
     name=Git,
     description={Ein populäres Programm, welches die Funktion eines \Gls{vcs} übernimmt und auf einem lokalen Gerät benutzt und installiert wird. Zusätzlich kann es auch auf einem Server installiert werden, um die eigenen lokalen Änderungen hochzuladen, neue fremde Änderungen herunterladen und Änderungen zu synchronisieren, um mit mehreren Leuten kollaborativ an einem Softwareprojekt arbeiten zu können.\cite{git}}
@@ -659,7 +669,7 @@ Wenn man im mittleren Bild oben links auf das sogenannte \say{Hamburgermenü} dr
 
 \subsubsection{Account Management}
 
-Wenn man im Drawer den \textit{Add Email Button} drückt, erscheint ein Pop-up Fenster, in dem man seine Anmeldedaten für ein neues Email Konto angeben kann. Da ein Mailserver aber auch von gewissen Standardeinstellungen, wie beispielsweise vom standardmässigen IMAP Port 993 (wie definiert von der Internet Society in der IMAP Spezifikation rfc9501 \cite{rfc9501}) abweichen kann, werden in diesem Fenster zuerst die Standardeinstellungen getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Zuerst wird geschaut, dass nicht bereits ein Account mit der gleichen Email Adresse wie der zu Hinzufügende, wobei dann eine Meldung erscheint für den Nutzer. Dann werden die Anmeldedaten anschliessend mit der Funktion \textit{checkConnection} überprüft, um zu überprüfen, ob man sich mit diesen zum Mailserver verbinden kann.\\
+Wenn man im Drawer den \textit{Add Email Button} drückt, erscheint ein Pop-up Fenster, in dem man seine Anmeldedaten für ein neues Email Konto angeben kann. Da ein Mailserver aber auch von gewissen Standardeinstellungen, wie beispielsweise vom standardmässigen IMAP Port 993 (wie definiert von der \gls{ietf} in der IMAP Spezifikation rfc9051 \cite{rfc9051}) abweichen kann, werden in diesem Fenster zuerst die Standardeinstellungen getestet, indem eine kurze Anfrage an den Server ausgeführt wird. Zuerst wird geschaut, dass nicht bereits ein Account mit der gleichen Email Adresse wie der zu Hinzufügende, wobei dann eine Meldung erscheint für den Nutzer. Dann werden die Anmeldedaten anschliessend mit der Funktion \textit{checkConnection} überprüft, um zu überprüfen, ob man sich mit diesen zum Mailserver verbinden kann.\\
 
 \lstset{language=python}
 \begin{lstlisting}
@@ -973,9 +983,7 @@ mit dem \textit{Folder} Attribut \say{Draft} in die Database eingelesen.\\
 \phantom{.} \\ % hack to fix line wrapping in the next paragraph
 Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer, der eine Email versenden will, interagiert mit seinem Mail-Client und gibt durch ihn den Befehl, die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
 
-%TODO: @noah SSL glossary
-
-Das Versenden von Mails wird in der App einzeln gemacht: Für jede zu sendende Email wird die Funktion \textit{sendStarttls} (siehe folgend) aufgerufen. Zuerst wird der der SSL Kontext initialisiert, dann werden die Angaben der Mail zu einer korrekt kodierten und formatierten Nachricht umgewandelt und schliesslich mit der \textit{smtplib} Bibliothek versendet.
+Das Versenden von Mails wird in der App einzeln gemacht: Für jede zu sendende Email wird die Funktion \textit{sendStarttls} (siehe folgend) aufgerufen. Zuerst wird der der \gls{ssl} Kontext initialisiert, dann werden die Angaben der Mail zu einer korrekt kodierten und formatierten Nachricht umgewandelt und schliesslich mit der \textit{smtplib} Bibliothek versendet.
 
 \lstset{language=python}
 \begin{lstlisting}
