@@ -180,11 +180,12 @@ sorting=ynt,
 
 \newglossaryentry{fsf}{
     name=Free Software Foundation,
-    description={dt. \say{Stiftung für freie Software}, ist eine von Richard Stallman\cite{rms} gegründete Stiftung, ursprünglich mit dem Ziel die Entwicklung des GNU Projekts zu finanzieren, was mittlerweile erweitert und erstetzt wurde durch die allgemeine Förderung und Entwicklung von \gls{freie Software}.} % TODO: change somehow to "freier"
+    description={dt. \say{Stiftung für freie Software}, ist eine von Richard Stallman\cite{rms} gegründete Stiftung, ursprünglich mit dem Ziel die Entwicklung des GNU Projekts zu finanzieren, was mittlerweile erweitert und erstetzt wurde durch die allgemeine Förderung und Entwicklung von \gls{freie Software}.}
 }
 
 \newglossaryentry{freie Software}{
     name=Freie Software,
+    plural=freier Software,
     description={engl. \say{free software}, ist nach der Definition der \gls{fsf} Software, welche die vier von ihnen definierten Grundfreiheiten garantiert: Das Verwenden der Software für jeden Zweck (keine willkürlichen, z.B. geografischen Einschränkungen etc.), der Quellcode darf ohne Vertraulichkeitsvereinbarungen oder ähnliche Einschränkungen von allen untersucht und gelesen werden, darf beliebig modifiziert und angepasst werden und alle modifizierten sowie nichtmodifizierten Versionen der Software dürfen weitergegeben werden.\cite{freesoftware}}
 }
 
@@ -215,7 +216,6 @@ sorting=ynt,
     plural=mergen,
     description={Beim \Gls{vcs} \Gls{git} unterschiedliche \Gls{branch}es zusammenzuführen in einen neuen, ähnlich dem Reissverschlussprinzip bei der zwei Strassenspuren in eine einzige zusammengeführt werden \cite{github}.}
 }
-%TODO: anständige quelle finden, Noah: why ????
 \newglossaryentry{ide}{
     name=IDE,
     plural=Integrated Development Environment,
@@ -437,7 +437,6 @@ nicht veröffentlicht. } \\
 \subsection{Arbeitskonzept}
 
 \subsubsection{Quellcode Modell}
-% TODO: too long, short a little (insg. ?)
 Um ein Programm zu programmieren, werden menschenlesbare Instruktionen in ein oder mehrere Textdateien geschrieben,
 die dann in Sprache, welche die Computerhardware interpretieren und ausführen kann, übersetzt.
 
@@ -458,7 +457,6 @@ int main() {
     return 0;
 }
 \end{lstlisting}
-%TODO: idk mir sötte grundlegendi sache ned erkläre
 Ein Teil der kompilierten, ausführbaren Version des Programmes \textit{./helloworld} sieht aber so aus:
 \begin{lstlisting}
 0011010001100000010111110110111101101100011001110110001001101111011011000110000101100100
@@ -552,7 +550,6 @@ Projekt immer wieder zu mailen, wobei schon nur bei Textarbeiten dabei Probleme 
 verwendet wurde. Über GitHub konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
 Auf GitHub ist das Programm öffentlich und wird dadurch auch Open-Source. Es kann aber nicht durch eine dritte Person ohne Einwilligung von Noah in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf GitHub aufgelistet werden. \cite{github} \\
-% TODO: das mit iwilligung stimmt nid sinngemäss -> forks
 
 Beim Programmieren einer Arbeit dieser Grösse, erweist es sich besonders nützlich, ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses 
 IDE speziell auf die Android Entwicklung spezialisiert hat. \gls{android-studio} besitzt viele Hilfsmittel, welche das Programmieren einer Androidapp erleichtern. Zum Beispiel ist der
@@ -577,8 +574,6 @@ Gemäss den Zielen soll die App eine Verbindung mit einem Server erstellen und m
 Nutzer eingibt, überprüfen können und weiter die Emails, die ein Nutzer auf einem \gls{server} hat, herunterladen. Ebenso soll die App Nachrichten weiter über einen Server verschicken können. 
 Um das zu realisieren, haben sich die Autoren nach passenden \glspl{library} für Java umgeschaut. Das Resultat dieser Suche waren zwei Libraries. \\
 
-
-%TODO: noah schrib wurum mir die libraries ned gange sind und wurum mir uf python umgstiege sind. 
 
 Weil nach dem Herunterladen der Nachrichten vom Server viele Daten gespeichert werden müssen, muss eine Möglichkeit her, wie diese Daten möglichst schnell, 
 und der Einfachheit halber mit einer gewissen Abstraktion, in einer sinnvollen Datenstruktur gespeichert werden können. Dazu taugte eine \gls{database}. Um dies zu erreichen, 
@@ -701,13 +696,11 @@ Zur Hilfe wird im Dialog des Account Managers die ganze Zeit zur Hilfe der aktue
 
 
 \subsubsection{Recyclerviewer}
-% TODO: mehr allgemein erklären
 Wie im Kapitel \say{Hauptziele} schon angedeutet, braucht es einen Recyclerviewer um Nachrichten aufgelistet anzuzeigen.
 Ein Recyclerviewer ist in fünf grundlegende Teile aufgeteilt. 
 
 \begin{enumerate}
 
-%TODO: dütsch? +Bild
     \item Das Recyclerview Objekt, welches ein Container ist und in das User Interface eingebaut wird. 
 Es beinhaltet verschiedene Views, welche nochmals unterteilt werden können. In einer View wird in diesem 
 Fall eine Nachricht eingebaut mit dem Absender, der Absendezeit, einem Betreff und dem Endsender der Nachricht. 
@@ -750,7 +743,6 @@ dass die App abstürzte, ohne einen Error zu melden. Nach einiger Zeit war die b
 Recyclerviewer. Es dauerte einen ganzen Monat bis eine weitere Version mit Recyclerviewer bereit war. Nur diesmal funktionierte die App. \\
 
 \subsubsection{Input Validation}
-% TODO: explain chain of popup windows
 
 \begin{wrapfigure}{r}{5cm}
 \centering
@@ -765,8 +757,6 @@ Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann und es sinnvoll
 % Nachdem die Grundbausteine für den Recyclerviewer gelegt wurden, war es Zeit eine Database zu erstellen, welche die Informationen der Server 
 % Speichern kann, da ein Ziel war POP3 anzubieten. Und mit IMAP muss die geöffnete Nachricht auch einmalig gespeichert werden. Dafür bietet sich eine Dabase gut an.
 % \textbf{nicht sicher ob das Stimmt was ich hier schreibe}\\
-
-%TODO: zeigen wie Nachrichten eingelesen werden
 
 Ein \textit{relational database management system} ist ein Datenbank-System, in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
@@ -1060,7 +1050,6 @@ Für die App musste auch noch ein Name her, doch die aller längste Zeit hatten 
 \url{https://github.com/noahvogt/snailmail}
 
 \subsection{Testing}
-% TODO: provide testing data + text
 
 Zum Testen gibt es soweit nicht sehr viel zu sagen, da die Autoren fortlaufend das Programm ausprobiert haben und die Resultate direkt wieder in das Programm flossen.
 Es hätte keinen Mehrwert gehabt, die \say{Ergebnisse} solcher einfachen Tests zu dokumentieren. Wofür die Zeit leider nicht gereicht hat, war das 
@@ -1073,7 +1062,7 @@ Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen
 
 Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst kürzlich kam auf, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen steht: Es wurde zwar nicht explizit angegeben, dass alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne der Autoren eine nichtfreie Library zu verwenden. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Missstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
 
-%TODO @noah glossar
+%TODO @noah glossar -> HTML Output parsing
 Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es bestehen verschiedene Mailboxen und jeder kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Gewisse Features, wie Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz. Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten einzelnen Emails.\\
 
 Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug \cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es weitaus sinnvoller und effizienter von den Autoren angesehen wurde, einfach klassische Patches zu verwenden. Ähnlich wie dies bei der suckless.org Software ist. \cite{dwm}
@@ -1086,9 +1075,8 @@ Im Vergleich mit der Konkurrenz sticht die App heraus durch ihre simple Art, so 
 \subsubsection{Pro}
 Für die Nutzung der App sprechen simple Nutzeroberfläche und Codebasis, welche nach Fertigstellung der initialen Entwicklung einer der besten simplen Email-Clients werden kann.
 
-%TODO:@noah glossar
 \subsubsection{Kontra}
-Dagegen sprechen, dass gewisse Funktionen, welche laut den Autoren nicht in einen Email-Client gehören, nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient Thunderbird zu tun pflegt.\cite{thunderbird}
+Dagegen sprechen, dass gewisse Funktionen, welche laut den Autoren nicht in einen Email-Client gehören, nicht vorhanden sind, wie beispielsweise die Funktionalität eines eingebauten Kalenders, wie es der allseits bekannte Mailclient Thunderbird zu tun pflegt.\cite{thunderbird}
 
 \section{Selbstreflexion}
 
@@ -1104,7 +1092,7 @@ In so einer Situation war er nicht nur bei der Database. Mit dem Recyclerviewer 
 mehrmals komplett umschreiben. \\
 
 
-%TODO:@Noah dinni Meinig dezue?
+%TODO:@Noah dinni Meinig dezue? -> erklären
 Etwas, das sicher hätte besser laufen sollen, war das Zeitmanagement. Wir glauben auch, dass uns nicht ganz klar war, wie viel 
 noch vor uns liegt. Wir waren beinahe immer in Zeitverzug. Im Sommer dachten wir noch, wir wären perfekt in der Zeit und dies wurde uns auch bestätigt. Jedoch
 als wir aus den Sommerferien kamen, wurde uns bewusst, wie viel es noch zu tun gab. Wir haben alles gegeben, jedoch wurde die App leider nicht fertig. 
@@ -1133,7 +1121,6 @@ Dazu war das eine sehr gute Lehre wie später in grösseren Teams solche Program
 \section{Danksagung}
 Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Yakonthov, und unserem Koreferenten D. Bühler bedanken, dass sie uns die Arbeit haben durchführen lassen und ihre Bereitschaft gezeigt haben, bei allfälligen Fragen zu helfen.
 
-%TODO:Anhang
 
 \clearpage
 \printglossary
