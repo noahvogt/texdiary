@@ -162,6 +162,8 @@ sorting=ynt,
 
 %========================Glossaries======================
 
+
+
 \makeglossaries
 % make glossary show up in toc
 \renewcommand*{\glossarysection}[2][]{\section{#1}}
@@ -173,7 +175,7 @@ sorting=ynt,
 
 \newglossaryentry{permissive}{
     name=Permissive Softwarelizenzen,
-    description={Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen. Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurückzugeben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute - meist auf Imageboards \cite{8chan.moe} - diese Lizenzen als ``Cuck Licenses'' beschimpfen, so werden sich auch reichlich kritisiert auf diversen technologiebezogenen Blogposts\cite{cuckblog}.}
+    description={Mit diesen Lizenzen hat man das Recht das Programm für JEDEN Zweck zu benutzen, den Source Code zu lesen, ändern und seine Änderungen zu veröffentlichen. Ihr Name kommt von der Tatsache, dass sie ``permissiv'' sind, wenn es um ihre wenigen Einschränkungen geht: Sie schränken die Verbreitung des Quellcodes nicht sehr stark ein und erlauben es oft, die Software unter JEGLICHEN Bedingungen weiterzugeben. Das bedeutet, es ist möglich, den Fork eines permissiv lizenzierten Programms proprietär zu machen. Das bedeutet, dass Sie den Code nicht davor schützen, in anderen Projekten, selbst wenn diese proprietär sind, verwendet zu werden, ohne etwas zurück geben zu müssen. Das ist ein eindeutiger Nachteil und der Grund, warum manche Leute - meist auf Imageboards \cite{8chan.moe} - diese Lizenzen als ``Cuck Licenses'' beschimpfen, sie werden auch reichlich kritisiert auf diversen technologiebezogenen Blogposts\cite{cuckblog}.}
 }
 
 \newglossaryentry{fsf}{
@@ -194,7 +196,7 @@ sorting=ynt,
 
 \newglossaryentry{git}{
     name=Git,
-    description={Ein populäres Programm, welches die Funktion eines \Gls{vcs} übernimmt und auf einem lokalen Gerät benutzt und installiert wird. Zusätzlich kann es auch auf einem Server installiert werden um die eigenen lokalen Änderungen hochzuladen, neue fremde Änderungen herunterladen und Änderungen zu synchronisieren, um mit mehreren Leuten kollaborativ an einem Softwareprojekt arbeiten zu können.\cite{git}}
+    description={Ein populäres Programm, welches die Funktion eines \Gls{vcs} übernimmt und auf einem lokalen Gerät benutzt und installiert wird. Zusätzlich kann es auch auf einem Server installiert werden, um die eigenen lokalen Änderungen hochzuladen, neue fremde Änderungen herunterladen und Änderungen zu synchronisieren, um mit mehreren Leuten kollaborativ an einem Softwareprojekt arbeiten zu können.\cite{git}}
 }
 
 \newglossaryentry{github}{
@@ -203,9 +205,9 @@ sorting=ynt,
 }
 
 \newglossaryentry{branch}{
-    name=branch,
+    name=Branch,
     plural=branches,
-    description={Beim \Gls{vcs} \Gls{git} handelt es sich hier um eine abgetrennte Arbeitsachse, welche erlaubt, verschieden Aufgaben in der Softwareentwicklung wie z.B. das Programmieren neuer Features getrennt oder parallel voneinander zu entwickeln, um sie später in einem \Gls{merge} wieder zusammenzuführen. Weiterführend: \cite{branch}.}
+    description={Beim \Gls{vcs} \Gls{git} handelt es sich hier um eine abgetrennte Arbeitsachse, welche erlaubt, verschieden Aufgaben in der Softwareentwicklung, wie z.B. das Programmieren neuer Features getrennt oder parallel voneinander zu entwickeln, um sie später in einem \Gls{merge} wieder zusammenzuführen. Weiterführend: \cite{branch}.}
 }
 
 \newglossaryentry{merge}{
@@ -217,7 +219,7 @@ sorting=ynt,
 \newglossaryentry{ide}{
     name=IDE,
     plural=Integrated Development Environment,
-    description={Ein Programm, welches den Programmierer beim Programieren unterstütz indem es z.b textvorschläge gibt oder das compilen des codes übernimmt.}
+    description={Ein Programm, welches den Programmierer beim Programieren unterstütz, indem es z.B Textvorschläge gibt oder das compilen des codes übernimmt.}
 }
 
 \newglossaryentry{android-studio}{
@@ -227,7 +229,7 @@ sorting=ynt,
 
 \newglossaryentry{adb}{
     name=Android Debugging Bridge,
-    description={Eine Software mit verschiedenen Tools, mit der man mit einem physischen Android Gerät interagieren kann, welches per USB-Anschluss an den PC angeschlossen ist. Man kann z.B. Apps des angeschlossenen vom Computer aus löschen und neue installieren, Screenshots aufnehmen, oder Dateien transferieren.}
+    description={Eine Software mit verschiedenen Tools, mit der man mit einem physischen Android Gerät interagieren kann, welches per USB-Anschluss an den PC angeschlossen ist. Man kann z.B. Apps des angeschlossenen vom Computer aus löschen und Neue installieren, Screenshots aufnehmen, oder Dateien transferieren.}
 }
 
 \newglossaryentry{emulator}{
@@ -250,16 +252,15 @@ sorting=ynt,
     description={Kurz für \say{Structure Query Language}. Eine Sprache, um einer Datenbank Befehle oder Anweisungen zu übermitteln. \cite{sqlInfo}}
 }
 
-%TODO: Quelle simon, Noah: @who?
 \newglossaryentry{sqlite}{
     name=SQLite,
-    description={SQLite unterstütz viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist deshalb leichter an Systemressourcen.}
+    description={SQLite unterstützt viele Funktionen von SQL hat aber keinen eigene Serverprozesse und ist deshalb leichter an Systemressourcen.}
 }
 
 \newglossaryentry{library}{
     name=Library,
     plural=libraries,
-    description={Eine Library (dt. Bibliothek) kann ist eine Sammlung von Programmen, Programmfunktionen und Skripts welche in einem anderen Programm verlinkt werden, um gewisse generische Funktionalitäten nicht jedes mal neu entwickeln zu müssen oder unnötig ein Klon davon in den Quellcode einfügen zu müssen. \cite{library}}
+    description={Eine Library (dt. Bibliothek) ist eine Sammlung von Programmen, Programmfunktionen und Skripts, welche in einem anderen Programm verlinkt werden, um gewisse generische Funktionalitäten nicht jedes mal neu entwickeln zu müssen oder unnötig ein Klon davon in den Quellcode einfügen zu müssen. \cite{library}}
 }
 
 \newglossaryentry{server}{
@@ -279,17 +280,17 @@ sorting=ynt,
 
 \newglossaryentry{entity}{
     name=Entity,plural=entities,
-    description={Eine Entity speichert Informationen über ein Objekt ab. Z.b über eine Person wird ihr Alter und Name gespeichert. Die Person ist das Objekt.}
+    description={Eine Entity speichert Informationen über ein Objekt ab. z.B über eine Person wird ihr Alter und Name gespeichert. Die Person ist das Objekt.}
 }
 
 \newglossaryentry{list}{
     name=List,plural=Liste,
-    description={Ein Datentyp welcher erlaubt mehrere einzelne Variablen aneinander zu ketten, was beispielsweise etwa so dargestellt werden kann: \texttt{List<Integer> = \{1, 3, 4, 5}\}.}
+    description={Ein Datentyp, welcher erlaubt, mehrere einzelne Variablen aneinander zu ketten, was beispielsweise etwa so dargestellt werden kann: \texttt{List<Integer> = \{1, 3, 4, 5}\}.}
 }
 
 \newglossaryentry{recyclerview}{
     name=Recyclerview,
-    description={Eine stark anpassbare ,durchscrollbare, dynamisch veränderbare Liste von die verschiedene Views und (Text-)Objekten.}
+    description={Eine stark anpassbare, durchscrollbare, dynamisch veränderbare Liste von der verschiedene Views und (Text-)Objekten.}
 }
 
 \newglossaryentry{view}{
@@ -314,7 +315,7 @@ sorting=ynt,
 
 \newglossaryentry{observer}{
     name=Observer,
-    description={Informiert die Klasse über ein änderung bei eine beobachtbaren Objekt. \cite{observer}}
+    description={Informiert die Klasse über eine Änderung bei einem beobachtbaren Objekt. \cite{observer}}
 }
 
 \newglossaryentry{livedata}{
@@ -739,40 +740,18 @@ Views mit den richtigen Informationen zu füllen.
 
 \end{enumerate}
 
-Die Wahl des Layout Managers wurde sehr schnell getroffen. Es war klar, dass eine Nachricht nicht nur eine Information auf horizontaler Ebene anzeigen muss, sondern
-z.B. auch das Datum nicht versetzt angezeigt werden soll. Deshalb wurde der Gridlayout Manager gewählt. 
+Die Wahl des Layoutmanagers wurde sehr schnell getroffen. Es war klar, dass eine Nachricht nicht nur eine Information auf horizontaler Ebene anzeigen muss, sondern
+z.B. auch das Datum nicht versetzt angezeigt werden soll. Deshalb wurde der Gridlayout Manager gewählt. \\
 
-% \textbf{https://github.com/android/views-widgets-samples/tree/main/RecyclerView} Recyclerviewer beispiel \\
-
-Mit Hilfe eines Open-Source Programms, welches eine Demonstration eines RecyclerViewers war, haben sich die Autoren über diesen informiert. \cite{RecViewApp}
+Mit Hilfe eines Open-Source Programms, welches eine Demonstration eines Recyclerviewers war, haben sich die Autoren über diesen informiert. \cite{RecViewApp}
 Nachdem dieses Programm ausgetestet und beliebig modifiziert wurde, sollte es in die App eingebaut werden. 
 Der erste Versuch scheiterte daran,
-dass die App abstürzte ohne einen Error zu melden. Und nach einiger Zeit war die beste Lösung wieder an einen Punkt zu gehen, an welchem die App noch funktionierte, nur ohne vollständigen 
+dass die App abstürzte, ohne einen Error zu melden. Nach einiger Zeit war die beste Lösung wieder an einen Punkt zu gehen, an welchem die App noch funktionierte, nur ohne vollständigen 
 Recyclerviewer. Es dauerte einen ganzen Monat bis eine weitere Version mit Recyclerviewer bereit war. Nur diesmal funktionierte die App. \\
-
-\textbf{Weiss ned ob de abschnitt so Sinn macht @Simon}
-
-Der Recyclerviewer war an diesem Punkt sehr simpel. Er konnte eine vorbestimmte Menge an Views anzeigen, welche in einem Loop generiert wurden, lass die Informationen aus
-einer sehr simplen Database aus und er konnte noch nicht aktualisiert werden. Die Informationen konnten nur einmal eingelesen werden und der View-Holder wurde in der gleichen Klasse wie 
-der Adapter definiert. \\
-
-Die Database bestand zu diesem Zeitpunkt aus nur einer Klasse, welche fünf Strings definierte, diese einlesen konnte und auch wieder ausgeben konnte. Mit dieser Klasse wurde
-ein Objekt erstellt, welches in einer Arraylist durch einen Loop eingelesen wurde und jeweils die gleichen fünf Strings bekam. \\
-
-In der Klasse des Adapters wurden durch den ViewHolder die richtigen Textviews ausgewählt, die Views kreiert und mit den Informationen, welche der Adapter bekam, gefüllt. \\
-
-In der Mainactivity wurde dies alles in der onCreate() Funktion ausgeführt, was zur Folge hatte, das der ganze vorgang nur beim Öffnen der App ablief, da die Funktion onCreate()
-nur einmal bei der ersten Ausführung der App aufgerufen wird. So konnte der Recyclerviewer erst nur einmalig mit Informationen versehen werden.
-
-Der CustomAdapter war am Anfang der App dafür zuständig, die Daten, welche in einer einfache Klasse abgespeichert wurden, über den 
-\textit{Constructor} dem ViewHolder weiter zu geben, welcher dann diese Informationen an eine View im Recyclerviewer band. Im Verlaufe der Zeit wurde 
-der Adapter angepasst und erweitert. Dies hatte Simon auch sehr grossen Spass gemacht, da er auch wirklich alles verstand, jedoch als die Database entstand, war der alte 
-CustomAdapter überflüssig und wurde ersetzt. Der neue CustomAdapter regelt seine Aufgaben jetzt ein wenig anders. Zwar viel effizienter mit weniger Code aber nicht 
-so transparent. Der CustomAdapter wird wie der Recyclerviewer in jedem \gls{fragment} für den zugehörigen \textit{Ordner} neu aufgerufen und überschreibt den CustomAdapter 
-aus der Mainactivity. 
 
 \subsubsection{Input Validation}
 % TODO: explain chain of popup windows
+
 \begin{wrapfigure}{r}{5cm}
 \centering
 \includegraphics[width=.18\textwidth]{media/inputValidation.png}
@@ -789,7 +768,7 @@ Bei den meisten Textfeldern, wo der Benutzer etwas eingeben kann und es sinnvoll
 
 %TODO: zeigen wie Nachrichten eingelesen werden
 
-Ein \textit{relational database management system} ist ein Datenbank-System in welchem die Informationen als \textit{tables} gespeichert werden. 
+Ein \textit{relational database management system} ist ein Datenbank-System, in welchem die Informationen als \textit{tables} gespeichert werden. 
 Ein \textit{table} besteht aus Reihen und Spalten. Eine Reihe repräsentiert jeweils ein Object der Database und eine Spalte repräsentiert ein Wert eines Attributes. Im Fall dieser App
 gibt es 9 Attribute und einen Objectkey. \cite{riccardi2001} \\
 
@@ -805,10 +784,10 @@ gibt es 9 Attribute und einen Objectkey. \cite{riccardi2001} \\
 \end{tabular} \\
 
 Der Objektkey wird dafür genutzt, das Objekt zu identifizieren und aufzurufen. Es können auch weitere Dinge mit dem Objektkey gemacht werden. 
-Je nachdem wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt eine Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
-alle Attribute Strings. 
+Je nachdem, wie die Database eingelesen wird, kann am Objektkey festgestellt werden, zu welchem Zeitpunkt ein Objekt erstellt wurde. Bis auf seen und dem ObjektKey sind 
+alle Attribute Strings. \\
 
-\textit{To} ist das Attribute, welches angibt, an wen die Email geschickt werden soll, \textit{From} ist das genaue Gegenstück dazu. \textit{Cc} und \textit{bcc} sind die 
+\textit{To} ist das Attribut, welches angibt, an wen die Email geschickt werden soll, \textit{From} ist das genaue Gegenstück dazu. \textit{Cc} und \textit{bcc} sind die 
 Email-Adressen, welche die Emails auch bekommen. Der einzige Unterschied ist, dass bei \textit{bcc} diese Adressen nicht einsehbar sind und somit nicht bekannte ist, wer diese Email auch liest. 
 
 \textit{Date} gibt das Datum an, an welchem die Email verschickt wurde. \textit{Subject} ist ein Betreff für die Email und \textit{textContent} ist der Text, welcher in der Email verfasst wurde. 
@@ -821,7 +800,7 @@ Die Attribute \textit{To}, \textit{from}, \textit{date}, \textit{folder} und \te
 nicht \textit{null} sein. Das macht soweit Sinn, weil eine Email bis auf \textit{seen} nicht ohne diese Angaben versendet werden können und ohne zu wissen, in welchem Ordner die Email einzuordnen ist,
 kann die Email auch nicht richtig angezeigt werden. \\
 
-Als letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent} 
+Als Letztes gibt es noch das Attribut \textit{folder}, es gibt an, von welcher Art die Email ist. Es gibt in der App fünf Ordner. Sie heissen \textit{Draft}, \textit{Sent} 
 \textit{Inbox}, \textit{Spam} und \textit{Archive}. Die Database kann nach einzelnen Attributen ausgelesen werden. So können die Emails mit den richtigen
 folder Attributen in den richtigen Ordnern angezeigt werden. Jeder Ordner hat sein eigenes Fragment, welches aufgerufen wird, wenn der Ordner ausgewählt wird.
 Wenn ein solches Fragment aufgerufen wird, wird auch die Database mit den richtigen Befehlen neu ausgelesen.  \\
@@ -890,9 +869,9 @@ auf den Ordner Draft drückt. Also ist es so, wenn dieser Ordner aufgerufen wird
 Damit die Database die Daten einlesen kann, braucht es eine Repository. Über das Repository werden normalerweise Daten aus aller Art von Datenquellen eingelesen. Jedoch
 werden in diesem Fall keine Daten vom Server direkt im Repository eingelesen, denn sie gehen zuerst über das Viewmodel.
 Weil das Herunterladen der Daten vom Mailserver leider erst sehr spät funktioniert hatte, 
-haben sich die Autoren dazu entschlossen das Einlesen der Daten über das Viewmodel zu machen. Dieses hat eine sehr ähnliche Funktion, 
+haben sich die Autoren dazu entschlossen, das Einlesen der Daten über das Viewmodel zu machen. Dieses hat eine sehr ähnliche Funktion, 
 es leitet die Daten ebenfalls weiter, nur gibt es \gls{livedata} zurück, was dazu führt, dass in der Mainactivity oder im entsprechenden Fragment ein \gls{observer} 
-eingebaut werden kann. Dieser informiert die Klasse dann über Veränderungen in der database, um sie dann im Recyclerviewer anzeigen zu lassen. 
+eingebaut werden kann. Dieser informiert die Klasse dann über Veränderungen in der Database, um sie dann im Recyclerviewer anzeigen zu lassen. 
 \cite{appStructurePicture}
 
 Dies ist die Funktion, welche an einer Variable vom Typ EmailViewModel ausgeführt wird. In dem Fragment 'HomeFragment' in der
@@ -956,9 +935,9 @@ in LiveData.
 \end{lstlisting}
 
 Es ist ein Schlange, welche sich durch EmialViewModel und EmailRepository zieht. In den beiden \textit{Constructor} wird etwa das gleiche gemacht. Im EmailRepository
-werden die Query aus dem MessageDAO ausgeführt, um die Daten in Variablen für jeden Ordner zu speichern. Und im EmailViewModel werden durch Funktionen aus dem Repository 
-die Variablen abgerufen und wieder neu gespeichert, um am Schluss diese Variablen in einem Fragment aufzurufen und dem Adapter gegeben. Wie es am Anfang dieser Seite beschrieben 
-ist.
+werden die Query aus dem MessageDAO ausgeführt, um die Daten in Variablen für jeden Ordner zu speichern. Und im EmailViewModel werden, durch Funktionen aus dem Repository 
+die Variablen abgerufen und wieder neu gespeichert, um am Schluss diese Variablen in einem Fragment aufzurufen und dem Adapter gegeben, wie es am Anfang dieser Seite beschrieben 
+wird.
 
 \subsubsection{Draft Messages}
 
@@ -982,12 +961,12 @@ ist.
 \nohyphenation
 
 Vorhin wurde beschrieben, wie Daten aus der Database ausgelesen werden, wie sie eingelesen werden und wie sie gespeichert werden. Jetzt wird kurz 
-noch gezeigt, wann und wie Entwürfe unter dem Namen 'Drafts' gespeichert werden. \\
+noch gezeigt, wann und wie Entwürfe unter dem Namen \say{Drafts} gespeichert werden. \\
 
 Nachdem eine Nachricht geschrieben wurde, kann sie versendet werden oder auch gespeichert werden, wenn im \gls{email writer} das Kreuz gewählt wird, wird der Nutzer 
 gefragt, ob er die Nachricht abspeichern möchte. Wenn er die Nachricht speichern will, werden im MessageCreateFragment, welches dem Email Writer entspricht, die
 eingegebenen Informationen ausgelesen. Über einen \gls{intent} werden diese Informationen weiter an die MainActivity gesendet und dort 
-mit dem \textit{Folder} Attribut 'Draft' in die Database eingelesen.\\
+mit dem \textit{Folder} Attribut \say{Draft} in die Database eingelesen.\\
 
 \endgroup
 
@@ -1001,7 +980,9 @@ mit dem \textit{Folder} Attribut 'Draft' in die Database eingelesen.\\
 \end{figure}
 
 \phantom{.} \\ % hack to fix line wrapping in the next paragraph
-Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer, der eine Email versenden will interagiert mit seinem Mail Client und gibt durch ihn den Befehl, die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
+Vereinfacht funktioniert der Versand von Emails wie im obigen Diagramm: Ein Nutzer, der eine Email versenden will, interagiert mit seinem Mail-Client und gibt durch ihn den Befehl, die Email zu versenden. Der Email Client verschickt die Mail an den SMTP Server des sendenden Nutzers, wo dieser zum SMTP Server des empfangenden Nutzers gelangt, von dort aus zu seinem IMAP oder POP3 Server. Wenn der Mail Client des Empfängers eine Anfrage an seinem SMTP / POP 3 macht, kann er diese einlesen und der Nutzer kann nun seine neue Email lesen.\\
+
+%TODO: @noah SSL glossary
 
 Das Versenden von Mails wird in der App einzeln gemacht: Für jede zu sendende Email wird die Funktion \textit{sendStarttls} (siehe folgend) aufgerufen. Zuerst wird der der SSL Kontext initialisiert, dann werden die Angaben der Mail zu einer korrekt kodierten und formatierten Nachricht umgewandelt und schliesslich mit der \textit{smtplib} Bibliothek versendet.
 
@@ -1042,27 +1023,27 @@ Es gab sehr viele Bugs, erst recht gegen Ende der Matur, weil dort erst die meis
 Ein Bug, der bis Heute nicht gelöst werden konnte, ist das Löschen des \textit{Tables} in der Database. Eigentlich sollte dies eine
 Leichtigkeit sein, dennoch war es den Autoren nicht möglich, ein einfaches Room/SQL statement zu finden, welches alle Informationen in der Database löscht. \\
 
-Die Lösung zu diesem Problem hat leider auch einen Haken. Es muss nämlich jeder Ordner einmal ausgewählt werden, bevor alle Nachrichten gelöscht werden können. 
-Die Lösung an sich war, dass wenn einer der Ordner geöffnet wird, alles Nachrichten in diesem Ordner in einer Liste gespeichert werden. Wenn dann die Option "Delete all Folder"
-gewählt wird, wird ein Loop gestartet, welcher durch die Liste geht und jede Nachricht einzeln ausgibt. Diese Nachricht wird dann über Umwege an die MessageDAO Klasse gebracht
-und dort kann eine einzelne Nachricht dann gelöscht werden. Es ist eine umständliche Lösung und nichteinmal ausgereift. Dennoch besser, als wenn es nicht möglich wäre. \\
+Die Lösung zu diesem Problem hat leider auch einen Haken: Es muss jeder Ordner einmal ausgewählt werden, bevor alle Nachrichten gelöscht werden können. 
+Die Lösung an sich war, dass, wenn einer der Ordner geöffnet wird, alle Nachrichten in diesem Ordner in einer Liste gespeichert werden. Wenn dann die Option "Delete all Folder"
+gewählt wird, wird ein Loop gestartet, welcher durch die Liste geht und jede Nachricht einzeln ausgibt. Diese Nachricht wird weiter über Umwege an die MessageDAO Klasse gebracht
+und dort kann eine einzelne Nachricht gelöscht werden. Es ist eine umständliche Lösung und noch nichteinmal ausgereift. Dennoch besser, als wenn es nicht möglich wäre. \\
 
 Vor kurzer Zeit war dieser Bug noch störender, denn die Nachrichten mussten auch gelöscht werden, wenn ein neuer Account angemeldet wurde. Jedoch 
 konnte das umgangen werden, sobald der Account Manager aufkam. Mit diesem mussten die Nachrichten einfach auch nach dem Account abgerufen werden und die Nachrichten
 wurden nicht mehr gelöscht. Es wurden einfach nur die Richtigen angezeigt. \\
 
-Wir sind uns ziemlich sicher, dass es weiter Bugs in der App geben wird, da wir nicht genügend Zeit für das debugging eingeplant haben. 
+Die Autoren sind sich ziemlich sicher, dass es weitere Bugs in der App geben wird, da nicht genügend Zeit für das debugging eingeplant . 
 
 
 \subsubsection{Probleme / Hiccups}
 % RecyclerViewer, shit java IMAP libraries
-Probleme waren die unnötig vielen Layouts, welche bei unserer App entstanden. Vielleicht hätten diese minimiert werden können, wenn die Entwickler eine signifikant höhere Erfahrung im Bereich der Android Entwicklung gehabt hätten, oder wenn die verschiedenen Inhalte beim Aufrufen weniger Layouts generieren würden, oder diese könnten besser wieder referenziert werden.\\
+Probleme waren die unnötig vielen Layouts, welche bei der App entstanden sind. Vielleicht hätten diese minimiert werden können, wenn die Entwickler eine signifikant höhere Erfahrung im Bereich der Android Entwicklung gehabt hätten, oder wenn die verschiedenen Inhalte beim Aufrufen weniger Layouts generieren würden, oder diese könnten besser wieder referenziert werden.\\
 
 Mit gewissen Bibliotheken sind auch Probleme entstanden, dazu wird später in diesem Text noch das Problem mit den Email-Bibliotheken geschildert.
 
 \subsubsection{Kommunikation}
 
-Die Menge an Kommunikation hat sich eingependelt zwischen den Anforderungen, Bedürfnissen und sozialen Kapazitäten der beiden Autoren. Einer wollte eher etwas mehr Dialog, der andere weniger. Das gegenseitige Vertrauen war aber auch soweit vorhanden, dass man sicher ziemlich sicher sein konnte, dass der andere gewisse abgemachte Zeiten einhält und Nachrichten nicht unnötig lange unbeantwortet lässt.\\
+Die Menge an Kommunikation hat sich eingependelt zwischen den Anforderungen, Bedürfnissen und sozialen Kapazitäten der beiden Autoren. Einer wollte eher etwas mehr Dialog, der andere weniger. Das gegenseitige Vertrauen war aber auch soweit vorhanden, dass man sicher sein konnte, dass der andere gewisse abgemachte Zeiten einhält und Nachrichten nicht unnötig lange unbeantwortet lässt.\\
 
 Es konnten auch gute Strukturen für die Kommunikation geschaffen werden, so wurde eine \textit{diary}, also eine Art Tage- oder Logbuch verwendet, um den Arbeitsprozess zu dokumentieren, was sich insbesondere bei den Anfängen des Projektes als nützlich herausstellte. Auf diesem Dokument und der \textit{Git Commit History} basiert die Dokumentation dieser Arbeit.\\
 
@@ -1070,11 +1051,11 @@ Sowohl im Programm-Quellcode der App als auch im Quellcode dieser Arbeit haben d
 
 Auch haben sich die beiden zeitweise Montags zusammen hingesetzt um den Arbeitsprozess in dieser Weise zu besprechen und um die nächsten Aufgaben zu verteilen.\\
 
-Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes, um daran zu entwickeln, um dann die Komponenten wieder zusammenzufügen, hatte etwas von der typischen Modularität und des Touches der Linuxphilosophie.
+Insgesamt verlief die Kommunikation doch reichhaltig, obwohl einer der beiden Autoren doch etwas überdurchschnittlich schwer digital erreichbar ist. Die grobe Aufteilung des Programmes, um daran zu entwickeln und die Komponenten wieder zusammenzufügen, hatte etwas von der typischen Modularität und des Touches der Linuxphilosophie.
 % TODO: bruche mir de satz mit de 'linuxphilosophie' @simon? weiss grad iwie nid. Doch ich find dä super
 
 \subsubsection{Namensfindung}
-Für die App musste auch noch ein Name her, doch die aller längste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater nach Namensideen fragte, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde sich für das Letzte entschieden, da dies das wichtigste Designkonzept der App am besten widerspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
+Für die App musste auch noch ein Name her, doch die aller längste Zeit hatten die beiden Autoren entweder keine Idee oder der Name wurde schon von einer anderen App verwendet. Doch als einer der beiden Autoren seinen Vater nach Namensideen fragte, war einer der Vorschläge \say{Schneckenpost}. Dies ist natürlich eine offensichtliche ironische Anspielung darauf, dass unsere App schneller sein soll als die meisten Apps. Doch da ein englischer Name erwünscht war, wurde es einfach direkt übersetzt in \say{snail mail}. Nun war nur noch die Frage, wie man es darstellen sollte, etwa \say{SnailMail} (CamelCase), \say{snailMail} (mixedCase), \say{Snail Mail}, \say{snail mail} oder \say{snailmail}. Es wurde für das Letzteres entschieden, da dies das wichtigste Designkonzept der App am besten widerspiegelt: Die Einfachheit. Gleich wie die App lautet auch übrigens der Name des GitHub Repositorys der App:\\
 
 \url{https://github.com/noahvogt/snailmail}
 
@@ -1082,30 +1063,32 @@ Für die App musste auch noch ein Name her, doch die aller längste Zeit hatten 
 % TODO: provide testing data + text
 
 Zum Testen gibt es soweit nicht sehr viel zu sagen, da die Autoren fortlaufend das Programm ausprobiert haben und die Resultate direkt wieder in das Programm flossen.
-Es hätte keinen wirklich Mehrwert gehabt, die 'Ergebnisse' solcher einfachen Tests zu dokumentieren. Wofür die Zeit leider nicht richtig gereicht hat, war das 
-richtige Testen der App im Alltag. Da die App noch nicht wirklich fertig ist und die neuste Version auch erst vor kurzem entstand, konnte die App nicht an Bekannte gegeben werde
+Es hätte keinen Mehrwert gehabt, die \say{Ergebnisse} solcher einfachen Tests zu dokumentieren. Wofür die Zeit leider nicht gereicht hat, war das 
+richtige Testen der App im Alltag. Da die App noch nicht fertig ist und die neuste Version auch erst vor Kurzem entstand, konnte die App nicht an Bekannte gegeben werden
 und ein paar Tage getestet werden. Das Interface wurde zwar getestet aber darüber hinaus leider nicht viel.
 
 \section{Resultate}
 \subsection{Vergleich mit unseren ursprünglichen Zielen}
-Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen, es ist wirklich simpel ohne irgendwelchen unnötigen Schnickschnack. Simpel ist das GUI also, doch wie steht es mit der Bedienbarkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt, sie sollen einen Mail Account einrichten, um dies herauszufinden. Dabei haben sich die meisten gut und schnell zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
+Das User Interface ist erfreulich gut im Einklang mit den ursprünglichen Zielen; es ist wirklich einfach ohne irgendwelchen unnötigen Schnickschnack. Simpel ist das GUI also, doch wie steht es mit der Bedienerfreundlichkeit? Dazu haben wir Freunde und Bekannte eingespannt, ihnen ein Handy mit der App in die Hand gedrückt und gesagt, sie sollen einen Mail Account einrichten, um dies herauszufinden. Dabei haben sich die meisten gut und schnell zurechtgefunden, obwohl die App ja noch nicht fertig ist.\\
 
 Die App selber ist wie von uns in den Zielen vorgegeben Free Software. Doch erst kürzlich kam auf, dass die von diesem Projekt verwendete \say{chaquopy} Bibliothek proprietär ist, und somit indirekt ein Konflikt mit den ursprünglichen Zielen steht: Es wurde zwar nicht explizit angegeben, dass alle Bibliotheken zwingend auch Open Source sein sollen, doch es ist nicht im Sinne der Autoren eine nichtfreie Library zu verwenden. Im Laufe der weiteren Softwareentwicklung wird dieser Fehler noch unbedingt behoben werden müssen. Dieser Missstand ist auch teilweise dem Dependencymanagement von Gradle anzulasten, da dieser immer nur die binäre Version herunterlädt und der Source Code von Dependencies nirgends gescheit verlinkt ist.\\
 
 %TODO @noah glossar
-Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es hat verschiedene Mailboxen und man kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Doch gewisse Features, nämlich Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz und Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten, einzelnen Emails.\\
+Die wichtigsten Funktionen der App wurden erreicht, es können Emails geschrieben, gelesen werden, es bestehen verschiedene Mailboxen und jeder kann seine Email Accounts gut managen, also hinzufügen, ändern und entfernen. Gewisse Features, wie Pushnachrichten, Suchfunktionen, HTML output parsing, ein visuelles Attribut, wo zu sehen ist, ob eine Nachricht gelesen wurde, fehlen noch ganz. Funktionen wie die Einstellungen, das synchronisieren der Datenbank mit dem Mailserver und die Anhang Funktionalität sind noch nicht fertiggestellt. Es gibt auch noch gewisse Bugs bei der Entstehung von \say{edge cases} \cite{edgecase} bei bestimmten einzelnen Emails.\\
 
-Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug\cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es als weitaus sinnvoller und effizienter von den Autoren angesehen wurde, einfach klassische Patches zu verwenden. Ähnlich wie dies bei der suckless.org Software ist. \cite{dwm}
+Ursprünglich wurde zusätzlich ein Pluginmanager - dabei angelehnt an die Funktionsweise von vim-plug \cite{plug} - geplant einzubauen, doch diese Idee wurde mittlerweile verworfen, da es weitaus sinnvoller und effizienter von den Autoren angesehen wurde, einfach klassische Patches zu verwenden. Ähnlich wie dies bei der suckless.org Software ist. \cite{dwm}
 
 \subsection{Vergleich mit der Konkurrenz}
 Es ist gar nicht so einfach, diese App zu vergleichen mit ihrer Konkurrenz, da sie noch nicht fertig entwickelt ist. Aus diesem Standpunkt heraus vergleichen wir nur die fertigen Funktionen mit der Konkurrenz.\\
 
-Im Vergleich mit der Konkurrenz sticht sie heraus durch ihre simple Art, so wie das geplant war. Die Funktionalitäten sind dabei auch wesentlich rudimentärer, oder besser gesagt mehr \say{suckless} als die der Konkurrenz. Die Farben und das Layout des User Interface sollte zwar simpel sein, doch das visuelle Zusammenspielen von Farben und dem Layout haben gewisse Konkurrenzprodukte, welche immerhin auch von Fortune 500 Unternehmen entwickelt werden, zweifelsohne besser umgesetzt als die Autoren dieser App.
+Im Vergleich mit der Konkurrenz sticht die App heraus durch ihre simple Art, so wie das geplant war. Die Funktionalitäten sind dabei auch wesentlich rudimentärer, oder besser gesagt, mehr \say{suckless}, als die der Konkurrenz. Die Farben und das Layout des User Interface sollte zwar simpel sein, doch das visuelle Zusammenspielen von Farben und dem Layout haben gewisse Konkurrenzprodukte, welche immerhin auch von Fortune 500 Unternehmen entwickelt werden, zweifelsohne besser umgesetzt, als die Autoren dieser App.
 \subsection{Vor- und Nachteile unserer App}
 \subsubsection{Pro}
-Für die Nutzung der App sprechen simple Nutzeroberfläche und Codebasis, welche nach Fertigstellung der initialen Entwicklung eine der besten simplen Email Client werden sollte.
+Für die Nutzung der App sprechen simple Nutzeroberfläche und Codebasis, welche nach Fertigstellung der initialen Entwicklung einer der besten simplen Email-Clients werden kann.
+
+%TODO:@noah glossar
 \subsubsection{Kontra}
-Dagegen sprechen, dass gewisse Funktionen, welche laut den Autoren nicht in einen Email client gehören nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient Thunderbird zu tun pflegt.\cite{thunderbird}
+Dagegen sprechen, dass gewisse Funktionen, welche laut den Autoren nicht in einen Email-Client gehören, nicht vorhanden sind, wie beispielsweise die Funktionalität RSS Feeds zu lesen, wie es der allseits bekannte Mailclient Thunderbird zu tun pflegt.\cite{thunderbird}
 
 \section{Selbstreflexion}
 
@@ -1113,39 +1096,38 @@ Dagegen sprechen, dass gewisse Funktionen, welche laut den Autoren nicht in eine
 % komm., vcs, java syntax (allg.)
 Das Arbeiten mit \textit{Git} als \textit{Version Control System} verlief gut und half enorm beim Arbeitsprozess und dessen Strukturierung. Mit der Syntax der verwendeten Programmier- und Markupsprachen Java, Python und XML konnte gut umgegangen werden, obwohl die beiden noch recht wenig Erfahrung mit Java hatten. Die Codestruktur fanden sie den Umständen entsprechen gut und sinnvoll.
 \subsection{Was Schlecht Lief}
-% ******* java shit tier libraries
-Dass es keine mit Gradle funktionierende, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Email Bibliotheken für Java gibt. Deshalb wichen wir auf die um Welten besser funktionierende Python Bibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
+Es gab keine mit Gradle funktionierende, ausreichend dokumentierte und/oder nicht veraltete IMAP- und Email Bibliotheken für Java. Deshalb wichen wir auf die um Welten besser funktionierende Python Bibliotheken \textit{imap} und \textit{emaillib} aus. Dazu mussten wir eine Library namens \textit{chaquopy} benutzen, um Python als Bytecode kompiliert in unsere Java App einbauen zu können. Das ist natürlich unschön, aber die Funktionalität hatte die oberste Priorität.\\
 
-Etwas, das nicht direkt schlecht lief, aber sehr viel Zeit brauchte ist, dass wenn ich (Simon) zum Beispiel eine Database für den Recyclerviewer gemacht hatte, zwar nur eine Testversion, 
-ich diese im späteren Verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion, aber dass diese so weit von einer professionelle Database entfernt war, war mit nicht klar. 
-In so einer Situation war ich nicht nur bei der Database. Mit dem Recyclerviewer hatte ich solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert, aber ich musste den Recyclerviewer
-öfters komplett umschreiben. \\
+Etwas, das nicht direkt schlecht lief, aber sehr viel Zeit raubte ist, dass wenn einer der Autoren zum Beispiel eine Database für den Recyclerviewer gemacht hatte, zwar nur eine Testversion, 
+er diese im späteren Verlauf komplett überarbeiten durfte. Es war zwar nur eine Testversion, aber, dass diese so weit von einer professionelle Database entfernt war, war ihm nicht klar. 
+In so einer Situation war er nicht nur bei der Database. Mit dem Recyclerviewer hatte er solche Probleme sogar öfters. Oft hat zwar noch nicht viel funktioniert, aber er musste den Recyclerviewer
+mehrmals komplett umschreiben. \\
 
 
 %TODO:@Noah dinni Meinig dezue?
-Etwas, das sicher hätte besser laufen sollen, war das Zeitmanagement. Ich glaube aber auch, dass uns nicht ganz klar war, wie viel 
-noch vor uns liegt. Wir waren fast immer in Zeitverzögerung. Im Sommer dachten wir noch, wir wären perfekt in der Zeit und dies wurde uns auch bestätigt. Jedoch
+Etwas, das sicher hätte besser laufen sollen, war das Zeitmanagement. Wir glauben auch, dass uns nicht ganz klar war, wie viel 
+noch vor uns liegt. Wir waren beinahe immer in Zeitverzug. Im Sommer dachten wir noch, wir wären perfekt in der Zeit und dies wurde uns auch bestätigt. Jedoch
 als wir aus den Sommerferien kamen, wurde uns bewusst, wie viel es noch zu tun gab. Wir haben alles gegeben, jedoch wurde die App leider nicht fertig. 
+
 \subsection{Was Wir Gleich Machen Würden}
-% As long as java is not deprecated in the future for android programming, we would still use it as it is the most ``native'' way of programming. The new java clone/fork of google, Kotlin, would be a worse choice in our eyes, as your are even more dependent on google code, which you are already by using android.
-Wenn wir in die Vergangenheit reisen könnten und die App von Neuem machen könnten, würden wir am User Design nichts ändern, und auch weiterhin mit \textit{Git} als \textit{VCS} arbeiten und für jedes noch nicht einsatzbereite Feature einen neuen \textit{Branch} machen. Die Arbeitsweise an sich hat sich aus unserer Sicht bewährt und ist ein passabler Weg, kollaborativ an einem Softwareprojekt zu arbeiten.
+Wenn wir in die Vergangenheit reisen und die App von Neuem machen könnten, würden wir am User Design nichts ändern, und auch weiterhin mit \textit{Git} als \textit{VCS} arbeiten und für jedes noch nicht einsatzbereite Feature einen neuen \textit{Branch} machen. Die Arbeitsweise an sich hat sich aus unserer Sicht bewährt und ist ein passabler Weg, kollaborativ an einem Softwareprojekt zu arbeiten.
+
+
 \subsection{Was Wir Anders Machen Würden}
-% As java is much slower than language that can be compiled into native binaries we would try to use more C or C++ libraries to improve speed and portability.
 
-Der Code, der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben werden, um die Geschwindigkeit und Portabilität zu erhöhen. Java komplett wegzulassen ist aber weder vorgesehen noch praktisch sinnvoll umsetzbar. \\
+Der Code, der in Java geschrieben wurde, kann nicht nativ auf einer Maschine laufen, sondern muss durch eine virtuelle Maschine, die \textit{Java Virtual Machine (JVM)} während der Ausführung in nativen Code umgewandelt werden. Deshalb würde bei einem Rewrite wohl besser mehr Code in C oder C++ geschrieben werden, um die Geschwindigkeit und Portabilität zu erhöhen. Java komplett wegzulassen, ist weder vorgesehen, noch praktisch sinnvoll umsetzbar. \\
 
-Uns ist öfters gesagt worden, dass das Managen der Zeit sehr wichtig ist. Wir sind davon ausgegangen, dass wir dies auch gut eingeplant hatten. Dem war leider nicht so und wir 
-würden uns mehr Gedanken machen beim Planen wie auch, wie lange wir an einem Problem arbeiten bevor wir das Feature entfernen, als dass wir sehr lange daran arbeiten. 
+Uns ist öfters gesagt worden, dass das Managen der Zeit sehr wichtig ist. Wir sind davon ausgegangen, dass wir diese auch gut eingeplant hatten. Dem war leider nicht so und wir 
+würden uns mehr Gedanken machen beim Planen, wie auch, wie lange wir an einem Problem arbeiten, bevor wir das Feature entfernen, als dass wir sehr lange daran arbeiten. 
 
 
-% use more c libs for speed and less java
-\subsection{Abschliessende persönliche Schlussfolgerung}
-Wir haben das Gefühl, einen guten ersten Einblick in die native Android Programmierung mit Java und Python bekommen zu haben. Wir haben uns vertraut gemacht mit den Vorzügen aber auch Nachteilen dieser Art von Programmierung und der Plattform Android.\\
+\subsection{Abschliessende Persönliche Schlussfolgerung}
+Wir haben das Gefühl, einen guten ersten Einblick in die native Android Programmierung mit Java und Python bekommen zu haben. Wir haben uns vertraut gemacht mit den Vorzügen, aber auch Nachteilen dieser Art von Programmierung und der Plattform Android.\\
 
 Wir sind zwar etwas enttäuscht, dass wir nicht alle geplanten Ziele erreicht haben, doch wir haben noch genug Motivation, die App in den nächsten paar Wochen und Monaten fertigzustellen. Denn die Arbeit hat uns insgesamt doch gefallen, trotz einigen Motivationstiefs, sodass wir auch gerne unseren Freunden und Familien von ihr erzählt haben.
 Wir können sicher sagen, dass wir jetzt eine Smartphone App als grösseres Projekt ansehen als das, was wir dachten. Eine App ist nicht so simpel wie wir erwartet haben.\\
 
-Was uns auch noch sehr gefallen hat ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattform \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonders Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
+Was uns auch noch sehr gefallen hat, ist das Arbeiten mit dem Version Control System \textit{Git} und der Plattform \textit{Github}, denn so konnte man gut den Fortschritt sehen und tracken, schliesslich machte das kollaborative Arbeiten an einem Projekt dieser Grösse besonders Sinn und konnte gut Nutzen machen von der Funktionalität dieses Systems.
 Dazu war das eine sehr gute Lehre wie später in grösseren Teams solche Programme entstehen. Wir sind jetzt sicher etwas besser ausgerüstet als andere.
 
 \section{Danksagung}
@@ -1226,7 +1208,7 @@ Diese Zeilen waren Grundlage für die Nachfolgenden Zeilen.
 \end{lstlisting}
 
 Sehr ähnliche Zeilen befinden sich auch in der messageCreateFragment.java Datei von Zeile 150-171. Diese Stammen ursprünglich auch aus dem Basisprogramm, 
-wurden aber überarbeitet. \\
+wurden aber überarbeitet. 
 
 \lstset{language=java}
 \begin{lstlisting}
