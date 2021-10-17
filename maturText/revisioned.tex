@@ -4,6 +4,11 @@
 \usepackage[ngerman]{babel}
 
 \usepackage{titlesec}
+\usepackage{tocbibind}
+\renewcommand{\listoffigures}{\begingroup
+\tocsection
+\tocfile{\listfigurename}{lof}
+\endgroup}
 
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
@@ -180,7 +185,7 @@ sorting=ynt,
 
 \newglossaryentry{fsf}{
     name=Free Software Foundation,
-    description={dt. \say{Stiftung für freie Software}, ist eine von Richard Stallman\cite{rms} gegründete Stiftung, ursprünglich mit dem Ziel die Entwicklung des GNU Projekts zu finanzieren, was mittlerweile erweitert und erstetzt wurde durch die allgemeine Förderung und Entwicklung von \gls{freie Software}.}
+    description={dt. \say{Stiftung für freie Software}, ist eine von Richard Stallman\cite{rms} gegründete Stiftung, ursprünglich mit dem Ziel die Entwicklung des GNU Projekts zu finanzieren, was mittlerweile erweitert und erstetzt wurde durch die allgemeine Förderung und Entwicklung von \glspl{freie Software}.}
 }
 
 \newglossaryentry{freie Software}{
@@ -194,7 +199,6 @@ sorting=ynt,
     name=Version Control Systems,
     description={Ein System oder Programm, welches die Versionierung des Quellcodes einer Software verwaltet.}
 }
-
 \newglossaryentry{ssl}{
     name=SSL/TLS,
     description={SSL (Secure Sockets Layer) \cite{rfc7568} und TLS (Transport Layer Security) \cite{rfc8996} sind kryptografische Protokolle, welche von der \Gls{ietf} entwickelt wurden, um über das Internet laufenden Netzwerkverkehr zu verschlüsseln.}
@@ -420,7 +424,7 @@ angehen möchte.
 Da Noah schon länger keinen \gls{email client} auf seinem Smartphone installiert hatte, weil ihm keine der gerade verfügbaren Apps gefiel, und er den Gedanken 
 schon länger hatte, sich seinen eigenen Email Client zu programmieren, traf sich das sehr gut und die beiden konnten sich einigen. 
 Also habe sie sich zusammen getan, um einen Email Client zu programmieren, der auch auf älteren Geräten ohne Schwierigkeiten läuft. Schliesslich hatten beide
-eher ältere Smartphones, ebenfalls sollte die App Open Source sein. 
+eher ältere Smartphones, ebenfalls sollte die App \gls{freie Software} sein. 
 Dafür sprechen viele praktische und philosophisch-ethische Gründe, aber dazu später mehr.
 Bei den Funktionen waren wir uns auch einig und wir hatten eine Menge Ideen, um einen vollumfänglichen Email Client zu erstellen. Der Name \textit{snailmail} ist in einem 
 Brainstorming aus der wörtlichen Übersetzung vom deutschen Wort \textit{Schneckenpost} entstanden. Gedanke zu dem Design machten wir sie sich zuerst nicht,
@@ -558,7 +562,7 @@ einen eigenen \Gls{branch} zu erstellen und diesen wieder mit dem Hauptbranch zu
 Um zu zweit an einem Projekt gleichzeitig zu arbeiten, gibt es viel Möglichkeiten, sich das aktualisierte Projekt zur Verfügung zu stellen. Die \say{Einfachste} ist, sich das 
 Projekt immer wieder zu mailen, wobei schon nur bei Textarbeiten dabei Probleme auftauchen können, weshalb bei diesem Projekt \Gls{github} 
 verwendet wurde. Über GitHub konnten die einzelnen Versionen des Programms, welche durch den Gebrauch von \gls{git} entstanden sind, geteilt werden. 
-Auf GitHub ist das Programm öffentlich und wird dadurch auch Open-Source. Es kann aber nicht durch eine dritte Person ohne Einwilligung von Noah in den Source-Code
+Auf GitHub ist das Programm öffentlich und wird dadurch auch quelloffen. Es kann aber nicht durch eine dritte Person ohne Einwilligung von Noah in den Source-Code
 des Programms geschrieben werden. Falls dies aber der Fall gewesen wäre, würde die dritte Person als mitwirkende Person auf GitHub aufgelistet werden. \cite{github} \\
 
 Beim Programmieren einer Arbeit dieser Grösse, erweist es sich besonders nützlich, ein \glspl{ide} zu verwenden. Es ist zu \gls{android-studio} gegriffen worden, weil sich dieses 
@@ -635,9 +639,9 @@ Die App kann grob in drei Teile unterteil werden. In \textit{User Interface}, in
 
 \nohyphenation
 
-Diese drei Komponenten bilden zusammen die App, wobei der Teil der Serververbindung nicht immer aktiv ist. Er wird von dem User Interface
+Diese drei Komponenten bilden zusam-men die App, wobei der Teil der Serververbindung nicht immer aktiv ist. Er wird von dem User Interface
 aufgerufen, wenn sich zum Beispiel ein neuer Nutzer mit einem Emailaccount anmelden möchte. Dann werden die Accountdaten an den Server geschickt und überprüft.
-Wenn diese korrekt sind, werden alle Nachrichten, die dieser Nutzer auf dem Server hat, heruntergeladen und weiter an die Database gegeben. Abgesehen von dem 
+Wenn diese korrekt sind, werden alle Nachrichten, die dieser Nutzer auf dem Server hat, heruntergela-den und weiter an die Database gegeben. Abgesehen von dem 
 Speichern der Nachrichten, die frisch vom Server kommen, macht die Database nur noch zwei Dinge. Sie kann durch das Interface entstandene Nachrichten so abspeichern, dass sie 
 vom \textit{User Interface} im Ordner \textit{Draft} angezeigt werden. Und die \textit{Database} kann weiter gespeicherte Nachrichten so bearbeiten, dass sie vom 
 \textit{User Interface} in einem anderen Ordner angezeigt werden.
@@ -1137,6 +1141,8 @@ Wir (Simon und Noah) möchten uns bei unserer Betreuungslehrperson Dr. Viktor Ya
 
 \newpage
 \printbibliography[heading=bibnumbered, title={Literaturverzeichnis}]
+
+\listoffigures
 
 \newpage
 \begin{appendices}
