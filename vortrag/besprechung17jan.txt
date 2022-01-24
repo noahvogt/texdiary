@@ -1,16 +1,27 @@
-was hatten wir vor? (Ziele)
-Wie heisst die Arbeit
-Warum ? 
-Was haben wir wirklich gemacht?
-Wie haben wir gewisse dinge gemacht?
-    kann Programmcodefragmente haben
-Keine grosse Kritik ausüben
-Was ist uns sehr gut gelung?
-Und was vielleicht nicht so?
-Was haben Sie gelernt?
-Soll klar sein was unsere eigene Leistung ist (z.b Librarys, programmexamples etc)
+Simon:
+        Warum Interesse etc, wieso überhaupt machen wir sowas (schlechte bisherige Apps)? 
+
+Noah:   was hatten wir vor? (Ziele)
+        Wie heisst die Arbeit
+
+
+Noah:   Was haben wir selber geschrieben?
+        Was haben wir wirklich gemacht?
+        Room, Dao, Libs, Material, ...
+
+Beide:  Wie haben wir gewisse dinge (bugs/features) gemacht?
+        kann Programmcodefragmente haben
+
+Simon:   Was ist uns sehr gut gelung?
+
+Noah:  Und was vielleicht nicht so?
+
+Simon:  Was haben Sie gelernt?
+
 Immer im positiven sprechen
 abwögen zwischen Unterhaltung und Fachlichem
+Soll klar sein was unsere eigene Leistung ist (z.b Librarys, programmexamples etc)
+Keine grosse Kritik ausüben
 Steve jobs Präsentationen anschauen (z.b 2009)
 Karteikärtchen mit Stichworten ist erlaubt
 
@@ -39,23 +50,23 @@ Faustregeln:
 
 Ablauf:
     Titel mit Datum etc
-    Zusammenfassung
-    Warum wollen wir dieses Produkt mache? Motivation
-    Ziele, für wen? 
-    Warum java etc
+    Zusammenfassung / Inhaltsverzeichniss
+    Warum wollen wir dieses Produkt mache? Motivation -> Simon
+    Ziele, für wen? -> Noah
+    Warum java etc -> Beide
     Haupteil:
-        kein AndroidStudio erwähnen
+        (kein AndroidStudio erwähnen)
         Film zur App zeigen mit Musik max 2 min
-        was ist drinn und Warum ist es so drin
-        allgemeine Struktur der App
-            wenn DB verwendet dann kurz erklären
-        wie wird verbundung mit server erstellt
-        Bugs
-            vielleicht auch schwierigkeiten nenen
-        wie kommen wir auf das Design?
+        was ist drinn und Warum ist es so drin -> Noah
+        allgemeine Struktur der App -> Simon
+            wenn DB verwendet dann kurz erklären -> Allg Noah -> spez. Simon
+        wie wird verbundung mit server erstellt -> Noah
+        Bugs 1 grosser / 1 kleiner -> Beide
+            vielleicht auch schwierigkeiten nenen (recyclerviewer) -> Simon
+        wie kommen wir auf das Design? -> Noah
     Resultate:
-        Von unseren Zielen haben wir dies, das und jenes erreicht
-        Wie geht es weiter?
+        Von unseren Zielen haben wir dies, das und jenes erreicht -> Noah
+        Wie geht es weiter? -> Simon
 
 
 Aufteilung:
@@ -69,7 +80,7 @@ Aufteilung:
         welche Ziele sind erreicht
     Resultate:
         hat es sich gelohnt ziele zu setzen
-        Wie viele Ziele sind erreicht
+        Wie viele Ziele sind erreicht -> Noah
     Persönliche Selbstreflektion:
         was ist gut gegange? 
         was hat man gelernt?
@@ -79,4 +90,4 @@ Aufteilung:
 
 Fragen:
     schriftlicher Teil, was könnte besser sein
-    oberflächliche fragen zu Technick und allgemeines
+    oberflächliche fragen zu Technik und allgemeines
