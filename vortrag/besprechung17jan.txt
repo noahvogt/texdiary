@@ -1,0 +1,82 @@
+was hatten wir vor? (Ziele)
+Wie heisst die Arbeit
+Warum ? 
+Was haben wir wirklich gemacht?
+Wie haben wir gewisse dinge gemacht?
+    kann Programmcodefragmente haben
+Keine grosse Kritik ausüben
+Was ist uns sehr gut gelung?
+Und was vielleicht nicht so?
+Was haben Sie gelernt?
+Soll klar sein was unsere eigene Leistung ist (z.b Librarys, programmexamples etc)
+Immer im positiven sprechen
+abwögen zwischen Unterhaltung und Fachlichem
+Steve jobs Präsentationen anschauen (z.b 2009)
+Karteikärtchen mit Stichworten ist erlaubt
+
+usepackage: 
+    movie15
+    animate
+    beamer
+        guter pdfreader verwenden
+
+pdfReader:
+    foxit
+
+
+
+Resultate:
+    Bilder statt Worte
+
+typische Frage:
+    Hätten Sie etwas mehr Zeit, in welche Richtung würden sie weiter gehen?
+        weiter Programmieren macht guter Eindruck
+
+Faustregeln:
+    1/3 der Folie ist information
+    c.a 2 Folien pro min
+    max 3 Programmcodefolien
+
+Ablauf:
+    Titel mit Datum etc
+    Zusammenfassung
+    Warum wollen wir dieses Produkt mache? Motivation
+    Ziele, für wen? 
+    Warum java etc
+    Haupteil:
+        kein AndroidStudio erwähnen
+        Film zur App zeigen mit Musik max 2 min
+        was ist drinn und Warum ist es so drin
+        allgemeine Struktur der App
+            wenn DB verwendet dann kurz erklären
+        wie wird verbundung mit server erstellt
+        Bugs
+            vielleicht auch schwierigkeiten nenen
+        wie kommen wir auf das Design?
+    Resultate:
+        Von unseren Zielen haben wir dies, das und jenes erreicht
+        Wie geht es weiter?
+
+
+Aufteilung:
+    30 Folien
+    Titelseite
+    Ziele 
+    Produkt
+        Wie?
+            mehr oder weniger arbeitsprozess, exemplarisch
+            java, warum java
+        welche Ziele sind erreicht
+    Resultate:
+        hat es sich gelohnt ziele zu setzen
+        Wie viele Ziele sind erreicht
+    Persönliche Selbstreflektion:
+        was ist gut gegange? 
+        was hat man gelernt?
+        würde man das mit anderen auch mache, was bräuchte man für kentnisse
+    Nachwort:
+        Danksagung etc
+
+Fragen:
+    schriftlicher Teil, was könnte besser sein
+    oberflächliche fragen zu Technick und allgemeines

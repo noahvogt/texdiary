@@ -1,0 +1,26 @@
+Yahooo
+    Spam ordner ned downloaded
+    Inbox ned glöscht solved
+
+Stürztz ab wenn sender ned acount isch solved
+
+Server
+    denkfehler, ordner werden nich auf server aktualisiert
+
+Account
+    deleting account doen't delete messages
+    when changing account List to delete is not informed
+    when account credentials are changed download messages
+    from extended accountsettings youre messages are not downloaded
+
+Message
+    cannot delete Draft message
+
+layout
+    infocard wack solved
+    Dateformat solved
+
+function
+    server settings also in settings
+    konfugurations solved
+    Draft messages können doppelt abgespeichert 
