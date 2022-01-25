@@ -23,8 +23,6 @@ usepackage:
 pdfReader:
     foxit
 
-
-
 Resultate:
     Bilder statt Worte
 
@@ -39,7 +37,7 @@ Faustregeln:
 
 Ablauf:
     Titel mit Datum etc
-    Zusammenfassung
+    Inhaltsverzeichnis 
     Warum wollen wir dieses Produkt mache? Motivation
     Ziele, für wen? 
     Warum java etc

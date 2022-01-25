@@ -1,0 +1,14 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Quellcode (engl. ``source code'') wird in ausführbaren Maschinencode umgewandelt \cite {stallman2002}\relax }}{4}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces parallele Featureentwicklung mit Git \cite {gitflowBlog}\relax }}{7}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Beispiel vom RecyclerView\relax }}{9}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces grober Aufbau der App\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces die Startup UI von snailmail\relax }}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {6}{\ignorespaces das Account Management\relax }}{12}{figure.caption.7}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Layout Manager Recyclerview \cite {LayoutManagerPicture}\relax }}{13}{figure.caption.8}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Input Validation\relax }}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Room Struktur \cite {appStructurePicture}\relax }}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {10}{\ignorespaces EmailViewModel and Repository \cite {appStructurePicture}\relax }}{15}{figure.caption.11}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Email Writer\relax }}{17}{figure.caption.12}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagramm Email Versand\relax }}{17}{figure.caption.13}%
