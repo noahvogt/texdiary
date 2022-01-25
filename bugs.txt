@@ -17,6 +17,7 @@ Message
     cannot delete Draft message
 
 layout
+    loading screen / animation
     infocard wack solved
     Dateformat solved
 
