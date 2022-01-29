@@ -13,7 +13,8 @@
 
 %% Putting the background image in the frames
 \usebackgroundtemplate{%
-    \vbox to \paperheight{\vfil\hbox to \paperwidth{\hfil\includegraphics[width=1\paperwidth]{../../logo/version2grey.pdf}\hfil}\vfil}
+    %\vbox to \paperheight{\hfil\hbox to \paperwidth{\hfil\includegraphics[width=1\paperwidth]{../../logo/version2grey.pdf}\hfil}\vfil}
+    \hspace{5.2cm}\includegraphics[width=0.8\paperwidth]{../../logo/version2grey.pdf}
     }
 %\logo{\includegraphics[scale=0.1]{libs/emblemufc.pdf}\hspace{9.7cm} \vspace{-0.2cm}}
 
