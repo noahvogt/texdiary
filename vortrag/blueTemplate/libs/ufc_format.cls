@@ -9,7 +9,7 @@
 \ProvidesClass{libs/ufc_format}[15/12/2020 v1.0 ufc template beamer]
 
 \PassOptionsToPackage{svgnames}{xcolor} 
-\LoadClass[compress, 10pt]{beamer}
+\LoadClass[compress, 10pt, aspectratio=169]{beamer}
 
 %% Putting the background image in the frames
 \usebackgroundtemplate{%
