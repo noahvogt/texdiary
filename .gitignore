@@ -5,7 +5,6 @@ Include/
 *.log
 *.aux
 *.toc
-*.pdf
 *.aux
 *.pdf
 *.idx
