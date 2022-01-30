@@ -13,6 +13,7 @@ selbst einen zu Entwickel ganz gut kam. Also unsere Motivation für dieses Produ
 ![](../maturText/media/AppStructureFull.png)
 Unsere App hat viele Facetten aber heruntergebrochen könne wir sie so darstellen (auf bild zeigen). Im grossen und ganze können wir sie sogar in drei Teile unterteilen. 
 Die Oberfläche, die sie vorhin sahen, ist das User Interface. (beispiele aus dem Video zeigen)
+Wenn eine E-Mail als Draft gespeichert wird, wird sie vom Userinterface bis in die DB geschickt
 
 Es kann Informationen aufnehmen die wir eingeben. Zum beispiel eine Email, oder eine Emailadresse um sich anzumelden.
 Und Natürlich kann es auch Informationen anzeigen. Informationen aus dem User Interface werden weitergegeben an das EmailViewModel, welches die Verknüpfung von 
@@ -29,6 +30,12 @@ das wichtigste war die Handhabung von Github und die Zusammenarbeit von uns beid
 arbeiten ohne das es Probleme mit der Arbeit des anderen gab. Wir haben uns vor der Maturarbeit ein wenig eingespielt aber während der Maturarbeit und Strukturen gegeben die uns
 massiv geholfen haben. Das fast wöchentliche treffen und absprechen, die diary und Github haben die Zusammenarbeit ermöglicht. Wir haben natürlich auch den Umgang mit AndroidStudio gelernt
 oder wie das debugging einer Handyapp funktioniert. Ebenso haben wir etwas über Database und SQL gelernt. 
+
+## Database simon
+(Einfügen Tabelle)
+Wir haben pro user eine eigene Database
+
+## Wie geht es weiter? simon
 
 ## Ziele (was hatten wir vor) noah
 
