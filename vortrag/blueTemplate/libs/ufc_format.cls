@@ -18,6 +18,7 @@
     }
 %\logo{\includegraphics[scale=0.1]{libs/emblemufc.pdf}\hspace{9.7cm} \vspace{-0.2cm}}
 
+
 %% Packages Used
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[brazil]{babel}
@@ -56,6 +57,7 @@
 \useinnertheme{rectangles}
 \useoutertheme[subsection=false]{miniframes}
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background}{\rule{0em}{.99\paperheight}\hspace{.5em}{\color{white}\tiny\bfseries\crono}}
 
 
 \setbeamercolor{section in head/foot}{bg=blue_theme, fg=white}
