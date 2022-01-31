@@ -54,6 +54,9 @@
     belowskip=3mm,
 }
 
+% Package to use videos
+\usepackage{movie15}
+
 \begin{document}
 \maketitle
 
@@ -138,12 +141,16 @@
 \end{frame}
 
 \begin{frame}{Demo}
+    \includemovie[toolbar]{90pt}{90pt}{media/cutaccountViewer.mp4}
+    \includemovie[]{90pt}{90pt}{media/draftsExample.mp4}
 \end{frame}
 
 \begin{frame}{Was alles drin ist}
-%\includegraphics<1>[height=.8\textheight]{../maturText/media/drawer.png}
-%\includegraphics<2>[height=.8\textheight]{../maturText/media/inbox.jpeg}
-%\includegraphics<3>[height=.8\textheight]{../maturText/media/emailWriter.png}
+\includegraphics<1>[height=.8\textheight]{media/emailViewer.jpg}
+\pause
+\includegraphics<2>[height=.8\textheight]{media/emailWriter.jpg}
+\pause
+\includegraphics<3>[height=.8\textheight]{media/accountManager.jpg}
 \end{frame}
 
 \begin{frame}{allgemeine App-Struktur}
@@ -151,6 +158,7 @@
 \includegraphics[height=.7\textheight]{../maturText/media/AppStructure.png}
 \end{frame}
 
+%:TODO Ich han eig gmeint Bilder us de Apps. Also wenn du seisch es isch zu überlade das me das in de Apps seht und ned s Logo fo de App
 \begin{frame}{Inspiration Design}
 \begin{varwidth}{.3\textwidth}\pause
         \begin{figure}
