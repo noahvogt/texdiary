@@ -27,6 +27,33 @@
     \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
 }
 
+% for code snippits
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{background}{rgb}{0.36,0.36,0.36}
+
+\lstset{
+    numbersep=3pt,
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    numbers=left,
+    numberstyle=\scriptsize\color{black},
+    frame=none,
+    basicstyle = \small\ttfamily,
+    breaklines=true
+    breakatwhitespace=false,
+    columns=flexible,
+    xleftmargin=0.5cm,framesep=8pt,framerule=0pt,
+    aboveskip=3mm,
+    belowskip=3mm,
+}
+
 \begin{document}
 \maketitle
 
@@ -119,9 +146,32 @@
 %\includegraphics<3>[height=.8\textheight]{../maturText/media/emailWriter.png}
 \end{frame}
 
-\begin{frame}{allg Struktur}
+\begin{frame}{allgemeine App-Struktur}
 \centering
 \includegraphics[height=.7\textheight]{../maturText/media/AppStructure.png}
+\end{frame}
+
+\begin{frame}{Inspiration Design}
+\begin{varwidth}{.3\textwidth}\pause
+        \begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{media/gmail-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.3\textwidth}\pause
+        \begin{figure}
+        \centering
+        \includegraphics[width=.9\textwidth]{media/k9-logo.png}
+        \end{figure}
+    \end{varwidth} 
+    \hfill
+    \begin{varwidth}{.3\textwidth}\pause
+        \begin{figure}
+        \centering
+        \includegraphics[width=.9\textwidth]{media/fairmail-logo.png}
+        \end{figure}
+\end{varwidth} 
 \end{frame}
 
 \begin{frame}{Database}
@@ -130,6 +180,102 @@
 
 \begin{block}{in der app}
 \end{block}
+\end{frame}
+
+\begin{frame}{Email Connection}
+\centering
+\includegraphics[width=.8\textwidth]{../maturText/media/connection-diagram.png}
+\end{frame}
+
+\defverbatim[colored]\makeset{
+\lstset{language=python}
+\begin{lstlisting}
+def sendStarttls(host, sendingMail, receivingMail, password, message="",
+                 subject="", port=587, cc=[], bcc=[]):
+    context = ssl.create_default_context()
+
+    if type(cc) is not str:
+        cc = ",".join(cc)
+    if type(bcc) is not str:
+        bcc = ",".join(bcc)
+    utf8Message = ("Subject: " + subject + "\nCC: " + cc + "\nBCC: " + bcc +
+                   "\n\n" + message)
+    decoded = utf8Message.encode('cp1252').decode('utf-8')
+
+    with smtplib.SMTP(host, port) as serverConnection:
+        serverConnection.starttls(context=context)
+        serverConnection.login(sendingMail, password)
+        serverConnection.sendmail(sendingMail, receivingMail, decoded)
+\end{lstlisting}
+}
+
+\begin{frame}{Sendung einer Email}
+\makeset
+\end{frame}
+
+\begin{frame}{Resultate}
+\begin{itemize}\pause
+    \item User Interface\pause
+    \item chaquopy\pause
+    \item Funktionalität\pause
+    \item abschliessend
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Was wir gelernt haben}
+\begin{varwidth}{.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{media/monetary-success.jpeg}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.5\textwidth}
+        \begin{itemize}\pause
+            \item Java\inlinegraphics{media/java-only-logo.png}\pause
+            \item Android Apps\inlinegraphics{media/android-robot.png}\pause
+            \item Android Studio\inlinegraphics{media/android-studio-logo.png}\pause
+            \item Database \& SQL\inlinegraphics{media/database.png}\pause
+            \item Gradle\inlinegraphics{media/gradle.png}\pause
+            \item kryptografisches Signieren\inlinegraphics{media/key.png}
+        \end{itemize}
+    \end{varwidth} 
+\end{frame}
+
+\begin{frame}{Was haben wir wirklich selber gemacht?}
+\centering
+\includegraphics[height=.8\textheight]{media/self.jpeg}
+\end{frame}
+
+\begin{frame}{Room}
+INSERT ABSTRACTION LAYERS
+\end{frame}
+
+\begin{frame}{Material Design}
+\begin{varwidth}{.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{media/material-design-in-action.jpg}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.4\textwidth}
+        \includegraphics[width=\textwidth]{media/material-android.png}
+        \begin{itemize}\pause
+            \item GUI-Framework\pause
+            \item beliebt\pause
+            \item in Google Apps
+        \end{itemize}
+    \end{varwidth} 
+\end{frame}
+
+\begin{frame}{Was wir gelernt haben}
+\end{frame}
+
+\begin{frame}{persönliche Meinung}
+\end{frame}
+
+\begin{frame}{Zukunft: Wie geht es weiter?}
 \end{frame}
 
 \end{document}
