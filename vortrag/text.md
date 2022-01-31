@@ -78,7 +78,8 @@ Die Databse speicher eigentlich nur zwei mal Email ab. Einmal wenn eine angefang
 unter dem Attribut folder mit dem Wert Draft abgespeichert und so nur noch im Ordner Draft ausgelesen. 
 
 Sonst speichert die Database immer dann Emails, wenn sie von dem Server heruntergeladen werden. Also wenn sich ein User anmeldet oder manuel Synchronisiert.
-Wir haben pro user eine eigene Database
+Ebenso kann Sie gewisse Werte von Atributen verändern. So dass eine Email in einem neuen Ordner angezeigt wird.
+Wir haben pro user eine eigene Database.
 
 ### Server Connection noah
 
