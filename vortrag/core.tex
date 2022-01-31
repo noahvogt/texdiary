@@ -100,7 +100,6 @@ INSERT TOC HERE
         \begin{figure}
             \centering
             \includegraphics[width=.8\textwidth]{../logo/version3d.png}
-            \caption{snailmail Logo}
         \end{figure}
     \end{varwidth}
     \hfill
@@ -137,15 +136,14 @@ INSERT TOC HERE
 \begin{frame}{Demo}
     \begin{figure}[h]
         \centering
-        \includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
-        \includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
+        INSERT DEMO HERE
+        %\includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
+        %\includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Was alles drin ist}
-
-    \begin{figure}[h]
-
+    \begin{figure}[h]\pause
         \includegraphics[height=.8\textheight]{media/emailViewer.jpg}
         \pause
         \includegraphics[height=.8\textheight]{media/emailWriter.jpg}
@@ -153,9 +151,7 @@ INSERT TOC HERE
         \includegraphics[height=.8\textheight]{media/accountManager.jpg}
         \pause
         \includegraphics[height=.8\textheight]{media/moreSettings.jpg}
-
     \end{figure}
-
 \end{frame}
 
 \begin{frame}{Allgemeine App-Struktur}
@@ -172,9 +168,6 @@ INSERT TOC HERE
             \item Das User Interface \pause
             \item Die Server Connection \pause
             \item Die Database \pause
-            \item Schnelligkeit\inlinegraphics{media/run.png}\pause
-            \item Mobil und Modern\inlinegraphics{media/mobile.png}\pause
-            \item Einstellungen\inlinegraphics{media/settings.png}
         \end{itemize}
     \end{varwidth} 
 \end{frame}
@@ -218,9 +211,10 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \makeset
 \end{frame}
 
-\begin{frame}{Was haben wir wirklich selber gemacht?}
+\begin{frame}{Was haben wir wirklich selber gemacht?}\pause
 \centering
-\includegraphics[height=.8\textheight]{media/self.jpeg}
+\includegraphics[height=.8\textheight]{media/hardware-abstraction-layers.png}
+%\includegraphics[scale=.3]{media/layer01.png}
 \end{frame}
 
 \begin{frame}{Room}
@@ -303,16 +297,32 @@ INSERT BUGS HERE
 \end{frame}
 
 % TODO: WAS GUT / SCHLECHT LIEF
-\begin{frame}{persönliche Meinung}
-\begin{varwidth}{.4\textwidth}
+\begin{frame}{persönliche Meinung: Simon}
+    \begin{varwidth}{.4\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{media/git-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.5\textwidth}
         \begin{itemize}\pause
             \item VCS $\rightarrow$ Git $\rightarrow$ GitHub\pause
             \item Treffen \& Absprachen \& VoIP\pause
             \item texdiary
         \end{itemize}
     \end{varwidth}
-    \hfill
+\end{frame}
+
+\begin{frame}{persönliche Meinung: Noah}
     \begin{varwidth}{.4\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{media/gradle-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.5\textwidth}
         \begin{itemize}\pause
             \item fehlende Erfahrung\pause
             \item Java Libraries\pause

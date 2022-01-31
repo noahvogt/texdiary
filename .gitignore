@@ -21,3 +21,5 @@ Include/
 *.gls
 *.ist
 *.webm
+*.nav
+*.snm
