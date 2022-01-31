@@ -156,6 +156,7 @@ Da wir noch nie in der Androidentwicklungsumgebung gearbeitet haben, war uns kla
 
 Als Notlösung mussten wir dann auf die mir bereits bekannte Python Bibliotheken zurückgreifen, doch dazu mussten wir erst mal einen Weg finden, Python Code in ein Java Programm einzubinden. Das ist natürlich eine unschöne Zwischenlösung, aber die Funktionalität hatte schliesslich oberste Priorität gehabt.
 
+Insgesamt kann ich von mir aus sagen, dass mich das ganze Projekt weitergebracht hat, die ersten Erfahrungen mit der App Programmierung waren es wert und ich sehe sie persönlich und beruflich rein zum Vorteil.
 
 ## Wie geht es weiter? simon
 
