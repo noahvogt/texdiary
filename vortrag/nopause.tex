@@ -13,7 +13,6 @@
 % beamer settings
 \title{snailmail}
 \author{Noah Vogt \& Simon Hammer}
-\date{5 Februar 2022}
 \institute{Gymnasium Kirschgarten}
 \usetheme{Copenhagen}
 
@@ -62,16 +61,9 @@
 % Package to use videos
 \usepackage{movie15}
 
-%% Putting the background image in the frames
-\usebackgroundtemplate{%
-    %\vbox to \paperheight{\hfil\hbox to \paperwidth{\hfil\includegraphics[width=1\paperwidth]{../../logo/version2grey.pdf}\hfil}\vfil}
-    \hspace{5.2cm}\includegraphics[width=0.8\paperwidth]{../logo/version2grey.pdf}
-    }
-
 \begin{document}
 \maketitle
 
-% TODO: create and insert toc
 \begin{frame}{Inhaltsverzeichniss}
 INSERT TOC HERE
 \end{frame}
@@ -86,10 +78,10 @@ INSERT TOC HERE
     \end{varwidth}
     \hfill
     \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item allgemeines Interesse\pause
-            \item fehlender Edubs-Mail-Client\pause
-            %\item fehlender Edubs-Mail-Client\inlinegraphics{media/baslerstab-1.jpg}\pause
+        \begin{itemize}
+            \item allgemeines Interesse
+            \item fehlender Edubs-Mail-Client
+            %\item fehlender Edubs-Mail-Client\inlinegraphics{media/baslerstab-1.jpg}
             \item persönliche Bedürfnisse
         \end{itemize}
     \end{varwidth} 
@@ -101,16 +93,17 @@ INSERT TOC HERE
         \begin{figure}
             \centering
             \includegraphics[width=.8\textwidth]{../logo/version3d.png}
+            \caption{snailmail Logo}
         \end{figure}
     \end{varwidth}
     \hfill
     \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item Basisfunktionen \inlinegraphics{media/mail.png} \pause
-            \item Account Manager\inlinegraphics{media/business.png}\pause
-            \item Design Prinzipien\inlinegraphics{media/paintbrush.png}\pause
-            \item Schnelligkeit\inlinegraphics{media/run.png}\pause
-            \item Mobil und Modern\inlinegraphics{media/mobile.png}\pause
+        \begin{itemize}
+            \item Basisfunktionen \inlinegraphics{media/mail.png} 
+            \item Account Manager\inlinegraphics{media/business.png}
+            \item Design Prinzipien\inlinegraphics{media/paintbrush.png}
+            \item Schnelligkeit\inlinegraphics{media/run.png}
+            \item Mobil und Modern\inlinegraphics{media/mobile.png}
             \item Einstellungen\inlinegraphics{media/settings.png}
         \end{itemize}
     \end{varwidth} 
@@ -125,9 +118,9 @@ INSERT TOC HERE
     \end{varwidth}
     \hfill
     \begin{varwidth}{.6\textwidth}
-        \begin{itemize}\pause
-            \item war offizielle Sprache für Android Apps\pause
-            \item abgelöst von Kotlin (seit 2019)\pause
+        \begin{itemize}
+            \item war offizielle Sprache für Android Apps
+            \item abgelöst von Kotlin (seit 2019)
             \item EF Informatik
         \end{itemize}
     \end{varwidth} 
@@ -135,42 +128,22 @@ INSERT TOC HERE
 
 % TODO: consider using external player
 \begin{frame}{Demo}
-    \begin{figure}[h]
-        \centering
-        INSERT DEMO HERE
-        %\includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
-        %\includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
-    \end{figure}
+    INSERT DEMO HERE
+    %\includemovie[toolbar]{90pt}{90pt}{media/cutaccountViewer.mp4}
+    %\includemovie[]{90pt}{90pt}{media/draftsExample.mp4}
 \end{frame}
 
 \begin{frame}{Was alles drin ist}
-    \begin{figure}[h]\pause
-        \includegraphics[height=.8\textheight]{media/emailViewer.jpg}
-        \pause
-        \includegraphics[height=.8\textheight]{media/emailWriter.jpg}
-        \pause
-        \includegraphics[height=.8\textheight]{media/accountManager.jpg}
-        \pause
-        \includegraphics[height=.8\textheight]{media/moreSettings.jpg}
-    \end{figure}
+\includegraphics<1>[height=.8\textheight]{media/emailViewer.jpg}
+
+\includegraphics<2>[height=.8\textheight]{media/emailWriter.jpg}
+
+\includegraphics<3>[height=.8\textheight]{media/accountManager.jpg}
 \end{frame}
 
-\begin{frame}{Allgemeine App-Struktur}
-\begin{varwidth}{.3\textwidth}
-    \pause
-        \begin{figure}
-            \centering
-            \includegraphics[height=.7\textheight]{../maturText/media/AppStructure.png}
-        \end{figure}
-    \end{varwidth}
-    \hfill
-    \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item Das User Interface \pause
-            \item Die Server Connection \pause
-            \item Die Database \pause
-        \end{itemize}
-    \end{varwidth} 
+\begin{frame}{allgemeine App-Struktur}
+\centering
+\includegraphics[height=.7\textheight]{../maturText/media/AppStructure.png}
 \end{frame}
 
 \begin{frame}{Database}
@@ -212,27 +185,11 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \makeset
 \end{frame}
 
-% TODO: add individual layers, add 'wirklich again'
-\begin{frame}{Was haben wir selber gemacht?}
-%\includegraphics[height=.8\textheight]{media/hardware-abstraction-layers.png}
-    \includegraphics<1>[height=.8\textheight]{media/empty.png}
-    \pause
-    \includegraphics<2>[height=.8\textheight]{media/layer01.png}
-    \pause
-    \includegraphics<3>[height=.8\textheight]{media/layer02.png}
-    \pause
-    \includegraphics<4>[height=.8\textheight]{media/layer03.png}
-    \pause
-    \includegraphics<5>[height=.8\textheight]{media/layer04.png}
-    \pause
-    \includegraphics<6>[height=.8\textheight]{media/layer05.png}
-    \pause
-    \includegraphics<7>[height=.8\textheight]{media/layer06.png}
-    \pause
-    \includegraphics<8>[height=.8\textheight]{media/layer07.png}
+\begin{frame}{Was haben wir wirklich selber gemacht?}
+\centering
+\includegraphics[height=.8\textheight]{media/self.jpeg}
 \end{frame}
 
-% TODO: make abstraction layer
 \begin{frame}{Room}
 INSERT ABSTRACTION LAYERS
 \end{frame}
@@ -247,36 +204,35 @@ INSERT ABSTRACTION LAYERS
     \hfill
     \begin{varwidth}{.4\textwidth}
         \includegraphics[width=\textwidth]{media/material-android.png}
-        \begin{itemize}\pause
-            \item GUI-Framework\pause
-            \item beliebt\pause
+        \begin{itemize}
+            \item GUI-Framework
+            \item beliebt
             \item in Google Apps
         \end{itemize}
     \end{varwidth}
 \end{frame}
 
-% TODO: insert bugs
 \begin{frame}{Bugs}
 INSERT BUGS HERE
 \end{frame}
 
 %:TODO Ich han eig gmeint Bilder us de Apps. Also wenn du seisch es isch zu überlade das me das in de Apps seht und ned s Logo fo de App
 \begin{frame}{Inspiration Design}
-\begin{varwidth}{.3\textwidth}\pause
+\begin{varwidth}{.3\textwidth}
         \begin{figure}
             \centering
             \includegraphics[width=.9\textwidth]{media/gmail-logo.png}
         \end{figure}
     \end{varwidth}
     \hfill
-    \begin{varwidth}{.3\textwidth}\pause
+    \begin{varwidth}{.3\textwidth}
         \begin{figure}
         \centering
         \includegraphics[width=.9\textwidth]{media/k9-logo.png}
         \end{figure}
     \end{varwidth}
     \hfill
-    \begin{varwidth}{.3\textwidth}\pause
+    \begin{varwidth}{.3\textwidth}
         \begin{figure}
         \centering
         \includegraphics[width=.9\textwidth]{media/fairmail-logo.png}
@@ -285,10 +241,10 @@ INSERT BUGS HERE
 \end{frame}
 
 \begin{frame}{Resultate}
-\begin{itemize}\pause
-    \item User Interface\pause
-    \item chaquopy\pause
-    \item Funktionalität\pause
+\begin{itemize}
+    \item User Interface
+    \item chaquopy
+    \item Funktionalität
     \item abschliessend
 \end{itemize}
 \end{frame}
@@ -302,46 +258,31 @@ INSERT BUGS HERE
     \end{varwidth}
     \hfill
     \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item Java\inlinegraphics{media/java-only-logo.png}\pause
-            \item Android Apps\inlinegraphics{media/android-robot.png}\pause
-            \item Android Studio\inlinegraphics{media/android-studio-logo.png}\pause
-            \item Database \& SQL\inlinegraphics{media/database.png}\pause
-            \item Gradle\inlinegraphics{media/gradle.png}\pause
+        \begin{itemize}
+            \item Java\inlinegraphics{media/java-only-logo.png}
+            \item Android Apps\inlinegraphics{media/android-robot.png}
+            \item Android Studio\inlinegraphics{media/android-studio-logo.png}
+            \item Database \& SQL\inlinegraphics{media/database.png}
+            \item Gradle\inlinegraphics{media/gradle.png}
             \item kryptografisches Signieren\inlinegraphics{media/key.png}
         \end{itemize}
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}{persönliche Meinung: Simon}
-    \begin{varwidth}{.4\textwidth}
-        \begin{figure}
-            \centering
-            \includegraphics[width=.95\textwidth]{media/git-logo.png}
-        \end{figure}
-    \end{varwidth}
-    \hfill
-    \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item VCS $\rightarrow$ Git $\rightarrow$ GitHub\pause
-            \item Treffen \& Absprachen \& VoIP\pause
+% TODO: WAS GUT / SCHLECHT LIEF
+\begin{frame}{persönliche Meinung}
+\begin{varwidth}{.4\textwidth}
+        \begin{itemize}
+            \item VCS $\rightarrow$ Git $\rightarrow$ GitHub
+            \item Treffen \& Absprachen \& VoIP
             \item texdiary
         \end{itemize}
     \end{varwidth}
-\end{frame}
-
-\begin{frame}{persönliche Meinung: Noah}
-    \begin{varwidth}{.4\textwidth}
-        \begin{figure}
-            \centering
-            \includegraphics[width=.95\textwidth]{media/gradle-logo.png}
-        \end{figure}
-    \end{varwidth}
     \hfill
-    \begin{varwidth}{.5\textwidth}
-        \begin{itemize}\pause
-            \item fehlende Erfahrung\pause
-            \item Java Libraries\pause
+    \begin{varwidth}{.4\textwidth}
+        \begin{itemize}
+            \item fehlende Erfahrung
+            \item Java Libraries
             \item persönlicher \& beruflicher Vorteil
         \end{itemize}
     \end{varwidth} 
