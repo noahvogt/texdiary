@@ -62,6 +62,10 @@
 % Package to use videos
 \usepackage{movie15}
 
+%for table
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
 %% Putting the background image in the frames
 \usebackgroundtemplate{%
     %\vbox to \paperheight{\hfil\hbox to \paperwidth{\hfil\includegraphics[width=1\paperwidth]{../../logo/version2grey.pdf}\hfil}\vfil}
@@ -71,12 +75,13 @@
 \begin{document}
 \maketitle
 
-\begin{frame}{Inhaltsverzeichniss}
-INSERT TOC HERE
+\begin{frame}[plain]{Inhaltsverzeichniss}
+    \tableofcontents
 \end{frame}
 
-%\section{Vorwort}
-\begin{frame}{Motivation}
+\section{Vorwort}
+\subsection{Motivation}
+\begin{frame}[plain]{Motivation}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
             \centering
@@ -94,8 +99,8 @@ INSERT TOC HERE
     \end{varwidth} 
 \end{frame}
 
-%\subsection{Ziele}
-\begin{frame}{Ziele}
+\subsection{Ziele}
+\begin{frame}[plain]{Ziele}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
             \centering
@@ -116,7 +121,8 @@ INSERT TOC HERE
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}{Warum Java}
+\subsection{Weshalb Java?}
+\begin{frame}[plain]{Weshalb Java?}
 \begin{varwidth}{.3\textwidth}
         \begin{figure}
             \centering
@@ -134,7 +140,9 @@ INSERT TOC HERE
 \end{frame}
 
 % TODO: consider using external player
-\begin{frame}{Demo}
+\section{Haupteil}
+\subsection{App mit Film}
+\begin{frame}[plain]{Demo}
     \begin{figure}[h]
         \centering
         \includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
@@ -142,7 +150,8 @@ INSERT TOC HERE
     \end{figure}
 \end{frame}
 
-\begin{frame}{Was alles drin ist}
+\subsection{App Inhalte}
+\begin{frame}[plain]{Was alles drin ist}
 
     \begin{figure}[h]
 
@@ -158,12 +167,13 @@ INSERT TOC HERE
 
 \end{frame}
 
-\begin{frame}{Allgemeine App-Struktur}
+\subsection{App-Struktur}
+\begin{frame}[plain]{Allgemeine App-Struktur}
 \begin{varwidth}{.3\textwidth}
     \pause
         \begin{figure}
             \centering
-            \includegraphics[height=.7\textheight]{../maturText/media/AppStructure.png}
+            \includegraphics[height=.7\textheight]{../maturText/media/AppStructureFull.png}
         \end{figure}
     \end{varwidth}
     \hfill
@@ -172,22 +182,31 @@ INSERT TOC HERE
             \item Das User Interface \pause
             \item Die Server Connection \pause
             \item Die Database \pause
-            \item Schnelligkeit\inlinegraphics{media/run.png}\pause
-            \item Mobil und Modern\inlinegraphics{media/mobile.png}\pause
-            \item Einstellungen\inlinegraphics{media/settings.png}
         \end{itemize}
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}{Database}
+\begin{frame}[plain]{Database}
 \begin{block}{allgemein}
 \end{block}
 
 \begin{block}{in der app}
+%:TODO finish this simon
+\begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.9Cm}|}
+%\begin{tabular}{ c c c c c c c c c c}
+ \hline
+ \multicolumn{10}{|c|}{Database Table} \\
+ \hline
+    \small{ObejctKey} &To & cc & bcc & from & date & subject & \small{textContent} & folder & seen  \\
+    \hline
+    \pause
+     01    & \small{Valentin} & null & null & \small{Lennard} & \small{01.03.13} & Schule &  Hallo Herr & Draft & true \\
+ \hline
+\end{tabular} 
 \end{block}
 \end{frame}
 
-\begin{frame}{Email Connection}
+\begin{frame}[plain]{Email Connection}
 \centering
 \includegraphics[width=.8\textwidth]{../maturText/media/connection-diagram.png}
 \end{frame}
@@ -214,20 +233,22 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \end{lstlisting}
 }
 
-\begin{frame}{Sendung einer Email}
-\makeset
+\begin{frame}[plain]{Senden einer Email}
+%\makeset
+    \lstset{language=Python}
+    \lstinputlisting[language=Python]{code/sentMail.py}
 \end{frame}
 
-\begin{frame}{Was haben wir wirklich selber gemacht?}
+\begin{frame}[plain]{Was haben wir wirklich selber gemacht?}
 \centering
 \includegraphics[height=.8\textheight]{media/self.jpeg}
 \end{frame}
 
-\begin{frame}{Room}
+\begin{frame}[plain]{Room}
 INSERT ABSTRACTION LAYERS
 \end{frame}
 
-\begin{frame}{Material Design}
+\begin{frame}[plain]{Material Design}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
             \centering
@@ -245,12 +266,12 @@ INSERT ABSTRACTION LAYERS
     \end{varwidth}
 \end{frame}
 
-\begin{frame}{Bugs}
+\begin{frame}[plain]{Bugs}
 INSERT BUGS HERE
 \end{frame}
 
 %:TODO Ich han eig gmeint Bilder us de Apps. Also wenn du seisch es isch zu überlade das me das in de Apps seht und ned s Logo fo de App
-\begin{frame}{Inspiration Design}
+\begin{frame}[plain]{Inspiration Design}
 \begin{varwidth}{.3\textwidth}\pause
         \begin{figure}
             \centering
@@ -273,7 +294,7 @@ INSERT BUGS HERE
 \end{varwidth}
 \end{frame}
 
-\begin{frame}{Resultate}
+\begin{frame}[plain]{Resultate}
 \begin{itemize}\pause
     \item User Interface\pause
     \item chaquopy\pause
@@ -282,7 +303,7 @@ INSERT BUGS HERE
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Was wir gelernt haben}
+\begin{frame}[plain]{Was wir gelernt haben}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
             \centering
@@ -303,7 +324,7 @@ INSERT BUGS HERE
 \end{frame}
 
 % TODO: WAS GUT / SCHLECHT LIEF
-\begin{frame}{persönliche Meinung}
+\begin{frame}[plain]{persönliche Meinung}
 \begin{varwidth}{.4\textwidth}
         \begin{itemize}\pause
             \item VCS $\rightarrow$ Git $\rightarrow$ GitHub\pause
@@ -321,7 +342,7 @@ INSERT BUGS HERE
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}{Zukunft: Wie geht es weiter?}
+\begin{frame}[plain]{Zukunft: Wie geht es weiter?}
     \begin{figure}
         \centering
         \includegraphics[height=.7\textheight]{media/github-repo.jpg}
