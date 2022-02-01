@@ -22,3 +22,7 @@ Include/
 *.ist
 *.webm
 *.nav
+<<<<<<< HEAD
+=======
+*.snm
+>>>>>>> cf1abc51e861ad5686fea2c697fa7e3736c01af2

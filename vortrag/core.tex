@@ -73,8 +73,13 @@
     }
 
 \begin{document}
+\begin{frame}[plain]
+
 \maketitle
 
+\end{frame}
+
+% TODO: create and insert toc
 \begin{frame}[plain]{Inhaltsverzeichniss}
     \tableofcontents
 \end{frame}
@@ -105,7 +110,6 @@
         \begin{figure}
             \centering
             \includegraphics[width=.8\textwidth]{../logo/version3d.png}
-            \caption{snailmail Logo}
         \end{figure}
     \end{varwidth}
     \hfill
@@ -121,7 +125,6 @@
     \end{varwidth} 
 \end{frame}
 
-\subsection{Weshalb Java?}
 \begin{frame}[plain]{Weshalb Java?}
 \begin{varwidth}{.3\textwidth}
         \begin{figure}
@@ -145,26 +148,28 @@
 \begin{frame}[plain]{Demo}
     \begin{figure}[h]
         \centering
-        \includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
-        \includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
+        INSERT DEMO HERE
+        %\includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
+        %\includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
     \end{figure}
 \end{frame}
 
+%:TODO Fix it simon
 \subsection{App Inhalte}
-\begin{frame}[plain]{Was alles drin ist}
-
-    \begin{figure}[h]
-
-        \includegraphics[height=.8\textheight]{media/emailViewer.jpg}
+        \begin{frame}[plain]{Was alles drin ist}
+            \centering
+        \begin{figure}[h]
         \pause
         \includegraphics[height=.8\textheight]{media/emailWriter.jpg}
+        \pause
+        \includegraphics[height=.8\textheight]{media/errorMessage.png}
+        \pause
+        \includegraphics[height=.8\textheight]{media/emailViewer.jpg}
         \pause
         \includegraphics[height=.8\textheight]{media/accountManager.jpg}
         \pause
         \includegraphics[height=.8\textheight]{media/moreSettings.jpg}
-
     \end{figure}
-
 \end{frame}
 
 \subsection{App-Struktur}
@@ -173,7 +178,7 @@
     \pause
         \begin{figure}
             \centering
-            \includegraphics[height=.7\textheight]{../maturText/media/AppStructureFull.png}
+            \includegraphics[height=.8\textheight]{../maturText/media/AppStructureFull.png}
         \end{figure}
     \end{varwidth}
     \hfill
@@ -192,7 +197,8 @@
 
 \begin{block}{in der app}
 %:TODO finish this simon
-\begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.9Cm}|}
+    \pause
+\begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.8Cm}|}
 %\begin{tabular}{ c c c c c c c c c c}
  \hline
  \multicolumn{10}{|c|}{Database Table} \\
@@ -200,7 +206,7 @@
     \small{ObejctKey} &To & cc & bcc & from & date & subject & \small{textContent} & folder & seen  \\
     \hline
     \pause
-     01    & \small{Valentin} & null & null & \small{Lennard} & \small{01.03.13} & Schule &  Hallo Herr & Draft & true \\
+     01    & \small{Sam} & null & null & \small{Anna} & \small{1.3.13} & Schule &  Hallo Herr & Draft & true \\
  \hline
 \end{tabular} 
 \end{block}
@@ -239,33 +245,51 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
     \lstinputlisting[language=Python]{code/sentMail.py}
 \end{frame}
 
-\begin{frame}[plain]{Was haben wir wirklich selber gemacht?}
-\centering
-\includegraphics[height=.8\textheight]{media/self.jpeg}
-\end{frame}
 
+% TODO: make abstraction layer
 \begin{frame}[plain]{Room}
 INSERT ABSTRACTION LAYERS
 \end{frame}
 
-\begin{frame}[plain]{Material Design}
-\begin{varwidth}{.5\textwidth}
-        \begin{figure}
-            \centering
-            \includegraphics[width=\textwidth]{media/material-design-in-action.jpg}
-        \end{figure}
-    \end{varwidth}
-    \hfill
-    \begin{varwidth}{.4\textwidth}
-        \includegraphics[width=\textwidth]{media/material-android.png}
-        \begin{itemize}\pause
-            \item GUI-Framework\pause
-            \item beliebt\pause
-            \item in Google Apps
-        \end{itemize}
-    \end{varwidth}
+% TODO: add individual layers, add 'wirklich again'
+\begin{frame}[plain]{Was haben wir selber gemacht?}
+%\includegraphics[height=.8\textheight]{media/hardware-abstraction-layers.png}
+    \includegraphics<1>[height=.8\textheight]{media/empty.png}
+    \pause
+    \includegraphics<2>[height=.8\textheight]{media/layer01.png}
+    \pause
+    \includegraphics<3>[height=.8\textheight]{media/layer02.png}
+    \pause
+    \includegraphics<4>[height=.8\textheight]{media/layer03.png}
+    \pause
+    \includegraphics<5>[height=.8\textheight]{media/layer04.png}
+    \pause
+    \includegraphics<6>[height=.8\textheight]{media/layer05.png}
+    \pause
+    \includegraphics<7>[height=.8\textheight]{media/layer06.png}
+    \pause
+    \includegraphics<8>[height=.8\textheight]{media/layer07.png}
 \end{frame}
 
+%\begin{frame}[plain]{Material Design}
+%\begin{varwidth}{.5\textwidth}
+%        \begin{figure}
+%            \centering
+%            \includegraphics[width=\textwidth]{media/material-design-in-action.jpg}
+%        \end{figure}
+%    \end{varwidth}
+%    \hfill
+%    \begin{varwidth}{.4\textwidth}
+%        \includegraphics[width=\textwidth]{media/material-android.png}
+%        \begin{itemize}\pause
+%            \item GUI-Framework\pause
+%            \item beliebt\pause
+%            \item in Google Apps
+%        \end{itemize}
+%    \end{varwidth}
+%\end{frame}
+
+% TODO: insert bugs
 \begin{frame}[plain]{Bugs}
 INSERT BUGS HERE
 \end{frame}
@@ -318,22 +342,37 @@ INSERT BUGS HERE
             \item Android Studio\inlinegraphics{media/android-studio-logo.png}\pause
             \item Database \& SQL\inlinegraphics{media/database.png}\pause
             \item Gradle\inlinegraphics{media/gradle.png}\pause
-            \item kryptografisches Signieren\inlinegraphics{media/key.png}
+            \item Zusammenarbeit\inlinegraphics{media/handschlag.jpeg}
         \end{itemize}
     \end{varwidth} 
 \end{frame}
 
-% TODO: WAS GUT / SCHLECHT LIEF
-\begin{frame}[plain]{persönliche Meinung}
-\begin{varwidth}{.4\textwidth}
+\begin{frame}[plain]{persönliche Meinung: Simon}
+    \begin{varwidth}{.4\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{media/git-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.5\textwidth}
         \begin{itemize}\pause
             \item VCS $\rightarrow$ Git $\rightarrow$ GitHub\pause
             \item Treffen \& Absprachen \& VoIP\pause
             \item texdiary
         \end{itemize}
     \end{varwidth}
-    \hfill
+\end{frame}
+
+\begin{frame}[plain]{persönliche Meinung: Noah}
     \begin{varwidth}{.4\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{media/gradle-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.5\textwidth}
         \begin{itemize}\pause
             \item fehlende Erfahrung\pause
             \item Java Libraries\pause

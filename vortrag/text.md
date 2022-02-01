@@ -32,7 +32,7 @@ eigene Einstellungen oder vorlieben selbst umsetzen wollen.
 
 (Film zegen)
 
-## Was ist drin und wieso ?(noah/simon)
+## Was ist drin und wieso ?simon
 
 Die App hat fuktionen die jeder Email-Client braucht. Darunter einen Email-Viewer, in welchem die Emial angezeigt wird (zeigt bild). Dann natürlichen einen Emailwriter, der sich 
 and dem Emailviewer orientiert damit alles schön simple bleibt. Im Emailwriter können emails geschrieben werden, wie im Video gezeigt wurde (zeigt bild). Anschliesen hat die App noch einen 
@@ -70,11 +70,8 @@ Wenn wir unsere Databse als Tabelle darstellen sieht diese so aus.
 Die Atribute sind recht selbsterklärend. CC und BCC sind Atribute in welche Email-Adressen geschrieben werden, welche die Email auch lesen könne wobei bei BCC nicht 
 alle Nutzer wissen wer alles diese Email lesen kann. 
 
-Im falle unsere Beispiel würde die Database dann so ausehen.
 
-(next slide tabelle mit atributen aus beispielvideo)
-
-Die Databse speicher eigentlich nur zwei mal Email ab. Einmal wenn eine angefangen Email nochnicht verschickt werden soll aber noch bearbeitet werden soll. Dann wird diese Email 
+Die Databse speichert eigentlich nur zwei mal Emails ab. Einmal wenn eine angefangen Email nochnicht verschickt werden soll aber noch bearbeitet werden soll. Dann wird diese Email 
 unter dem Attribut folder mit dem Wert Draft abgespeichert und so nur noch im Ordner Draft ausgelesen. 
 
 Sonst speichert die Database immer dann Emails, wenn sie von dem Server heruntergeladen werden. Also wenn sich ein User anmeldet oder manuel Synchronisiert.

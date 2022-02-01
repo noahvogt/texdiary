@@ -13,12 +13,10 @@
 \headcommand {\beamer@subsectionentry {0}{1}{2}{7}{Ziele}}
 \headcommand {\slideentry {1}{2}{1}{7/13}{Ziele}{0}}
 \headcommand {\beamer@framepages {7}{13}}
-\headcommand {\beamer@subsectionpages {7}{13}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{14}{Weshalb Java?}}
-\headcommand {\slideentry {1}{3}{1}{14/17}{Weshalb Java?}{0}}
+\headcommand {\slideentry {1}{2}{2}{14/17}{Ziele}{0}}
 \headcommand {\beamer@framepages {14}{17}}
 \headcommand {\beamer@sectionpages {3}{17}}
-\headcommand {\beamer@subsectionpages {14}{17}}
+\headcommand {\beamer@subsectionpages {7}{17}}
 \headcommand {\sectionentry {2}{Haupteil}{18}{Haupteil}{0}}
 \headcommand {\beamer@subsectionpages {18}{17}}
 \headcommand {\beamer@subsectionentry {0}{2}{1}{18}{App mit Film}}
@@ -26,38 +24,38 @@
 \headcommand {\beamer@framepages {18}{18}}
 \headcommand {\beamer@subsectionpages {18}{18}}
 \headcommand {\beamer@subsectionentry {0}{2}{2}{19}{App Inhalte}}
-\headcommand {\slideentry {2}{2}{1}{19/22}{App Inhalte}{0}}
-\headcommand {\beamer@framepages {19}{22}}
-\headcommand {\beamer@subsectionpages {19}{22}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{23}{App-Struktur}}
-\headcommand {\slideentry {2}{3}{1}{23/28}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {23}{28}}
-\headcommand {\slideentry {2}{3}{2}{29/30}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {29}{30}}
-\headcommand {\slideentry {2}{3}{3}{31/31}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {2}{3}{4}{32/32}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {2}{3}{5}{33/33}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {2}{3}{6}{34/34}{App-Struktur}{0}}
+\headcommand {\slideentry {2}{2}{1}{19/24}{App Inhalte}{0}}
+\headcommand {\beamer@framepages {19}{24}}
+\headcommand {\beamer@subsectionpages {19}{24}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{25}{App-Struktur}}
+\headcommand {\slideentry {2}{3}{1}{25/30}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {25}{30}}
+\headcommand {\slideentry {2}{3}{2}{31/33}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {31}{33}}
+\headcommand {\slideentry {2}{3}{3}{34/34}{App-Struktur}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {2}{3}{7}{35/38}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {35}{38}}
-\headcommand {\slideentry {2}{3}{8}{39/39}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {2}{3}{9}{40/43}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {40}{43}}
-\headcommand {\slideentry {2}{3}{10}{44/48}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {44}{48}}
-\headcommand {\slideentry {2}{3}{11}{49/55}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {49}{55}}
-\headcommand {\slideentry {2}{3}{12}{56/62}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {56}{62}}
-\headcommand {\slideentry {2}{3}{13}{63/63}{App-Struktur}{0}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\beamer@partpages {1}{63}}
-\headcommand {\beamer@subsectionpages {23}{63}}
-\headcommand {\beamer@sectionpages {18}{63}}
-\headcommand {\beamer@documentpages {63}}
+\headcommand {\slideentry {2}{3}{4}{35/35}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {2}{3}{5}{36/36}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {2}{3}{6}{37/44}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {37}{44}}
+\headcommand {\slideentry {2}{3}{7}{45/45}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {2}{3}{8}{46/49}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {46}{49}}
+\headcommand {\slideentry {2}{3}{9}{50/54}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {50}{54}}
+\headcommand {\slideentry {2}{3}{10}{55/61}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {55}{61}}
+\headcommand {\slideentry {2}{3}{11}{62/65}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {62}{65}}
+\headcommand {\slideentry {2}{3}{12}{66/69}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {66}{69}}
+\headcommand {\slideentry {2}{3}{13}{70/70}{App-Struktur}{0}}
+\headcommand {\beamer@framepages {70}{70}}
+\headcommand {\beamer@partpages {1}{70}}
+\headcommand {\beamer@subsectionpages {25}{70}}
+\headcommand {\beamer@sectionpages {18}{70}}
+\headcommand {\beamer@documentpages {70}}
 \headcommand {\gdef \inserttotalframenumber {20}}

@@ -15,6 +15,7 @@ Account
 
 Message
     cannot delete Draft message
+    email is sent even without content or subject
 
 layout
     loading screen / animation
