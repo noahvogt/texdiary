@@ -125,21 +125,28 @@
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}[plain]{Weshalb Java?}
-\begin{varwidth}{.3\textwidth}
+%:TODO Ich han eig gmeint Bilder us de Apps. Also wenn du seisch es isch zu überlade das me das in de Apps seht und ned s Logo fo de App
+\begin{frame}[plain]{Inspiration Design}
+\begin{varwidth}{.3\textwidth}\pause
         \begin{figure}
             \centering
-            \includegraphics[height=.8\textheight]{media/java-logo.png}
+            \includegraphics[width=.9\textwidth]{media/gmail-logo.png}
         \end{figure}
     \end{varwidth}
     \hfill
-    \begin{varwidth}{.6\textwidth}
-        \begin{itemize}\pause
-            \item war offizielle Sprache für Android Apps\pause
-            \item abgelöst von Kotlin (seit 2019)\pause
-            \item EF Informatik
-        \end{itemize}
-    \end{varwidth} 
+    \begin{varwidth}{.3\textwidth}\pause
+        \begin{figure}
+        \centering
+        \includegraphics[width=.9\textwidth]{media/k9-logo.png}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.3\textwidth}\pause
+        \begin{figure}
+        \centering
+        \includegraphics[width=.9\textwidth]{media/fairmail-logo.png}
+        \end{figure}
+\end{varwidth}
 \end{frame}
 
 % TODO: consider using external player
@@ -149,7 +156,7 @@
     \begin{figure}[h]
         \centering
         INSERT DEMO HERE
-        %\includemovie[toolbar]{120pt}{190pt}{media/cutaccountViewer.mp4}
+        \includemovie[toolbar]{100pt}{220pt}{media/cutaccountViewer.mp4}
         %\includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
     \end{figure}
 \end{frame}
@@ -158,16 +165,10 @@
 \begin{frame}[plain]{Was alles drin ist}
     \centering
     \begin{figure}[h]
+        \includegraphics[height=.9\textheight]{media/errorMessage.png}
+        \hspace{2.5cm}
         \pause
-        \includegraphics[height=.7\textheight]{media/emailWriter.jpg}
-        \pause
-        \includegraphics[height=.7\textheight]{media/errorMessage.png}
-        \pause
-        \includegraphics[height=.7\textheight]{media/emailViewer.jpg}
-        \pause
-        \includegraphics[height=.7\textheight]{media/accountManager.jpg}
-        \pause
-        \includegraphics[height=.7\textheight]{media/moreSettings.jpg}
+        \includegraphics[height=.9\textheight]{media/moreSettings.jpg}
     \end{figure}
 \end{frame}
 
@@ -241,6 +242,7 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \end{lstlisting}
 }
 
+
 \begin{frame}[plain]{Senden einer Email}
 %\makeset
     \lstset{language=Python}
@@ -248,31 +250,7 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \end{frame}
 
 
-% TODO: add individual layers, add 'wirklich again'
-\begin{frame}[plain]{Was haben wir selber gemacht?}
-%\includegraphics[height=.8\textheight]{media/hardware-abstraction-layers.png}
-    \includegraphics<1>[height=.8\textheight]{media/empty.png}
-    \pause
-    \includegraphics<2>[height=.8\textheight]{media/layer01.png}
-    \pause
-    \includegraphics<3>[height=.8\textheight]{media/layer02.png}
-    \pause
-    \includegraphics<4>[height=.8\textheight]{media/layer03.png}
-    \pause
-    \includegraphics<5>[height=.8\textheight]{media/layer04.png}
-    \pause
-    \includegraphics<6>[height=.8\textheight]{media/layer05.png}
-    \pause
-    \includegraphics<7>[height=.8\textheight]{media/layer06.png}
-    \pause
-    \includegraphics<8>[height=.8\textheight]{media/layer07.png}
-\end{frame}
-
-% TODO: make abstraction layer
-\begin{frame}[plain]{Room}
-INSERT ABSTRACTION LAYERS
-\end{frame}
-
+\subsection{Librarys}
 \begin{frame}[plain]{Material Design}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
@@ -296,30 +274,8 @@ INSERT ABSTRACTION LAYERS
 INSERT BUGS HERE
 \end{frame}
 
-%:TODO Ich han eig gmeint Bilder us de Apps. Also wenn du seisch es isch zu überlade das me das in de Apps seht und ned s Logo fo de App
-\begin{frame}[plain]{Inspiration Design}
-\begin{varwidth}{.3\textwidth}\pause
-        \begin{figure}
-            \centering
-            \includegraphics[width=.9\textwidth]{media/gmail-logo.png}
-        \end{figure}
-    \end{varwidth}
-    \hfill
-    \begin{varwidth}{.3\textwidth}\pause
-        \begin{figure}
-        \centering
-        \includegraphics[width=.9\textwidth]{media/k9-logo.png}
-        \end{figure}
-    \end{varwidth}
-    \hfill
-    \begin{varwidth}{.3\textwidth}\pause
-        \begin{figure}
-        \centering
-        \includegraphics[width=.9\textwidth]{media/fairmail-logo.png}
-        \end{figure}
-\end{varwidth}
-\end{frame}
 
+\section{Resultate}
 \begin{frame}[plain]{Resultate}
 \begin{itemize}\pause
     \item User Interface\pause
@@ -329,6 +285,7 @@ INSERT BUGS HERE
 \end{itemize}
 \end{frame}
 
+\section{Gelerntes}
 \begin{frame}[plain]{Was wir gelernt haben}
 \begin{varwidth}{.5\textwidth}
         \begin{figure}
@@ -349,7 +306,8 @@ INSERT BUGS HERE
     \end{varwidth} 
 \end{frame}
 
-\begin{frame}[plain]{persönliche Meinung: Simon}
+\section{Persönliche Meinung}
+\begin{frame}[plain]{Persönliche Meinung: Simon}
     \begin{varwidth}{.4\textwidth}
         \begin{figure}
             \centering
