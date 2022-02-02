@@ -1,4 +1,3 @@
-
 def sendStarttls(host, sendingMail, receivingMail, password, message="",
                  subject="", port=587, cc=[], bcc=[]):
     context = ssl.create_default_context()

@@ -79,7 +79,7 @@
 
 \end{frame}
 
-% TODO: create and insert toc
+% TODO: -> sectioning (or custom sectioning, but less preferable)
 \begin{frame}[plain]{Inhaltsverzeichniss}
     \tableofcontents
 \end{frame}
@@ -154,21 +154,20 @@
     \end{figure}
 \end{frame}
 
-%:TODO Fix it simon
 \subsection{App Inhalte}
-        \begin{frame}[plain]{Was alles drin ist}
-            \centering
-        \begin{figure}[h]
+\begin{frame}[plain]{Was alles drin ist}
+    \centering
+    \begin{figure}[h]
         \pause
-        \includegraphics[height=.8\textheight]{media/emailWriter.jpg}
+        \includegraphics[height=.7\textheight]{media/emailWriter.jpg}
         \pause
-        \includegraphics[height=.8\textheight]{media/errorMessage.png}
+        \includegraphics[height=.7\textheight]{media/errorMessage.png}
         \pause
-        \includegraphics[height=.8\textheight]{media/emailViewer.jpg}
+        \includegraphics[height=.7\textheight]{media/emailViewer.jpg}
         \pause
-        \includegraphics[height=.8\textheight]{media/accountManager.jpg}
+        \includegraphics[height=.7\textheight]{media/accountManager.jpg}
         \pause
-        \includegraphics[height=.8\textheight]{media/moreSettings.jpg}
+        \includegraphics[height=.7\textheight]{media/moreSettings.jpg}
     \end{figure}
 \end{frame}
 
@@ -192,10 +191,11 @@
 \end{frame}
 
 \begin{frame}[plain]{Database}
-\begin{block}{allgemein}
+\begin{block}{Allgemein}
+\textbf{Datenbank:} eine organisierte Ansammlung von strukturierter Information oder Daten
 \end{block}
 
-\begin{block}{in der app}
+\begin{block}{in Der App}
 %:TODO finish this simon
     \pause
 \begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.8Cm}|}
@@ -212,11 +212,13 @@
 \end{block}
 \end{frame}
 
+% TODO: add pauses + neomutt / thunderbird + customdomain / edubs example imgs
 \begin{frame}[plain]{Email Connection}
 \centering
 \includegraphics[width=.8\textwidth]{../maturText/media/connection-diagram.png}
 \end{frame}
 
+% TODO: not use lstlisting?
 \defverbatim[colored]\makeset{
 \lstset{language=python}
 \begin{lstlisting}
@@ -246,11 +248,6 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 \end{frame}
 
 
-% TODO: make abstraction layer
-\begin{frame}[plain]{Room}
-INSERT ABSTRACTION LAYERS
-\end{frame}
-
 % TODO: add individual layers, add 'wirklich again'
 \begin{frame}[plain]{Was haben wir selber gemacht?}
 %\includegraphics[height=.8\textheight]{media/hardware-abstraction-layers.png}
@@ -271,23 +268,28 @@ INSERT ABSTRACTION LAYERS
     \includegraphics<8>[height=.8\textheight]{media/layer07.png}
 \end{frame}
 
-%\begin{frame}[plain]{Material Design}
-%\begin{varwidth}{.5\textwidth}
-%        \begin{figure}
-%            \centering
-%            \includegraphics[width=\textwidth]{media/material-design-in-action.jpg}
-%        \end{figure}
-%    \end{varwidth}
-%    \hfill
-%    \begin{varwidth}{.4\textwidth}
-%        \includegraphics[width=\textwidth]{media/material-android.png}
-%        \begin{itemize}\pause
-%            \item GUI-Framework\pause
-%            \item beliebt\pause
-%            \item in Google Apps
-%        \end{itemize}
-%    \end{varwidth}
-%\end{frame}
+% TODO: make abstraction layer
+\begin{frame}[plain]{Room}
+INSERT ABSTRACTION LAYERS
+\end{frame}
+
+\begin{frame}[plain]{Material Design}
+\begin{varwidth}{.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{media/material-design-in-action.jpg}
+        \end{figure}
+    \end{varwidth}
+    \hfill
+    \begin{varwidth}{.4\textwidth}
+        \includegraphics[width=\textwidth]{media/material-android.png}
+        \begin{itemize}\pause
+            \item GUI-Framework\pause
+            \item beliebt\pause
+            \item in Google Apps
+        \end{itemize}
+    \end{varwidth}
+\end{frame}
 
 % TODO: insert bugs
 \begin{frame}[plain]{Bugs}
