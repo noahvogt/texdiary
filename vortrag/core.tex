@@ -64,8 +64,6 @@
 }
 
 % Package to use videos
-%\usepackage{movie15}
-%\usepackage{media9}
 \usepackage{multimedia}
 
 %for table
@@ -86,7 +84,7 @@
 \end{frame}
 
 \begin{frame}[plain]{Inhaltsverzeichniss}
-    \tableofcontents
+        \tableofcontents
 \end{frame}
 
 \section{Vorwort}
@@ -103,7 +101,6 @@
         \begin{itemize}\pause
             \item allgemeines Interesse\pause
             \item fehlender Edubs-Mail-Client\pause
-            %\item fehlender Edubs-Mail-Client\inlinegraphics{media/baslerstab-1.jpg}\pause
             \item persönliche Bedürfnisse
         \end{itemize}
     \end{varwidth} 
@@ -158,25 +155,11 @@
 \end{varwidth}
 \end{frame}
 
-% TODO: consider using external player
 \section{Haupteil}
 \subsection{App mit Film}
 \begin{frame}[plain]{Demo}
         \center
-        %\movie[externalviewer]{\includegraphics[width=.8\textwidth]{media/bug.png}}{media/appNoSound.mp4}
-        %\includemovie[externalviewer, autoplay]{20pt}{20pt}{media/appNoSound.mp4}
-%        \includemedia[
-%            width=0.6\linewidth,height=0.45\linewidth,
-%            activate=pageopen,
-%            addresource=media/appNoSound.mp4,
-%            flashvars={
-%                source=media/appNoSound.mp4
-%               &autoPlay=true
-%               &scaleMode=letterbox
-%    
-%           }
-%]{}{SlideShow.swf}\pgfuseimage{../logo/version2.png
-           \movie[externalviewer, autostart]{\includegraphics[height=0.8\textheight]{../logo/version3b.png}}{media/appNoSound.mp4}
+           \movie[externalviewer, autostart]{\includegraphics[height=0.8\textheight]{../logo/version3b.png}}{media/appWithMusic.mp4}
 \end{frame}
 
 \subsection{App Inhalte}
@@ -215,10 +198,8 @@
 \end{block}
 
 \begin{block}{in Der App}
-%:TODO finish this simon
     \pause
 \begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.8Cm}|}
-%\begin{tabular}{ c c c c c c c c c c}
  \hline
  \multicolumn{10}{|c|}{Database Table} \\
  \hline
@@ -253,34 +234,8 @@
     \includegraphics<9>[height=.8\textheight]{media/mail-diagram-08.png}
 \end{frame}
 
-% TODO: not use lstlisting?
-\defverbatim[colored]\makeset{
-\lstset{language=python}
-\begin{lstlisting}
-def sendStarttls(host, sendingMail, receivingMail, password, message="",
-                 subject="", port=587, cc=[], bcc=[]):
-    context = ssl.create_default_context()
-
-    if type(cc) is not str:
-        cc = ",".join(cc)
-    if type(bcc) is not str:
-        bcc = ",".join(bcc)
-    utf8Message = ("Subject: " + subject + "\nCC: " + cc + "\nBCC: " + bcc +
-                   "\n\n" + message)
-    decoded = utf8Message.encode('cp1252').decode('utf-8')
-
-    with smtplib.SMTP(host, port) as serverConnection:
-        serverConnection.starttls(context=context)
-        serverConnection.login(sendingMail, password)
-        serverConnection.sendmail(sendingMail, receivingMail, decoded)
-\end{lstlisting}
-}
-
 
 \begin{frame}[plain]{Senden einer Email}
-%\makeset
-    %\lstset{language=Python}
-    %\lstinputlisting[language=Python]{code/sentMail.py}
     \begin{figure}[h]
         \includegraphics[width=.8\textwidth]{media/codeFragment.png}
     \end{figure}
@@ -306,7 +261,6 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
     \end{varwidth}
 \end{frame}
 
-% TODO: insert bugs
 \begin{frame}[plain]{Bugs}
     \begin{figure}[h]
         \includegraphics[width=.8\textwidth]{media/bug.png}
@@ -337,7 +291,6 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
         \begin{itemize}\pause
             \item Java\inlinegraphics{media/java-only-logo.png}\pause
             \item Android Apps\inlinegraphics{media/android-robot.png}\pause
-            \item Android Studio\inlinegraphics{media/android-studio-logo.png}\pause
             \item Database \& SQL\inlinegraphics{media/database.png}\pause
             \item Gradle\inlinegraphics{media/gradle.png}\pause
             \item Zusammenarbeit\inlinegraphics{media/handschlag.jpeg}
@@ -357,8 +310,7 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
     \begin{varwidth}{.5\textwidth}
         \begin{itemize}\pause
             \item VCS $\rightarrow$ Git $\rightarrow$ GitHub\pause
-            \item Treffen \& Absprachen \& VoIP\pause
-            \item texdiary
+            \item Treffen \& Absprachen 
         \end{itemize}
     \end{varwidth}
 \end{frame}
