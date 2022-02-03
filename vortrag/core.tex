@@ -60,8 +60,9 @@
 }
 
 % Package to use videos
-\usepackage{movie15}
-\usepackage{media9}
+%\usepackage{movie15}
+%\usepackage{media9}
+\usepackage{multimedia}
 
 %for table
 \usepackage{array}
@@ -163,15 +164,17 @@
         %\movie[externalviewer]{\includegraphics[width=.8\textwidth]{media/bug.png}}{media/appNoSound.mp4}
         %\includemovie[externalviewer, autoplay]{20pt}{20pt}{media/appNoSound.mp4}
 %        \includemedia[
-%        width=5cm,height=5cm,
-%        activate=pageopen,
-%        addresource=media/appNoSound.mp4,
-%        flashvars={
-%            source=media/appNoSound.mp4
-%           &autoPlay=true
-%           &scaleMode=letterbox
-%    }
-%]{}{VPlayer.swf}
+%            width=0.6\linewidth,height=0.45\linewidth,
+%            activate=pageopen,
+%            addresource=media/appNoSound.mp4,
+%            flashvars={
+%                source=media/appNoSound.mp4
+%               &autoPlay=true
+%               &scaleMode=letterbox
+%    
+%           }
+%]{}{SlideShow.swf}
+           \movie[externalviewer, autostart, width=4cm, height=8cm]{first try}{media/appNoSound.mp4}
 \end{frame}
 
 \subsection{App Inhalte}
