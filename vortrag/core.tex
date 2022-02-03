@@ -61,6 +61,7 @@
 
 % Package to use videos
 \usepackage{movie15}
+\usepackage{media9}
 
 %for table
 \usepackage{array}
@@ -156,12 +157,19 @@
 \section{Haupteil}
 \subsection{App mit Film}
 \begin{frame}[plain]{Demo}
-    \begin{figure}[h]
         \centering
-        INSERT DEMO HERE
-        %\includemovie[toolbar]{100pt}{220pt}{media/cutaccountViewer.mp4}
-        %\includemovie[toolbar]{90pt}{90pt}{media/draftsExample.mp4}
-    \end{figure}
+        %\movie[externalviewer]{\includegraphics[width=.8\textwidth]{media/bug.png}}{media/appNoSound.mp4}
+        %\includemovie[externalviewer, autoplay]{20pt}{20pt}{media/appNoSound.mp4}
+%        \includemedia[
+%        width=5cm,height=5cm,
+%        activate=pageopen,
+%        addresource=media/appNoSound.mp4,
+%        flashvars={
+%            source=media/appNoSound.mp4
+%           &autoPlay=true
+%           &scaleMode=letterbox
+%    }
+%]{}{VPlayer.swf}
 \end{frame}
 
 \subsection{App Inhalte}
@@ -264,8 +272,11 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 
 \begin{frame}[plain]{Senden einer Email}
 %\makeset
-    \lstset{language=Python}
-    \lstinputlisting[language=Python]{code/sentMail.py}
+    %\lstset{language=Python}
+    %\lstinputlisting[language=Python]{code/sentMail.py}
+    \begin{figure}[h]
+        \includegraphics[width=.8\textwidth]{media/codeFragment.png}
+    \end{figure}
 \end{frame}
 
 
@@ -290,7 +301,9 @@ def sendStarttls(host, sendingMail, receivingMail, password, message="",
 
 % TODO: insert bugs
 \begin{frame}[plain]{Bugs}
-INSERT BUGS HERE
+    \begin{figure}[h]
+        \includegraphics[width=.8\textwidth]{media/bug.png}
+    \end{figure}
 \end{frame}
 
 
