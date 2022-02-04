@@ -21,6 +21,9 @@
 
 \usetheme{Copenhagen}
 
+\newcommand{\tabitem}{
+    \usebeamertemplate{itemize item}\hspace*{\labelsep}}
+
 \usepackage{varwidth}
 
 \usepackage{graphicx,calc}
@@ -33,7 +36,7 @@
 \newcommand*\inlinegraphics[1]{
     \settototalheight\myheight{Xygp}
     \settodepth\mydepth{Xygp}
-    \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}%
+    \raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}
 }
 
 % for code snippits
@@ -176,7 +179,6 @@
 \subsection{App-Struktur}
 \begin{frame}[plain]{Allgemeine App-Struktur}
 \begin{varwidth}{.3\textwidth}
-    \pause
         \begin{figure}
             \centering
             \includegraphics[height=.8\textheight]{../maturText/media/AppStructureFull.png}
@@ -195,17 +197,32 @@
 \begin{frame}[plain]{Database}
 \begin{block}{Allgemein}
 \textbf{Datenbank:} eine organisierte Ansammlung von strukturierter Information oder Daten
-\end{block}
+\end{block}\pause
 
-\begin{block}{in Der App}
-    \pause
+\begin{block}{In Der App}
 \begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.8Cm}|}
  \hline
  \multicolumn{10}{|c|}{Database Table} \\
  \hline
-    \small{ObejctKey} &To & cc & bcc & from & date & subject & \small{textContent} & folder & seen  \\
+    \small{ObjectKey} &To & cc & bcc & from & date & subject & \small{textContent} & folder & seen  \\
     \hline
-    \pause
+\end{tabular}
+\vspace{.9cm}
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]{Database}
+\begin{block}{Allgemein}
+\textbf{Datenbank:} eine organisierte Ansammlung von strukturierter Information oder Daten
+\end{block}
+
+\begin{block}{In Der App}
+\begin{tabular}{ |C{1.4Cm}  |C{0.9Cm} |C{0.5Cm} |C{0.65Cm} |C{0.95Cm} |C{0.85Cm} |C{1.05Cm} |C{1.55Cm} |C{1.05Cm} |C{0.8Cm}|}
+ \hline
+ \multicolumn{10}{|c|}{Database Table} \\
+ \hline
+    \small{ObjectKey} &To & cc & bcc & from & date & subject & \small{textContent} & folder & seen  \\
+    \hline
      01    & \small{Sam} & null & null & \small{Anna} & \small{1.3.13} & Schule &  Hallo Herr & Draft & true \\
  \hline
 \end{tabular} 
@@ -213,52 +230,59 @@
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
+    \centering
+    \fbox{\includegraphics[height=.8\textheight]{media/white.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-01.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-01.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-02.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-02.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-03.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-03.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-04.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-04.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-05.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-05.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-06.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-06.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-07.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-07.png}}
 \end{frame}
 
 \begin{frame}[plain]{Mail Server Connection}
     \centering
-    \includegraphics[height=.8\textheight]{media/mail-diagram-08.png}
+    \fbox{\includegraphics[height=.8\textheight]{media/mail-08.png}}
 \end{frame}
 
 \begin{frame}[plain]{Senden einer Email}
     \begin{figure}[h]
-        \includegraphics[width=.8\textwidth]{media/codeFragment.png}
+        \includegraphics[width=\textwidth]{media/codeFragment.png}
     \end{figure}
+    \begin{center}
+        \begin{tabular}{@{}l@{}}
+            \tabitem app/src/main/python/mailFunctions.py
+        \end{tabular}
+    \end{center}
 \end{frame}
 
 
@@ -281,7 +305,7 @@
     \end{varwidth}
 \end{frame}
 
-\begin{frame}[plain]{Bugs}
+\begin{frame}[plain]{Bug}
     \begin{figure}[h]
         \includegraphics[width=.8\textwidth]{media/bug.png}
     \end{figure}
