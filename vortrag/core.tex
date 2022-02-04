@@ -21,9 +21,6 @@
 
 \usetheme{Copenhagen}
 
-\newcommand{\tabitem}{
-    \usebeamertemplate{itemize item}\hspace*{\labelsep}}
-
 \usepackage{varwidth}
 
 \usepackage{graphicx,calc}
@@ -278,11 +275,10 @@
     \begin{figure}[h]
         \includegraphics[width=\textwidth]{media/codeFragment.png}
     \end{figure}
-    \begin{center}
-        \begin{tabular}{@{}l@{}}
-            \tabitem app/src/main/python/mailFunctions.py
-        \end{tabular}
-    \end{center}
+        \begin{itemize}
+            \centering
+            \item app/src/main/python/mailFunctions.py
+        \end{itemize}
 \end{frame}
 
 
